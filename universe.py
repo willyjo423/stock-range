@@ -125,21 +125,30 @@ def reconstruct_members(current: list[str], blob: bytes) -> pd.DataFrame:
     """
     changes = _changes_table(blob)
     members = set(current)
-    rows = [{"date": pd.Timestamp.today().normalize(),
-             "members": sorted(members), "n": len(members)}]
+    rows = []
 
     for r in changes.iloc[::-1].itertuples(index=False):
+        # `members` currently holds the membership that applied from this
+        # change date onward, so record it against that date *before* undoing
+        # it. Recording after would label each row with the date the state
+        # stopped being true rather than the date it started.
+        rows.append({"date": pd.Timestamp(r.date), "members": sorted(members),
+                     "n": len(members)})
         added = normalise_ticker(r.added) if pd.notna(r.added) else ""
         removed = normalise_ticker(r.removed) if pd.notna(r.removed) else ""
-        # Undo this change to step back before it happened.
         if added and added in members:
             members.discard(added)
         if removed:
             members.add(removed)
-        rows.append({"date": pd.Timestamp(r.date), "members": sorted(members),
-                     "n": len(members)})
 
-    df = pd.DataFrame(rows).sort_values("date").reset_index(drop=True)
+    # Whatever is left is the membership before the earliest change we know of.
+    earliest = (pd.Timestamp(changes["date"].min()) - pd.Timedelta(days=1)
+                if len(changes) else pd.Timestamp(config.HISTORY_START))
+    rows.append({"date": earliest, "members": sorted(members),
+                 "n": len(members)})
+
+    df = (pd.DataFrame(rows).sort_values("date")
+            .drop_duplicates("date", keep="last").reset_index(drop=True))
     log.info("reconstructed membership from %d changes: %s to %s, "
              "count %d-%d", len(changes), df["date"].min().date(),
              df["date"].max().date(), df["n"].min(), df["n"].max())
@@ -198,20 +207,39 @@ class Universe:
             log.error("current membership unavailable: %s", exc)
             current = []
 
-        history, source = None, None
-        # The published file first, since it is a record rather than a
-        # reconstruction. The first probe run found both of its URLs 404 - the
-        # name changes with each refresh - so the fallback matters.
+        published, rebuilt = None, None
         try:
-            history, source = historical_members(), "published file"
+            published = historical_members()
         except UniverseUnavailable as exc:
             log.warning("membership history file unavailable: %s", exc)
-            if blob is not None and current:
-                try:
-                    history, source = reconstruct_members(current, blob), \
-                        "reconstructed from the change log"
-                except UniverseUnavailable as exc2:
-                    log.warning("reconstruction failed: %s", exc2)
+        if blob is not None and current:
+            try:
+                rebuilt = reconstruct_members(current, blob)
+            except UniverseUnavailable as exc:
+                log.warning("reconstruction failed: %s", exc)
+
+        # The published file is a record and the reconstruction is an
+        # inference, so the file wins where it exists. But the copy that
+        # answered on the first live run stops in January 2019 - seven years
+        # short - and using it alone would freeze membership there and lose
+        # every name that has joined and left since. So the two are spliced:
+        # the file for the deep history, the change log for everything after
+        # it ends.
+        history, source = None, None
+        if published is not None and rebuilt is not None:
+            cutoff = pd.Timestamp(published["date"].max())
+            recent = rebuilt[rebuilt["date"] > cutoff]
+            history = (pd.concat([published, recent], ignore_index=True)
+                         .sort_values("date").reset_index(drop=True))
+            source = (f"published file to {cutoff.date()}, then the change log "
+                      f"({len(recent)} later changes)")
+        elif published is not None:
+            history, source = published, "published file only"
+            log.warning("no change log to extend the file past %s; membership "
+                        "is frozen after that date",
+                        published["date"].max().date())
+        elif rebuilt is not None:
+            history, source = rebuilt, "reconstructed from the change log"
 
         if not current and history is not None and len(history):
             current = list(history.iloc[-1]["members"])

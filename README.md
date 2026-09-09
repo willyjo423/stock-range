@@ -144,3 +144,46 @@ is detected, and that volatility persistence is recovered from the fixtures —
 
 What they cannot prove is anything about the real market. That is what the
 probe is for.
+
+---
+
+## What the model is, and what it needs
+
+Per horizon, five gradient boosters fitted with **pinball loss** at the 10th,
+25th, 50th, 75th and 90th percentiles — of the forward return *divided by the
+naive band width*. Predicting that ratio rather than the return itself means
+the trees only learn how the shape differs from the naive assumption instead of
+relearning the level of volatility, which is the same trick as riding the
+football model on a rescaled ratings baseline, and it is what lets the model
+extrapolate to a stock wilder than anything in its training data.
+
+Two corrections sit on top, both fitted out of sample:
+
+**Width.** Regularised quantile regression is biased toward the conditional
+median — shrinkage pulls the 25th up and the 75th down — so the raw band comes
+out about 12% too narrow and under-covers. One scalar per quantile, fitted on a
+held-back slice, fixes it.
+
+**Order.** Five independent models can produce a 25th above a 75th on an odd
+row. Each row is sorted, so a range can never read backwards.
+
+### It needs a large panel, and here is the measurement
+
+Estimating conditional quantiles costs variance; the naive answer costs none.
+So below a certain amount of *independent* evidence, the model is worse than
+doing nothing. Measured on the fixtures:
+
+| independent windows | pinball vs naive | worst bucket, model / naive |
+|---|---|---|
+| 5,614 | −2.9% | 6.2 / 9.8 |
+| 18,629 | +0.2% | 2.3 / 9.4 |
+| 51,840 | +1.1% | 3.2 / 11.0 |
+
+A 40-ticker test would have "proved" the approach does not work. It shows that
+40 tickers is not enough — which is exactly why the universe question was worth
+answering before writing any of this. The real panel has well past 100,000
+independent windows at a one-month horizon.
+
+Note what improves at *every* size: conditional calibration. The naive band's
+worst volatility bucket sits 9–11 points from target; the model's sits 2–3.
+That is the product, and the pinball gain is the tiebreak.

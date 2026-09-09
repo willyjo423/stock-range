@@ -82,6 +82,41 @@ def make_prices(tickers=None, days: int = 2600, seed: int = 1729,
     return df.sort_values(["ticker", "date"]).reset_index(drop=True)
 
 
+def make_market(days: int = 2600, seed: int = 5150) -> pd.DataFrame:
+    """Index and volatility references, in the same shape as the real ones."""
+    rng = np.random.default_rng(seed)
+    dates = pd.bdate_range("2014-01-02", periods=days)
+    rows = []
+    for t, base in (("SPY", 0.16), ("QQQ", 0.20), ("IWM", 0.22)):
+        vol = _garch_path(days, rng, base)
+        px = 200 * np.exp(np.cumsum(rng.normal(0.0004, 1.0, days) * vol))
+        for i in range(days):
+            c = float(px[i])
+            rows.append({"date": dates[i], "ticker": t, "open": c, "high": c * 1.004,
+                         "low": c * 0.996, "close": c, "volume": 5e7,
+                         "source": "fixture"})
+    # A VIX that tracks the index's own volatility, as the real one does.
+    spy_vol = _garch_path(days, rng, 0.16)
+    for i in range(days):
+        v = float(spy_vol[i]) * np.sqrt(TRADING_DAYS) * 100 * 1.1
+        rows.append({"date": dates[i], "ticker": "^VIX", "open": v, "high": v,
+                     "low": v, "close": v, "volume": 0.0, "source": "fixture"})
+    return pd.DataFrame(rows).sort_values(["ticker", "date"]).reset_index(drop=True)
+
+
+def make_earnings(tickers=None, seed: int = 4242) -> pd.DataFrame:
+    """Quarterly report dates, roughly 90 days apart with real-world jitter."""
+    rng = np.random.default_rng(seed)
+    tickers = list(tickers or TICKERS)
+    rows = []
+    for t in tickers:
+        d = pd.Timestamp("2014-02-05") + pd.Timedelta(days=int(rng.integers(0, 89)))
+        while d < pd.Timestamp("2025-01-01"):
+            rows.append({"ticker": t, "date": d})
+            d = d + pd.Timedelta(days=int(90 + rng.integers(-6, 7)))
+    return pd.DataFrame(rows)
+
+
 def make_universe_history(tickers=None, seed: int = 99) -> pd.DataFrame:
     """Membership that actually changes, so survivorship logic has work to do."""
     rng = np.random.default_rng(seed)
