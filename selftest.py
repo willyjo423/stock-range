@@ -54,9 +54,25 @@ def universe_block() -> universe.Universe | None:
 
     s = uni.summary()
     print(f"  in the index today          {s['current']}")
+    print(f"  history source              {uni.source or 'none'}")
     print(f"  membership change records   {s['change_dates']}")
     print(f"  ever a member since {config.HISTORY_START[:4]}    {s['ever_in_window']}")
     print(f"  names that came and went    {s['turnover']}")
+
+    if s["survivorship_safe"]:
+        cc = uni.count_check()
+        print(f"\n  membership count over time  {cc['min']} to {cc['max']} "
+              f"(median {cc['median']})")
+        if cc["ok"]:
+            print(f"  {cc['share_in_band'] * 100:.0f}% of dates inside "
+                  f"{cc['band'][0]}-{cc['band'][1]}, which is what a correct")
+            print("  reconstruction looks like: the index has held about 500")
+            print("  names throughout.")
+        else:
+            print(f"  !! only {cc['share_in_band'] * 100:.0f}% of dates fall "
+                  f"inside {cc['band'][0]}-{cc['band'][1]}. The change log is")
+            print("     missing entries, so the reconstruction is unreliable.")
+            print("     Send me this - it is fixable but not by guessing.")
 
     if s["survivorship_safe"]:
         print(f"\n  Survivorship handled. {s['turnover']} companies that left the")
@@ -183,29 +199,46 @@ def premise_block(df: pd.DataFrame) -> None:
 def baseline_block(df: pd.DataFrame) -> None:
     head("5. THE BAR: HOW GOOD IS THE OBVIOUS ANSWER?")
     print("The simplest possible range: assume the next month looks like the")
-    print("last month. Any model has to beat this, and the sports builds are a")
-    print("reminder of how often the obvious answer is hard to improve on.\n")
+    print("last month. The first run of this probe found it already lands at")
+    print("about 50% overall, which is a higher bar than expected - so the")
+    print("interesting number is not the total but the breakdown under it.\n")
 
     rv = prices.realized_vol(df)
     for label, h in config.HORIZONS.items():
         d = rv.copy()
         d["fwd_ret"] = prices.forward_return(d, h)
         col = f"rv_{h}" if f"rv_{h}" in d.columns else "rv_21"
-        ok = d[[col, "fwd_ret"]].dropna()
-        if len(ok) < 500:
+        ok = d[[col, "fwd_ret"]].dropna().copy()
+        if len(ok) < 2000:
             continue
-        # A middle-half band from the trailing volatility alone.
         halfwidth = 0.6745 * ok[col] * np.sqrt(h / 252.0)
-        inside = float((ok["fwd_ret"].abs() <= halfwidth).mean())
-        print(f"  {label:<9} naive band held {inside * 100:5.1f}% of the time "
-              f"(target 50%)   n={len(ok):,}")
-        if inside < 0.42:
-            print(f"            -> too narrow: real returns have fatter tails "
-                  f"than the normal assumption")
-        elif inside > 0.58:
-            print(f"            -> too wide")
-    print("\n  A model earns its place by moving these toward 50% and by")
-    print("  tightening the band on the stocks that deserve a tighter one.")
+        ok["inside"] = ok["fwd_ret"].abs() <= halfwidth
+        ok["width"] = 2 * halfwidth
+        print(f"  {label:<9} overall {ok['inside'].mean() * 100:5.1f}%   "
+              f"median band width {ok['width'].median() * 100:5.1f}%   "
+              f"n={len(ok):,}")
+
+        # Overall calibration can be right while every part of it is wrong -
+        # too wide on calm stocks and too narrow on wild ones, averaging out.
+        # That is the failure a single number cannot show, and it is exactly
+        # the gap a model can close.
+        ok["bucket"] = pd.qcut(ok[col], 4, labels=["calmest", "calm",
+                                                   "active", "wildest"],
+                               duplicates="drop")
+        for name, block in ok.groupby("bucket", observed=True):
+            flag = ""
+            share = block["inside"].mean()
+            if share < 0.45:
+                flag = "  <- too narrow here"
+            elif share > 0.55:
+                flag = "  <- too wide here"
+            print(f"            {str(name):<9} {share * 100:5.1f}%   "
+                  f"width {block['width'].median() * 100:5.1f}%{flag}")
+
+    print("\n  Overall coverage near 50% is not the same as being right. If")
+    print("  the buckets above spread out, the naive band is compensating for")
+    print("  one error with another, and closing that gap - while keeping the")
+    print("  band no wider - is what a model would be for.")
 
 
 def benchmark_block() -> None:

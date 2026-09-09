@@ -30,12 +30,24 @@ for _p in (DATA, CACHE, MODELS, DOCS, FORECASTS):
 SP500_CURRENT_URLS = [
     "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
 ]
+# The first probe run 404'd on both of these - the file gets renamed with each
+# refresh, so a pinned name rots. They are kept as a fast path and the real
+# answer now comes from reconstructing membership backwards through the
+# "Selected changes" table on the Wikipedia page, which is fetched anyway.
 SP500_HISTORY_URLS = [
     "https://raw.githubusercontent.com/fja05680/sp500/master/"
     "S%26P%20500%20Historical%20Components%20%26%20Changes(current).csv",
     "https://github.com/fja05680/sp500/raw/master/"
     "S%26P%20500%20Historical%20Components%20%26%20Changes(current).csv",
+    "https://raw.githubusercontent.com/fja05680/sp500/master/"
+    "S%26P%20500%20Historical%20Components%20%26%20Changes.csv",
 ]
+
+# A reconstruction is only trusted if the membership count stays near 500 at
+# every point in history. Drift outside this band means changes are being
+# missed or double-applied, and the probe says so rather than quietly training
+# on a 380-name index.
+MEMBERSHIP_COUNT_BAND = (460, 530)
 
 # Index and volatility references, used as context features and as the free
 # benchmark. No account needed for any of them.

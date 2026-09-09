@@ -80,6 +80,56 @@ def test_universe() -> None:
     check("summary reports the turnover", s["turnover"] == len(ever) - len(uni.current))
 
 
+def test_reconstruction() -> None:
+    """Rebuilding membership backwards through the change log.
+
+    The published history file 404'd on the first live run - it gets renamed
+    with each refresh - so this fallback is now the main path and needs to be
+    tested rather than hoped for.
+    """
+    section("MEMBERSHIP RECONSTRUCTION")
+    rows = "".join(
+        f"<tr><td>20{20 + i // 9}-{i % 9 + 1:02d}-15</td>"
+        f"<td>NEW{i}</td><td>OLD{i}</td></tr>" for i in range(25))
+    blob = (f"<table><tr><th>Date</th><th>Added Ticker</th>"
+            f"<th>Removed Ticker</th></tr>{rows}</table>").encode()
+    current = [f"NEW{i}" for i in range(25)] + [f"KEEP{i}" for i in range(480)]
+
+    hist = universe.reconstruct_members(current, blob)
+    check("one row per change plus today", len(hist) == 26, f"{len(hist)}")
+
+    uni = universe.Universe(hist, current)
+    check("today's membership is unchanged",
+          set(uni.members_on("2030-01-01")) == set(current))
+
+    # Each change swaps one name for another, so the count must never move.
+    cc = uni.count_check()
+    check("the count stays put through the reconstruction",
+          cc["min"] == cc["max"] == len(current),
+          f"{cc['min']}-{cc['max']} vs {len(current)}")
+    check("count_check passes on a sound reconstruction", cc["ok"])
+
+    ever = uni.all_ever()
+    check("removed names are recovered", len(ever) == len(current) + 25,
+          f"{len(ever)} - the 25 OLD tickers are exactly the survivorship gap")
+    check("and they are the ones that left",
+          all(f"OLD{i}" in ever for i in range(25)))
+
+    # A change log with entries missing produces a drifting count, and that
+    # drift is the only warning available without a second source.
+    lopsided = "".join(f"<tr><td>2021-{i % 9 + 1:02d}-15</td>"
+                       f"<td>ADD{i}</td><td></td></tr>" for i in range(60))
+    blob2 = (f"<table><tr><th>Date</th><th>Added Ticker</th>"
+             f"<th>Removed Ticker</th></tr>{lopsided}</table>").encode()
+    bad = universe.Universe(
+        universe.reconstruct_members([f"ADD{i}" for i in range(60)]
+                                     + [f"K{i}" for i in range(440)], blob2),
+        [f"ADD{i}" for i in range(60)] + [f"K{i}" for i in range(440)])
+    check("a broken change log is caught by the count check",
+          not bad.count_check()["ok"],
+          f"{bad.count_check()} - if this passes, the check is useless")
+
+
 # ------------------------------------------------------------------ returns
 def test_returns() -> None:
     section("RETURNS")
@@ -204,7 +254,8 @@ def test_premise() -> None:
 
 def main() -> int:
     print("Range forecast - offline data layer checks")
-    for fn in (test_tickers, test_universe, test_returns, test_audit,
+    for fn in (test_tickers, test_universe, test_reconstruction,
+               test_returns, test_audit,
                test_realized_vol, test_forward_return, test_premise):
         try:
             fn()
