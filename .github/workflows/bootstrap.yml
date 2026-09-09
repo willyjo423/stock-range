@@ -1,0 +1,96 @@
+name: Bootstrap
+
+# Downloads the universe, measures what each feature group is worth, runs the
+# walk-forward evaluation and trains one model per horizon.
+#
+# Start with the default sample. A thousand tickers over twenty years is
+# millions of rows, and it is worth seeing the shape of the answer on a quarter
+# of it before spending an hour on all of it.
+on:
+  workflow_dispatch:
+    inputs:
+      sample:
+        description: "Tickers to use (blank = the whole universe, ~1000)"
+        required: false
+        default: "250"
+      horizons:
+        description: "Trading-day horizons, space separated (blank = 5 21 63)"
+        required: false
+        default: ""
+      earnings:
+        description: "Fetch earnings dates (slow the first time, then cached)"
+        type: boolean
+        required: false
+        default: true
+      ablation:
+        description: "Measure each feature group (slower, but it is the point)"
+        type: boolean
+        required: false
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Offline checks
+        # No network. If these fail the fault is in the code, not the market.
+        run: |
+          python test_data.py
+          python test_model.py
+
+      # Prices and earnings both cache to disk and neither changes for a
+      # finished day, so this turns a long download into seconds on a rerun.
+      - name: Restore data cache
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: vol-cache-${{ github.run_id }}
+          restore-keys: |
+            vol-cache-
+            prices-
+
+      - name: Build
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.sample }}" ]; then ARGS="$ARGS --sample ${{ inputs.sample }}"; fi
+          if [ -n "${{ inputs.horizons }}" ]; then ARGS="$ARGS --horizons ${{ inputs.horizons }}"; fi
+          if [ "${{ inputs.earnings }}" = "false" ]; then ARGS="$ARGS --no-earnings"; fi
+          if [ "${{ inputs.ablation }}" = "false" ]; then ARGS="$ARGS --no-ablation"; fi
+          echo "build.py $ARGS"
+          python build.py $ARGS | tee bootstrap.txt
+
+      - name: Keep the models and the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bootstrap-output
+          path: |
+            bootstrap.txt
+            data/metrics.json
+            models/
+          retention-days: 30
+
+      - name: Commit the trained models
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f models/ data/metrics.json
+          git diff --staged --quiet && echo "nothing changed" && exit 0
+          git commit -m "Bootstrap: retrain range models"
+          git pull --rebase --autostash origin main || true
+          git push
