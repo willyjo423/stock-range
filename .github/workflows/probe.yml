@@ -1,0 +1,61 @@
+name: Probe
+
+# One live run that reports what the data actually contains, and measures
+# whether the premise behind this project holds. Run this first - its output
+# decides whether there is anything worth building.
+on:
+  workflow_dispatch:
+    inputs:
+      sample:
+        description: "How many tickers to probe (blank = 60)"
+        required: false
+        default: "60"
+      full:
+        description: "Probe every index member ever (slow)"
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Offline checks
+        # No network. If these fail the problem is in the code, not the data -
+        # worth knowing before reading the live output.
+        run: python test_data.py
+
+      - name: Cache downloaded prices
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: prices-${{ github.run_id }}
+          restore-keys: prices-
+
+      - name: Live probe
+        run: |
+          if [ "${{ inputs.full }}" = "true" ]; then
+            python selftest.py --full | tee probe.txt
+          else
+            python selftest.py --sample "${{ inputs.sample }}" | tee probe.txt
+          fi
+
+      - name: Keep the output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: probe-output
+          path: probe.txt
+          retention-days: 30
