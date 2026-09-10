@@ -129,6 +129,50 @@ def test_reconstruction() -> None:
           not bad.count_check()["ok"],
           f"{bad.count_check()} - if this passes, the check is useless")
 
+    # The live page grew a two-row header - Added/Removed above Ticker/Security
+    # - and the parser found nothing, which silently froze membership at
+    # January 2019 rather than failing. These are the layouts it has to
+    # survive now.
+    def _wiki(added="Added", removed="Removed", ticker="Ticker"):
+        body = "".join(
+            f"<tr><td>January {i % 28 + 1}, 202{i % 5}</td><td>NEW{i}</td>"
+            f"<td>New Company {i}</td><td>OLD{i}</td><td>Old Company {i}</td>"
+            f"<td>Market capitalization change.</td></tr>" for i in range(25))
+        return (f"<table><tr><th rowspan=2>Effective Date</th>"
+                f"<th colspan=2>{added}</th><th colspan=2>{removed}</th>"
+                f"<th rowspan=2>Reason</th></tr>"
+                f"<tr><th>{ticker}</th><th>Security</th>"
+                f"<th>{ticker}</th><th>Security</th></tr>"
+                f"{body}</table>").encode()
+
+    two_row = universe._changes_table(_wiki())
+    check("a two-row Added/Removed header is parsed", len(two_row) == 25,
+          f"{len(two_row)}")
+    check("the ticker columns are taken, not the company names",
+          set(two_row["added"]) == {f"NEW{i}" for i in range(25)},
+          str(sorted(two_row["added"])[:3]))
+    check("a long-form date is read", int(two_row["date"].min().year) == 2020)
+
+    # The same table with every header renamed, which is what a page
+    # restructure looks like. Matching on shape has to carry it.
+    renamed = universe._changes_table(_wiki("In", "Out", "Sym"))
+    check("renaming every header does not lose the table",
+          len(renamed) == 25, f"{len(renamed)}")
+    check("and it finds the same changes",
+          set(renamed["added"]) == set(two_row["added"])
+          and set(renamed["removed"]) == set(two_row["removed"]))
+
+    # A failure has to say what it saw, or the next run is another guess.
+    try:
+        universe._changes_table(
+            b"<table><tr><th>Colour</th><th>Count</th></tr>"
+            + b"<tr><td>red</td><td>3</td></tr>" * 15 + b"</table>")
+        check("a page with no changes table raises", False, "it did not raise")
+    except universe.UniverseUnavailable as exc:
+        check("a page with no changes table raises", True)
+        check("and the error names the tables it did find",
+              "colour" in str(exc).lower(), str(exc)[:120])
+
 
 # ------------------------------------------------------------------ returns
 def test_returns() -> None:

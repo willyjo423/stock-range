@@ -86,7 +86,17 @@ def probe_sources(names: list[str]) -> tuple[pd.DataFrame, dict]:
               "have it now.")
         return pd.DataFrame(), timings
 
+    # Both sources are asked about the same leading tickers, so the same
+    # contract arrives twice. The first run counted those twice and inflated
+    # every share in section 3 - a filter that passes 20% of contracts looks
+    # identical whether the contracts are distinct or duplicated. CBOE is
+    # appended first, so keeping the first occurrence keeps the faster source.
     chain = pd.concat(frames, ignore_index=True)
+    before = len(chain)
+    chain = chain.drop_duplicates(["ticker", "contract"], keep="first")
+    if len(chain) < before:
+        print(f"\n  {before - len(chain):,} duplicate contracts dropped "
+              f"(the two sources were asked about overlapping tickers)")
 
     head("2. WHAT THE CHAIN CONTAINS")
     q = chains.check(chain)
@@ -141,9 +151,9 @@ def probe_gates(chain: pd.DataFrame) -> None:
     print(f"\n  Scaled to the full index that is roughly "
           f"{per_name * 500:.0f} names a day.")
     if per_name * 500 > 60:
-        print("  That is too many to be a signal. The premium floor or the "
-              "moneyness\n  band wants tightening - see FLOW_MIN_PREMIUM and "
-              "FLOW_ATM_BAND.")
+        print("  That is too many to be a signal. Section 3b solves for the "
+              "premium\n  floor that would fix it, rather than guessing at "
+              "one.")
     elif per_name * 500 < 1:
         print("  That is too few to ever grade. Loosen one gate - but note "
               "which one,\n  because a filter set tuned until it fires is a "
@@ -171,6 +181,78 @@ def probe_gates(chain: pd.DataFrame) -> None:
                   f"{(vo >= 1).mean() * 100:.1f}% of them")
 
 
+def probe_threshold(chain: pd.DataFrame, target: int = 25) -> None:
+    """Solve for the premium floor rather than guessing at it.
+
+    The first live run measured that $50,000 sits at roughly the median of
+    short-dated at-the-money contracts that traded at all. That is not a
+    surprise once stated plainly: $50k was a criterion for one trade's premium,
+    and what free data reports is a whole contract-day's premium. The number
+    was right for a quantity this cannot see.
+
+    So rather than pick a new number and defend it, this prints what each
+    candidate floor would actually do to the daily count and lets the
+    arithmetic choose. The target is deliberately modest - a couple of dozen
+    names a day accumulates a gradeable sample within a few months and is still
+    short enough to read.
+    """
+    head(f"3b. WHAT PREMIUM FLOOR WOULD MAKE THIS SELECTIVE (target ~{target}"
+         f" names a day)")
+    if chain.empty:
+        print("  no chain to calibrate against")
+        return
+
+    screened = flow.screen(flow.interval(flow.enrich(chain), None))
+    others = [c for c in screened.columns
+              if c.startswith("gate_") and c != "gate_premium"]
+    if not others:
+        return
+    base = screened[np.logical_and.reduce(
+        [(screened[c] == 1).to_numpy() for c in others])]
+    n_names = int(chain["ticker"].nunique())
+    print(f"  contracts passing every filter except premium: {len(base):,}")
+    print(f"  across {n_names} names scanned\n")
+    if base.empty:
+        print("  Nothing survives the other filters, so the premium floor is "
+              "not what is\n  binding. Look at the moneyness band and the "
+              "open-interest cap instead.")
+        return
+
+    print(f"  {'floor':>12} {'contracts':>10} {'names':>7} "
+          f"{'projected/day':>14}")
+    chosen = None
+    for floor in (50_000, 100_000, 250_000, 500_000, 1_000_000, 2_000_000,
+                  5_000_000, 10_000_000):
+        hit = base[base["new_premium"] >= floor]
+        names = int(hit["ticker"].nunique())
+        proj = names / max(n_names, 1) * 500
+        print(f"  ${floor:>11,} {len(hit):>10,} {names:>7} {proj:>13.0f}")
+        if chosen is None and proj <= target:
+            chosen = (floor, proj)
+
+    print()
+    if chosen:
+        print(f"  The lowest floor that lands near the target is "
+              f"${chosen[0]:,}\n  (about {chosen[1]:.0f} names a day). Set "
+              f"FLOW_MIN_PREMIUM to that.")
+    else:
+        print("  Even the highest floor here flags more than the target. The "
+              "binding\n  constraint is not premium - tighten FLOW_ATM_BAND "
+              "or FLOW_MAX_OI.")
+
+    # The projection is a share measured on a handful of names, and a share
+    # measured on a handful of names has enormous error bars. Saying so is the
+    # difference between calibrating and fooling yourself.
+    if n_names < 40:
+        share = 0.5
+        se = (share * (1 - share) / n_names) ** 0.5
+        print(f"\n  CAUTION: {n_names} names is far too few to set a threshold "
+              f"on. A rate\n  measured here carries a standard error of about "
+              f"{se * 500:.0f} names a day, so\n  every projection above could "
+              f"easily be double or half. Re-run with\n  --sample 80 during "
+              f"market hours before changing anything.")
+
+
 # ---------------------------------------------------------------------- 4
 def probe_oi_stability(chain: pd.DataFrame) -> None:
     head("4. DOES OPEN INTEREST HOLD STILL DURING THE SESSION")
@@ -178,7 +260,7 @@ def probe_oi_stability(chain: pd.DataFrame) -> None:
     print("  interest, and that only means anything if the open interest is")
     print("  yesterday's settled figure rather than something that ticks.")
     print()
-    day = pd.Timestamp.utcnow().strftime("%Y-%m-%d")
+    day = pd.Timestamp.now("UTC").strftime("%Y-%m-%d")
     earlier = flow.load_snapshots(day)
     if not earlier:
         print("  No earlier snapshot from today, so this cannot be answered in")
@@ -243,7 +325,7 @@ def main(argv=None) -> int:
                         format="%(levelname)s %(message)s")
 
     print("OPTIONS FLOW PROBE")
-    print(f"run at {pd.Timestamp.utcnow():%Y-%m-%d %H:%M} UTC")
+    print(f"run at {pd.Timestamp.now('UTC'):%Y-%m-%d %H:%M} UTC")
     print("US options trade 13:30-20:00 UTC; outside that, volume is "
           "yesterday's\nand section 3 describes a finished day rather than a "
           "live one.")
@@ -261,6 +343,7 @@ def main(argv=None) -> int:
 
     chain, timings = probe_sources(names)
     probe_gates(chain)
+    probe_threshold(chain)
     probe_oi_stability(chain)
     probe_cost(timings, 500)
 

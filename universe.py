@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import io
 import logging
+import re
 from datetime import date
 
 import pandas as pd
@@ -75,40 +76,149 @@ def _members_from_blob(blob: bytes) -> list[str]:
     raise UniverseUnavailable("no table on that page had a Symbol column")
 
 
+_TICKERISH = re.compile(r"^[A-Z][A-Z0-9.\-]{0,5}$")
+# Enough rows to be the change log rather than an infobox that mentions a date.
+_MIN_CHANGE_ROWS = 10
+
+
+def _flatten(columns) -> list[str]:
+    return [" ".join(str(x) for x in c).lower() if isinstance(c, tuple)
+            else str(c).lower() for c in columns]
+
+
+def _date_like(s: pd.Series) -> int:
+    """How many entries in this column parse as dates."""
+    for kwargs in ({"format": "mixed"}, {}):
+        try:
+            return int(pd.to_datetime(s, errors="coerce",
+                                      **kwargs).notna().sum())
+        except (ValueError, TypeError):
+            continue
+    return 0
+
+
+def _ticker_like(s: pd.Series) -> float:
+    """What share of a column looks like a ticker symbol.
+
+    This is how the added and removed columns get found without trusting the
+    header, because the header is the part of a scraped page most likely to be
+    renamed. A column of company names or a sentence of explanation scores near
+    zero; a column of NVDA and POOL scores near one.
+    """
+    vals = [str(v).strip() for v in s.dropna().tolist()]
+    vals = [v for v in vals if v and v.lower() not in ("nan", "-", "—")]
+    if len(vals) < 5:
+        return 0.0
+    return sum(bool(_TICKERISH.match(v)) for v in vals) / len(vals)
+
+
+def _tidy(out: pd.DataFrame) -> pd.DataFrame:
+    for kwargs in ({"format": "mixed"}, {}):
+        try:
+            out["date"] = pd.to_datetime(out["date"], errors="coerce", **kwargs)
+            break
+        except (ValueError, TypeError):
+            continue
+    return (out.dropna(subset=["date"]).sort_values("date")
+               .reset_index(drop=True))
+
+
+def _inventory(tables: list[pd.DataFrame]) -> str:
+    """What was actually on the page, for an error message worth reading.
+
+    A scraper that fails with "not found" sends whoever reads it back to the
+    website to guess. Printing the shape and headers of every table found turns
+    the next run into the diagnosis rather than into the next attempt.
+    """
+    bits = []
+    for i, t in enumerate(tables[:12]):
+        cols = ", ".join(_flatten(t.columns))[:110]
+        bits.append(f"[{i}] {len(t)}x{len(t.columns)} ({cols})")
+    if len(tables) > 12:
+        bits.append(f"...and {len(tables) - 12} more")
+    return " | ".join(bits)
+
+
 def _changes_table(blob: bytes) -> pd.DataFrame:
-    """The 'Selected changes to the list' table: date, added, removed."""
+    """The 'Selected changes to the list' table: date, added, removed.
+
+    Two strategies, because this is a scrape of a page that gets restructured
+    and the first live run after it was restructured found nothing.
+
+    **By header** - a column mentioning "added" and one mentioning "removed".
+    Unambiguous when it holds, which it did until the page grew a two-row
+    header of Added/Removed over Ticker/Security.
+
+    **By shape** - a column that parses as dates and two columns full of things
+    that look like ticker symbols, in that order. This survives any renaming.
+    The added column has preceded the removed one in every layout this table
+    has had; if that ever reverses, the count check downstream catches it
+    immediately, because undoing changes in the wrong direction makes the
+    membership count drift away from 500 within a few years.
+
+    If both fail it raises with an inventory of every table on the page, so the
+    next run diagnoses the problem instead of repeating it.
+    """
     tables = pd.read_html(io.BytesIO(blob))
+    candidates = [t for t in tables if len(t) >= _MIN_CHANGE_ROWS]
+
+    # --- by header ---------------------------------------------------------
     best = None
-    for tbl in tables:
-        flat = [" ".join(str(x) for x in c).lower() if isinstance(c, tuple)
-                else str(c).lower() for c in tbl.columns]
-        has_date = any("date" in c for c in flat)
-        has_added = any("added" in c for c in flat)
-        has_removed = any("removed" in c for c in flat)
-        if has_date and has_added and has_removed and len(tbl) > 20:
+    for tbl in candidates:
+        flat = _flatten(tbl.columns)
+        if (any("date" in c for c in flat) and any("added" in c for c in flat)
+                and any("removed" in c for c in flat)):
             if best is None or len(tbl) > len(best):
                 best = tbl.copy()
                 best.columns = flat
-    if best is None:
-        raise UniverseUnavailable("no changes table on the page")
 
-    def _pick(*needles):
-        for c in best.columns:
-            if all(n in c for n in needles):
-                return c
-        return None
+    if best is not None:
+        def _pick(*needles):
+            for c in best.columns:
+                if all(n in c for n in needles):
+                    return c
+            return None
 
-    date_c = _pick("date")
-    add_c = _pick("added", "ticker") or _pick("added", "symbol")
-    rem_c = _pick("removed", "ticker") or _pick("removed", "symbol")
-    if not (date_c and add_c and rem_c):
-        raise UniverseUnavailable(f"changes table columns unusable: "
-                                  f"{list(best.columns)}")
+        date_c = _pick("date")
+        add_c = (_pick("added", "ticker") or _pick("added", "symbol")
+                 or _pick("added"))
+        rem_c = (_pick("removed", "ticker") or _pick("removed", "symbol")
+                 or _pick("removed"))
+        if date_c and add_c and rem_c and add_c != rem_c:
+            out = best[[date_c, add_c, rem_c]].copy()
+            out.columns = ["date", "added", "removed"]
+            parsed = _tidy(out)
+            if len(parsed) >= _MIN_CHANGE_ROWS:
+                log.info("changes table matched by header: %d changes",
+                         len(parsed))
+                return parsed
+        log.warning("a table carried added/removed headers but did not "
+                    "parse: %s", list(best.columns))
 
-    out = best[[date_c, add_c, rem_c]].copy()
-    out.columns = ["date", "added", "removed"]
-    out["date"] = pd.to_datetime(out["date"], errors="coerce", format="mixed")
-    return out.dropna(subset=["date"]).sort_values("date").reset_index(drop=True)
+    # --- by shape ----------------------------------------------------------
+    for tbl in sorted(candidates, key=len, reverse=True):
+        cols = list(tbl.columns)
+        scored = [(c, _date_like(tbl[c])) for c in cols]
+        date_c, hits = max(scored, key=lambda p: p[1], default=(None, 0))
+        if hits < _MIN_CHANGE_ROWS:
+            continue
+        tickers = [c for c in cols
+                   if c is not date_c and _ticker_like(tbl[c]) >= 0.6]
+        if len(tickers) < 2:
+            continue
+        out = tbl[[date_c, tickers[0], tickers[1]]].copy()
+        out.columns = ["date", "added", "removed"]
+        parsed = _tidy(out)
+        if len(parsed) >= _MIN_CHANGE_ROWS:
+            log.warning("changes table matched by shape rather than by "
+                        "header - the page layout has changed. Columns used: "
+                        "%s", [str(date_c), str(tickers[0]),
+                               str(tickers[1])])
+            return parsed
+
+    raise UniverseUnavailable(
+        f"no changes table on the page. {len(tables)} tables found: "
+        f"{_inventory(tables)}")
 
 
 def reconstruct_members(current: list[str], blob: bytes) -> pd.DataFrame:

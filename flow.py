@@ -196,8 +196,13 @@ def screen(df: pd.DataFrame, min_premium: float | None = None,
         "dte": out["dte"].between(config.FLOW_MIN_DTE, max_dte),
         "atm": out["log_moneyness"].abs() <= band,
         "premium": out["new_premium"] >= min_premium,
-        "low_oi": (out["open_interest"] <= max_oi) |
-                  (out["vol_oi"] >= min_vol_oi),
+        # An absolute cap, and nothing else. The first version of this was
+        # `OI <= cap OR vol/OI >= 1`, which the live probe showed passing 90%
+        # of every contract on the page - because the right-hand side is
+        # exactly the `new_positioning` gate below, so any contract that
+        # cleared that cleared this too. It was not a filter, it was a second
+        # copy of the next one wearing a different name.
+        "low_oi": out["open_interest"] <= max_oi,
         "new_positioning": out["vol_oi"] >= min_vol_oi,
         "quote": (out["bid"] >= config.FLOW_MIN_BID) &
                  (out["spread_pct"] <= config.FLOW_MAX_SPREAD_PCT),
@@ -375,7 +380,8 @@ def load_snapshots(day: str) -> list[tuple[str, pd.DataFrame]]:
 
 
 def prune(days: int = SNAPSHOT_RETENTION_DAYS) -> int:
-    cutoff = pd.Timestamp.utcnow().tz_localize(None) - pd.Timedelta(days=days)
+    cutoff = (pd.Timestamp.now("UTC").tz_localize(None)
+              - pd.Timedelta(days=days))
     removed = 0
     for folder in sorted(config.FLOW_SNAPSHOTS.glob("*")):
         if not folder.is_dir():
