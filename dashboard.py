@@ -60,6 +60,15 @@ tr:hover td{background:var(--card)}
   font-weight:700;border-radius:3px;padding:1px 4px;margin-left:4px;
   letter-spacing:.03em;vertical-align:1px}
 .scroll{overflow-x:auto}
+th.sortable{cursor:pointer;user-select:none}
+th.sortable:hover{color:var(--ink)}
+th.sortable::after{content:" \2195";opacity:.35;font-size:10px}
+.watch{font-weight:600;font-variant-numeric:tabular-nums}
+.why{display:block;color:var(--faint);font-size:11px;font-weight:400}
+.edge-hi{color:#3fb950}
+.edge-lo{color:#f85149}
+.pos{white-space:nowrap}
+.pos small{color:var(--faint);display:block;font-size:11px}
 footer{color:var(--faint);font-size:12px;margin-top:30px;text-align:center}
 .cal{font-size:12.5px;color:var(--dim);margin-top:6px}
 .cal table{font-size:12px;margin-top:6px}
@@ -71,6 +80,29 @@ if (box) box.addEventListener('input', () => {
   const q = box.value.trim().toUpperCase();
   document.querySelectorAll('tbody tr').forEach(r => {
     r.hidden = q && !r.dataset.t.startsWith(q);
+  });
+});
+
+// Click a header to sort. Numeric columns carry a data-v on each cell so the
+// sort reads the underlying value rather than the formatted text - "$1,204.00"
+// and "$98.10" sort the wrong way round as strings.
+const tbody = document.querySelector('tbody');
+document.querySelectorAll('th.sortable').forEach((th, i) => {
+  let desc = true;
+  th.addEventListener('click', () => {
+    const idx = Array.from(th.parentNode.children).indexOf(th);
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    rows.sort((a, b) => {
+      const av = a.children[idx].dataset.v, bv = b.children[idx].dataset.v;
+      if (av !== undefined && bv !== undefined) {
+        const d = parseFloat(bv) - parseFloat(av);
+        return desc ? d : -d;
+      }
+      const at = a.children[idx].textContent, bt = b.children[idx].textContent;
+      return desc ? bt.localeCompare(at) : at.localeCompare(bt);
+    });
+    rows.forEach(r => tbody.appendChild(r));
+    desc = !desc;
   });
 });
 """
@@ -89,15 +121,58 @@ def _range_cell(h: dict) -> str:
     if h.get("pct_low") is not None and h.get("pct_high") is not None:
         pct = (f'<span class="pct">{h["pct_low"]:+.1f}% to '
                f'{h["pct_high"]:+.1f}%</span>')
-    return (f'<td class="rng">${h["low"]:,.2f} – ${h["high"]:,.2f}{flag}'
-            f'{pct}</td>')
+    width = ((h["pct_high"] - h["pct_low"])
+             if h.get("pct_high") is not None and h.get("pct_low") is not None
+             else 0)
+    return (f'<td class="rng" data-v="{width:.3f}">'
+            f'${h["low"]:,.2f} – ${h["high"]:,.2f}{flag}{pct}</td>')
+
+
+def _watch_cell(r: dict) -> str:
+    """The ranking number, and one line saying why it is what it is."""
+    score = r.get("watch_score") or 0.0
+    open_ = (r.get("open_ranges") or [])
+    ts = r.get("term_structure") or {}
+
+    if open_:
+        top = open_[0]
+        pct = top["percentile"]
+        cls = "edge-hi" if pct >= 50 else "edge-lo"
+        why = (f'{pct:.0f}th pct of the {_e(top["horizon"])} range '
+               f'published {_e(top["published"])}')
+    elif ts:
+        cls = ""
+        why = (f'{_e(ts["direction"])} — next {_e(ts["short"])} priced at '
+               f'{ts["short_annual_pct"]:.0f}% vs {ts["long_annual_pct"]:.0f}% '
+               f'for the {_e(ts["long"])}')
+    else:
+        cls = ""
+        why = ""
+    return (f'<td class="watch" data-v="{score}">'
+            f'<span class="{cls}">{score:.0f}</span>'
+            f'<span class="why">{why}</span></td>')
+
+
+def _position_cell(r: dict) -> str:
+    """Where today sits inside every range still running."""
+    open_ = r.get("open_ranges") or []
+    if not open_:
+        return '<td class="pos" data-v="-1">—</td>'
+    lead = open_[0]["percentile"]
+    bits = "".join(
+        f'<small>{_e(o["horizon"])}: {o["percentile"]:.0f}th '
+        f'({o["elapsed_frac"] * 100:.0f}% through)</small>' for o in open_)
+    return (f'<td class="pos" data-v="{abs(lead - 50):.2f}">'
+            f'{lead:.0f}th{bits}</td>')
 
 
 def _row(r: dict, labels: list) -> str:
     cells = "".join(_range_cell((r.get("horizons") or {}).get(l)) for l in labels)
     return (f'<tr data-t="{_e(r["ticker"])}">'
             f'<td class="tk">{_e(r["ticker"])}</td>'
-            f'<td class="px">${r["close"]:,.2f}</td>{cells}</tr>')
+            f'{_watch_cell(r)}{_position_cell(r)}'
+            f'<td class="px" data-v="{r["close"]}">${r["close"]:,.2f}</td>'
+            f'{cells}</tr>')
 
 
 def _strip(payload: dict) -> str:
@@ -150,7 +225,24 @@ def _honesty(payload: dict) -> str:
         'volatility quartile sat from the 50% target — the number that '
         'separates being right on average from being right everywhere.'
         f'{table}'
-        '<br><b>A calibrated range is not a trading strategy.</b> It says '
+        '<br><br><b>The watch column.</b> Every range on this page is drawn '
+        'outward from today\'s close, so today sits in the middle of all of '
+        'them by construction — asking where a stock is inside its own bracket '
+        'has the same answer for all five hundred. Ranking needs a second '
+        'reference point, and this uses two.'
+        '<br><br>Where available, <b>where today\'s price sits inside a range '
+        'published earlier</b> and still running. A stock at the 92nd '
+        'percentile of the range forecast for it three weeks ago has moved '
+        'further than expected, which is the truest reading of "at the edge '
+        'of its bracket". This fills in as the daily runs accumulate.'
+        '<br><br>Otherwise, <b>expected turbulence</b>: the near-term band '
+        'against the long-term one, both annualised so they compare. A stock '
+        'whose next week is priced far wider than its next quarter is one the '
+        'model thinks is about to move.'
+        '<br><br><b>Neither says which way.</b> The first says a stock already '
+        'moved; the second says one is likely to. Green and red mark the top '
+        'and bottom of a range, not good and bad.'
+        '<br><br><b>A calibrated range is not a trading strategy.</b> It says '
         'what is plausible, not what is mispriced.'
         '</div>')
 
@@ -163,7 +255,7 @@ def render(payload: dict, standalone: bool = True) -> str:
             if l not in labels:
                 labels.append(l)
 
-    head = "".join(f"<th>{_e(l)}</th>" for l in labels)
+    head = "".join(f'<th class="sortable">{_e(l)}</th>' for l in labels)
     body = "".join(_row(r, labels) for r in rows)
     asof = payload.get("asof", "")
     gen = (payload.get("generated_at") or "")[:16].replace("T", " ")
@@ -176,7 +268,11 @@ def render(payload: dict, standalone: bool = True) -> str:
         f'{_strip(payload)}{_honesty(payload)}'
         '<input type="search" id="f" placeholder="Filter by ticker…" '
         'autocomplete="off">'
-        '<div class="scroll"><table><thead><tr><th>ticker</th><th>last</th>'
+        '<div class="scroll"><table><thead><tr>'
+        '<th class="sortable">ticker</th>'
+        '<th class="sortable">watch</th>'
+        '<th class="sortable">in open range</th>'
+        '<th class="sortable">last</th>'
         f'{head}</tr></thead><tbody>{body}</tbody></table></div>'
         + ('' if rows else '<p class="sub">No forecasts in this run.</p>')
         + '<footer>Forecasts of range only. Not investment advice.</footer>'

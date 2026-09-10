@@ -24,6 +24,7 @@ import config
 import earnings as earnings_mod
 import features
 import prices
+import signals
 import universe
 from model import FeatureMismatchError
 
@@ -123,6 +124,9 @@ def run(tickers: list[str] | None = None, want_earnings: bool = True) -> dict:
                 "days_to_earnings": _j(row.get("days_to_earnings"), 0),
             }
 
+    ranked = signals.attach(list(records.values()),
+                            asof.strftime("%Y-%m-%d"))
+
     metrics = {}
     if (config.DATA / "metrics.json").exists():
         try:
@@ -133,7 +137,8 @@ def run(tickers: list[str] | None = None, want_earnings: bool = True) -> dict:
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "asof": asof.strftime("%Y-%m-%d"),
-        "tickers": sorted(records.values(), key=lambda r: r["ticker"]),
+        # Already ordered by watch_score; the page keeps that order.
+        "tickers": ranked,
         "model_metrics": metrics,
     }
 
@@ -147,6 +152,15 @@ def _j(v, digits=2):
 def archive(payload: dict) -> str | None:
     if not payload.get("tickers"):
         return None
+    # The archive is a record of what was forecast, not of how it was ranked
+    # on the day - the ranking is derived and would otherwise be re-read as
+    # evidence later.
+    payload = dict(payload)
+    payload["tickers"] = [
+        {k: v for k, v in r.items()
+         if k not in ("watch_score", "watch_reason", "term_structure",
+                      "open_ranges")}
+        for r in payload["tickers"]]
     path = config.FORECASTS / f"{payload['asof']}.json"
     path.write_text(json.dumps(payload, indent=2))
     return str(path)
