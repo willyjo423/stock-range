@@ -156,8 +156,8 @@ def test_page():
     check("the geometry is explained on the page",
           "middle of all of" in html,
           "a reader will otherwise expect to sort by position in today's band")
-    check("it says neither signal implies direction",
-          "Neither says which way" in html)
+    check("it does not overclaim direction",
+          "Nothing here says which way with confidence" in html)
     check("no missing-data row breaks it",
           '<td class="pos" data-v="-1">' in html)
 
@@ -165,7 +165,8 @@ def test_page():
 def main():
     print("Watch signals and page - offline checks")
     for fn in (test_term_structure, test_percentile, test_open_ranges,
-               test_ranking, test_page):
+               test_ranking, test_direction, test_direction_on_page,
+               test_page):
         try:
             fn()
         except Exception:
@@ -179,6 +180,70 @@ def main():
         print(f"  - {f}")
     return 1 if FAIL else 0
 
+
+
+
+def test_direction():
+    section("DIRECTION")
+    # A whole page of stocks whose bands sit above today's price - which is
+    # what exponentiating a symmetric return band always produces.
+    recs = []
+    for i, t in enumerate(["A", "B", "C", "D", "E", "F", "G", "H"]):
+        close = 100.0
+        shift = 1.0 + (0.03 if t == "H" else -0.03 if t == "A" else 0.0)
+        recs.append({
+            "ticker": t, "asof": "2026-09-10", "close": close,
+            "horizons": {"1 month": {
+                "days": 21, "low": 92.0 * shift, "high": 109.0 * shift,
+                "wide_low": 86.0 * shift, "wide_high": 118.0 * shift,
+                "mid": 100.6 * shift,
+                "pct_low": -8.0, "pct_high": 9.0,
+                "earnings_inside": 0, "days_to_earnings": 40}}})
+    signals.direction(recs)
+    by = {r["ticker"]: r["horizons"]["1 month"] for r in recs}
+
+    check("the market's own drift is subtracted out",
+          by["B"]["lean"] == "flat",
+          f'B leans {by["B"]["lean"]} at tilt {by["B"]["tilt_pct"]:+.2f}% — '
+          f'a stock in line with the crowd must not get an arrow')
+    check("a stock above the crowd leans up", by["H"]["lean"] == "up",
+          f'{by["H"]["rel_tilt_pct"]:+.2f}%')
+    check("a stock below the crowd leans down", by["A"]["lean"] == "down",
+          f'{by["A"]["rel_tilt_pct"]:+.2f}%')
+    check("most stocks are flat on any given day",
+          sum(1 for v in by.values() if v["lean"] == "flat") >= 5,
+          "if most names carry an arrow it is measuring the market, not them")
+    check("the raw tilt is kept alongside the relative one",
+          by["B"]["tilt_pct"] is not None and "rel_tilt_pct" in by["B"])
+
+    # Skew is a separate question from the tilt.
+    lop = {"days": 21, "low": 95.0, "high": 106.0, "wide_low": 80.0,
+           "wide_high": 112.0, "mid": 100.0}
+    check("a longer downside tail reads as negative skew",
+          signals._skew(lop) < 0, f'{signals._skew(lop)}')
+    sym = {"days": 21, "low": 95.0, "high": 105.26, "wide_low": 90.0,
+           "wide_high": 111.1, "mid": 100.0}
+    check("a symmetric band reads as roughly zero skew",
+          abs(signals._skew(sym)) < 0.05, f'{signals._skew(sym)}')
+    check("a missing band yields no skew", signals._skew({}) is None)
+
+
+def test_direction_on_page():
+    section("ARROWS ON THE PAGE")
+    recs = signals.attach(
+        [mk("AAPL", 315.34, (0.977, 1.024), (0.959, 1.052), (0.938, 1.123)),
+         mk("KO", 70, (0.988, 1.012), (0.977, 1.024), (0.96, 1.05))],
+        "2026-09-10", [])
+    html = dashboard.render({"generated_at": "2026-09-10T22:00:00",
+                             "asof": "2026-09-10", "tickers": recs,
+                             "model_metrics": {}})
+    check("an indicator appears in the range cells",
+          'class="lean' in html)
+    check("the arrows are explained", "subtracted" in html)
+    check("their weakness is stated plainly",
+          "weakest thing on the page" in html)
+    check("and the page says when to remove them",
+          "come off the page" in html)
 
 if __name__ == "__main__":
     sys.exit(main())

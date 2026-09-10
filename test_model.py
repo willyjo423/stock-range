@@ -262,6 +262,21 @@ def test_walk_forward() -> None:
           f"{m['worst_bucket_error_naive']:.3f} - this is what the model is "
           f"actually for")
 
+    # The fixtures generate returns with no forecastable direction, so the
+    # direction measurement must say so. A harness that finds skill in noise
+    # would put arrows on the real page that mean nothing.
+    d = m.get("direction")
+    check("direction skill is measured at all", bool(d))
+    if d:
+        check("and reports no skill on data that has none",
+              abs(d["t"]) < 2.5,
+              f'hit {d["hit_rate"]:.3f} vs base {d["base_rate"]:.3f}, '
+              f't={d["t"]:+.2f} - the fixtures contain no directional signal')
+        cs = d.get("cross_section")
+        if cs:
+            check("cross-sectional direction is a null too", abs(cs["t"]) < 2.5,
+                  f't={cs["t"]:+.2f}')
+
     print("\n" + M.summarize(m))
 
 

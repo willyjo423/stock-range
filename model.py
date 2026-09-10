@@ -351,6 +351,55 @@ def evaluate(oos: pd.DataFrame, horizon: int,
     m["worst_bucket_error_naive"] = float(
         max(abs(c - m["coverage_target"]) for c in naive_spread)) if naive_spread else None
 
+    # --- does the median forecast know which way? ---------------------------
+    # The whole project rests on direction being unforecastable, so putting an
+    # arrow on the page requires checking that claim rather than assuming it
+    # either way. Two numbers matter, and the second is the honest one:
+    #
+    #   hit rate     - how often sign(predicted median) matched sign(outcome)
+    #   base rate    - how often "always up" would have been right
+    #
+    # Equities drift upward, so a model that always says up scores well above
+    # 50% while knowing nothing. Skill is hit rate ABOVE base rate, and the
+    # standard error says whether that gap survives.
+    if "z_q50" in d.columns:
+        med = d["z_q50"].to_numpy(dtype=float)
+        ok = np.isfinite(med) & np.isfinite(z) & (z != 0)
+        if ok.sum() > 200:
+            up = z[ok] > 0
+            said_up = med[ok] > 0
+            hit = float((up == said_up).mean())
+            base = float(max(up.mean(), 1 - up.mean()))
+            n = int(ok.sum())
+            se = float(np.sqrt(0.25 / n))
+            m["direction"] = {
+                "n": n, "hit_rate": hit, "base_rate": base,
+                "skill": hit - base, "se": se,
+                "t": (hit - base) / se if se else float("nan"),
+                "share_up": float(up.mean()),
+                "share_called_up": float(said_up.mean()),
+            }
+            # The same question asked of the cross-section: within one date,
+            # does a higher predicted median go with a higher outcome? That
+            # strips out the market's own drift, which is the part the model
+            # gets for free and which nobody can trade on.
+            frame = pd.DataFrame({"d": pd.to_datetime(d.loc[ok, "date"]),
+                                  "med": med[ok], "z": z[ok]})
+            rel = frame.groupby("d").filter(lambda g: len(g) >= 20)
+            if len(rel) > 500:
+                rel = rel.copy()
+                rel["med_rel"] = rel["med"] - rel.groupby("d")["med"].transform("median")
+                rel["z_rel"] = rel["z"] - rel.groupby("d")["z"].transform("median")
+                sel = rel["z_rel"] != 0
+                hit_rel = float(((rel.loc[sel, "med_rel"] > 0)
+                                 == (rel.loc[sel, "z_rel"] > 0)).mean())
+                n_rel = int(sel.sum())
+                m["direction"]["cross_section"] = {
+                    "n": n_rel, "hit_rate": hit_rel,
+                    "skill": hit_rel - 0.5,
+                    "t": (hit_rel - 0.5) / float(np.sqrt(0.25 / n_rel)),
+                }
+
     if "year_tested" in d.columns:
         m["by_year"] = {
             int(y): {"n": int(len(b)), "coverage": float(b["_inside"].mean())}
@@ -376,6 +425,20 @@ def summarize(m: dict) -> str:
         f"Median band width        : {m['median_width_z']:.2f} "
         f"(naive {m['median_width_naive_z']:.2f}, in units of the naive band)",
     ]
+    if m.get("direction"):
+        dd = m["direction"]
+        lines += ["", "Direction, which this model does not claim to predict:",
+                  f"  called the right way   {dd['hit_rate'] * 100:.1f}%",
+                  f"  always saying up      {dd['base_rate'] * 100:.1f}%",
+                  f"  -> skill {dd['skill'] * 100:+.1f} points "
+                  f"(t = {dd['t']:+.1f}) on {dd['n']:,} windows"]
+        cs = dd.get("cross_section")
+        if cs:
+            lines.append(f"  against the day's own cross-section: "
+                         f"{cs['hit_rate'] * 100:.1f}% "
+                         f"(t = {cs['t']:+.1f}, n={cs['n']:,})")
+        lines.append("  |t| under 2 means the arrows are decoration.")
+
     if m.get("by_volatility"):
         lines += ["", "Coverage by how volatile the stock already is:",
                   f"  {'bucket':<9} {'model':>7} {'naive':>7} {'width':>7} {'n':>8}"]

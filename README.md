@@ -274,3 +274,41 @@ last tickers instead of the most recent dates. It was measuring in-period,
 found nothing to correct, and returned factors of 1.00-1.06 while the finished
 bands under-covered by five to eight points at every horizon. It now splits on
 date.
+
+---
+
+## The direction arrows, and what they are worth
+
+The page marks each range with an up, down or flat indicator. Two things make
+it honest rather than decorative.
+
+**It is measured against the day's cross-section, not against zero.** Every
+stock's median forecast sits above today's price over a quarter, because the
+market drifts up and the model learned that from twenty years of it. That part
+is identical for all five hundred names and nobody can act on it. The arrow
+shows each stock's tilt *minus the median tilt across the whole page*, which
+leaves only what is specific to the name. Without that subtraction every row
+would carry an up arrow.
+
+**Whether even that carries information is measured, not assumed.** Every
+bootstrap now reports:
+
+```
+Direction, which this model does not claim to predict:
+  called the right way   xx.x%
+  always saying up       xx.x%
+  -> skill +x.x points (t = +x.x) on nn,nnn windows
+  against the day's own cross-section: xx.x% (t = +x.x)
+```
+
+The base rate matters more than the hit rate. Equities rise more often than
+they fall, so a model that always says "up" scores well above 50% while knowing
+nothing at all. Skill is the gap between the two, and the t says whether that
+gap survives.
+
+**If it comes back near zero, take the arrows off the page.** The features are
+all measures of how far a stock moves, not which way; nothing in the design
+gives it directional information, and a faint arrow that means nothing is worse
+than no arrow because it invites exactly the reading the rest of the page is
+careful to avoid. On the fixtures — which contain no directional signal by
+construction — it correctly reports 50.0% against a 50.1% base rate at t = −0.4.

@@ -69,6 +69,10 @@ th.sortable::after{content:" \2195";opacity:.35;font-size:10px}
 .edge-lo{color:#f85149}
 .pos{white-space:nowrap}
 .pos small{color:var(--faint);display:block;font-size:11px}
+.lean{font-weight:700;margin-right:4px}
+.lean-up{color:#3fb950}
+.lean-down{color:#f85149}
+.lean-flat{color:var(--faint)}
 footer{color:var(--faint);font-size:12px;margin-top:30px;text-align:center}
 .cal{font-size:12.5px;color:var(--dim);margin-top:6px}
 .cal table{font-size:12px;margin-top:6px}
@@ -124,8 +128,19 @@ def _range_cell(h: dict) -> str:
     width = ((h["pct_high"] - h["pct_low"])
              if h.get("pct_high") is not None and h.get("pct_low") is not None
              else 0)
+
+    lean = h.get("lean")
+    rel = h.get("rel_tilt_pct")
+    arrow = ""
+    if lean == "up":
+        arrow = f'<span class="lean lean-up" title="median tilts {rel:+.2f}% above the day\'s typical stock">&#9650;</span>'
+    elif lean == "down":
+        arrow = f'<span class="lean lean-down" title="median tilts {rel:+.2f}% below the day\'s typical stock">&#9660;</span>'
+    elif lean == "flat":
+        arrow = '<span class="lean lean-flat" title="in line with the day\'s typical stock">&#9679;</span>'
+
     return (f'<td class="rng" data-v="{width:.3f}">'
-            f'${h["low"]:,.2f} – ${h["high"]:,.2f}{flag}{pct}</td>')
+            f'{arrow}${h["low"]:,.2f} – ${h["high"]:,.2f}{flag}{pct}</td>')
 
 
 def _watch_cell(r: dict) -> str:
@@ -239,9 +254,22 @@ def _honesty(payload: dict) -> str:
         'against the long-term one, both annualised so they compare. A stock '
         'whose next week is priced far wider than its next quarter is one the '
         'model thinks is about to move.'
-        '<br><br><b>Neither says which way.</b> The first says a stock already '
-        'moved; the second says one is likely to. Green and red mark the top '
-        'and bottom of a range, not good and bad.'
+        '<br><br><b>The arrows.</b> \u25b2 and \u25bc mark whether the '
+        'forecast median for that window sits above or below the day\'s '
+        'typical stock. Every stock drifts upward over a quarter because the '
+        'market does, and that part is identical for all five hundred names '
+        'and useless — so the arrow shows only what is left after the crowd is '
+        'subtracted. \u25cf means in line with everything else.'
+        '<br><br>Treat them as the weakest thing on the page. This model was '
+        'built on the premise that direction is not forecastable, and its '
+        'features are all measures of how far a stock moves rather than which '
+        'way. The training run measures whether the median has any directional '
+        'skill at all — hit rate against the base rate of simply always saying '
+        'up — and prints it. If that comes back at zero, these arrows should '
+        'come off the page rather than be quietly kept.'
+        '<br><br><b>Nothing here says which way with confidence.</b> The watch '
+        'column says a stock already moved or is likely to move; the arrows are '
+        'a faint tilt. Green and red mark up and down, not good and bad.'
         '<br><br><b>A calibrated range is not a trading strategy.</b> It says '
         'what is plausible, not what is mispriced.'
         '</div>')

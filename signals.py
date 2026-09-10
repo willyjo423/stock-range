@@ -190,11 +190,85 @@ def open_ranges(records: list[dict], asof: str,
     return grouped
 
 
+# ----------------------------------------------------------------- direction
+# How far the tilt must be from the crowd before it is worth a symbol at all.
+LEAN_THRESHOLD_PCT = 0.35
+
+
+def _tilt(h: dict, close: float) -> float | None:
+    """The median forecast against today's price, in log terms.
+
+    Log, not raw, because the price band comes from exponentiating a symmetric
+    return band - so its arithmetic midpoint sits above today's price for every
+    stock, and reading that as bullish would put an up arrow on all five
+    hundred. In log space a flat forecast is flat.
+    """
+    mid = h.get("mid")
+    if not mid or not close or mid <= 0 or close <= 0:
+        return None
+    return 100.0 * math.log(mid / close)
+
+
+def _skew(h: dict) -> float | None:
+    """Whether the long tail runs up or down, on a -1 to +1 scale.
+
+    Separate from the tilt and worth having: a stock can have a flat median
+    with far more room below it than above, which is a different situation from
+    one whose whole distribution has shifted.
+    """
+    lo, mid, hi = h.get("wide_low"), h.get("mid"), h.get("wide_high")
+    if not all(v and v > 0 for v in (lo, mid, hi)):
+        return None
+    up, down = math.log(hi / mid), math.log(mid / lo)
+    total = up + down
+    if total <= 0:
+        return None
+    return round(float((up - down) / total), 3)
+
+
+def direction(records: list[dict]) -> None:
+    """Attach a lean per horizon, measured against the day's cross-section.
+
+    Every stock drifts up over a quarter, because the market does. That part is
+    real and entirely useless as a signal - it is the same for everything on
+    the page and nobody can act on it. So the tilt shown is each stock's median
+    forecast MINUS the median tilt across all stocks that day, which leaves
+    only what is specific to this name.
+
+    Whether even that carries information is a separate question, and not one
+    the arrows can answer. `model.evaluate` measures it directly - hit rate
+    against base rate, with a t - and the page prints the result beside the
+    arrows so the reader knows what they are worth. If it comes back at zero,
+    these should come off the page.
+    """
+    horizons: dict[str, list] = {}
+    for rec in records:
+        for label, h in (rec.get("horizons") or {}).items():
+            t = _tilt(h, rec.get("close"))
+            if t is not None:
+                horizons.setdefault(label, []).append(t)
+
+    typical = {k: float(np.median(v)) for k, v in horizons.items() if v}
+
+    for rec in records:
+        for label, h in (rec.get("horizons") or {}).items():
+            t = _tilt(h, rec.get("close"))
+            if t is None:
+                continue
+            rel = t - typical.get(label, 0.0)
+            h["tilt_pct"] = round(float(t), 2)
+            h["rel_tilt_pct"] = round(float(rel), 2)
+            h["skew"] = _skew(h)
+            h["lean"] = ("up" if rel >= LEAN_THRESHOLD_PCT else
+                         "down" if rel <= -LEAN_THRESHOLD_PCT else "flat")
+
+
 # ------------------------------------------------------------------ combine
 def attach(records: list[dict], asof: str,
            archive: list[dict] | None = None) -> list[dict]:
     """Add both signals to each record, plus one number to sort the page by."""
     positions = open_ranges(records, asof, archive)
+    direction(records)
 
     for rec in records:
         ts = term_structure(rec)
