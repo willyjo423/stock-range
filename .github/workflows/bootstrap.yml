@@ -105,6 +105,12 @@ jobs:
           retention-days: 30
 
       - name: Commit the trained models
+        # `always()` because build.py writes each horizon's model to disk as
+        # that horizon finishes. If the job is cancelled or times out during
+        # the last one, the earlier models are complete and sitting there -
+        # committing them costs nothing and saves the whole run from being
+        # thrown away over the horizon that did not finish.
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
