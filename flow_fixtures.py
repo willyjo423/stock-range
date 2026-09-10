@@ -52,12 +52,13 @@ def _row(ticker, spot, expiry, right, strike, bid, ask, last, volume, oi,
 
 
 def chain(asof: pd.Timestamp = ASOF, volume_scale: float = 1.0,
-          seed: int = 11) -> pd.DataFrame:
+          seed: int = 11, stamp: datetime | None = None) -> pd.DataFrame:
     """One snapshot. `volume_scale` shrinks the traded volume for a mid-session
     snapshot, so differencing two of them produces a known burst."""
     asof = pd.Timestamp(asof)
     near = asof + pd.Timedelta(days=7)
     far = asof + pd.Timedelta(days=30)
+    stamp = stamp or STAMP
     rows = []
 
     # premium = volume x mid x 100 -> 900 x 3.00 x 100 = $270,000
@@ -93,7 +94,11 @@ def chain(asof: pd.Timestamp = ASOF, volume_scale: float = 1.0,
         rows.append(_row("QUIET", 100.0, exp, right, strike,
                          1.20, 1.30, 1.25, float(rng.integers(0, 6)),
                          float(rng.integers(50, 4000))))
-    return pd.DataFrame(rows)
+    df = pd.DataFrame(rows)
+    # One stamp for the whole snapshot, which is what a real scan produces and
+    # what the interval scaling reads to size the premium bar.
+    df["snapshot_at"] = pd.Timestamp(stamp)
+    return df
 
 
 def two_snapshots(asof: pd.Timestamp = ASOF) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -103,7 +108,11 @@ def two_snapshots(asof: pd.Timestamp = ASOF) -> tuple[pd.DataFrame, pd.DataFrame
     burst is 1.0. DRIBBLE trades half and half, so its burst is 0.5. That is
     the only free way to tell them apart and this is the test of it.
     """
-    return chain(asof, volume_scale=0.0), chain(asof, volume_scale=1.0)
+    morning = chain(asof, volume_scale=0.0,
+                    stamp=datetime(2026, 3, 2, 14, 30, tzinfo=timezone.utc))
+    afternoon = chain(asof, volume_scale=1.0,
+                      stamp=datetime(2026, 3, 2, 17, 30, tzinfo=timezone.utc))
+    return morning, afternoon
 
 
 # ------------------------------------------------------- grading fixtures

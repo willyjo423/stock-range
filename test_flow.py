@@ -20,6 +20,7 @@ import config
 import flow
 import flow_fixtures as fx
 import flow_grade
+from datetime import datetime, timezone
 
 PASS = FAIL = 0
 FAILURES: list[str] = []
@@ -40,11 +41,19 @@ def section(t):
     print(f"\n{t}\n{'-' * 66}")
 
 
-def _flagged(volume_scale=1.0, prev=None):
+# The fixtures were sized around a $50k bar, and the shipped floor is now a
+# measured number that will move again as the forward grading finds the real
+# edge. So every test of the GATE LOGIC pins its own threshold - otherwise
+# tuning a constant breaks tests that were never about that constant.
+FIXTURE_FLOOR = 50_000.0
+
+
+def _flagged(volume_scale=1.0, prev=None, **kw):
     raw = fx.chain(volume_scale=volume_scale)
     rich = flow.enrich(raw, asof=fx.ASOF)
     prev_rich = flow.enrich(prev, asof=fx.ASOF) if prev is not None else None
-    return flow.screen(flow.interval(rich, prev_rich))
+    kw.setdefault("min_premium", FIXTURE_FLOOR)
+    return flow.screen(flow.interval(rich, prev_rich), **kw)
 
 
 def names(df):
@@ -187,11 +196,13 @@ def test_gates():
     # decoration and the decoy it was meant to catch is getting through by
     # accident.
     loose = flow.screen(flow.interval(flow.enrich(fx.chain(), asof=fx.ASOF),
-                                      None), max_dte=45)
+                                      None), max_dte=45,
+                        min_premium=FIXTURE_FLOOR)
     check("loosening the expiry gate admits the month-out decoy",
           "FARDATE" in names(loose))
     loose = flow.screen(flow.interval(flow.enrich(fx.chain(), asof=fx.ASOF),
-                                      None), atm_band=0.40)
+                                      None), atm_band=0.40,
+                        min_premium=FIXTURE_FLOOR)
     check("loosening the moneyness gate admits the far strike",
           "OTM" in names(loose))
     loose = flow.screen(flow.interval(flow.enrich(fx.chain(), asof=fx.ASOF),
@@ -199,9 +210,49 @@ def test_gates():
     check("loosening the premium gate admits the small trade",
           "SMALL" in names(loose))
     loose = flow.screen(flow.interval(flow.enrich(fx.chain(), asof=fx.ASOF),
-                                      None), max_oi=10 ** 9, min_vol_oi=0.0)
+                                      None), max_oi=10 ** 9, min_vol_oi=0.0,
+                        min_premium=FIXTURE_FLOOR)
     check("loosening the open-interest gate admits the crowded contract",
           "DRIBBLE" in names(loose))
+
+
+def test_interval_scaling():
+    section("THE PREMIUM BAR SCALES WITH THE INTERVAL")
+    morning, afternoon = fx.two_snapshots()          # 14:30 and 17:30 UTC
+    m = flow.enrich(morning, asof=fx.ASOF)
+    a = flow.enrich(afternoon, asof=fx.ASOF)
+
+    three_hours = flow.screen(flow.interval(a, m))
+    check("a three-hour gap is measured as three hours",
+          abs(three_hours["interval_hours"].iloc[0] - 3.0) < 0.01,
+          str(three_hours["interval_hours"].iloc[0]))
+    check("and asks for the reference premium exactly",
+          abs(three_hours["premium_floor"].iloc[0]
+              - config.FLOW_MIN_PREMIUM) < 1.0,
+          str(three_hours["premium_floor"].iloc[0]))
+
+    # The first scan of the day covers only what has traded since the open.
+    first = flow.screen(flow.interval(a, None))
+    check("the first scan of the day is measured from the opening bell",
+          abs(first["interval_hours"].iloc[0] - 4.0) < 0.01,
+          str(first["interval_hours"].iloc[0]))
+
+    early = flow.screen(flow.interval(
+        flow.enrich(fx.chain(stamp=datetime(2026, 3, 2, 14, 30, tzinfo=timezone.utc)),
+                    asof=fx.ASOF), None))
+    check("an hour into the session the bar is a third of the reference",
+          abs(early["premium_floor"].iloc[0]
+              - config.FLOW_MIN_PREMIUM / 3.0) < 1.0,
+          str(early["premium_floor"].iloc[0]))
+    check("so a short interval asks for less, not the same",
+          early["premium_floor"].iloc[0] < three_hours["premium_floor"].iloc[0])
+
+    # Two snapshots seconds apart must not admit everything that ticked.
+    same = flow.screen(flow.interval(a, a))
+    check("a near-zero gap is clamped rather than driving the bar to zero",
+          abs(same["interval_hours"].iloc[0] - config.FLOW_MIN_HOURS) < 0.01,
+          str(same["interval_hours"].iloc[0]))
+    check("and the bar stays positive", same["premium_floor"].iloc[0] > 0)
 
 
 def test_score():
@@ -215,7 +266,7 @@ def test_score():
     morning, afternoon = fx.two_snapshots()
     with_burst = flow.screen(flow.interval(
         flow.enrich(afternoon, asof=fx.ASOF),
-        flow.enrich(morning, asof=fx.ASOF)))
+        flow.enrich(morning, asof=fx.ASOF)), min_premium=FIXTURE_FLOOR)
     no_burst = _flagged()
     b1 = float(with_burst[with_burst["ticker"] == "BLOCK"]["score"].iloc[0])
     b0 = float(no_burst[no_burst["ticker"] == "BLOCK"]["score"].iloc[0])
@@ -394,7 +445,7 @@ def test_page():
 
 def main():
     print("Options flow - offline checks")
-    for fn in (test_occ, test_enrich, test_interval, test_gates, test_score,
+    for fn in (test_occ, test_enrich, test_interval, test_gates, test_interval_scaling, test_score,
                test_rollup, test_merge, test_grader_finds_a_planted_effect,
                test_grader_reports_a_null,
                test_grader_admits_when_it_cannot_tell,

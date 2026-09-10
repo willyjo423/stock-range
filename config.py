@@ -160,10 +160,34 @@ FLOW_MIN_DTE = 1
 # above and below the strike.
 FLOW_ATM_BAND = 0.05
 
-# Premium floor, in dollars. Note what this is: volume x mid x 100 for the
-# interval, which is TOTAL premium traded in that contract, not the size of
-# any one trade. It is the weakest of the four filters and the page says so.
-FLOW_MIN_PREMIUM = 50_000.0
+# Premium floor, in dollars, for a reference-length interval - see
+# FLOW_REFERENCE_HOURS below, which scales it to how long the interval
+# actually was. Note what this is: volume x mid x 100, the TOTAL premium
+# traded in that contract over the interval, not the size of any one trade.
+# It is the weakest of the four filters and the page says so.
+#
+# The number came from measurement, not from the brief. $50,000 was the
+# original criterion and the live probe found it sitting at the 76th
+# percentile of short-dated at-the-money contracts that traded at all - i.e.
+# barely a filter, because $50k of ONE TRADE's premium is rare while $50k of a
+# contract's whole session is ordinary.
+#
+# Measured over 80 names, 4.4 hours into a live session:
+#
+#     floor over that window   names flagged, scaled to the index
+#     $   50,000                94
+#     $  250,000                56
+#     $  500,000                50
+#     $1,000,000                19
+#
+# $350k over a three-hour interval is about $500k over that 4.4-hour window,
+# so roughly fifty names a scan. That is deliberately looser than the tightest
+# option, for one reason: the grader learns faster with more flags, and it can
+# only find the real boundary INSIDE the range it is given. Set the floor at
+# $1m and every flag is enormous, `by_score` compares huge against huge, and
+# nothing is learned about where the line actually belongs. Start wide, let
+# the forward grading find the edge, then tighten to it.
+FLOW_MIN_PREMIUM = 350_000.0
 
 # Low open interest, two ways, and both are needed.
 #
@@ -208,3 +232,20 @@ FLOW_GRADE_HORIZON = "1 week"
 # Flags below this score are recorded but not shown on the page. They are
 # still graded, which is the point - a threshold nobody tested is a guess.
 FLOW_SHOW_MIN_SCORE = 1.0
+
+# --- Interval scaling ------------------------------------------------------
+# US options trade 13:30-20:00 UTC while the US is on daylight time, and an
+# hour later once it is not. The drift is tolerated: this is only used to work
+# out how much of a session a first-of-the-day scan covers, and being an hour
+# out changes a floor by a sixth, not a verdict.
+MARKET_OPEN_UTC_HOUR = 13
+MARKET_OPEN_UTC_MIN = 30
+SESSION_HOURS = 6.5
+
+# The premium floor above is the bar for an interval of this length. A shorter
+# interval gets a proportionally smaller bar, so the three scans of a session
+# ask the same question of the same amount of trading.
+FLOW_REFERENCE_HOURS = 3.0
+# And a floor under the scaling, so a scan that fires two minutes after the
+# previous one does not admit everything that ticked in between.
+FLOW_MIN_HOURS = 0.5

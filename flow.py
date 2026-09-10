@@ -16,6 +16,18 @@ Comparing today's volume against it is a genuine before-and-after. This is the
 strongest free filter by some distance, and it is the one closest to what a
 flow tool means by "new positioning".
 
+That is measured, not assumed. Two snapshots ninety minutes apart inside a live
+session: volume grew for 27.3% of contracts and open interest changed for
+**0.0%** of them. The count passing the open-interest cap was identical to the
+contract between the two runs - 64,600 both times. It does not move.
+
+An earlier pair of snapshots taken before the open said the opposite, and said
+it confidently: open interest changed for 64.8% of contracts. That was the
+overnight settlement being published between them, with no trading at all
+either side. The section that reports this now refuses to answer unless volume
+actually moved in the window, because a comparison across a settlement boundary
+measures the settlement.
+
 What degrades
 -------------
 **Premium.** On a tape this is one trade's size times its price. Here it is
@@ -118,6 +130,28 @@ def enrich(df: pd.DataFrame, asof: pd.Timestamp | None = None) -> pd.DataFrame:
     return out
 
 
+def _stamp(df: pd.DataFrame) -> pd.Timestamp:
+    """When a snapshot was taken, tz-naive."""
+    s = pd.to_datetime(pd.Series(df["snapshot_at"]).dropna())
+    t = pd.Timestamp(s.max()) if len(s) else pd.Timestamp.now("UTC")
+    return t.tz_localize(None) if t.tzinfo is not None else t
+
+
+def _hours_since_open(df: pd.DataFrame) -> float:
+    """How much of the session this snapshot's cumulative volume covers.
+
+    The first scan of a day has no previous snapshot, so its interval is
+    everything since the opening bell rather than a gap between scans. Treating
+    that as the same length as a mid-session gap is what made the morning scan
+    look quiet - it had a third of the trading time and the same dollar bar.
+    """
+    now = _stamp(df)
+    open_at = now.normalize() + pd.Timedelta(hours=config.MARKET_OPEN_UTC_HOUR,
+                                             minutes=config.MARKET_OPEN_UTC_MIN)
+    hours = (now - open_at).total_seconds() / 3600.0
+    return float(np.clip(hours, config.FLOW_MIN_HOURS, config.SESSION_HOURS))
+
+
 def interval(now: pd.DataFrame, prev: pd.DataFrame | None) -> pd.DataFrame:
     """Volume that arrived since the previous snapshot.
 
@@ -135,6 +169,7 @@ def interval(now: pd.DataFrame, prev: pd.DataFrame | None) -> pd.DataFrame:
         out["interval_is_day"] = 1
         out["burst"] = np.nan
         out["prev_volume"] = np.nan
+        out["interval_hours"] = _hours_since_open(now)
     else:
         key = ["ticker", "contract"]
         before = (prev[key + ["volume"]]
@@ -148,6 +183,9 @@ def interval(now: pd.DataFrame, prev: pd.DataFrame | None) -> pd.DataFrame:
             out["burst"] = np.where(out["volume"] > 0,
                                     out["new_volume"] / out["volume"], np.nan)
         out.loc[out["interval_is_day"] == 1, "burst"] = np.nan
+        gap = (_stamp(now) - _stamp(prev)).total_seconds() / 3600.0
+        out["interval_hours"] = float(np.clip(gap, config.FLOW_MIN_HOURS,
+                                              config.SESSION_HOURS))
 
     out["new_premium"] = out["new_volume"] * out["mid"] * 100.0
     # The side proxy is only worth reading when the print fell inside the
@@ -187,15 +225,29 @@ def screen(df: pd.DataFrame, min_premium: float | None = None,
         out["new_volume"] = out["volume"]
         out["new_premium"] = out["day_premium"]
         for col, default in (("burst", np.nan), ("side_firm", 0),
-                             ("interval_is_day", 1)):
+                             ("interval_is_day", 1),
+                             ("interval_hours", config.FLOW_REFERENCE_HOURS)):
             if col not in out.columns:
                 out[col] = default
+
+    # The premium bar is dollars per hour of trading, not dollars.
+    #
+    # The scans sit roughly 1.75, 3 and 2.75 hours apart, so a fixed floor asks
+    # the morning scan for the same premium the afternoon one gets nearly twice
+    # as long to accumulate. That is not a stricter filter in the morning, it is
+    # an arbitrary one. Scaling by the interval's own length makes the three
+    # scans comparable, which they have to be before any of them can be graded
+    # against the others.
+    hours = pd.to_numeric(out["interval_hours"], errors="coerce").fillna(
+        config.FLOW_REFERENCE_HOURS).clip(config.FLOW_MIN_HOURS,
+                                          config.SESSION_HOURS)
+    out["premium_floor"] = min_premium * hours / config.FLOW_REFERENCE_HOURS
 
     band = math.log(1.0 + atm_band)
     gates = {
         "dte": out["dte"].between(config.FLOW_MIN_DTE, max_dte),
         "atm": out["log_moneyness"].abs() <= band,
-        "premium": out["new_premium"] >= min_premium,
+        "premium": out["new_premium"] >= out["premium_floor"],
         # An absolute cap, and nothing else. The first version of this was
         # `OI <= cap OR vol/OI >= 1`, which the live probe showed passing 90%
         # of every contract on the page - because the right-hand side is
@@ -227,8 +279,9 @@ def _score(df: pd.DataFrame) -> pd.Series:
     concentration when the day had enough snapshots to measure it.
     """
     prem = pd.to_numeric(df["new_premium"], errors="coerce")
-    size = np.log10(np.maximum(prem, 1.0) /
-                    config.FLOW_MIN_PREMIUM).clip(0, 2.0) * 2.0
+    floor = pd.to_numeric(df.get("premium_floor"), errors="coerce")
+    floor = floor.fillna(config.FLOW_MIN_PREMIUM).clip(lower=1.0)
+    size = np.log10(np.maximum(prem, 1.0) / floor).clip(0, 2.0) * 2.0
 
     vo = pd.to_numeric(df["vol_oi"], errors="coerce").fillna(0.0)
     fresh = np.log2(np.maximum(vo, 0.25) /

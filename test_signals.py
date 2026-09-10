@@ -242,8 +242,10 @@ def test_direction_on_page():
     check("the arrows are explained", "subtracted" in html)
     check("their weakness is stated plainly",
           "weakest thing on the page" in html)
-    check("and the page says when to remove them",
-          "come off the page" in html)
+    check("the page states the measured skill rather than a promise to measure",
+          "51.3%" in html)
+    check("and states the base rate the raw tilt loses to",
+          "54.5%" in html)
 
 if __name__ == "__main__":
     sys.exit(main())
