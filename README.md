@@ -190,7 +190,31 @@ That is the product, and the pinball gain is the tiebreak.
 
 ---
 
-## What the first real bootstrap found
+## Where it landed
+
+Second bootstrap, after removing the two harmful feature groups and fixing the
+calibration split. 250 index members, 2004-2026:
+
+| horizon | vs naive | coverage | worst bucket | naive's worst | windows |
+|---|---|---|---|---|---|
+| 1 week | **+5.3%** | 49.8% | **0.5** | 18.6 | 125,789 |
+| 1 month | **+1.0%** | 48.5% | **2.7** | 9.5 | 29,857 |
+| 3 months | −0.7% | 46.5% | 6.5 | 9.2 | 9,892 |
+
+At one week the conditional calibration is essentially exact — 49.5%, 49.7%,
+50.2%, 49.8% across the four volatility quartiles, against a naive band running
+31.4% to 63.2%. That 32-point spread closing to half a point is what this
+project is for.
+
+Three months still loses, and the reason is visible in the last column: 9,892
+independent windows is below the crossover measured on the fixtures, where the
+model needs roughly 12,000 before it beats doing nothing. Running the full
+~1,000-name universe instead of a 250 sample should roughly quadruple that.
+Until it does, that horizon should not ship.
+
+---
+
+## What the first bootstrap found
 
 250 index members, 2004-2026, roughly 780,000 ticker-days per horizon.
 
