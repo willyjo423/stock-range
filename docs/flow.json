@@ -1,9 +1,10 @@
 {
   "asof": "2026-09-10",
-  "scan_at": "2026-09-10T18:28:31+00:00",
+  "scan_at": "2026-09-10T20:49:32+00:00",
   "scans": [
     "1530",
-    "1828"
+    "1828",
+    "2049"
   ],
   "tickers": [
     {
@@ -157,7 +158,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "SNDK",
@@ -310,7 +311,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "META",
@@ -463,7 +464,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "AAPL",
@@ -616,7 +617,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "AMD",
@@ -769,7 +770,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "VRT",
@@ -1159,7 +1160,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2,
+      "times_flagged": 3,
       "first_seen": "2026-09-10T15:30:59+00:00"
     },
     {
@@ -1245,7 +1246,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "INTC",
@@ -1482,7 +1483,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "TSLA",
@@ -1618,7 +1619,59 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
+    },
+    {
+      "ticker": "MSFT",
+      "spot": 492.44,
+      "n_contracts": 2,
+      "premium": 4973502,
+      "call_premium": 0,
+      "put_premium": 4973502,
+      "call_share": 0.0,
+      "tilt": "puts",
+      "score": 4.6,
+      "max_vol_oi": 3.78,
+      "nearest_dte": 1,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "MSFT260911P00512500",
+          "right": "P",
+          "strike": 512.5,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 3385025,
+          "volume": 1682,
+          "open_interest": 452,
+          "vol_oi": 3.78,
+          "mid": 20.12,
+          "burst": 0.98,
+          "side": "mid",
+          "iv": 0.519,
+          "score": 4.1,
+          "stale_mid": 0
+        },
+        {
+          "contract": "MSFT260911P00515000",
+          "right": "P",
+          "strike": 515.0,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 1588478,
+          "volume": 699,
+          "open_interest": 215,
+          "vol_oi": 3.27,
+          "mid": 22.73,
+          "burst": 1.0,
+          "side": "at ask",
+          "iv": 0.59,
+          "score": 3.37,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 3,
+      "first_seen": "2026-09-10T18:28:31+00:00"
     },
     {
       "ticker": "APP",
@@ -1857,6 +1910,41 @@
       ]
     },
     {
+      "ticker": "FSLR",
+      "spot": 207.17,
+      "n_contracts": 1,
+      "premium": 1571547,
+      "call_premium": 1571547,
+      "put_premium": 0,
+      "call_share": 1.0,
+      "tilt": "calls",
+      "score": 4.4,
+      "max_vol_oi": 22.36,
+      "nearest_dte": 1,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "FSLR260911C00207500",
+          "right": "C",
+          "strike": 207.5,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 1571547,
+          "volume": 6631,
+          "open_interest": 311,
+          "vol_oi": 22.36,
+          "mid": 2.37,
+          "burst": 0.95,
+          "side": "mid",
+          "iv": 0.433,
+          "score": 4.4,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 2,
+      "first_seen": "2026-09-10T18:28:31+00:00"
+    },
+    {
       "ticker": "NVDA",
       "spot": 218.2,
       "n_contracts": 2,
@@ -1905,7 +1993,127 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
+    },
+    {
+      "ticker": "ADBE",
+      "spot": 246.0,
+      "n_contracts": 6,
+      "premium": 2749042,
+      "call_premium": 1403605,
+      "put_premium": 1345438,
+      "call_share": 0.51,
+      "tilt": "two-sided",
+      "score": 4.32,
+      "max_vol_oi": 394.0,
+      "nearest_dte": 1,
+      "looks_multileg": 1,
+      "contracts": [
+        {
+          "contract": "ADBE260911C00250000",
+          "right": "C",
+          "strike": 250.0,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 1090980,
+          "volume": 1102,
+          "open_interest": 157,
+          "vol_oi": 12.57,
+          "mid": 9.9,
+          "burst": 0.56,
+          "side": "mid",
+          "iv": 1.988,
+          "score": 3.03,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ADBE260918P00247500",
+          "right": "P",
+          "strike": 247.5,
+          "expiry": "2026-09-18",
+          "dte": 8,
+          "premium": 286235,
+          "volume": 262,
+          "open_interest": 0,
+          "vol_oi": 394.0,
+          "mid": 10.93,
+          "burst": 0.66,
+          "side": "at ask",
+          "iv": 0.822,
+          "score": 2.2,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ADBE260911C00240000",
+          "right": "C",
+          "strike": 240.0,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 312625,
+          "volume": 205,
+          "open_interest": 36,
+          "vol_oi": 8.44,
+          "mid": 15.25,
+          "burst": 0.67,
+          "side": "at bid",
+          "iv": 1.955,
+          "score": 1.84,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ADBE260911P00245000",
+          "right": "P",
+          "strike": 245.0,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 432900,
+          "volume": 520,
+          "open_interest": 585,
+          "vol_oi": 2.4,
+          "mid": 8.32,
+          "burst": 0.37,
+          "side": "mid",
+          "iv": 1.957,
+          "score": 1.03,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ADBE260911P00247500",
+          "right": "P",
+          "strike": 247.5,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 322310,
+          "volume": 334,
+          "open_interest": 225,
+          "vol_oi": 3.06,
+          "mid": 9.65,
+          "burst": 0.48,
+          "side": "at ask",
+          "iv": 1.981,
+          "score": 0.95,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ADBE260911P00237500",
+          "right": "P",
+          "strike": 237.5,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 303992,
+          "volume": 599,
+          "open_interest": 703,
+          "vol_oi": 1.23,
+          "mid": 5.08,
+          "burst": 0.69,
+          "side": "at ask",
+          "iv": 1.928,
+          "score": 0.47,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 3,
+      "first_seen": "2026-09-10T18:28:31+00:00"
     },
     {
       "ticker": "AVGO",
@@ -2226,7 +2434,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "NOW",
@@ -2362,125 +2570,6 @@
           "stale_mid": 0
         }
       ]
-    },
-    {
-      "ticker": "MSFT",
-      "spot": 492.21,
-      "n_contracts": 6,
-      "premium": 1210524,
-      "call_premium": 1210524,
-      "put_premium": 0,
-      "call_share": 1.0,
-      "tilt": "calls",
-      "score": 3.91,
-      "max_vol_oi": 4.03,
-      "nearest_dte": 1,
-      "looks_multileg": 0,
-      "contracts": [
-        {
-          "contract": "MSFT260911C00487500",
-          "right": "C",
-          "strike": 487.5,
-          "expiry": "2026-09-11",
-          "dte": 1,
-          "premium": 616175,
-          "volume": 1006,
-          "open_interest": 550,
-          "vol_oi": 1.83,
-          "mid": 6.12,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.248,
-          "score": 2.62,
-          "stale_mid": 0
-        },
-        {
-          "contract": "MSFT260911C00497500",
-          "right": "C",
-          "strike": 497.5,
-          "expiry": "2026-09-11",
-          "dte": 1,
-          "premium": 240161,
-          "volume": 1753,
-          "open_interest": 918,
-          "vol_oi": 1.91,
-          "mid": 1.37,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.236,
-          "score": 1.83,
-          "stale_mid": 0
-        },
-        {
-          "contract": "MSFT260914C00485000",
-          "right": "C",
-          "strike": 485.0,
-          "expiry": "2026-09-14",
-          "dte": 4,
-          "premium": 107500,
-          "volume": 125,
-          "open_interest": 31,
-          "vol_oi": 4.03,
-          "mid": 8.6,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.203,
-          "score": 1.67,
-          "stale_mid": 0
-        },
-        {
-          "contract": "MSFT260916C00505000",
-          "right": "C",
-          "strike": 505.0,
-          "expiry": "2026-09-16",
-          "dte": 6,
-          "premium": 84816,
-          "volume": 496,
-          "open_interest": 251,
-          "vol_oi": 1.98,
-          "mid": 1.71,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.227,
-          "score": 0.95,
-          "stale_mid": 0
-        },
-        {
-          "contract": "MSFT260914C00490000",
-          "right": "C",
-          "strike": 490.0,
-          "expiry": "2026-09-14",
-          "dte": 4,
-          "premium": 99450,
-          "volume": 180,
-          "open_interest": 175,
-          "vol_oi": 1.03,
-          "mid": 5.53,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.201,
-          "score": 0.62,
-          "stale_mid": 0
-        },
-        {
-          "contract": "MSFT260916C00490000",
-          "right": "C",
-          "strike": 490.0,
-          "expiry": "2026-09-16",
-          "dte": 6,
-          "premium": 62422,
-          "volume": 87,
-          "open_interest": 51,
-          "vol_oi": 1.71,
-          "mid": 7.18,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.232,
-          "score": 0.58,
-          "stale_mid": 0
-        }
-      ],
-      "times_flagged": 2
     },
     {
       "ticker": "OXY",
@@ -2702,7 +2791,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "MPC",
@@ -2750,74 +2839,6 @@
           "side": "unknown",
           "iv": 0.484,
           "score": 2.19,
-          "stale_mid": 0
-        }
-      ],
-      "times_flagged": 2
-    },
-    {
-      "ticker": "ADBE",
-      "spot": 250.47,
-      "n_contracts": 3,
-      "premium": 713760,
-      "call_premium": 713760,
-      "put_premium": 0,
-      "call_share": 1.0,
-      "tilt": "calls",
-      "score": 3.6,
-      "max_vol_oi": 10.93,
-      "nearest_dte": 1,
-      "looks_multileg": 0,
-      "contracts": [
-        {
-          "contract": "ADBE260918C00252500",
-          "right": "C",
-          "strike": 252.5,
-          "expiry": "2026-09-18",
-          "dte": 8,
-          "premium": 173655,
-          "volume": 153,
-          "open_interest": 14,
-          "vol_oi": 10.93,
-          "mid": 11.35,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.794,
-          "score": 2.81,
-          "stale_mid": 0
-        },
-        {
-          "contract": "ADBE260911C00252500",
-          "right": "C",
-          "strike": 252.5,
-          "expiry": "2026-09-11",
-          "dte": 1,
-          "premium": 276375,
-          "volume": 275,
-          "open_interest": 54,
-          "vol_oi": 5.09,
-          "mid": 10.05,
-          "burst": null,
-          "side": "unknown",
-          "iv": 1.882,
-          "score": 2.66,
-          "stale_mid": 0
-        },
-        {
-          "contract": "ADBE260911C00250000",
-          "right": "C",
-          "strike": 250.0,
-          "expiry": "2026-09-11",
-          "dte": 1,
-          "premium": 263730,
-          "volume": 236,
-          "open_interest": 157,
-          "vol_oi": 1.5,
-          "mid": 11.18,
-          "burst": null,
-          "side": "unknown",
-          "iv": 1.864,
-          "score": 1.74,
           "stale_mid": 0
         }
       ],
@@ -2958,6 +2979,160 @@
       ]
     },
     {
+      "ticker": "ORCL",
+      "spot": 152.94,
+      "n_contracts": 8,
+      "premium": 3613102,
+      "call_premium": 1775450,
+      "put_premium": 1837652,
+      "call_share": 0.49,
+      "tilt": "two-sided",
+      "score": 3.42,
+      "max_vol_oi": 3.99,
+      "nearest_dte": 1,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "ORCL260911C00152500",
+          "right": "C",
+          "strike": 152.5,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 981410,
+          "volume": 1004,
+          "open_interest": 868,
+          "vol_oi": 1.4,
+          "mid": 9.78,
+          "burst": 0.83,
+          "side": "mid",
+          "iv": 2.121,
+          "score": 1.92,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ORCL260911P00146000",
+          "right": "P",
+          "strike": 146.0,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 479940,
+          "volume": 842,
+          "open_interest": 540,
+          "vol_oi": 2.11,
+          "mid": 5.7,
+          "burst": 0.74,
+          "side": "at ask",
+          "iv": 1.981,
+          "score": 1.37,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ORCL260918C00157500",
+          "right": "C",
+          "strike": 157.5,
+          "expiry": "2026-09-18",
+          "dte": 8,
+          "premium": 421988,
+          "volume": 465,
+          "open_interest": 398,
+          "vol_oi": 3.99,
+          "mid": 9.07,
+          "burst": 0.29,
+          "side": "at bid",
+          "iv": 1.154,
+          "score": 1.37,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ORCL260918P00152500",
+          "right": "P",
+          "strike": 152.5,
+          "expiry": "2026-09-18",
+          "dte": 8,
+          "premium": 368740,
+          "volume": 358,
+          "open_interest": 210,
+          "vol_oi": 2.71,
+          "mid": 10.3,
+          "burst": 0.63,
+          "side": "mid",
+          "iv": 1.101,
+          "score": 1.05,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ORCL260911P00149000",
+          "right": "P",
+          "strike": 149.0,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 281052,
+          "volume": 389,
+          "open_interest": 427,
+          "vol_oi": 2.32,
+          "mid": 7.22,
+          "burst": 0.39,
+          "side": "mid",
+          "iv": 2.034,
+          "score": 0.63,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ORCL260911P00148000",
+          "right": "P",
+          "strike": 148.0,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 418750,
+          "volume": 625,
+          "open_interest": 897,
+          "vol_oi": 1.11,
+          "mid": 6.7,
+          "burst": 0.63,
+          "side": "mid",
+          "iv": 2.017,
+          "score": 0.51,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ORCL260918C00152500",
+          "right": "C",
+          "strike": 152.5,
+          "expiry": "2026-09-18",
+          "dte": 8,
+          "premium": 372052,
+          "volume": 339,
+          "open_interest": 732,
+          "vol_oi": 1.26,
+          "mid": 10.97,
+          "burst": 0.37,
+          "side": "mid",
+          "iv": 1.125,
+          "score": 0.43,
+          "stale_mid": 0
+        },
+        {
+          "contract": "ORCL260911P00157500",
+          "right": "P",
+          "strike": 157.5,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 289170,
+          "volume": 238,
+          "open_interest": 966,
+          "vol_oi": 1.45,
+          "mid": 12.15,
+          "burst": 0.17,
+          "side": "mid",
+          "iv": 2.119,
+          "score": 0.31,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 3,
+      "first_seen": "2026-09-10T18:28:31+00:00"
+    },
+    {
       "ticker": "LITE",
       "spot": 961.93,
       "n_contracts": 2,
@@ -3074,7 +3249,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "WDC",
@@ -3325,57 +3500,6 @@
           "stale_mid": 0
         }
       ]
-    },
-    {
-      "ticker": "ORCL",
-      "spot": 158.71,
-      "n_contracts": 2,
-      "premium": 834042,
-      "call_premium": 537430,
-      "put_premium": 296613,
-      "call_share": 0.64,
-      "tilt": "two-sided",
-      "score": 2.7,
-      "max_vol_oi": 1.33,
-      "nearest_dte": 8,
-      "looks_multileg": 0,
-      "contracts": [
-        {
-          "contract": "ORCL260918C00157500",
-          "right": "C",
-          "strike": 157.5,
-          "expiry": "2026-09-18",
-          "dte": 8,
-          "premium": 537430,
-          "volume": 482,
-          "open_interest": 398,
-          "vol_oi": 1.21,
-          "mid": 11.15,
-          "burst": null,
-          "side": "unknown",
-          "iv": 1.065,
-          "score": 2.2,
-          "stale_mid": 0
-        },
-        {
-          "contract": "ORCL260918P00157500",
-          "right": "P",
-          "strike": 157.5,
-          "expiry": "2026-09-18",
-          "dte": 8,
-          "premium": 296613,
-          "volume": 305,
-          "open_interest": 229,
-          "vol_oi": 1.33,
-          "mid": 9.73,
-          "burst": null,
-          "side": "unknown",
-          "iv": 1.043,
-          "score": 1.75,
-          "stale_mid": 0
-        }
-      ],
-      "times_flagged": 2
     },
     {
       "ticker": "GEV",
@@ -3809,6 +3933,41 @@
       ]
     },
     {
+      "ticker": "CIEN",
+      "spot": 334.56,
+      "n_contracts": 1,
+      "premium": 434025,
+      "call_premium": 434025,
+      "put_premium": 0,
+      "call_share": 1.0,
+      "tilt": "calls",
+      "score": 2.16,
+      "max_vol_oi": 3.53,
+      "nearest_dte": 8,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "CIEN260918C00350000",
+          "right": "C",
+          "strike": 350.0,
+          "expiry": "2026-09-18",
+          "dte": 8,
+          "premium": 434025,
+          "volume": 643,
+          "open_interest": 194,
+          "vol_oi": 3.53,
+          "mid": 6.75,
+          "burst": 0.94,
+          "side": "at ask",
+          "iv": 0.609,
+          "score": 2.16,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-09-10T20:49:32+00:00"
+    },
+    {
       "ticker": "CVX",
       "spot": 213.14,
       "n_contracts": 2,
@@ -3972,7 +4131,43 @@
           "score": 2.11,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
+    },
+    {
+      "ticker": "COST",
+      "spot": 902.38,
+      "n_contracts": 1,
+      "premium": 765210,
+      "call_premium": 0,
+      "put_premium": 765210,
+      "call_share": 0.0,
+      "tilt": "puts",
+      "score": 2.03,
+      "max_vol_oi": 1.55,
+      "nearest_dte": 1,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "COST260911P00930000",
+          "right": "P",
+          "strike": 930.0,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 765210,
+          "volume": 276,
+          "open_interest": 192,
+          "vol_oi": 1.55,
+          "mid": 27.73,
+          "burst": 0.93,
+          "side": "at ask",
+          "iv": 0.427,
+          "score": 2.03,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 2,
+      "first_seen": "2026-09-10T18:28:31+00:00"
     },
     {
       "ticker": "DOW",
@@ -4072,6 +4267,41 @@
           "stale_mid": 0
         }
       ]
+    },
+    {
+      "ticker": "WMT",
+      "spot": 105.73,
+      "n_contracts": 1,
+      "premium": 573750,
+      "call_premium": 0,
+      "put_premium": 573750,
+      "call_share": 0.0,
+      "tilt": "puts",
+      "score": 1.89,
+      "max_vol_oi": 1.56,
+      "nearest_dte": 1,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "WMT260911P00110000",
+          "right": "P",
+          "strike": 110.0,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 573750,
+          "volume": 1350,
+          "open_interest": 893,
+          "vol_oi": 1.56,
+          "mid": 4.25,
+          "burst": 0.97,
+          "side": "at ask",
+          "iv": 0.354,
+          "score": 1.89,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-09-10T20:49:32+00:00"
     },
     {
       "ticker": "CRWD",
@@ -4205,6 +4435,41 @@
           "stale_mid": 0
         }
       ]
+    },
+    {
+      "ticker": "MRVL",
+      "spot": 226.96,
+      "n_contracts": 1,
+      "premium": 284642,
+      "call_premium": 284642,
+      "put_premium": 0,
+      "call_share": 1.0,
+      "tilt": "calls",
+      "score": 1.72,
+      "max_vol_oi": 4.87,
+      "nearest_dte": 1,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "MRVL260911C00237500",
+          "right": "C",
+          "strike": 237.5,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 284642,
+          "volume": 3981,
+          "open_interest": 998,
+          "vol_oi": 4.87,
+          "mid": 0.72,
+          "burst": 0.82,
+          "side": "mid",
+          "iv": 0.573,
+          "score": 1.72,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-09-10T20:49:32+00:00"
     },
     {
       "ticker": "MCK",
@@ -4370,7 +4635,8 @@
           "score": 1.57,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "CI",
@@ -4471,6 +4737,41 @@
           "stale_mid": 0
         }
       ]
+    },
+    {
+      "ticker": "TJX",
+      "spot": 126.42,
+      "n_contracts": 1,
+      "premium": 456475,
+      "call_premium": 0,
+      "put_premium": 456475,
+      "call_share": 0.0,
+      "tilt": "puts",
+      "score": 1.46,
+      "max_vol_oi": 1.03,
+      "nearest_dte": 1,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "TJX260911P00131000",
+          "right": "P",
+          "strike": 131.0,
+          "expiry": "2026-09-11",
+          "dte": 1,
+          "premium": 456475,
+          "volume": 961,
+          "open_interest": 937,
+          "vol_oi": 1.03,
+          "mid": 4.75,
+          "burst": 1.0,
+          "side": "mid",
+          "iv": 0.538,
+          "score": 1.46,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 2,
+      "first_seen": "2026-09-10T18:28:31+00:00"
     },
     {
       "ticker": "NKE",
@@ -4666,39 +4967,6 @@
           "side": "unknown",
           "iv": 0.536,
           "score": 1.2,
-          "stale_mid": 0
-        }
-      ]
-    },
-    {
-      "ticker": "COST",
-      "spot": 903.49,
-      "n_contracts": 1,
-      "premium": 157132,
-      "call_premium": 0,
-      "put_premium": 157132,
-      "call_share": 0.0,
-      "tilt": "puts",
-      "score": 1.15,
-      "max_vol_oi": 1.24,
-      "nearest_dte": 1,
-      "looks_multileg": 0,
-      "contracts": [
-        {
-          "contract": "COST260911P00940000",
-          "right": "P",
-          "strike": 940.0,
-          "expiry": "2026-09-11",
-          "dte": 1,
-          "premium": 157132,
-          "volume": 41,
-          "open_interest": 33,
-          "vol_oi": 1.24,
-          "mid": 38.33,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.507,
-          "score": 1.15,
           "stale_mid": 0
         }
       ]
@@ -4953,37 +5221,39 @@
       ]
     },
     {
-      "ticker": "TJX",
-      "spot": 126.65,
+      "ticker": "LH",
+      "spot": 306.96,
       "n_contracts": 1,
-      "premium": 57960,
+      "premium": 404845,
       "call_premium": 0,
-      "put_premium": 57960,
+      "put_premium": 404845,
       "call_share": 0.0,
       "tilt": "puts",
       "score": 0.78,
-      "max_vol_oi": 2.45,
+      "max_vol_oi": 1.84,
       "nearest_dte": 8,
       "looks_multileg": 0,
       "contracts": [
         {
-          "contract": "TJX260918P00127000",
+          "contract": "LH260918P00320000",
           "right": "P",
-          "strike": 127.0,
+          "strike": 320.0,
           "expiry": "2026-09-18",
           "dte": 8,
-          "premium": 57960,
-          "volume": 336,
-          "open_interest": 137,
-          "vol_oi": 2.45,
-          "mid": 1.73,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.204,
+          "premium": 404845,
+          "volume": 301,
+          "open_interest": 327,
+          "vol_oi": 1.84,
+          "mid": 13.45,
+          "burst": 0.5,
+          "side": "at bid",
+          "iv": 0.31,
           "score": 0.78,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-09-10T20:49:32+00:00"
     },
     {
       "ticker": "IBM",
@@ -5049,39 +5319,6 @@
           "side": "unknown",
           "iv": 0.53,
           "score": 0.76,
-          "stale_mid": 0
-        }
-      ]
-    },
-    {
-      "ticker": "FSLR",
-      "spot": 205.92,
-      "n_contracts": 1,
-      "premium": 94192,
-      "call_premium": 94192,
-      "put_premium": 0,
-      "call_share": 1.0,
-      "tilt": "calls",
-      "score": 0.69,
-      "max_vol_oi": 1.22,
-      "nearest_dte": 1,
-      "looks_multileg": 0,
-      "contracts": [
-        {
-          "contract": "FSLR260911C00210000",
-          "right": "C",
-          "strike": 210.0,
-          "expiry": "2026-09-11",
-          "dte": 1,
-          "premium": 94192,
-          "volume": 661,
-          "open_interest": 544,
-          "vol_oi": 1.22,
-          "mid": 1.43,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.515,
-          "score": 0.69,
           "stale_mid": 0
         }
       ]
@@ -5586,11 +5823,11 @@
     "requested": 503,
     "with_chain": 502,
     "failed": 1,
-    "contracts": 141722,
-    "snapshots_today": 2,
+    "contracts": 141997,
+    "snapshots_today": 3,
     "first_scan_of_day": false,
     "chain_quality": {
-      "rows": 141722,
+      "rows": 141997,
       "tickers": 502,
       "sources": [
         "cboe",
@@ -5598,21 +5835,21 @@
       ],
       "expiries": 32,
       "symbol_disagreements": 0,
-      "oi_missing": 0.0007902795613948434,
+      "oi_missing": 0.0007887490580786918,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.43655889699552647,
+      "zero_volume_share": 0.4256427952703226,
       "usable": true
     },
     "gate_survivors": {
-      "dte": 69798,
-      "atm": 19603,
-      "premium": 2162,
-      "low_oi": 129035,
-      "new_positioning": 15805,
-      "quote": 82423
+      "dte": 69801,
+      "atm": 19741,
+      "premium": 3017,
+      "low_oi": 129295,
+      "new_positioning": 17697,
+      "quote": 78228
     },
-    "flagged_contracts": 150
+    "flagged_contracts": 130
   },
   "errors": {
     "NVR": "CBOE: NVR: https://cdn.cboe.com/api/global/delayed_quotes/options/NVR.json -> HTTP 429; yfinance: NVR: no expirations listed"
