@@ -1,0 +1,58 @@
+name: Daily
+
+# Publishes today's ranges and grades the ones whose windows have closed.
+on:
+  schedule:
+    # 22:30 UTC on weekdays - after the US close, before the next open.
+    - cron: "30 22 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Restore data cache
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: vol-daily-${{ github.run_id }}
+          restore-keys: |
+            vol-daily-
+            vol-cache-
+
+      - name: Forecast
+        run: python daily.py
+
+      - name: Grade ranges whose windows have closed
+        # Never let the scoreboard take the forecasts down with it.
+        continue-on-error: true
+        run: python track.py --write
+
+      - name: Publish
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f docs/ data/forecasts/
+          git diff --staged --quiet && echo "nothing changed" && exit 0
+          git commit -m "Ranges: $(date -u +%Y-%m-%d)"
+          git pull --rebase --autostash origin main || true
+          git push
