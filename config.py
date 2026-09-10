@@ -94,3 +94,98 @@ REQUEST_TIMEOUT = 60
 MAX_RETRIES = 3
 DOWNLOAD_CHUNK = 40          # tickers per request; 500 at once gets throttled
 CACHE_TTL_SECONDS = int(os.environ.get("CACHE_TTL", 12 * 3600))
+
+# --- Options flow ----------------------------------------------------------
+# A separate product from the ranges, sharing this project's universe and -
+# more importantly - its bands, which are what make the flow scan gradeable.
+#
+# The honest framing first, because every filter below is shaped by it. Real
+# options flow is a TAPE: every print, with its size, its price, and the quote
+# that stood at the instant it happened. That is OPRA data and it is licensed.
+# Nothing free carries it. What free sources carry is a SNAPSHOT of the chain -
+# strike, bid, ask, last, cumulative day volume, open interest, IV - refreshed
+# on a delay.
+#
+# So a single $80k sweep lifting the offer and four hundred retail lots
+# trickling out at the mid arrive here as the same number. The one free lever
+# against that is time: snapshot often enough and a block shows up as almost
+# all of the day's volume appearing inside one interval, while the dribble
+# spreads evenly. That is what FLOW_BURST measures, and it is the reason this
+# runs several times a day rather than once after the close.
+
+FLOW = DATA / "flow"
+FLOW_SNAPSHOTS = FLOW / "snapshots"     # raw chains, one file per scan
+FLOW_FLAGS = FLOW / "flags"             # what was flagged, for forward grading
+
+for _p in (FLOW, FLOW_SNAPSHOTS, FLOW_FLAGS):
+    _p.mkdir(parents=True, exist_ok=True)
+
+# CBOE publishes a full delayed chain per underlying as one JSON document -
+# every expiry in a single request, where yfinance needs one request per
+# expiry. For 500 names that is the difference between a scan that finishes
+# inside a schedule slot and one that does not. yfinance stays as the fallback.
+# Neither has been confirmed against the live endpoint yet; flow_probe.py is
+# what confirms them, and it should be run before any of this is believed.
+CBOE_CHAIN_URL = "https://cdn.cboe.com/api/global/delayed_quotes/options/{sym}.json"
+CBOE_INDEX_URL = "https://cdn.cboe.com/api/global/delayed_quotes/options/_{sym}.json"
+
+# --- The four filters ------------------------------------------------------
+# Expirations inside two weeks. Short-dated is where a directional bet has to
+# be right about timing as well as direction, so it is where conviction shows.
+FLOW_MAX_DTE = 14
+# And a floor, because a contract expiring today trades on gamma mechanics
+# rather than on anyone's view, and 0-DTE volume would swamp everything else.
+FLOW_MIN_DTE = 1
+
+# "On the money". Measured in log terms so a 5% band means the same thing
+# above and below the strike.
+FLOW_ATM_BAND = 0.05
+
+# Premium floor, in dollars. Note what this is: volume x mid x 100 for the
+# interval, which is TOTAL premium traded in that contract, not the size of
+# any one trade. It is the weakest of the four filters and the page says so.
+FLOW_MIN_PREMIUM = 50_000.0
+
+# Low open interest, two ways, and both are needed.
+#
+# Absolute, which is the criterion as stated: few contracts outstanding going
+# in, so what trades today is not people shuffling an existing position.
+FLOW_MAX_OI = 1_000
+# And relative, which is the stronger form: today's volume against the open
+# interest that stood before it. Above 1.0 means more contracts changed hands
+# today than existed yesterday, which is hard to explain as anything but new
+# positioning. Worth knowing: the open interest in an intraday snapshot is
+# LAST NIGHT'S settled figure - it does not tick during the session - so this
+# ratio is correctly computed against a number that predates today's trading.
+FLOW_MIN_VOL_OI = 1.0
+
+# --- Quality gates ---------------------------------------------------------
+# A contract quoted 0.05 bid / 0.90 ask has no meaningful mid, and premium
+# estimated from that mid is fiction.
+FLOW_MAX_SPREAD_PCT = 0.35
+# A quote of zero bid is a contract nobody wants; its "last" is stale by
+# construction.
+FLOW_MIN_BID = 0.05
+
+# Share of a contract's day volume that arrived inside a single scan interval.
+# High means concentrated - the free proxy for a block. It needs at least two
+# snapshots in a session to mean anything, and is reported as unknown until it
+# has them.
+FLOW_BURST_ALERT = 0.60
+
+# How many scans a day. Three is the default: mid-morning, midday, and just
+# after the close for the settled picture. More is better for burst detection
+# and worse for rate limits.
+FLOW_SCANS_PER_DAY = 3
+
+# Requests are spaced to stay under the free endpoints' patience.
+FLOW_REQUEST_PAUSE = 0.25
+FLOW_MAX_WORKERS = 8
+
+# --- Grading ---------------------------------------------------------------
+# The horizon a flag is graded over. Two weeks of expiry means the thesis, if
+# there is one, should show inside a week.
+FLOW_GRADE_HORIZON = "1 week"
+# Flags below this score are recorded but not shown on the page. They are
+# still graded, which is the point - a threshold nobody tested is a guess.
+FLOW_SHOW_MIN_SCORE = 1.0

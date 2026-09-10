@@ -312,3 +312,165 @@ gives it directional information, and a faint arrow that means nothing is worse
 than no arrow because it invites exactly the reading the rest of the page is
 careful to avoid. On the fixtures — which contain no directional signal by
 construction — it correctly reports 50.0% against a 50.1% base rate at t = −0.4.
+
+---
+
+# Options flow
+
+A second thing built on the same universe and, more importantly, on the same
+bands. Short-dated, at the money, large premium, into a contract that barely
+existed yesterday.
+
+## What free data can and cannot do
+
+The four criteria split cleanly, and the split is the whole design.
+
+| criterion | free data | fidelity |
+|---|---|---|
+| expiration inside two weeks | exact | full |
+| at the money | exact | full |
+| low open interest | exact, and better than exact | full |
+| $50,000+ premium | volume x mid x 100 | **approximate** |
+
+Open interest is the strong one. It settles overnight and does **not** tick
+during the session, so the figure in a chain pulled at 11am is yesterday's.
+Today's volume against it is a real before-and-after, and "more contracts
+changed hands today than existed yesterday" is about as close to *new
+positioning* as anything gets without a tape.
+
+Premium is the weak one, and there is no fixing it. On a tape, $50k of premium
+is one trade's size times its price. Here it is everything that traded in that
+contract, however many hands it took. One $80,000 sweep and eight hundred $100
+retail lots produce the same number.
+
+## The one lever against that: time
+
+Scan several times a session and difference the cumulative volume. A block
+lands almost entirely inside one interval; a dribble spreads across all of
+them. That share is `burst`, and a contract that bursts near 1.0 on meaningful
+premium is the closest free data gets to *one order did that*.
+
+It needs at least two snapshots in a day, and reports `None` until it has
+them - not 1.0, which would claim concentration that was never measured. This
+is the reason the workflow runs three times a session rather than once after
+the close.
+
+`test_flow.py` plants the two side by side: `BLOCK` trades its whole 900 lots
+in the afternoon interval, `DRIBBLE` trades 450 in each. Identical premium,
+bursts of 1.0 and 0.5.
+
+## What is deliberately not attempted
+
+**Bought or sold.** That needs the quote standing at the instant of the trade.
+What is available is the last print against the current market, which is a fair
+proxy when the trade just happened and meaningless when it happened at 10am. So
+it is computed, and marked `firm` only when the interval's own volume proves
+the trade fell inside it. Otherwise it reads `unknown`.
+
+**Opening versus closing intent.** Dropped from the brief. But next morning's
+open interest answers it a day late for free - if OI rose by roughly what
+traded, the position was opened and held - so every flag gets that stamp on the
+following run, and the grader checks whether the stamp separates anything.
+
+**Anything called bullish or bearish.** Call premium is call premium. Someone
+sold every one of those contracts.
+
+## The six decoys
+
+The easy test is that a screen flags the planted block. The useful test is that
+it declines to flag six things that look like it in exactly one respect:
+
+| decoy | identical to the block except | must fail on |
+|---|---|---|
+| `DRIBBLE` | 50,000 open interest | new positioning |
+| `FARDATE` | thirty days out | expiry |
+| `OTM` | 25% out of the money | moneyness |
+| `WIDE` | quoted 0.02 / 2.00 | quote quality |
+| `SMALL` | a tenth the size | premium |
+| `QUIET` | never trades | premium |
+
+And each gate is checked for doing work: loosening it must let its decoy
+through. A gate that changes nothing when loosened was never catching anything.
+
+## How the scan gets graded, and why the band is the yardstick
+
+This is the part that makes it worth running rather than worth looking at.
+
+Every "unusual options activity" study has the same hole: flagged names skew
+toward volatile names, volatile names move more, so any screen looks prescient
+if movement is measured in percent. The fix here was already built - the range
+model states, per stock, where it lands half the time over the next week,
+conditional on how volatile that stock already is.
+
+So the question has an exact form:
+
+> Do flagged names leave **their own** middle-half band more often than
+> unflagged names on the same days?
+
+A band is 50/50 by construction, so a wild name gets no credit for being wild.
+`test_flow.py` builds the trap directly: flagged names drawn only from the
+high-volatility group, moving four times as far in raw terms, and checks that
+the grader reports no effect - which it must, because there is none.
+
+Three readings, in increasing order of power: breakout rate (binary, weakest),
+move size in band half-widths (continuous, extracts far more from a small
+archive), and direction for one-sided flags only. Direction is the one most
+likely to be a null and it is reported against the unflagged base rate rather
+than against 50%.
+
+Every result prints its own power alongside it, because *no effect detected*
+and *not enough data to detect one* read identically and mean opposite things.
+An eight-point effect needs roughly 156 flagged observations before it clears
+two standard errors; until then the grader says `NOT ENOUGH YET` instead of
+printing a verdict.
+
+**And if it stays flat as the sample grows, the honest move is to stop running
+the scan** - not to loosen the filters until something looks significant.
+
+## No lookahead
+
+A flag is raised during the session on day D from a delayed chain. The band it
+is graded against is anchored to D's *close* and covers the week after it. So
+whatever the flow already did to the price on day D sits inside the anchor, not
+inside the outcome. The test is conservative on purpose.
+
+## Run the probe first
+
+Actions -> **Flow probe** -> *Run workflow*. Twice, an hour apart, during US
+market hours (13:30-20:00 UTC). Then send me the output.
+
+Nothing in `chains.py` was written with a live endpoint in front of it, and
+that is exactly the situation that produced four separate bugs in the football
+builds. The probe answers five things:
+
+1. Which source answers, and how long 500 names would take.
+2. Whether the fields are there, and whether contract symbols agree with their
+   own stated strikes and expiries.
+3. **How many contracts survive each filter.** If the whole index would flag
+   three thousand names a day the filters are decoration; if it would flag zero
+   they can never be graded. Both are findable now rather than in a month.
+4. Whether open interest really does hold still during the session. This is
+   what the second run answers, and the new-positioning filter rests on it.
+5. What a day of scanning costs in requests and minutes.
+
+## Files
+
+| file | what it does |
+|---|---|
+| `chains.py` | option chains from CBOE and yfinance, normalised; OCC symbol parsing; a quality check |
+| `flow.py` | enrichment, snapshot differencing, the four gates, scoring, the day's flag file |
+| `flow_scan.py` | one scan, end to end - the thing the schedule runs |
+| `flow_grade.py` | forward grading against the range model's own bands |
+| `flow_dashboard.py` | `docs/flow.html`, with the data's limits printed on the page |
+| `flow_probe.py` | the live probe - run this first |
+| `flow_fixtures.py` | a synthetic chain with a planted block and six decoys |
+| `test_flow.py` | 81 offline checks |
+
+## If free turns out not to be enough
+
+The probe's section 3 is what decides it. If short-dated ATM premium is so
+diffuse that nothing separates a block from background noise, the missing piece
+is the tape, and the tape is a paid feed - a per-trade options API, or a retail
+flow tool. That is a real answer and worth reaching honestly rather than by
+building a screen that fires often enough to feel useful. The grader is what
+tells the difference.
