@@ -9,10 +9,21 @@ name: Bootstrap
 on:
   workflow_dispatch:
     inputs:
-      sample:
-        description: "Tickers to use (blank = the whole universe, ~1000)"
+      full:
+        description: "Use every index member ever (~1000 names, 3-5 hrs)"
+        type: boolean
         required: false
-        default: "250"
+        default: false
+      sample:
+        # This MUST default to empty. GitHub substitutes an input's default
+        # whenever the submitted value is blank, so a default of "250" makes
+        # the full universe unreachable through this form - clearing the box
+        # sends 250 back. Two runs were spent discovering that. The `full`
+        # toggle above is the belt to that braces: it overrides whatever is
+        # here.
+        description: "Or a sample size (e.g. 250 for a fast look)"
+        required: false
+        default: ""
       horizons:
         description: "Trading-day horizons, space separated (blank = 5 21 63)"
         required: false
@@ -27,6 +38,10 @@ on:
         type: boolean
         required: false
         default: true
+      ablation_horizon:
+        description: "Ablate only this horizon (21 = one month, 0 = all three)"
+        required: false
+        default: "21"
 
 permissions:
   contents: write
@@ -67,10 +82,14 @@ jobs:
       - name: Build
         run: |
           ARGS=""
-          if [ -n "${{ inputs.sample }}" ]; then ARGS="$ARGS --sample ${{ inputs.sample }}"; fi
+          if [ "${{ inputs.full }}" != "true" ] && [ -n "${{ inputs.sample }}" ]; then
+            ARGS="$ARGS --sample ${{ inputs.sample }}"
+          fi
+          echo "EFFECTIVE UNIVERSE: $( [ "${{ inputs.full }}" = "true" ] && echo "FULL (every index member ever)" || echo "sample=${{ inputs.sample }}" )"
           if [ -n "${{ inputs.horizons }}" ]; then ARGS="$ARGS --horizons ${{ inputs.horizons }}"; fi
           if [ "${{ inputs.earnings }}" = "false" ]; then ARGS="$ARGS --no-earnings"; fi
           if [ "${{ inputs.ablation }}" = "false" ]; then ARGS="$ARGS --no-ablation"; fi
+          if [ -n "${{ inputs.ablation_horizon }}" ]; then ARGS="$ARGS --ablation-horizon ${{ inputs.ablation_horizon }}"; fi
           echo "build.py $ARGS"
           python build.py $ARGS | tee bootstrap.txt
 
