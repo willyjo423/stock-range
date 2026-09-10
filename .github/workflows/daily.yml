@@ -39,6 +39,9 @@ jobs:
             vol-daily-
             vol-cache-
 
+      - name: Offline checks
+        run: python test_signals.py
+
       - name: Forecast
         run: python daily.py
 
