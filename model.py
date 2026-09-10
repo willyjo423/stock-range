@@ -79,24 +79,49 @@ class RangeModel:
     trained_range: tuple = ()
 
     def fit(self, X: pd.DataFrame, y: pd.Series,
+            dates: pd.Series | None = None,
             calibrate: bool = True) -> "RangeModel":
         X = X[self.features]
         z = np.asarray(y, dtype=float)
 
-        # Hold back the most recent slice, by position, before fitting. It is
-        # used only to correct the width of the finished band, and it must not
-        # be part of what the trees saw.
+        # Hold back the most recent DATES before fitting, and use them only to
+        # correct the width of the finished band.
+        #
+        # The first version of this split by row position, which was a real
+        # bug: the panel is sorted by ticker then date, so "the last 15% of
+        # rows" was the alphabetically last tickers, not the most recent
+        # period. The calibration was therefore measured in-period, found
+        # nothing to fix, and came back at 1.00-1.06 - while the walk-forward
+        # showed the finished bands under-covering by five to eight points at
+        # every horizon. It was correcting the wrong thing on the wrong sample.
         n = len(X)
-        cut = int(n * 0.85) if (calibrate and n > 20000) else n
-        Xf, zf = X.iloc[:cut], z[:cut]
+        holdout = None
+        if calibrate and n > 20000:
+            if dates is not None:
+                d = pd.Series(pd.to_datetime(pd.Series(dates).to_numpy()))
+                cutoff = d.quantile(0.85)
+                holdout = (d > cutoff).to_numpy()
+                if holdout.sum() < 2000 or (~holdout).sum() < 10000:
+                    holdout = None
+            else:
+                log.warning("no dates given, so the width calibration falls "
+                            "back to a positional split - fine for a fixture, "
+                            "wrong for a panel sorted by ticker")
+                cut = int(n * 0.85)
+                holdout = np.zeros(n, dtype=bool)
+                holdout[cut:] = True
+
+        train = slice(None) if holdout is None else ~holdout
+        Xf = X.loc[train] if holdout is not None else X
+        zf = z[train] if holdout is not None else z
 
         for q in self.quantiles:
             self.models[q] = _regressor(q).fit(Xf, zf)
         self.trained_rows = int(len(Xf))
 
         self.spread = {q: 1.0 for q in self.quantiles}
-        if cut < n:
-            self._fit_spread(X.iloc[cut:], z[cut:])
+        if holdout is not None:
+            self._fit_spread(X.loc[holdout], z[holdout])
         log.info("fitted %d quantile models on %d rows", len(self.models),
                  self.trained_rows)
         return self
@@ -207,18 +232,29 @@ def non_overlapping(df: pd.DataFrame, horizon: int) -> pd.DataFrame:
 
 def walk_forward(panel: pd.DataFrame, horizon: int,
                  columns: list | None = None,
-                 min_train_years: int = 5) -> pd.DataFrame:
-    """Refit each year on everything before it, predict that year only."""
+                 min_train_years: int = 5,
+                 max_years: int | None = None) -> pd.DataFrame:
+    """Refit each year on everything before it, predict that year only.
+
+    `max_years` tests only the most recent N years while still training on
+    everything before each of them. It exists for the ablation, where the
+    question is which feature group is better rather than what the model
+    scores, and eighteen refits per group is most of the bootstrap's runtime.
+    """
     from features import training_matrix
 
     X_all, carry = training_matrix(panel, columns=columns)
     carry = carry.copy()
     carry["year"] = pd.to_datetime(carry["date"]).dt.year
     years = sorted(carry["year"].unique())
+    testable = years[min_train_years:]
+    if max_years is not None and len(testable) > max_years:
+        testable = testable[-max_years:]
+    keep = set(testable)
 
     out = []
     for i, yr in enumerate(years):
-        if i < min_train_years:
+        if yr not in keep:
             continue
         # A forward window straddles the year boundary, so training rows whose
         # own window reaches into the test year would be peeking. Dropping the
@@ -230,7 +266,8 @@ def walk_forward(panel: pd.DataFrame, horizon: int,
             continue
 
         m = RangeModel(horizon=horizon, features=list(X_all.columns))
-        m.fit(X_all.loc[train.values], carry.loc[train, "z"])
+        m.fit(X_all.loc[train.values], carry.loc[train, "z"],
+              dates=carry.loc[train, "date"])
         z = m.predict_z(X_all.loc[test.values])
 
         block = carry.loc[test].copy()
@@ -377,8 +414,36 @@ def _paired_pinball(a: pd.DataFrame, b: pd.DataFrame, horizon: int,
     return float(per.mean()), float(per.mean() / se if se else np.nan), len(per)
 
 
+def thin_rows(panel: pd.DataFrame, stride: int) -> pd.DataFrame:
+    """Keep every `stride`-th row per ticker.
+
+    Available, and off by default, because measuring it showed it does not
+    work. On a fixture where the shape features genuinely help:
+
+        stride 1   111s   delta -0.00268  t = -2.16   (helps)
+        stride 3    63s   delta -0.00031  t = -0.18   (null)
+        stride 5    31s   delta +0.00016  t = +0.08   (null)
+
+    It is nearly four times faster and it cannot see the effect any more -
+    thinning takes rows out of the training set, which weakens the model, and
+    out of the test set, which widens the error bars. A cheap ablation that
+    reports every feature group as a null is worse than no ablation, because
+    it looks like an answer.
+
+    Trimming years was measured too and saved only 17%, since the years it
+    drops are the cheap early ones. The honest saving is running the ablation
+    for one horizon instead of three: same measurement, asked once.
+    """
+    if stride is None or stride <= 1:
+        return panel
+    out = [b.iloc[::stride] for _, b in
+           panel.sort_values(["ticker", "date"]).groupby("ticker", sort=False)]
+    return pd.concat(out) if out else panel
+
+
 def ablation(panel: pd.DataFrame, horizon: int, groups: dict,
-             base_group: str = "vol") -> dict:
+             base_group: str = "vol", max_years: int | None = None,
+             stride: int = 1) -> dict:
     """What each feature group is worth, measured one at a time.
 
     Groups are measured alone against the baseline rather than stacked. The NFL
@@ -388,7 +453,9 @@ def ablation(panel: pd.DataFrame, horizon: int, groups: dict,
     """
     results = {}
     base_cols = list(groups[base_group])
-    base = walk_forward(panel, horizon, columns=base_cols)
+    panel = thin_rows(panel, stride)
+    base = walk_forward(panel, horizon, columns=base_cols,
+                        max_years=max_years)
     if base.empty:
         return {}
     qs = list(config.QUANTILES)
@@ -402,7 +469,8 @@ def ablation(panel: pd.DataFrame, horizon: int, groups: dict,
         if name == base_group:
             continue
         use = base_cols + [c for c in cols if c not in base_cols]
-        run = walk_forward(panel, horizon, columns=use)
+        run = walk_forward(panel, horizon, columns=use,
+                           max_years=max_years)
         if run.empty:
             continue
         delta, t, n = _paired_pinball(run, base, horizon, qs)

@@ -115,7 +115,8 @@ def assemble(sample: int | None, want_earnings: bool,
 
 
 def run_horizon(panel: pd.DataFrame, label: str, horizon: int,
-                earn, do_ablation: bool) -> dict:
+                earn, do_ablation: bool, ablation_years: int | None = None,
+                ablation_stride: int = 1) -> dict:
     rule(f"HORIZON: {label.upper()}  ({horizon} trading days)")
     df = shrink(features.build_for_horizon(panel, horizon, earn))
     X, carry = features.training_matrix(df)
@@ -127,7 +128,9 @@ def run_horizon(panel: pd.DataFrame, label: str, horizon: int,
         print("  OWN against the volatility core, paired window by window,")
         print("  with the t statistic beside it. |t| under 2 means the")
         print("  difference cannot be told from zero.\n")
-        abl = model_mod.ablation(df, horizon, features.FEATURE_GROUPS)
+        abl = model_mod.ablation(df, horizon, features.FEATURE_GROUPS,
+                                 max_years=ablation_years,
+                                 stride=ablation_stride)
         out["ablation"] = abl
         if abl:
             print(f"  {'group':<10} {'cols':>5} {'pinball':>9} {'delta':>10} "
@@ -139,6 +142,10 @@ def run_horizon(panel: pd.DataFrame, label: str, horizon: int,
                       f"{r['delta']:>+10.5f} {ts}  "
                       f"{r['coverage'] * 100:8.1f}%   {r.get('verdict', '')}")
 
+    print(f"\n  Shipped feature set: {', '.join(features.ACTIVE_GROUPS)} "
+          f"({len(features.FEATURE_COLUMNS)} columns). `market` and `flow` "
+          f"are built and\n  ablated but excluded - see features.ACTIVE_GROUPS "
+          f"for the numbers.")
     print("\n  Walk-forward evaluation:")
     oos = model_mod.walk_forward(df, horizon)
     metrics = model_mod.evaluate(oos, horizon)
@@ -146,7 +153,8 @@ def run_horizon(panel: pd.DataFrame, label: str, horizon: int,
     print(model_mod.summarize(metrics))
 
     print("\n  Fitting the final model on everything:")
-    m = model_mod.RangeModel(horizon=horizon).fit(X, carry["z"])
+    m = model_mod.RangeModel(horizon=horizon).fit(
+        X, carry["z"], dates=carry["date"])
     path = config.MODELS / f"range_h{horizon}.joblib"
     try:
         import joblib
@@ -171,6 +179,21 @@ def main() -> int:
     ap.add_argument("--sample", type=int)
     ap.add_argument("--no-earnings", action="store_true")
     ap.add_argument("--no-ablation", action="store_true")
+    # Which feature groups help is a question about the features, not about the
+    # horizon, so measuring it once is enough - and it is most of the runtime.
+    ap.add_argument("--ablation-horizon", type=int, default=21,
+                    help="run the ablation only for this horizon (0 = all)")
+    # Off by default: measured, and it silently turns real effects into
+    # nulls. See model.thin_rows for the numbers.
+    ap.add_argument("--ablation-stride", type=int, default=1,
+                    help="use every Nth row for the ablation (default 1); "
+                         "faster and demonstrably unable to detect a real "
+                         "effect, so leave it alone unless you only want a "
+                         "rough look")
+    ap.add_argument("--ablation-years", type=int, default=0,
+                    help="test years per ablation run (0 = all); the ablation "
+                         "compares groups, so it needs less history than the "
+                         "headline evaluation")
     ap.add_argument("--earnings-budget", type=float, default=1800.0)
     ap.add_argument("--quiet", action="store_true")
     args = ap.parse_args()
@@ -185,8 +208,12 @@ def main() -> int:
                 else dict(config.HORIZONS))
     results = {"context": context, "horizons": {}}
     for label, h in horizons.items():
+        wants = (not args.no_ablation
+                 and (args.ablation_horizon in (0, h)))
         results["horizons"][label] = run_horizon(
-            panel, label, h, earn, not args.no_ablation)
+            panel, label, h, earn, wants,
+            ablation_years=args.ablation_years or None,
+            ablation_stride=args.ablation_stride)
 
     model_mod.save_metrics(results, METRICS_PATH)
 

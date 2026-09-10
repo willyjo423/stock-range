@@ -187,3 +187,66 @@ independent windows at a one-month horizon.
 Note what improves at *every* size: conditional calibration. The naive band's
 worst volatility bucket sits 9–11 points from target; the model's sits 2–3.
 That is the product, and the pinball gain is the tiebreak.
+
+---
+
+## What the first real bootstrap found
+
+250 index members, 2004-2026, roughly 780,000 ticker-days per horizon.
+
+**The volatility core works at every horizon.** Measured alone against the
+naive band, on non-overlapping windows:
+
+| horizon | vol core | naive | verdict |
+|---|---|---|---|
+| 1 week | 0.3834 | 0.4015 | +4.5% better |
+| 1 month | 0.3086 | 0.3120 | +1.1% better |
+| 3 months | 0.2970 | 0.3001 | +1.0% better |
+
+**And the full model lost at two of the three**, because two feature groups
+were actively harmful:
+
+```
+group      1 week            1 month           3 months
+shape      -0.0010 t=-10.8   -0.0008 t= -3.5   -0.0004 t= -0.9
+earnings   -0.0031 t=-20.3   -0.0012 t= -5.4   -0.0001 t= -0.2
+flow       -0.0000 t= -0.0   +0.0028 t= +7.4   +0.0094 t=+11.3
+market     +0.0104 t=+38.9   +0.0117 t=+21.2   +0.0190 t=+20.2
+```
+
+Positive is worse. `market` — VIX, index volatility, beta — is the most
+harmful thing in the model at every horizon, and for a structural reason: those
+values are nearly identical for every stock on a given day, so the trees end up
+keyed to particular historical regimes rather than to the stock in front of
+them. Train through 2015 and the model has learned what a VIX of 15 implied
+then, which is not what it implies in the year being predicted.
+
+`shape` and `earnings` both help, strongly at one week and fading with horizon
+— which is what you would expect, since a single earnings report dominates a
+five-day window and barely registers over a quarter.
+
+So the shipped feature set is **vol + shape + earnings**. `market` and `flow`
+are still built and still ablated every run, so that decision keeps being
+re-tested rather than taken on trust.
+
+### The conditional gap, which is the point
+
+At one week the naive band covered **31.4%** of outcomes for the calmest
+quarter of stocks and **63.2%** for the wildest — a 32-point spread hiding
+behind a respectable-looking overall number. The model brought that to
+47.2% / 42.8%. Worst bucket: **7.2 points off target against the naive band's
+18.6**.
+
+### Two limitations worth stating
+
+**Survivorship is only half-fixed.** The universe correctly includes the 492
+companies that left the index, but yfinance cannot serve most delisted tickers
+— 106 failed to download. 250 requested, 158 returned. The bias is reduced, not
+eliminated, and the names still missing are the ones that blew up.
+
+**The width calibration had a real bug.** It split the held-back slice by row
+position, and the panel is sorted by ticker, so it held back the alphabetically
+last tickers instead of the most recent dates. It was measuring in-period,
+found nothing to correct, and returned factors of 1.00-1.06 while the finished
+bands under-covered by five to eight points at every horizon. It now splits on
+date.

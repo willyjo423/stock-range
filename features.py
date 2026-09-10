@@ -70,8 +70,36 @@ FEATURE_GROUPS = {
     "earnings": EARNINGS_COLUMNS,
 }
 
-FEATURE_COLUMNS = (VOL_COLUMNS + SHAPE_COLUMNS + MARKET_COLUMNS
-                   + FLOW_COLUMNS + EARNINGS_COLUMNS)
+# Which groups the shipped model actually uses.
+#
+# `market` and `flow` are built and measured but deliberately excluded, on the
+# first real bootstrap's evidence. Measured alone against the volatility core,
+# over 250 index members and twenty years:
+#
+#     horizon    market            flow
+#     1 week     +0.0104 t=+38.9   -0.0000 t= -0.0
+#     1 month    +0.0117 t=+21.2   +0.0028 t= +7.4
+#     3 months   +0.0190 t=+20.2   +0.0094 t=+11.3
+#
+# Positive is worse. Those are not marginal - `market` is the single most
+# harmful thing in the model at every horizon, and it is harmful for a
+# structural reason: VIX, index volatility and beta are nearly identical for
+# every stock on a given day, so the trees end up keyed to particular
+# historical regimes rather than to the stock in front of them. Train on
+# 2004-2015 and the model has learned what a VIX of 15 implied then, which is
+# not what it implies in the year being predicted.
+#
+# Keeping them cost more than everything else gained: the full model lost to
+# the naive band at two of three horizons while the volatility core alone beat
+# it at all three.
+ACTIVE_GROUPS = ["vol", "shape", "earnings"]
+
+FEATURE_COLUMNS = [c for g in ACTIVE_GROUPS for c in FEATURE_GROUPS[g]]
+
+# Everything built, so the ablation can keep re-testing the excluded groups
+# rather than taking that decision on trust forever.
+ALL_FEATURE_COLUMNS = (VOL_COLUMNS + SHAPE_COLUMNS + MARKET_COLUMNS
+                       + FLOW_COLUMNS + EARNINGS_COLUMNS)
 
 # Never features, carried for evaluation and display.
 CARRY = ["ticker", "date", "close", "scale", "fwd_ret", "z", "rv_ref"]
@@ -247,7 +275,7 @@ def build_for_horizon(panel: pd.DataFrame, horizon: int,
     df["fwd_ret"] = prices.forward_return(df, horizon)
     df["z"] = df["fwd_ret"] / df["scale"]
 
-    for c in FEATURE_COLUMNS:
+    for c in ALL_FEATURE_COLUMNS:
         if c not in df.columns:
             df[c] = np.nan
         df[c] = pd.to_numeric(df[c], errors="coerce")

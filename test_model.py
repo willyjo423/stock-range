@@ -86,13 +86,24 @@ def test_features() -> None:
     section("FEATURES")
     df = panel()
 
-    missing = [c for c in features.FEATURE_COLUMNS if c not in df.columns]
+    missing = [c for c in features.ALL_FEATURE_COLUMNS if c not in df.columns]
     check("every declared feature is built", not missing, str(missing))
     check("all features are numeric",
           all(pd.api.types.is_numeric_dtype(df[c])
-              for c in features.FEATURE_COLUMNS))
+              for c in features.ALL_FEATURE_COLUMNS))
 
-    filled = df[features.FEATURE_COLUMNS].notna().mean()
+    # The groups the first real bootstrap showed to be harmful are built and
+    # still ablated, but must not reach the shipped model.
+    check("market features are excluded from the shipped set",
+          not (set(features.MARKET_COLUMNS) & set(features.FEATURE_COLUMNS)),
+          "market was the most harmful group at every horizon")
+    check("flow features are excluded from the shipped set",
+          not (set(features.FLOW_COLUMNS) & set(features.FEATURE_COLUMNS)))
+    check("but both are still built, so they can be re-measured",
+          set(features.MARKET_COLUMNS + features.FLOW_COLUMNS)
+          <= set(features.ALL_FEATURE_COLUMNS))
+
+    filled = df[features.ALL_FEATURE_COLUMNS].notna().mean()
     check("volatility core is populated", filled["log_rv_21"] > 0.85,
           f"{filled['log_rv_21']:.3f}")
     check("market context is populated", filled["log_vix"] > 0.85,
@@ -280,7 +291,7 @@ def test_leakage() -> None:
     # And the forward return must never be knowable from the features.
     fwd = carry.loc[early, "fwd_ret"].to_numpy()
     worst = 0.0
-    for c in ("log_rv_21", "rv_slope_long", "log_vix", "trailing_ret_21"):
+    for c in ("log_rv_21", "rv_slope_long", "range_vol_21", "downside_vol_21"):
         v = X.loc[early.values, c].to_numpy()
         ok = np.isfinite(v) & np.isfinite(fwd)
         if ok.sum() > 1000:
