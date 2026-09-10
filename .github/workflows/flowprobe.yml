@@ -1,0 +1,62 @@
+name: Flow probe
+
+# What the free option chains actually contain. Run this - twice, an hour
+# apart, during US market hours - before believing anything the scanner says.
+# Nothing in chains.py was written with a live endpoint in front of it.
+on:
+  workflow_dispatch:
+    inputs:
+      sample:
+        description: "How many tickers to probe (blank = 12)"
+        required: false
+        default: "12"
+      tickers:
+        description: "Specific tickers instead, space separated"
+        required: false
+        default: ""
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Offline checks
+        # If these fail the problem is in the code, not the data - worth
+        # knowing before reading the live output.
+        run: python test_flow.py
+
+      - name: Keep snapshots between runs
+        # So a second run an hour later can answer whether open interest ticks
+        # during the session, which is the assumption the whole scan rests on.
+        uses: actions/cache@v4
+        with:
+          path: data/flow/snapshots
+          key: flow-probe-${{ github.run_id }}
+          restore-keys: flow-probe-
+
+      - name: Live probe
+        run: |
+          if [ -n "${{ inputs.tickers }}" ]; then
+            python flow_probe.py --tickers ${{ inputs.tickers }} | tee flowprobe.txt
+          else
+            python flow_probe.py --sample "${{ inputs.sample }}" | tee flowprobe.txt
+          fi
+
+      - name: Keep the output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: flow-probe-output
+          path: flowprobe.txt
+          retention-days: 30
