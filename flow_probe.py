@@ -57,46 +57,59 @@ def probe_sources(names: list[str]) -> tuple[pd.DataFrame, dict]:
     frames = []
     errors = {}
 
+    # A small head-to-head on the same few names, purely to time the two
+    # sources against each other and see that both answer.
+    bake_off = names[:4]
     for source in ("cboe", "yfinance"):
-        sample = names[:4] if source == "yfinance" else names[:8]
         t0 = time.time()
         got = 0
-        for t in sample:
+        for t in bake_off:
             try:
                 df = (chains.from_cboe(t) if source == "cboe"
                       else chains.from_yfinance(t))
                 if not df.empty:
                     got += 1
-                    frames.append(df)
             except Exception as exc:  # noqa: BLE001
                 errors.setdefault(source, []).append(f"{t}: {str(exc)[:120]}")
         elapsed = time.time() - t0
-        per = elapsed / max(len(sample), 1)
-        timings[source] = {"answered": got, "tried": len(sample),
+        per = elapsed / max(len(bake_off), 1)
+        timings[source] = {"answered": got, "tried": len(bake_off),
                            "seconds_each": round(per, 2)}
-        print(f"  {source:<10} {got}/{len(sample)} answered   "
+        print(f"  {source:<10} {got}/{len(bake_off)} answered   "
               f"{per:5.2f}s per name   "
               f"-> {per * 500 / 60:5.1f} min for 500 names, serially")
         for e in (errors.get(source) or [])[:3]:
             print(f"             {e}")
 
-    if not frames:
+    # Then the whole requested sample, from the faster source that answered.
+    #
+    # The first version of this section built the chain out of the bake-off
+    # itself, so every downstream section ran on eight tickers no matter what
+    # --sample said. Section 3b was then quantising the daily projection in
+    # jumps of sixty names and its own caution line was the only honest thing
+    # on it. The sample has to actually reach the fetch.
+    winner = min((s for s, v in timings.items() if v["answered"]),
+                 key=lambda s: timings[s]["seconds_each"], default=None)
+    if winner is None:
         print("\n  Neither source returned a chain. Nothing downstream can "
               "work.\n  This is the stop-here result, and it is better to "
               "have it now.")
         return pd.DataFrame(), timings
 
-    # Both sources are asked about the same leading tickers, so the same
-    # contract arrives twice. The first run counted those twice and inflated
-    # every share in section 3 - a filter that passes 20% of contracts looks
-    # identical whether the contracts are distinct or duplicated. CBOE is
-    # appended first, so keeping the first occurrence keeps the faster source.
-    chain = pd.concat(frames, ignore_index=True)
+    print(f"\n  fetching all {len(names)} sampled names from {winner}...")
+    try:
+        chain, failures = chains.fetch_many(names, prefer=winner)
+    except chains.ChainsUnavailable as exc:
+        print(f"  the batch fetch failed: {exc}")
+        return pd.DataFrame(), timings
+    if failures:
+        print(f"  {len(failures)} names returned no chain; first: "
+              f"{next(iter(failures.items()))[0]}")
+
     before = len(chain)
     chain = chain.drop_duplicates(["ticker", "contract"], keep="first")
     if len(chain) < before:
-        print(f"\n  {before - len(chain):,} duplicate contracts dropped "
-              f"(the two sources were asked about overlapping tickers)")
+        print(f"  {before - len(chain):,} duplicate contracts dropped")
 
     head("2. WHAT THE CHAIN CONTAINS")
     q = chains.check(chain)
@@ -283,6 +296,22 @@ def probe_oi_stability(chain: pd.DataFrame) -> None:
           f"{traded * 100:5.1f}%")
     print(f"  contracts whose open interest changed:               "
           f"{changed * 100:5.1f}%")
+
+    # The guard that was missing the first time this ran. Two snapshots taken
+    # twenty minutes apart at 5am straddled the overnight settlement, so open
+    # interest changed for 30% of contracts while volume moved for 0.1% - and
+    # the section read that as open interest ticking intraday, which is the
+    # opposite of what it showed. If no volume traded between the snapshots,
+    # the session was not running and the question has not been asked.
+    if traded < 0.05:
+        print("\n  Volume barely moved between these two snapshots, so the")
+        print("  session was not running between them and this question has")
+        print("  NOT been answered. Any change in open interest here is the")
+        print("  overnight settlement being published, which is exactly the")
+        print("  behaviour the filter wants. Re-run twice between 13:30 and")
+        print("  20:00 UTC to actually test it.")
+        return
+
     if changed < 0.02:
         print("\n  Open interest held still while volume moved. That is the")
         print("  assumption the filter needs, and it holds.")
@@ -318,7 +347,7 @@ def probe_cost(timings: dict, n_names: int) -> None:
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--sample", type=int, default=12)
+    p.add_argument("--sample", type=int, default=40)
     p.add_argument("--tickers", nargs="*")
     args = p.parse_args(argv)
     logging.basicConfig(level=logging.WARNING,
