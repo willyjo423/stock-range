@@ -1,0 +1,94 @@
+name: Flow
+
+# Three scans a session. The schedule is the product: differencing consecutive
+# snapshots is the only free way to tell one large order from four hundred
+# small ones, and a single end-of-day run loses it entirely.
+#
+# US options trade 13:30-20:00 UTC (14:30-21:00 when the US is on standard
+# time). The times below sit mid-morning, mid-afternoon, and after the close,
+# and drift by an hour with daylight saving - which is acceptable, since
+# nothing here is timing-sensitive to the minute.
+on:
+  schedule:
+    - cron: "15 15 * * 1-5"   # ~an hour into the session
+    - cron: "15 18 * * 1-5"   # mid-afternoon
+    - cron: "45 20 * * 1-5"   # after the close, for the settled picture
+  workflow_dispatch:
+    inputs:
+      tickers:
+        description: "Specific tickers instead of the whole index"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: flow
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Offline checks
+        run: python test_flow.py
+
+      - name: Restore intraday snapshots
+        # These are what the next scan differences against. Losing them costs
+        # the burst measurement for the rest of the day, not the scan itself.
+        uses: actions/cache@v4
+        with:
+          path: data/flow/snapshots
+          key: flow-snap-${{ github.run_id }}
+          restore-keys: |
+            flow-snap-
+
+      - name: Restore price cache
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: vol-flow-${{ github.run_id }}
+          restore-keys: |
+            vol-daily-
+            vol-cache-
+
+      - name: Scan
+        # The first scan of the day also settles yesterday's flags against
+        # this morning's open interest, which is free - the chain is already
+        # in hand.
+        run: |
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" -lt 16 ]; then EXTRA="--confirm"; else EXTRA=""; fi
+          if [ -n "${{ inputs.tickers }}" ]; then
+            python flow_scan.py --tickers ${{ inputs.tickers }} $EXTRA
+          else
+            python flow_scan.py $EXTRA
+          fi
+
+      - name: Grade the flags whose weeks have closed
+        # Never let the scoreboard take the scan down with it.
+        continue-on-error: true
+        run: python flow_grade.py --write
+
+      - name: Publish
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f docs/ data/flow/flags/
+          git diff --staged --quiet && echo "nothing changed" && exit 0
+          git commit -m "Flow: $(date -u +'%Y-%m-%d %H:%M')"
+          git pull --rebase --autostash origin main || true
+          git push
