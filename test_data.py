@@ -174,6 +174,60 @@ def test_reconstruction() -> None:
               "colour" in str(exc).lower(), str(exc)[:120])
 
 
+def test_forward_changes() -> None:
+    """Carrying a published membership forward through a published change log.
+
+    This replaced the Wikipedia scrape as the main path, because the live probe
+    found the change table is no longer on that page at all - only two tables
+    were there, the constituents list and a navigation box. Applying a record
+    forward from a known state also cannot be wrong about where it started,
+    which walking today's index backwards can.
+    """
+    section("CARRYING MEMBERSHIP FORWARD")
+    base = pd.DataFrame([{
+        "date": pd.Timestamp("2019-01-11"),
+        "members": sorted([f"K{i}" for i in range(498)] + ["PCG", "GT"]),
+        "n": 500}])
+    changes = pd.DataFrame([
+        {"date": pd.Timestamp("2018-12-01"), "added": ["EARLY"],
+         "removed": []},
+        {"date": pd.Timestamp("2019-01-18"), "added": ["TFX"],
+         "removed": ["PCG"]},
+        {"date": pd.Timestamp("2019-02-27"), "added": ["WAB"],
+         "removed": ["GT"]},
+    ])
+    fwd = universe.apply_changes_forward(base, changes)
+
+    check("changes before the record ends are ignored", len(fwd) == 2,
+          f"{len(fwd)} - a change already inside the file would double-apply")
+    check("a name that left is gone", "PCG" not in fwd.iloc[0]["members"])
+    check("a name that joined is in", "TFX" in fwd.iloc[0]["members"])
+    check("a one-for-one swap leaves the count alone",
+          set(fwd["n"]) == {500}, str(list(fwd["n"])))
+    check("membership now runs to the last change",
+          fwd["date"].max() == pd.Timestamp("2019-02-27"))
+
+    uni = universe.Universe(
+        pd.concat([base, fwd], ignore_index=True), list(fwd.iloc[-1]["members"]))
+    check("the spliced history still passes the count check",
+          uni.count_check()["ok"], str(uni.count_check()))
+    check("and the names that left are recoverable",
+          {"PCG", "GT"} <= set(uni.all_ever()))
+
+    # A same-day multiple swap arrives as one cell holding several tickers.
+    check("a multi-ticker cell splits",
+          universe._split_cell("FLEX,MRVL") == ["FLEX", "MRVL"])
+    check("an empty cell is no tickers, not one blank one",
+          universe._split_cell("") == [] and universe._split_cell(None) == [])
+    check("a class share is normalised on the way in",
+          universe._split_cell("BRK.B") == ["BRK-B"])
+
+    # And the whole point: an empty change log must not silently look like a
+    # successful extension.
+    empty = universe.apply_changes_forward(base, pd.DataFrame())
+    check("no changes yields nothing, not a fabricated row", empty.empty)
+
+
 # ------------------------------------------------------------------ returns
 def test_returns() -> None:
     section("RETURNS")
@@ -299,7 +353,7 @@ def test_premise() -> None:
 def main() -> int:
     print("Range forecast - offline data layer checks")
     for fn in (test_tickers, test_universe, test_reconstruction,
-               test_returns, test_audit,
+               test_forward_changes, test_returns, test_audit,
                test_realized_vol, test_forward_return, test_premise):
         try:
             fn()

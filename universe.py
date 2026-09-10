@@ -293,6 +293,84 @@ def historical_members() -> pd.DataFrame:
     return df[["date", "members", "n"]]
 
 
+def _split_cell(v) -> list[str]:
+    """A cell holding zero, one, or several tickers.
+
+    The changes file puts a same-day multiple swap in one row, as
+    `"FLEX,MRVL"`, and an empty string where nothing went the other way.
+    """
+    if v is None or (isinstance(v, float) and pd.isna(v)):
+        return []
+    return [normalise_ticker(x) for x in str(v).split(",") if x.strip()]
+
+
+def published_changes() -> pd.DataFrame:
+    """Additions and removals since the plain history file ends.
+
+    A record, not a reconstruction - which is why this is preferred over
+    scraping. Returns one row per change date with the tickers that came in
+    and went out.
+    """
+    blob = _get(config.SP500_CHANGES_URLS)
+    df = pd.read_csv(io.BytesIO(blob))
+    cols = {str(c).strip().lower(): c for c in df.columns}
+    date_c = next((cols[k] for k in cols if "date" in k), None)
+    add_c = next((cols[k] for k in cols if k in ("add", "added", "addition",
+                                                 "additions")), None)
+    rem_c = next((cols[k] for k in cols if k in ("remove", "removed",
+                                                 "removal", "removals")), None)
+    if not (date_c and add_c and rem_c):
+        raise UniverseUnavailable(f"changes file columns unusable: "
+                                  f"{list(df.columns)}")
+
+    out = df[[date_c, add_c, rem_c]].copy()
+    out.columns = ["date", "added", "removed"]
+    out["date"] = pd.to_datetime(out["date"], errors="coerce")
+    out = out.dropna(subset=["date"]).sort_values("date").reset_index(drop=True)
+    out["added"] = out["added"].apply(_split_cell)
+    out["removed"] = out["removed"].apply(_split_cell)
+    log.info("published changes: %d dates, %s to %s", len(out),
+             out["date"].min().date(), out["date"].max().date())
+    return out
+
+
+def apply_changes_forward(base: pd.DataFrame,
+                          changes: pd.DataFrame) -> pd.DataFrame:
+    """Carry a published membership forward through a list of changes.
+
+    Starts from the last state the record actually contains and steps forward,
+    so the starting point cannot be wrong. Each row is written against the date
+    the new membership took effect, which is what `members_on` looks up.
+
+    Removals are applied before additions so that a same-day swap of one name
+    for another leaves the count where it was rather than briefly at 501.
+    """
+    if base is None or base.empty or changes is None or changes.empty:
+        return pd.DataFrame(columns=["date", "members", "n"])
+
+    cutoff = pd.Timestamp(base["date"].max())
+    members = set(base.iloc[-1]["members"])
+    rows = []
+    for r in changes.itertuples(index=False):
+        when = pd.Timestamp(r.date)
+        if when <= cutoff:
+            continue
+        for t in r.removed:
+            members.discard(t)
+        for t in r.added:
+            members.add(t)
+        rows.append({"date": when, "members": sorted(members),
+                     "n": len(members)})
+
+    if not rows:
+        return pd.DataFrame(columns=["date", "members", "n"])
+    df = pd.DataFrame(rows)
+    log.info("carried membership forward through %d changes: %s to %s, "
+             "count %d-%d", len(df), df["date"].min().date(),
+             df["date"].max().date(), df["n"].min(), df["n"].max())
+    return df
+
+
 class Universe:
     """Index membership as of any date, with an honest fallback."""
 
@@ -317,39 +395,68 @@ class Universe:
             log.error("current membership unavailable: %s", exc)
             current = []
 
-        published, rebuilt = None, None
+        published = None
         try:
             published = historical_members()
         except UniverseUnavailable as exc:
             log.warning("membership history file unavailable: %s", exc)
-        if blob is not None and current:
+
+        # Three sources, in descending order of how much they can be trusted.
+        #
+        # 1. The published membership file. A record.
+        # 2. The published changes file, carried forward from wherever the
+        #    membership file stops. Also a record, and it cannot be wrong about
+        #    where it started.
+        # 3. Walking today's index backwards through the Wikipedia table. An
+        #    inference from a scrape, and the live probe found the table is no
+        #    longer even on that page - so this is now a last resort that will
+        #    usually fail, kept because when it works it is free.
+        #
+        # The failure this is built around: the membership file that answered
+        # stopped in January 2019, nobody noticed, and membership was frozen
+        # for seven years while everything downstream looked completely normal.
+        # Whichever path runs, `source` says which, and the probe prints it.
+        forward = None
+        if published is not None:
+            try:
+                forward = apply_changes_forward(published, published_changes())
+            except UniverseUnavailable as exc:
+                log.warning("changes file unavailable: %s", exc)
+
+        rebuilt = None
+        if (forward is None or forward.empty) and blob is not None and current:
             try:
                 rebuilt = reconstruct_members(current, blob)
             except UniverseUnavailable as exc:
                 log.warning("reconstruction failed: %s", exc)
 
-        # The published file is a record and the reconstruction is an
-        # inference, so the file wins where it exists. But the copy that
-        # answered on the first live run stops in January 2019 - seven years
-        # short - and using it alone would freeze membership there and lose
-        # every name that has joined and left since. So the two are spliced:
-        # the file for the deep history, the change log for everything after
-        # it ends.
         history, source = None, None
-        if published is not None and rebuilt is not None:
+        extension = forward if forward is not None and not forward.empty \
+            else rebuilt
+        how = "the published change log" if extension is forward \
+            else "the Wikipedia change table"
+
+        if published is not None and extension is not None and len(extension):
             cutoff = pd.Timestamp(published["date"].max())
-            recent = rebuilt[rebuilt["date"] > cutoff]
+            recent = extension[extension["date"] > cutoff]
             history = (pd.concat([published, recent], ignore_index=True)
                          .sort_values("date").reset_index(drop=True))
-            source = (f"published file to {cutoff.date()}, then the change log "
-                      f"({len(recent)} later changes)")
+            source = (f"published file to {cutoff.date()}, then {how} "
+                      f"({len(recent)} later changes, to "
+                      f"{history['date'].max().date()})")
         elif published is not None:
             history, source = published, "published file only"
-            log.warning("no change log to extend the file past %s; membership "
-                        "is frozen after that date",
-                        published["date"].max().date())
+            last = published["date"].max().date()
+            if (pd.Timestamp.today() - pd.Timestamp(last)).days > 400:
+                log.error(
+                    "MEMBERSHIP FROZEN AT %s - no change log could extend it. "
+                    "Every year after that date trains on the index as it "
+                    "stood then, which silently drops every company added "
+                    "since. Do not bootstrap on this.", last)
+            else:
+                log.warning("no change log to extend the file past %s", last)
         elif rebuilt is not None:
-            history, source = rebuilt, "reconstructed from the change log"
+            history, source = rebuilt, "reconstructed from the change table"
 
         if not current and history is not None and len(history):
             current = list(history.iloc[-1]["members"])
