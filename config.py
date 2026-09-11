@@ -83,7 +83,13 @@ HISTORY_START = os.environ.get("HISTORY_START", "2004-01-01")
 # Trading days, not calendar days: 5 is a week, 21 a month, 63 a quarter.
 # Each horizon gets its own model. Interpolating one model across horizons
 # sounds tidy and quietly breaks calibration at the ends.
-HORIZONS = {"1 week": 5, "1 month": 21, "3 months": 63}
+# Three months was built, measured and dropped. On the full universe it was
+# never re-tested, but on 250 names it lost to the naive band at every attempt
+# (-0.63%, -0.67%) with only ~10,500 independent windows behind it, against the
+# ~12,000 the fixtures said the approach needs before it beats doing nothing.
+# The horizon also is not wanted. Keeping a horizon that loses, in order to
+# print a caveat next to it, is worse than not shipping it.
+HORIZONS = {"1 week": 5, "1 month": 21}
 
 # The quantiles the model predicts directly, rather than deriving from a
 # standard deviation. Stock returns are fat-tailed and left-skewed, so a

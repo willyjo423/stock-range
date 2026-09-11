@@ -242,10 +242,17 @@ def test_direction_on_page():
     check("the arrows are explained", "subtracted" in html)
     check("their weakness is stated plainly",
           "weakest thing on the page" in html)
-    check("the page states the measured skill rather than a promise to measure",
-          "51.3%" in html)
-    check("and states the base rate the raw tilt loses to",
-          "54.5%" in html)
+    # Matched by shape, not by value. The figures come from the last bootstrap
+    # and change every time one runs; a test pinned to "51.3%" fails on a
+    # better measurement, which is exactly backwards.
+    import re
+    check("the page states a measured hit rate, not a promise to measure one",
+          bool(re.search(r"\d\d\.\d% ?'?\s*'?of the time", html)), 
+          "no measured hit rate found")
+    check("and the base rate the raw tilt is compared against",
+          bool(re.search(r"base rate of.{0,20}\d\d\.\d%", html, re.S)))
+    check("the old promise to measure it later is gone",
+          "comes back at zero" not in html)
 
 if __name__ == "__main__":
     sys.exit(main())

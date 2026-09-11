@@ -192,27 +192,46 @@ That is the product, and the pinball gain is the tiebreak.
 
 ## Where it landed
 
-Second bootstrap, after removing the two harmful feature groups and fixing the
-calibration split. 250 index members, 2004-2026:
+Full universe - every S&P 500 member since 2004, 703 names with earnings data,
+**3.35 million usable rows** and 2.85 million training rows per horizon.
 
-| horizon | vs naive | coverage | worst bucket | naive's worst | windows |
+| horizon | vs naive | coverage | worst vol bucket | naive's worst | independent windows |
 |---|---|---|---|---|---|
-| 1 week | **+5.3%** | 49.8% | **0.5** | 18.6 | 125,789 |
-| 1 month | **+1.0%** | 48.5% | **2.7** | 9.5 | 29,857 |
-| 3 months | −0.7% | 46.5% | 6.5 | 9.2 | 9,892 |
+| 1 week | **+5.53%** | 49.9% | **0.2** | 18.2 | 543,450 |
+| 1 month | **+1.31%** | 49.0% | **1.9** | 9.7 | 129,165 |
 
-At one week the conditional calibration is essentially exact — 49.5%, 49.7%,
-50.2%, 49.8% across the four volatility quartiles, against a naive band running
-31.4% to 63.2%. That 32-point spread closing to half a point is what this
-project is for.
+One-week conditional calibration, which is the product:
 
-Three months still loses, and the reason is visible in the last column: 9,892
-independent windows is below the crossover measured on the fixtures, where the
-model needs roughly 12,000 before it beats doing nothing. Running the full
-~1,000-name universe instead of a 250 sample should roughly quadruple that.
-Until it does, that horizon should not ship.
+| volatility quartile | model | naive band |
+|---|---|---|
+| calmest | 49.9% | 31.8% |
+| calm | 49.9% | 43.9% |
+| active | 50.2% | 51.8% |
+| wildest | 49.9% | 63.2% |
 
----
+A 31-point spread closed to **two-tenths of a point**, and the model's band is
+only 7% wider than the naive one to do it.
+
+### The sample size mattered more than expected
+
+The same code on a 250-name sample, run twice:
+
+| horizon | 250 names | full universe |
+|---|---|---|
+| 1 week | +5.24% | +5.53% |
+| 1 month | +0.59% | **+1.31%** |
+| 1 month, worst bucket | 4.4 | **1.9** |
+
+One week barely moved - it had 134,000 independent windows already, well past
+the point of diminishing returns. One month more than doubled its edge and
+halved its worst bucket, because 32,000 windows was not enough and 129,000 is.
+The earlier runs were understating the model, not measuring it.
+
+**Three months is not shipped.** It lost to the naive band on every sample it
+was tried on (-0.63%, -0.67%) with roughly 10,500 independent windows, against
+the ~12,000 the fixtures say the approach needs before it beats doing nothing.
+It was never re-run on the full universe because the horizon was not wanted;
+what is certain is that it was never shown to work.
 
 ## What the first bootstrap found
 
@@ -279,198 +298,40 @@ date.
 
 ## The direction arrows, and what they are worth
 
-The page marks each range with an up, down or flat indicator. Two things make
-it honest rather than decorative.
+The page marks each range with an up, down or flat indicator. I expected this
+section to end with "so they came off the page". It does not.
 
-**It is measured against the day's cross-section, not against zero.** Every
-stock's median forecast sits above today's price over a quarter, because the
-market drifts up and the model learned that from twenty years of it. That part
-is identical for all five hundred names and nobody can act on it. The arrow
-shows each stock's tilt *minus the median tilt across the whole page*, which
-leaves only what is specific to the name. Without that subtraction every row
-would carry an up arrow.
+**The subtraction is the entire effect.** Every stock's median forecast sits
+above today's price, because the market drifts up and the model learned that
+from twenty years of it. That part is identical for all five hundred names and
+nobody can act on it. The arrow shows each stock's tilt *minus the median tilt
+across the whole page*.
 
-**Whether even that carries information is measured, not assumed.** Every
-bootstrap now reports:
+Measured on the full universe, 543,450 independent windows:
 
 ```
 Direction, which this model does not claim to predict:
-  called the right way   xx.x%
-  always saying up       xx.x%
-  -> skill +x.x points (t = +x.x) on nn,nnn windows
-  against the day's own cross-section: xx.x% (t = +x.x)
+  called the right way   53.7%
+  always saying up       54.4%
+  -> skill -0.7 points (t = -10.5) on 540,912 windows
+  against the day's own cross-section: 51.5% (t = +21.4, n=528,282)
 ```
 
-The base rate matters more than the hit rate. Equities rise more often than
-they fall, so a model that always says "up" scores well above 50% while knowing
-nothing at all. Skill is the gap between the two, and the t says whether that
-gap survives.
+Read the first two lines before the third. **Against the base rate, the raw
+tilt is actively wrong** - it calls direction correctly 53.7% of the time when
+simply saying "up" every time scores 54.4%, and that gap is not noise at
+t = -10.5. A page showing the raw tilt would have had arrows pointing the wrong
+way, and it would have looked entirely reasonable.
 
-**If it comes back near zero, take the arrows off the page.** The features are
-all measures of how far a stock moves, not which way; nothing in the design
-gives it directional information, and a faint arrow that means nothing is worse
-than no arrow because it invites exactly the reading the rest of the page is
-careful to avoid. On the fixtures — which contain no directional signal by
-construction — it correctly reports 50.0% against a 50.1% base rate at t = −0.4.
+Against the day's own cross-section it is +1.5 points, and +1.4 over a month.
+That result has now reproduced across three independent fits at two sample
+sizes - 51.3%, 51.3%, 51.5% - which is harder to dismiss than any single t.
 
----
+**Two reasons it is smaller than it looks.** The windows share dates with one
+another, and the t-statistic treats them as independent, so the printed
+confidence is flattering. Cross-sectional demeaning removes the market-wide
+component, which is most of the shared variation, but not all of it. And 1.5
+points is 1.5 points.
 
-# Options flow
-
-A second thing built on the same universe and, more importantly, on the same
-bands. Short-dated, at the money, large premium, into a contract that barely
-existed yesterday.
-
-## What free data can and cannot do
-
-The four criteria split cleanly, and the split is the whole design.
-
-| criterion | free data | fidelity |
-|---|---|---|
-| expiration inside two weeks | exact | full |
-| at the money | exact | full |
-| low open interest | exact, and better than exact | full |
-| $50,000+ premium | volume x mid x 100 | **approximate** |
-
-Open interest is the strong one. It settles overnight and does **not** tick
-during the session, so the figure in a chain pulled at 11am is yesterday's.
-Today's volume against it is a real before-and-after, and "more contracts
-changed hands today than existed yesterday" is about as close to *new
-positioning* as anything gets without a tape.
-
-Premium is the weak one, and there is no fixing it. On a tape, $50k of premium
-is one trade's size times its price. Here it is everything that traded in that
-contract, however many hands it took. One $80,000 sweep and eight hundred $100
-retail lots produce the same number.
-
-## The one lever against that: time
-
-Scan several times a session and difference the cumulative volume. A block
-lands almost entirely inside one interval; a dribble spreads across all of
-them. That share is `burst`, and a contract that bursts near 1.0 on meaningful
-premium is the closest free data gets to *one order did that*.
-
-It needs at least two snapshots in a day, and reports `None` until it has
-them - not 1.0, which would claim concentration that was never measured. This
-is the reason the workflow runs three times a session rather than once after
-the close.
-
-`test_flow.py` plants the two side by side: `BLOCK` trades its whole 900 lots
-in the afternoon interval, `DRIBBLE` trades 450 in each. Identical premium,
-bursts of 1.0 and 0.5.
-
-## What is deliberately not attempted
-
-**Bought or sold.** That needs the quote standing at the instant of the trade.
-What is available is the last print against the current market, which is a fair
-proxy when the trade just happened and meaningless when it happened at 10am. So
-it is computed, and marked `firm` only when the interval's own volume proves
-the trade fell inside it. Otherwise it reads `unknown`.
-
-**Opening versus closing intent.** Dropped from the brief. But next morning's
-open interest answers it a day late for free - if OI rose by roughly what
-traded, the position was opened and held - so every flag gets that stamp on the
-following run, and the grader checks whether the stamp separates anything.
-
-**Anything called bullish or bearish.** Call premium is call premium. Someone
-sold every one of those contracts.
-
-## The six decoys
-
-The easy test is that a screen flags the planted block. The useful test is that
-it declines to flag six things that look like it in exactly one respect:
-
-| decoy | identical to the block except | must fail on |
-|---|---|---|
-| `DRIBBLE` | 50,000 open interest | new positioning |
-| `FARDATE` | thirty days out | expiry |
-| `OTM` | 25% out of the money | moneyness |
-| `WIDE` | quoted 0.02 / 2.00 | quote quality |
-| `SMALL` | a tenth the size | premium |
-| `QUIET` | never trades | premium |
-
-And each gate is checked for doing work: loosening it must let its decoy
-through. A gate that changes nothing when loosened was never catching anything.
-
-## How the scan gets graded, and why the band is the yardstick
-
-This is the part that makes it worth running rather than worth looking at.
-
-Every "unusual options activity" study has the same hole: flagged names skew
-toward volatile names, volatile names move more, so any screen looks prescient
-if movement is measured in percent. The fix here was already built - the range
-model states, per stock, where it lands half the time over the next week,
-conditional on how volatile that stock already is.
-
-So the question has an exact form:
-
-> Do flagged names leave **their own** middle-half band more often than
-> unflagged names on the same days?
-
-A band is 50/50 by construction, so a wild name gets no credit for being wild.
-`test_flow.py` builds the trap directly: flagged names drawn only from the
-high-volatility group, moving four times as far in raw terms, and checks that
-the grader reports no effect - which it must, because there is none.
-
-Three readings, in increasing order of power: breakout rate (binary, weakest),
-move size in band half-widths (continuous, extracts far more from a small
-archive), and direction for one-sided flags only. Direction is the one most
-likely to be a null and it is reported against the unflagged base rate rather
-than against 50%.
-
-Every result prints its own power alongside it, because *no effect detected*
-and *not enough data to detect one* read identically and mean opposite things.
-An eight-point effect needs roughly 156 flagged observations before it clears
-two standard errors; until then the grader says `NOT ENOUGH YET` instead of
-printing a verdict.
-
-**And if it stays flat as the sample grows, the honest move is to stop running
-the scan** - not to loosen the filters until something looks significant.
-
-## No lookahead
-
-A flag is raised during the session on day D from a delayed chain. The band it
-is graded against is anchored to D's *close* and covers the week after it. So
-whatever the flow already did to the price on day D sits inside the anchor, not
-inside the outcome. The test is conservative on purpose.
-
-## Run the probe first
-
-Actions -> **Flow probe** -> *Run workflow*. Twice, an hour apart, during US
-market hours (13:30-20:00 UTC). Then send me the output.
-
-Nothing in `chains.py` was written with a live endpoint in front of it, and
-that is exactly the situation that produced four separate bugs in the football
-builds. The probe answers five things:
-
-1. Which source answers, and how long 500 names would take.
-2. Whether the fields are there, and whether contract symbols agree with their
-   own stated strikes and expiries.
-3. **How many contracts survive each filter.** If the whole index would flag
-   three thousand names a day the filters are decoration; if it would flag zero
-   they can never be graded. Both are findable now rather than in a month.
-4. Whether open interest really does hold still during the session. This is
-   what the second run answers, and the new-positioning filter rests on it.
-5. What a day of scanning costs in requests and minutes.
-
-## Files
-
-| file | what it does |
-|---|---|
-| `chains.py` | option chains from CBOE and yfinance, normalised; OCC symbol parsing; a quality check |
-| `flow.py` | enrichment, snapshot differencing, the four gates, scoring, the day's flag file |
-| `flow_scan.py` | one scan, end to end - the thing the schedule runs |
-| `flow_grade.py` | forward grading against the range model's own bands |
-| `flow_dashboard.py` | `docs/flow.html`, with the data's limits printed on the page |
-| `flow_probe.py` | the live probe - run this first |
-| `flow_fixtures.py` | a synthetic chain with a planted block and six decoys |
-| `test_flow.py` | 81 offline checks |
-
-## If free turns out not to be enough
-
-The probe's section 3 is what decides it. If short-dated ATM premium is so
-diffuse that nothing separates a block from background noise, the missing piece
-is the tape, and the tape is a paid feed - a per-trade options API, or a retail
-flow tool. That is a real answer and worth reaching honestly rather than by
-building a screen that fires often enough to feel useful. The grader is what
-tells the difference.
+So the arrows stay, with the number printed beside them on the page. They are
+not a reason to buy anything.
