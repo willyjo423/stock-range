@@ -311,7 +311,17 @@ def render(payload: dict, standalone: bool = True) -> str:
         '<th class="sortable">last</th>'
         f'{head}</tr></thead><tbody>{body}</tbody></table></div>'
         + ('' if rows else '<p class="sub">No forecasts in this run.</p>')
-        + '<footer>Forecasts of range only. Not investment advice.</footer>'
+        # The options view is the page that answers "is this option worth
+        # buying", and without a link from here it is a page nobody lands on.
+        # Every other page already linked back to this one; this direction was
+        # the only one missing, which is why the options work was invisible.
+        + '<footer>'
+          '<a href="./options.html">Options &mdash; what a move should cost, '
+          'and which way it leans</a> &middot; '
+          '<a href="./results.html">How the ranges have scored</a> &middot; '
+          '<a href="./flow.html">Options flow</a>'
+          '<br><br>Forecasts of range only. Not investment advice.'
+          '</footer>'
         '</div>')
 
     if not standalone:
