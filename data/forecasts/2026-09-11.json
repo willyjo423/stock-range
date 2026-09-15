@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T22:42:14+00:00",
+  "generated_at": "2026-09-15T00:21:29+00:00",
   "asof": "2026-09-11",
   "tickers": [
     {
@@ -68,7 +68,7 @@
           "days": 21,
           "low": 80.47,
           "high": 96.7,
-          "wide_low": 74.42,
+          "wide_low": 74.34,
           "wide_high": 105.12,
           "mid": 88.52,
           "pct_low": -8.9,
@@ -77,7 +77,7 @@
           "days_to_earnings": 54.0,
           "tilt_pct": 0.19,
           "rel_tilt_pct": -1.08,
-          "skew": -0.005,
+          "skew": -0.008,
           "lean": "down"
         }
       }
@@ -92,32 +92,32 @@
           "days": 5,
           "low": 57.43,
           "high": 60.73,
-          "wide_low": 55.79,
-          "wide_high": 62.38,
-          "mid": 59.12,
+          "wide_low": 55.81,
+          "wide_high": 62.42,
+          "mid": 59.17,
           "pct_low": -2.8,
           "pct_high": 2.8,
           "earnings_inside": 0.0,
           "days_to_earnings": 42.0,
-          "tilt_pct": 0.1,
-          "rel_tilt_pct": -0.17,
-          "skew": -0.039,
+          "tilt_pct": 0.19,
+          "rel_tilt_pct": -0.09,
+          "skew": -0.045,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 55.65,
-          "high": 63.11,
+          "low": 55.7,
+          "high": 63.25,
           "wide_low": 52.39,
-          "wide_high": 66.4,
-          "mid": 59.44,
-          "pct_low": -5.8,
-          "pct_high": 6.9,
+          "wide_high": 66.38,
+          "mid": 59.55,
+          "pct_low": -5.7,
+          "pct_high": 7.1,
           "earnings_inside": 0.0,
           "days_to_earnings": 42.0,
-          "tilt_pct": 0.64,
-          "rel_tilt_pct": -0.63,
-          "skew": -0.065,
+          "tilt_pct": 0.83,
+          "rel_tilt_pct": -0.44,
+          "skew": -0.082,
           "lean": "down"
         }
       }
@@ -171,33 +171,33 @@
         "1 week": {
           "days": 5,
           "low": 191.35,
-          "high": 206.18,
+          "high": 206.39,
           "wide_low": 184.77,
-          "wide_high": 213.37,
+          "wide_high": 213.66,
           "mid": 199.52,
           "pct_low": -4.0,
-          "pct_high": 3.5,
+          "pct_high": 3.6,
           "earnings_inside": 0.0,
           "days_to_earnings": 82.0,
           "tilt_pct": 0.12,
           "rel_tilt_pct": -0.16,
-          "skew": -0.067,
+          "skew": -0.057,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 186.72,
+          "low": 186.38,
           "high": 214.01,
-          "wide_low": 172.72,
-          "wide_high": 227.05,
-          "mid": 201.08,
-          "pct_low": -6.3,
+          "wide_low": 172.37,
+          "wide_high": 227.16,
+          "mid": 201.03,
+          "pct_low": -6.5,
           "pct_high": 7.4,
           "earnings_inside": 0.0,
           "days_to_earnings": 82.0,
-          "tilt_pct": 0.9,
-          "rel_tilt_pct": -0.37,
-          "skew": -0.112,
+          "tilt_pct": 0.87,
+          "rel_tilt_pct": -0.4,
+          "skew": -0.115,
           "lean": "down"
         }
       }
@@ -410,18 +410,18 @@
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 247.42,
+          "low": 247.13,
           "high": 278.03,
-          "wide_low": 230.96,
-          "wide_high": 296.43,
+          "wide_low": 230.83,
+          "wide_high": 296.42,
           "mid": 262.04,
-          "pct_low": -4.7,
+          "pct_low": -4.8,
           "pct_high": 7.1,
           "earnings_inside": 1.0,
           "days_to_earnings": 6.0,
           "tilt_pct": 0.89,
           "rel_tilt_pct": 0.62,
-          "skew": -0.012,
+          "skew": -0.014,
           "lean": "up"
         },
         "1 month": {
@@ -429,7 +429,7 @@
           "low": 234.22,
           "high": 290.89,
           "wide_low": 211.76,
-          "wide_high": 319.2,
+          "wide_high": 319.36,
           "mid": 263.57,
           "pct_low": -9.8,
           "pct_high": 12.0,
@@ -437,7 +437,47 @@
           "days_to_earnings": 6.0,
           "tilt_pct": 1.48,
           "rel_tilt_pct": 0.2,
-          "skew": -0.067,
+          "skew": -0.065,
+          "lean": "flat"
+        }
+      }
+    },
+    {
+      "ticker": "NDAQ",
+      "asof": "2026-09-11",
+      "close": 91.19,
+      "trailing_vol": 0.21,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 89.66,
+          "high": 93.35,
+          "wide_low": 87.68,
+          "wide_high": 95.17,
+          "mid": 91.42,
+          "pct_low": -1.7,
+          "pct_high": 2.4,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 42.0,
+          "tilt_pct": 0.25,
+          "rel_tilt_pct": -0.02,
+          "skew": -0.019,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 87.91,
+          "high": 96.21,
+          "wide_low": 84.02,
+          "wide_high": 99.92,
+          "mid": 92.54,
+          "pct_low": -3.6,
+          "pct_high": 5.5,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 42.0,
+          "tilt_pct": 1.47,
+          "rel_tilt_pct": 0.2,
+          "skew": -0.115,
           "lean": "flat"
         }
       }
@@ -479,46 +519,6 @@
           "rel_tilt_pct": -1.47,
           "skew": -0.063,
           "lean": "down"
-        }
-      }
-    },
-    {
-      "ticker": "NDAQ",
-      "asof": "2026-09-11",
-      "close": 91.19,
-      "trailing_vol": 0.211,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 89.55,
-          "high": 93.34,
-          "wide_low": 87.65,
-          "wide_high": 95.33,
-          "mid": 91.41,
-          "pct_low": -1.8,
-          "pct_high": 2.4,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 42.0,
-          "tilt_pct": 0.24,
-          "rel_tilt_pct": -0.04,
-          "skew": -0.0,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 87.85,
-          "high": 96.23,
-          "wide_low": 83.99,
-          "wide_high": 99.94,
-          "mid": 92.54,
-          "pct_low": -3.7,
-          "pct_high": 5.5,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 42.0,
-          "tilt_pct": 1.47,
-          "rel_tilt_pct": 0.2,
-          "skew": -0.115,
-          "lean": "flat"
         }
       }
     },
@@ -726,38 +726,38 @@
       "ticker": "ALB",
       "asof": "2026-09-11",
       "close": 117.52,
-      "trailing_vol": 0.488,
+      "trailing_vol": 0.485,
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 112.6,
-          "high": 123.17,
-          "wide_low": 108.81,
-          "wide_high": 128.1,
-          "mid": 117.76,
-          "pct_low": -4.2,
+          "low": 112.48,
+          "high": 123.16,
+          "wide_low": 108.62,
+          "wide_high": 128.08,
+          "mid": 117.75,
+          "pct_low": -4.3,
           "pct_high": 4.8,
           "earnings_inside": 0.0,
           "days_to_earnings": 55.0,
           "tilt_pct": 0.2,
-          "rel_tilt_pct": -0.07,
-          "skew": 0.031,
+          "rel_tilt_pct": -0.08,
+          "skew": 0.021,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 109.02,
-          "high": 131.64,
-          "wide_low": 101.24,
-          "wide_high": 141.87,
-          "mid": 119.69,
-          "pct_low": -7.2,
-          "pct_high": 12.0,
+          "low": 108.99,
+          "high": 131.42,
+          "wide_low": 101.16,
+          "wide_high": 141.72,
+          "mid": 119.63,
+          "pct_low": -7.3,
+          "pct_high": 11.8,
           "earnings_inside": 0.0,
           "days_to_earnings": 55.0,
-          "tilt_pct": 1.83,
-          "rel_tilt_pct": 0.56,
-          "skew": 0.008,
+          "tilt_pct": 1.78,
+          "rel_tilt_pct": 0.51,
+          "skew": 0.005,
           "lean": "up"
         }
       }
@@ -803,46 +803,6 @@
       }
     },
     {
-      "ticker": "GRMN",
-      "asof": "2026-09-11",
-      "close": 282.67,
-      "trailing_vol": 0.23,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 277.36,
-          "high": 289.69,
-          "wide_low": 271.65,
-          "wide_high": 296.46,
-          "mid": 283.42,
-          "pct_low": -1.9,
-          "pct_high": 2.5,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 48.0,
-          "tilt_pct": 0.26,
-          "rel_tilt_pct": -0.01,
-          "skew": 0.029,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 270.77,
-          "high": 299.89,
-          "wide_low": 256.61,
-          "wide_high": 312.97,
-          "mid": 286.19,
-          "pct_low": -4.2,
-          "pct_high": 6.1,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 48.0,
-          "tilt_pct": 1.24,
-          "rel_tilt_pct": -0.03,
-          "skew": -0.099,
-          "lean": "flat"
-        }
-      }
-    },
-    {
       "ticker": "ON",
       "asof": "2026-09-11",
       "close": 76.14,
@@ -879,6 +839,46 @@
           "rel_tilt_pct": 0.67,
           "skew": -0.058,
           "lean": "up"
+        }
+      }
+    },
+    {
+      "ticker": "CPRT",
+      "asof": "2026-09-11",
+      "close": 29.95,
+      "trailing_vol": 0.474,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 28.97,
+          "high": 30.97,
+          "wide_low": 27.96,
+          "wide_high": 32.0,
+          "mid": 30.0,
+          "pct_low": -3.3,
+          "pct_high": 3.4,
+          "earnings_inside": 0.0,
+          "days_to_earnings": null,
+          "tilt_pct": 0.17,
+          "rel_tilt_pct": -0.11,
+          "skew": -0.044,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 27.99,
+          "high": 32.01,
+          "wide_low": 26.19,
+          "wide_high": 33.87,
+          "mid": 30.04,
+          "pct_low": -6.6,
+          "pct_high": 6.9,
+          "earnings_inside": 0.0,
+          "days_to_earnings": null,
+          "tilt_pct": 0.3,
+          "rel_tilt_pct": -0.97,
+          "skew": -0.067,
+          "lean": "down"
         }
       }
     },
@@ -923,42 +923,42 @@
       }
     },
     {
-      "ticker": "CPRT",
+      "ticker": "GRMN",
       "asof": "2026-09-11",
-      "close": 29.95,
-      "trailing_vol": 0.474,
+      "close": 282.67,
+      "trailing_vol": 0.239,
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 28.99,
-          "high": 30.97,
-          "wide_low": 27.99,
-          "wide_high": 32.0,
-          "mid": 30.0,
-          "pct_low": -3.2,
-          "pct_high": 3.4,
+          "low": 277.08,
+          "high": 289.92,
+          "wide_low": 271.87,
+          "wide_high": 297.02,
+          "mid": 283.38,
+          "pct_low": -2.0,
+          "pct_high": 2.6,
           "earnings_inside": 0.0,
-          "days_to_earnings": null,
-          "tilt_pct": 0.17,
-          "rel_tilt_pct": -0.11,
-          "skew": -0.036,
+          "days_to_earnings": 48.0,
+          "tilt_pct": 0.25,
+          "rel_tilt_pct": -0.03,
+          "skew": 0.063,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 27.98,
-          "high": 32.01,
-          "wide_low": 26.19,
-          "wide_high": 33.87,
-          "mid": 30.04,
-          "pct_low": -6.6,
-          "pct_high": 6.9,
+          "low": 270.58,
+          "high": 299.91,
+          "wide_low": 255.93,
+          "wide_high": 312.94,
+          "mid": 286.09,
+          "pct_low": -4.3,
+          "pct_high": 6.1,
           "earnings_inside": 0.0,
-          "days_to_earnings": null,
-          "tilt_pct": 0.3,
-          "rel_tilt_pct": -0.97,
-          "skew": -0.067,
-          "lean": "down"
+          "days_to_earnings": 48.0,
+          "tilt_pct": 1.2,
+          "rel_tilt_pct": -0.07,
+          "skew": -0.108,
+          "lean": "flat"
         }
       }
     },
@@ -2403,46 +2403,6 @@
       }
     },
     {
-      "ticker": "WMB",
-      "asof": "2026-09-11",
-      "close": 72.85,
-      "trailing_vol": 0.311,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 71.02,
-          "high": 74.88,
-          "wide_low": 68.9,
-          "wide_high": 76.54,
-          "mid": 72.93,
-          "pct_low": -2.5,
-          "pct_high": 2.8,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 53.0,
-          "tilt_pct": 0.11,
-          "rel_tilt_pct": -0.17,
-          "skew": -0.081,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 69.34,
-          "high": 76.7,
-          "wide_low": 65.61,
-          "wide_high": 80.22,
-          "mid": 73.2,
-          "pct_low": -4.8,
-          "pct_high": 5.3,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 53.0,
-          "tilt_pct": 0.48,
-          "rel_tilt_pct": -0.79,
-          "skew": -0.089,
-          "lean": "down"
-        }
-      }
-    },
-    {
       "ticker": "FISV",
       "asof": "2026-09-11",
       "close": 51.58,
@@ -2491,17 +2451,17 @@
         "1 week": {
           "days": 5,
           "low": 89.69,
-          "high": 94.04,
+          "high": 94.05,
           "wide_low": 87.63,
           "wide_high": 96.08,
-          "mid": 91.83,
+          "mid": 91.84,
           "pct_low": -2.0,
           "pct_high": 2.7,
           "earnings_inside": 0.0,
           "days_to_earnings": 42.0,
-          "tilt_pct": 0.32,
-          "rel_tilt_pct": 0.04,
-          "skew": -0.017,
+          "tilt_pct": 0.33,
+          "rel_tilt_pct": 0.05,
+          "skew": -0.019,
           "lean": "flat"
         },
         "1 month": {
@@ -2679,6 +2639,46 @@
           "rel_tilt_pct": -0.05,
           "skew": -0.03,
           "lean": "flat"
+        }
+      }
+    },
+    {
+      "ticker": "WMB",
+      "asof": "2026-09-11",
+      "close": 72.85,
+      "trailing_vol": 0.313,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 71.01,
+          "high": 74.83,
+          "wide_low": 68.94,
+          "wide_high": 76.48,
+          "mid": 72.88,
+          "pct_low": -2.5,
+          "pct_high": 2.7,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 53.0,
+          "tilt_pct": 0.04,
+          "rel_tilt_pct": -0.24,
+          "skew": -0.071,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 69.27,
+          "high": 76.72,
+          "wide_low": 65.56,
+          "wide_high": 80.27,
+          "mid": 73.2,
+          "pct_low": -4.9,
+          "pct_high": 5.3,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 53.0,
+          "tilt_pct": 0.48,
+          "rel_tilt_pct": -0.79,
+          "skew": -0.089,
+          "lean": "down"
         }
       }
     },
@@ -2934,14 +2934,14 @@
           "high": 68.09,
           "wide_low": 62.02,
           "wide_high": 69.9,
-          "mid": 66.0,
+          "mid": 65.99,
           "pct_low": -3.2,
           "pct_high": 3.3,
           "earnings_inside": 0.0,
           "days_to_earnings": 48.0,
-          "tilt_pct": 0.09,
-          "rel_tilt_pct": -0.19,
-          "skew": -0.04,
+          "tilt_pct": 0.08,
+          "rel_tilt_pct": -0.2,
+          "skew": -0.037,
           "lean": "flat"
         },
         "1 month": {
@@ -3131,9 +3131,9 @@
         "1 week": {
           "days": 5,
           "low": 185.92,
-          "high": 193.54,
+          "high": 193.55,
           "wide_low": 182.05,
-          "wide_high": 197.03,
+          "wide_high": 197.05,
           "mid": 189.71,
           "pct_low": -1.7,
           "pct_high": 2.3,
@@ -3141,23 +3141,23 @@
           "days_to_earnings": 40.0,
           "tilt_pct": 0.27,
           "rel_tilt_pct": -0.0,
-          "skew": -0.042,
+          "skew": -0.041,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 183.62,
+          "low": 183.65,
           "high": 199.97,
           "wide_low": 176.4,
           "wide_high": 207.22,
-          "mid": 191.84,
+          "mid": 191.85,
           "pct_low": -2.9,
           "pct_high": 5.7,
           "earnings_inside": 0.0,
           "days_to_earnings": 40.0,
-          "tilt_pct": 1.39,
-          "rel_tilt_pct": 0.12,
-          "skew": -0.042,
+          "tilt_pct": 1.4,
+          "rel_tilt_pct": 0.13,
+          "skew": -0.043,
           "lean": "flat"
         }
       }
@@ -3172,7 +3172,7 @@
           "days": 5,
           "low": 103.58,
           "high": 106.91,
-          "wide_low": 101.98,
+          "wide_low": 101.96,
           "wide_high": 108.26,
           "mid": 105.24,
           "pct_low": -1.3,
@@ -3181,7 +3181,7 @@
           "days_to_earnings": 55.0,
           "tilt_pct": 0.32,
           "rel_tilt_pct": 0.05,
-          "skew": -0.053,
+          "skew": -0.056,
           "lean": "flat"
         },
         "1 month": {
@@ -3189,7 +3189,7 @@
           "low": 102.92,
           "high": 109.31,
           "wide_low": 100.02,
-          "wide_high": 112.39,
+          "wide_high": 112.42,
           "mid": 106.11,
           "pct_low": -1.9,
           "pct_high": 4.2,
@@ -3197,7 +3197,7 @@
           "days_to_earnings": 55.0,
           "tilt_pct": 1.15,
           "rel_tilt_pct": -0.12,
-          "skew": -0.014,
+          "skew": -0.011,
           "lean": "flat"
         }
       }
@@ -3252,7 +3252,7 @@
           "days": 5,
           "low": 206.63,
           "high": 215.44,
-          "wide_low": 202.07,
+          "wide_low": 202.05,
           "wide_high": 219.63,
           "mid": 211.19,
           "pct_low": -2.0,
@@ -3261,7 +3261,7 @@
           "days_to_earnings": 55.0,
           "tilt_pct": 0.2,
           "rel_tilt_pct": -0.07,
-          "skew": -0.059,
+          "skew": -0.061,
           "lean": "flat"
         },
         "1 month": {
@@ -3293,7 +3293,7 @@
           "low": 271.14,
           "high": 289.69,
           "wide_low": 262.64,
-          "wide_high": 299.07,
+          "wide_high": 299.08,
           "mid": 281.5,
           "pct_low": -3.5,
           "pct_high": 3.1,
@@ -3301,14 +3301,14 @@
           "days_to_earnings": 50.0,
           "tilt_pct": 0.16,
           "rel_tilt_pct": -0.11,
-          "skew": -0.068,
+          "skew": -0.067,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
           "low": 259.62,
           "high": 301.0,
-          "wide_low": 240.45,
+          "wide_low": 240.42,
           "wide_high": 319.23,
           "mid": 283.66,
           "pct_low": -7.6,
@@ -3317,7 +3317,7 @@
           "days_to_earnings": 50.0,
           "tilt_pct": 0.93,
           "rel_tilt_pct": -0.34,
-          "skew": -0.166,
+          "skew": -0.167,
           "lean": "flat"
         }
       }
@@ -3450,7 +3450,7 @@
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 33.63,
+          "low": 33.62,
           "high": 34.68,
           "wide_low": 33.11,
           "wide_high": 35.14,
@@ -3723,6 +3723,46 @@
       }
     },
     {
+      "ticker": "DPZ",
+      "asof": "2026-09-11",
+      "close": 311.6,
+      "trailing_vol": 0.348,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 302.51,
+          "high": 321.73,
+          "wide_low": 292.44,
+          "wide_high": 331.01,
+          "mid": 312.53,
+          "pct_low": -2.9,
+          "pct_high": 3.3,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 32.0,
+          "tilt_pct": 0.3,
+          "rel_tilt_pct": 0.02,
+          "skew": -0.073,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 296.02,
+          "high": 337.34,
+          "wide_low": 277.31,
+          "wide_high": 354.64,
+          "mid": 316.96,
+          "pct_low": -5.0,
+          "pct_high": 8.3,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 32.0,
+          "tilt_pct": 1.71,
+          "rel_tilt_pct": 0.43,
+          "skew": -0.087,
+          "lean": "up"
+        }
+      }
+    },
+    {
       "ticker": "MOS",
       "asof": "2026-09-11",
       "close": 25.19,
@@ -3759,46 +3799,6 @@
           "rel_tilt_pct": -0.13,
           "skew": -0.076,
           "lean": "flat"
-        }
-      }
-    },
-    {
-      "ticker": "DPZ",
-      "asof": "2026-09-11",
-      "close": 311.6,
-      "trailing_vol": 0.348,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 302.51,
-          "high": 321.73,
-          "wide_low": 292.44,
-          "wide_high": 331.01,
-          "mid": 312.53,
-          "pct_low": -2.9,
-          "pct_high": 3.3,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 32.0,
-          "tilt_pct": 0.3,
-          "rel_tilt_pct": 0.02,
-          "skew": -0.073,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 296.26,
-          "high": 337.47,
-          "wide_low": 277.83,
-          "wide_high": 354.64,
-          "mid": 316.96,
-          "pct_low": -4.9,
-          "pct_high": 8.3,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 32.0,
-          "tilt_pct": 1.71,
-          "rel_tilt_pct": 0.43,
-          "skew": -0.08,
-          "lean": "up"
         }
       }
     },
@@ -3883,46 +3883,6 @@
       }
     },
     {
-      "ticker": "WM",
-      "asof": "2026-09-11",
-      "close": 213.46,
-      "trailing_vol": 0.129,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 210.51,
-          "high": 217.08,
-          "wide_low": 207.25,
-          "wide_high": 220.21,
-          "mid": 213.84,
-          "pct_low": -1.4,
-          "pct_high": 1.7,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 46.0,
-          "tilt_pct": 0.18,
-          "rel_tilt_pct": -0.1,
-          "skew": -0.032,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 208.16,
-          "high": 223.09,
-          "wide_low": 201.16,
-          "wide_high": 229.51,
-          "mid": 215.97,
-          "pct_low": -2.5,
-          "pct_high": 4.5,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 46.0,
-          "tilt_pct": 1.17,
-          "rel_tilt_pct": -0.1,
-          "skew": -0.078,
-          "lean": "flat"
-        }
-      }
-    },
-    {
       "ticker": "MRK",
       "asof": "2026-09-11",
       "close": 143.93,
@@ -3963,6 +3923,46 @@
       }
     },
     {
+      "ticker": "WM",
+      "asof": "2026-09-11",
+      "close": 213.46,
+      "trailing_vol": 0.129,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 210.44,
+          "high": 217.36,
+          "wide_low": 207.2,
+          "wide_high": 220.24,
+          "mid": 213.86,
+          "pct_low": -1.4,
+          "pct_high": 1.8,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 46.0,
+          "tilt_pct": 0.19,
+          "rel_tilt_pct": -0.09,
+          "skew": -0.037,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 208.18,
+          "high": 223.05,
+          "wide_low": 201.14,
+          "wide_high": 229.49,
+          "mid": 215.96,
+          "pct_low": -2.5,
+          "pct_high": 4.5,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 46.0,
+          "tilt_pct": 1.16,
+          "rel_tilt_pct": -0.11,
+          "skew": -0.078,
+          "lean": "flat"
+        }
+      }
+    },
+    {
       "ticker": "PFG",
       "asof": "2026-09-11",
       "close": 116.17,
@@ -3973,23 +3973,23 @@
           "low": 114.35,
           "high": 118.34,
           "wide_low": 112.36,
-          "wide_high": 120.69,
-          "mid": 116.45,
+          "wide_high": 120.7,
+          "mid": 116.46,
           "pct_low": -1.6,
           "pct_high": 1.9,
           "earnings_inside": 0.0,
           "days_to_earnings": 46.0,
-          "tilt_pct": 0.24,
-          "rel_tilt_pct": -0.04,
-          "skew": 0.0,
+          "tilt_pct": 0.25,
+          "rel_tilt_pct": -0.03,
+          "skew": -0.001,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 112.88,
-          "high": 121.4,
-          "wide_low": 108.72,
-          "wide_high": 125.02,
+          "low": 112.89,
+          "high": 121.41,
+          "wide_low": 108.73,
+          "wide_high": 125.03,
           "mid": 118.1,
           "pct_low": -2.8,
           "pct_high": 4.5,
@@ -3997,7 +3997,7 @@
           "days_to_earnings": 46.0,
           "tilt_pct": 1.65,
           "rel_tilt_pct": 0.38,
-          "skew": -0.185,
+          "skew": -0.184,
           "lean": "up"
         }
       }
@@ -4046,38 +4046,38 @@
       "ticker": "REG",
       "asof": "2026-09-11",
       "close": 74.62,
-      "trailing_vol": 0.124,
+      "trailing_vol": 0.12,
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 73.83,
+          "low": 73.87,
           "high": 75.75,
-          "wide_low": 73.09,
-          "wide_high": 76.69,
+          "wide_low": 73.15,
+          "wide_high": 76.68,
           "mid": 74.81,
-          "pct_low": -1.1,
+          "pct_low": -1.0,
           "pct_high": 1.5,
           "earnings_inside": 0.0,
           "days_to_earnings": 48.0,
           "tilt_pct": 0.25,
           "rel_tilt_pct": -0.02,
-          "skew": 0.032,
+          "skew": 0.048,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 73.21,
-          "high": 77.44,
-          "wide_low": 71.31,
-          "wide_high": 79.31,
-          "mid": 75.53,
-          "pct_low": -1.9,
-          "pct_high": 3.8,
+          "low": 73.28,
+          "high": 77.39,
+          "wide_low": 71.42,
+          "wide_high": 79.16,
+          "mid": 75.47,
+          "pct_low": -1.8,
+          "pct_high": 3.7,
           "earnings_inside": 0.0,
           "days_to_earnings": 48.0,
-          "tilt_pct": 1.21,
-          "rel_tilt_pct": -0.06,
-          "skew": -0.081,
+          "tilt_pct": 1.13,
+          "rel_tilt_pct": -0.14,
+          "skew": -0.072,
           "lean": "flat"
         }
       }
@@ -4171,9 +4171,9 @@
         "1 week": {
           "days": 5,
           "low": 240.63,
-          "high": 251.29,
+          "high": 251.3,
           "wide_low": 234.62,
-          "wide_high": 257.18,
+          "wide_high": 257.21,
           "mid": 246.16,
           "pct_low": -2.0,
           "pct_high": 2.3,
@@ -4181,7 +4181,7 @@
           "days_to_earnings": 48.0,
           "tilt_pct": 0.25,
           "rel_tilt_pct": -0.02,
-          "skew": -0.046,
+          "skew": -0.045,
           "lean": "flat"
         },
         "1 month": {
@@ -4243,46 +4243,6 @@
       }
     },
     {
-      "ticker": "EXE",
-      "asof": "2026-09-11",
-      "close": 94.83,
-      "trailing_vol": 0.179,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 92.87,
-          "high": 97.17,
-          "wide_low": 90.54,
-          "wide_high": 99.36,
-          "mid": 95.07,
-          "pct_low": -2.1,
-          "pct_high": 2.5,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 47.0,
-          "tilt_pct": 0.25,
-          "rel_tilt_pct": -0.02,
-          "skew": -0.05,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 91.24,
-          "high": 100.48,
-          "wide_low": 87.12,
-          "wide_high": 104.58,
-          "mid": 96.19,
-          "pct_low": -3.8,
-          "pct_high": 6.0,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 47.0,
-          "tilt_pct": 1.42,
-          "rel_tilt_pct": 0.15,
-          "skew": -0.084,
-          "lean": "flat"
-        }
-      }
-    },
-    {
       "ticker": "AKAM",
       "asof": "2026-09-11",
       "close": 106.79,
@@ -4318,6 +4278,46 @@
           "tilt_pct": 1.31,
           "rel_tilt_pct": 0.04,
           "skew": -0.045,
+          "lean": "flat"
+        }
+      }
+    },
+    {
+      "ticker": "EXE",
+      "asof": "2026-09-11",
+      "close": 94.83,
+      "trailing_vol": 0.179,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 92.83,
+          "high": 97.16,
+          "wide_low": 90.52,
+          "wide_high": 99.36,
+          "mid": 95.06,
+          "pct_low": -2.1,
+          "pct_high": 2.5,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 47.0,
+          "tilt_pct": 0.24,
+          "rel_tilt_pct": -0.03,
+          "skew": -0.05,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 91.22,
+          "high": 100.43,
+          "wide_low": 87.12,
+          "wide_high": 104.58,
+          "mid": 96.18,
+          "pct_low": -3.8,
+          "pct_high": 5.9,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 47.0,
+          "tilt_pct": 1.41,
+          "rel_tilt_pct": 0.14,
+          "skew": -0.083,
           "lean": "flat"
         }
       }
@@ -4733,7 +4733,7 @@
           "low": 178.13,
           "high": 187.6,
           "wide_low": 173.41,
-          "wide_high": 191.82,
+          "wide_high": 191.79,
           "mid": 183.0,
           "pct_low": -2.3,
           "pct_high": 2.9,
@@ -4741,12 +4741,12 @@
           "days_to_earnings": 42.0,
           "tilt_pct": 0.37,
           "rel_tilt_pct": 0.09,
-          "skew": -0.067,
+          "skew": -0.069,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 173.99,
+          "low": 173.86,
           "high": 194.39,
           "wide_low": 162.45,
           "wide_high": 203.52,
@@ -4772,7 +4772,7 @@
           "days": 5,
           "low": 105.2,
           "high": 108.6,
-          "wide_low": 103.72,
+          "wide_low": 103.67,
           "wide_high": 110.01,
           "mid": 106.81,
           "pct_low": -1.2,
@@ -4781,7 +4781,7 @@
           "days_to_earnings": 56.0,
           "tilt_pct": 0.33,
           "rel_tilt_pct": 0.05,
-          "skew": 0.003,
+          "skew": -0.005,
           "lean": "flat"
         },
         "1 month": {
@@ -5171,9 +5171,9 @@
         "1 week": {
           "days": 5,
           "low": 86.8,
-          "high": 92.09,
+          "high": 92.1,
           "wide_low": 84.34,
-          "wide_high": 94.5,
+          "wide_high": 94.57,
           "mid": 89.62,
           "pct_low": -2.7,
           "pct_high": 3.2,
@@ -5181,7 +5181,7 @@
           "days_to_earnings": 54.0,
           "tilt_pct": 0.42,
           "rel_tilt_pct": 0.15,
-          "skew": -0.068,
+          "skew": -0.061,
           "lean": "flat"
         },
         "1 month": {
@@ -5189,7 +5189,7 @@
           "low": 84.47,
           "high": 95.46,
           "wide_low": 79.82,
-          "wide_high": 100.52,
+          "wide_high": 100.7,
           "mid": 90.51,
           "pct_low": -5.3,
           "pct_high": 7.0,
@@ -5197,7 +5197,7 @@
           "days_to_earnings": 54.0,
           "tilt_pct": 1.41,
           "rel_tilt_pct": 0.14,
-          "skew": -0.09,
+          "skew": -0.082,
           "lean": "flat"
         }
       }
@@ -5492,7 +5492,7 @@
           "days": 5,
           "low": 328.86,
           "high": 344.33,
-          "wide_low": 321.75,
+          "wide_low": 321.71,
           "wide_high": 350.7,
           "mid": 336.44,
           "pct_low": -2.0,
@@ -5501,7 +5501,7 @@
           "days_to_earnings": 48.0,
           "tilt_pct": 0.29,
           "rel_tilt_pct": 0.02,
-          "skew": -0.036,
+          "skew": -0.038,
           "lean": "flat"
         },
         "1 month": {
@@ -5509,15 +5509,15 @@
           "low": 322.94,
           "high": 353.67,
           "wide_low": 308.2,
-          "wide_high": 365.9,
-          "mid": 340.06,
+          "wide_high": 365.91,
+          "mid": 340.02,
           "pct_low": -3.7,
           "pct_high": 5.4,
           "earnings_inside": 0.0,
           "days_to_earnings": 48.0,
-          "tilt_pct": 1.36,
-          "rel_tilt_pct": 0.09,
-          "skew": -0.146,
+          "tilt_pct": 1.35,
+          "rel_tilt_pct": 0.08,
+          "skew": -0.145,
           "lean": "flat"
         }
       }
@@ -5723,46 +5723,6 @@
       }
     },
     {
-      "ticker": "PSKY",
-      "asof": "2026-09-11",
-      "close": 10.6,
-      "trailing_vol": 0.379,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 10.2,
-          "high": 11.05,
-          "wide_low": 9.79,
-          "wide_high": 11.53,
-          "mid": 10.64,
-          "pct_low": -3.8,
-          "pct_high": 4.3,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 60.0,
-          "tilt_pct": 0.38,
-          "rel_tilt_pct": 0.1,
-          "skew": -0.018,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 9.95,
-          "high": 11.64,
-          "wide_low": 9.22,
-          "wide_high": 12.46,
-          "mid": 10.77,
-          "pct_low": -6.1,
-          "pct_high": 9.8,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 60.0,
-          "tilt_pct": 1.59,
-          "rel_tilt_pct": 0.32,
-          "skew": -0.032,
-          "lean": "flat"
-        }
-      }
-    },
-    {
       "ticker": "BBY",
       "asof": "2026-09-11",
       "close": 90.8,
@@ -5798,6 +5758,46 @@
           "tilt_pct": 1.05,
           "rel_tilt_pct": -0.22,
           "skew": -0.11,
+          "lean": "flat"
+        }
+      }
+    },
+    {
+      "ticker": "PSKY",
+      "asof": "2026-09-11",
+      "close": 10.6,
+      "trailing_vol": 0.379,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 10.2,
+          "high": 11.04,
+          "wide_low": 9.79,
+          "wide_high": 11.52,
+          "mid": 10.64,
+          "pct_low": -3.8,
+          "pct_high": 4.2,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 60.0,
+          "tilt_pct": 0.38,
+          "rel_tilt_pct": 0.1,
+          "skew": -0.023,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 9.95,
+          "high": 11.63,
+          "wide_low": 9.22,
+          "wide_high": 12.47,
+          "mid": 10.77,
+          "pct_low": -6.1,
+          "pct_high": 9.7,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 60.0,
+          "tilt_pct": 1.59,
+          "rel_tilt_pct": 0.32,
+          "skew": -0.029,
           "lean": "flat"
         }
       }
@@ -6349,7 +6349,7 @@
           "low": 102.83,
           "high": 111.09,
           "wide_low": 99.06,
-          "wide_high": 115.01,
+          "wide_high": 115.1,
           "mid": 107.23,
           "pct_low": -3.3,
           "pct_high": 4.5,
@@ -6357,7 +6357,7 @@
           "days_to_earnings": 50.0,
           "tilt_pct": 0.88,
           "rel_tilt_pct": -0.39,
-          "skew": -0.062,
+          "skew": -0.056,
           "lean": "down"
         }
       }
@@ -6372,7 +6372,7 @@
           "days": 5,
           "low": 118.07,
           "high": 121.41,
-          "wide_low": 116.47,
+          "wide_low": 116.4,
           "wide_high": 123.08,
           "mid": 119.74,
           "pct_low": -1.1,
@@ -6381,7 +6381,7 @@
           "days_to_earnings": 56.0,
           "tilt_pct": 0.27,
           "rel_tilt_pct": -0.01,
-          "skew": -0.003,
+          "skew": -0.014,
           "lean": "flat"
         },
         "1 month": {
@@ -6398,46 +6398,6 @@
           "tilt_pct": 1.08,
           "rel_tilt_pct": -0.19,
           "skew": -0.062,
-          "lean": "flat"
-        }
-      }
-    },
-    {
-      "ticker": "KMI",
-      "asof": "2026-09-11",
-      "close": 30.86,
-      "trailing_vol": 0.258,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 30.31,
-          "high": 31.62,
-          "wide_low": 29.62,
-          "wide_high": 32.25,
-          "mid": 30.99,
-          "pct_low": -1.8,
-          "pct_high": 2.5,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 48.0,
-          "tilt_pct": 0.42,
-          "rel_tilt_pct": 0.14,
-          "skew": -0.063,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 29.72,
-          "high": 32.55,
-          "wide_low": 28.41,
-          "wide_high": 33.74,
-          "mid": 31.26,
-          "pct_low": -3.7,
-          "pct_high": 5.5,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 48.0,
-          "tilt_pct": 1.29,
-          "rel_tilt_pct": 0.02,
-          "skew": -0.112,
           "lean": "flat"
         }
       }
@@ -6519,6 +6479,46 @@
           "rel_tilt_pct": 1.6,
           "skew": -0.124,
           "lean": "up"
+        }
+      }
+    },
+    {
+      "ticker": "KMI",
+      "asof": "2026-09-11",
+      "close": 30.86,
+      "trailing_vol": 0.258,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 30.31,
+          "high": 31.62,
+          "wide_low": 29.62,
+          "wide_high": 32.25,
+          "mid": 30.99,
+          "pct_low": -1.8,
+          "pct_high": 2.5,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 48.0,
+          "tilt_pct": 0.42,
+          "rel_tilt_pct": 0.14,
+          "skew": -0.063,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 29.75,
+          "high": 32.55,
+          "wide_low": 28.43,
+          "wide_high": 33.74,
+          "mid": 31.26,
+          "pct_low": -3.6,
+          "pct_high": 5.5,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 48.0,
+          "tilt_pct": 1.29,
+          "rel_tilt_pct": 0.02,
+          "skew": -0.108,
+          "lean": "flat"
         }
       }
     },
@@ -6788,8 +6788,8 @@
           "days": 21,
           "low": 577.26,
           "high": 657.67,
-          "wide_low": 539.02,
-          "wide_high": 702.78,
+          "wide_low": 538.93,
+          "wide_high": 703.31,
           "mid": 620.46,
           "pct_low": -6.2,
           "pct_high": 6.9,
@@ -6797,7 +6797,7 @@
           "days_to_earnings": 89.0,
           "tilt_pct": 0.81,
           "rel_tilt_pct": -0.46,
-          "skew": -0.061,
+          "skew": -0.058,
           "lean": "down"
         }
       }
@@ -7348,7 +7348,7 @@
           "days": 21,
           "low": 166.55,
           "high": 183.01,
-          "wide_low": 159.71,
+          "wide_low": 159.56,
           "wide_high": 189.92,
           "mid": 174.83,
           "pct_low": -4.0,
@@ -7357,7 +7357,7 @@
           "days_to_earnings": 48.0,
           "tilt_pct": 0.79,
           "rel_tilt_pct": -0.48,
-          "skew": -0.044,
+          "skew": -0.049,
           "lean": "down"
         }
       }
@@ -7451,7 +7451,7 @@
         "1 week": {
           "days": 5,
           "low": 200.8,
-          "high": 218.3,
+          "high": 218.28,
           "wide_low": 191.45,
           "wide_high": 227.22,
           "mid": 210.53,
@@ -8051,33 +8051,33 @@
         "1 week": {
           "days": 5,
           "low": 309.94,
-          "high": 333.78,
-          "wide_low": 298.68,
-          "wide_high": 344.19,
+          "high": 333.83,
+          "wide_low": 298.22,
+          "wide_high": 344.74,
           "mid": 321.1,
           "pct_low": -2.6,
-          "pct_high": 4.9,
+          "pct_high": 5.0,
           "earnings_inside": 0.0,
           "days_to_earnings": 20.0,
           "tilt_pct": 0.94,
           "rel_tilt_pct": 0.67,
-          "skew": -0.021,
+          "skew": -0.02,
           "lean": "up"
         },
         "1 month": {
           "days": 21,
           "low": 299.43,
-          "high": 360.17,
-          "wide_low": 271.44,
-          "wide_high": 389.19,
+          "high": 360.43,
+          "wide_low": 271.03,
+          "wide_high": 390.28,
           "mid": 327.04,
           "pct_low": -5.9,
-          "pct_high": 13.2,
+          "pct_high": 13.3,
           "earnings_inside": 1.0,
           "days_to_earnings": 20.0,
           "tilt_pct": 2.78,
           "rel_tilt_pct": 1.51,
-          "skew": -0.034,
+          "skew": -0.03,
           "lean": "up"
         }
       }
@@ -8269,7 +8269,7 @@
           "low": 40.57,
           "high": 43.31,
           "wide_low": 39.25,
-          "wide_high": 44.56,
+          "wide_high": 44.58,
           "mid": 41.93,
           "pct_low": -2.0,
           "pct_high": 4.6,
@@ -8277,7 +8277,7 @@
           "days_to_earnings": 48.0,
           "tilt_pct": 1.25,
           "rel_tilt_pct": -0.02,
-          "skew": -0.041,
+          "skew": -0.037,
           "lean": "flat"
         }
       }
@@ -8683,46 +8683,6 @@
       }
     },
     {
-      "ticker": "AJG",
-      "asof": "2026-09-11",
-      "close": 240.32,
-      "trailing_vol": 0.311,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 233.54,
-          "high": 247.3,
-          "wide_low": 226.42,
-          "wide_high": 253.28,
-          "mid": 240.96,
-          "pct_low": -2.8,
-          "pct_high": 2.9,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 49.0,
-          "tilt_pct": 0.27,
-          "rel_tilt_pct": -0.01,
-          "skew": -0.11,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 225.67,
-          "high": 257.37,
-          "wide_low": 212.8,
-          "wide_high": 270.61,
-          "mid": 242.96,
-          "pct_low": -6.1,
-          "pct_high": 7.1,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 49.0,
-          "tilt_pct": 1.09,
-          "rel_tilt_pct": -0.18,
-          "skew": -0.103,
-          "lean": "flat"
-        }
-      }
-    },
-    {
       "ticker": "AXON",
       "asof": "2026-09-11",
       "close": 479.34,
@@ -8758,6 +8718,46 @@
           "tilt_pct": 0.98,
           "rel_tilt_pct": -0.29,
           "skew": -0.031,
+          "lean": "flat"
+        }
+      }
+    },
+    {
+      "ticker": "AJG",
+      "asof": "2026-09-11",
+      "close": 240.32,
+      "trailing_vol": 0.311,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 233.54,
+          "high": 247.43,
+          "wide_low": 226.42,
+          "wide_high": 253.28,
+          "mid": 240.96,
+          "pct_low": -2.8,
+          "pct_high": 3.0,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 49.0,
+          "tilt_pct": 0.27,
+          "rel_tilt_pct": -0.01,
+          "skew": -0.11,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 225.67,
+          "high": 257.37,
+          "wide_low": 212.8,
+          "wide_high": 270.61,
+          "mid": 242.94,
+          "pct_low": -6.1,
+          "pct_high": 7.1,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 49.0,
+          "tilt_pct": 1.08,
+          "rel_tilt_pct": -0.19,
+          "skew": -0.102,
           "lean": "flat"
         }
       }
@@ -8854,14 +8854,14 @@
           "high": 206.79,
           "wide_low": 194.76,
           "wide_high": 210.9,
-          "mid": 202.8,
+          "mid": 202.83,
           "pct_low": -1.8,
           "pct_high": 2.2,
           "earnings_inside": 0.0,
           "days_to_earnings": 42.0,
-          "tilt_pct": 0.22,
-          "rel_tilt_pct": -0.06,
-          "skew": -0.016,
+          "tilt_pct": 0.23,
+          "rel_tilt_pct": -0.04,
+          "skew": -0.02,
           "lean": "flat"
         },
         "1 month": {
@@ -9050,9 +9050,9 @@
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 79.37,
-          "high": 82.88,
-          "wide_low": 77.59,
+          "low": 79.35,
+          "high": 82.89,
+          "wide_low": 77.56,
           "wide_high": 84.68,
           "mid": 81.22,
           "pct_low": -2.0,
@@ -9061,15 +9061,15 @@
           "days_to_earnings": 42.0,
           "tilt_pct": 0.27,
           "rel_tilt_pct": -0.01,
-          "skew": -0.046,
+          "skew": -0.05,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
           "low": 77.89,
-          "high": 85.71,
-          "wide_low": 74.42,
-          "wide_high": 88.84,
+          "high": 85.69,
+          "wide_low": 74.41,
+          "wide_high": 88.89,
           "mid": 82.14,
           "pct_low": -3.8,
           "pct_high": 5.8,
@@ -9077,7 +9077,7 @@
           "days_to_earnings": 42.0,
           "tilt_pct": 1.4,
           "rel_tilt_pct": 0.13,
-          "skew": -0.115,
+          "skew": -0.112,
           "lean": "flat"
         }
       }
@@ -9119,46 +9119,6 @@
           "rel_tilt_pct": -1.0,
           "skew": -0.217,
           "lean": "down"
-        }
-      }
-    },
-    {
-      "ticker": "LVS",
-      "asof": "2026-09-11",
-      "close": 42.83,
-      "trailing_vol": 0.273,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 41.87,
-          "high": 43.96,
-          "wide_low": 40.8,
-          "wide_high": 44.96,
-          "mid": 42.93,
-          "pct_low": -2.2,
-          "pct_high": 2.6,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 41.0,
-          "tilt_pct": 0.23,
-          "rel_tilt_pct": -0.04,
-          "skew": -0.048,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 41.31,
-          "high": 45.7,
-          "wide_low": 39.42,
-          "wide_high": 47.88,
-          "mid": 43.73,
-          "pct_low": -3.6,
-          "pct_high": 6.7,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 41.0,
-          "tilt_pct": 2.08,
-          "rel_tilt_pct": 0.81,
-          "skew": -0.067,
-          "lean": "up"
         }
       }
     },
@@ -9243,6 +9203,46 @@
       }
     },
     {
+      "ticker": "LVS",
+      "asof": "2026-09-11",
+      "close": 42.83,
+      "trailing_vol": 0.273,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 41.87,
+          "high": 43.98,
+          "wide_low": 40.8,
+          "wide_high": 44.97,
+          "mid": 42.93,
+          "pct_low": -2.2,
+          "pct_high": 2.7,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 41.0,
+          "tilt_pct": 0.23,
+          "rel_tilt_pct": -0.04,
+          "skew": -0.046,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 41.31,
+          "high": 45.7,
+          "wide_low": 39.42,
+          "wide_high": 47.88,
+          "mid": 43.73,
+          "pct_low": -3.6,
+          "pct_high": 6.7,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 41.0,
+          "tilt_pct": 2.08,
+          "rel_tilt_pct": 0.81,
+          "skew": -0.067,
+          "lean": "up"
+        }
+      }
+    },
+    {
       "ticker": "IBM",
       "asof": "2026-09-11",
       "close": 243.29,
@@ -9291,7 +9291,7 @@
         "1 week": {
           "days": 5,
           "low": 140.37,
-          "high": 147.45,
+          "high": 147.46,
           "wide_low": 136.59,
           "wide_high": 150.71,
           "mid": 144.14,
@@ -9307,17 +9307,17 @@
         "1 month": {
           "days": 21,
           "low": 138.07,
-          "high": 152.74,
-          "wide_low": 130.57,
-          "wide_high": 158.49,
-          "mid": 146.29,
+          "high": 152.72,
+          "wide_low": 130.58,
+          "wide_high": 158.5,
+          "mid": 146.27,
           "pct_low": -3.9,
           "pct_high": 6.3,
           "earnings_inside": 0.0,
           "days_to_earnings": 49.0,
-          "tilt_pct": 1.77,
-          "rel_tilt_pct": 0.5,
-          "skew": -0.173,
+          "tilt_pct": 1.76,
+          "rel_tilt_pct": 0.49,
+          "skew": -0.171,
           "lean": "up"
         }
       }
@@ -9348,7 +9348,7 @@
           "days": 21,
           "low": 80.11,
           "high": 88.56,
-          "wide_low": 76.9,
+          "wide_low": 76.89,
           "wide_high": 92.09,
           "mid": 84.63,
           "pct_low": -4.2,
@@ -9412,7 +9412,7 @@
           "days": 5,
           "low": 92.67,
           "high": 96.01,
-          "wide_low": 91.22,
+          "wide_low": 91.16,
           "wide_high": 97.63,
           "mid": 94.32,
           "pct_low": -1.5,
@@ -9421,15 +9421,15 @@
           "days_to_earnings": 41.0,
           "tilt_pct": 0.23,
           "rel_tilt_pct": -0.04,
-          "skew": 0.016,
+          "skew": 0.006,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
           "low": 91.72,
-          "high": 98.8,
+          "high": 98.79,
           "wide_low": 88.67,
-          "wide_high": 101.63,
+          "wide_high": 101.68,
           "mid": 95.7,
           "pct_low": -2.5,
           "pct_high": 5.0,
@@ -9437,7 +9437,7 @@
           "days_to_earnings": 41.0,
           "tilt_pct": 1.69,
           "rel_tilt_pct": 0.42,
-          "skew": -0.119,
+          "skew": -0.115,
           "lean": "up"
         }
       }
@@ -10330,9 +10330,9 @@
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 143.4,
+          "low": 143.36,
           "high": 150.96,
-          "wide_low": 139.67,
+          "wide_low": 139.6,
           "wide_high": 154.43,
           "mid": 147.38,
           "pct_low": -2.4,
@@ -10341,15 +10341,15 @@
           "days_to_earnings": 76.0,
           "tilt_pct": 0.31,
           "rel_tilt_pct": 0.03,
-          "skew": -0.07,
+          "skew": -0.074,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 140.07,
+          "low": 139.97,
           "high": 156.29,
-          "wide_low": 132.9,
-          "wide_high": 163.11,
+          "wide_low": 132.62,
+          "wide_high": 163.28,
           "mid": 148.25,
           "pct_low": -4.7,
           "pct_high": 6.4,
@@ -10357,7 +10357,7 @@
           "days_to_earnings": 76.0,
           "tilt_pct": 0.89,
           "rel_tilt_pct": -0.38,
-          "skew": -0.067,
+          "skew": -0.071,
           "lean": "down"
         }
       }
@@ -10771,8 +10771,8 @@
         "1 week": {
           "days": 5,
           "low": 148.72,
-          "high": 157.02,
-          "wide_low": 144.67,
+          "high": 157.01,
+          "wide_low": 144.63,
           "wide_high": 161.02,
           "mid": 152.96,
           "pct_low": -2.7,
@@ -10781,7 +10781,7 @@
           "days_to_earnings": 48.0,
           "tilt_pct": 0.12,
           "rel_tilt_pct": -0.16,
-          "skew": -0.041,
+          "skew": -0.043,
           "lean": "flat"
         },
         "1 month": {
@@ -10883,6 +10883,46 @@
       }
     },
     {
+      "ticker": "KLAC",
+      "asof": "2026-09-11",
+      "close": 180.64,
+      "trailing_vol": 0.443,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 172.0,
+          "high": 189.35,
+          "wide_low": 166.78,
+          "wide_high": 197.23,
+          "mid": 181.65,
+          "pct_low": -4.8,
+          "pct_high": 4.8,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 48.0,
+          "tilt_pct": 0.56,
+          "rel_tilt_pct": 0.28,
+          "skew": -0.019,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 168.32,
+          "high": 200.77,
+          "wide_low": 154.21,
+          "wide_high": 215.91,
+          "mid": 184.44,
+          "pct_low": -6.8,
+          "pct_high": 11.1,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 48.0,
+          "tilt_pct": 2.08,
+          "rel_tilt_pct": 0.81,
+          "skew": -0.064,
+          "lean": "up"
+        }
+      }
+    },
+    {
       "ticker": "CTVA",
       "asof": "2026-09-11",
       "close": 83.9,
@@ -10919,46 +10959,6 @@
           "rel_tilt_pct": -0.63,
           "skew": -0.104,
           "lean": "down"
-        }
-      }
-    },
-    {
-      "ticker": "KLAC",
-      "asof": "2026-09-11",
-      "close": 180.64,
-      "trailing_vol": 0.443,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 172.0,
-          "high": 189.35,
-          "wide_low": 166.78,
-          "wide_high": 197.23,
-          "mid": 181.65,
-          "pct_low": -4.8,
-          "pct_high": 4.8,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 48.0,
-          "tilt_pct": 0.56,
-          "rel_tilt_pct": 0.28,
-          "skew": -0.019,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 168.19,
-          "high": 200.77,
-          "wide_low": 154.21,
-          "wide_high": 215.91,
-          "mid": 184.44,
-          "pct_low": -6.9,
-          "pct_high": 11.1,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 48.0,
-          "tilt_pct": 2.08,
-          "rel_tilt_pct": 0.81,
-          "skew": -0.064,
-          "lean": "up"
         }
       }
     },
@@ -11283,6 +11283,46 @@
       }
     },
     {
+      "ticker": "TPL",
+      "asof": "2026-09-11",
+      "close": 369.1,
+      "trailing_vol": 0.333,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 356.86,
+          "high": 383.01,
+          "wide_low": 342.77,
+          "wide_high": 397.89,
+          "mid": 371.54,
+          "pct_low": -3.3,
+          "pct_high": 3.8,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 55.0,
+          "tilt_pct": 0.66,
+          "rel_tilt_pct": 0.38,
+          "skew": -0.081,
+          "lean": "up"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 340.14,
+          "high": 400.92,
+          "wide_low": 314.58,
+          "wide_high": 426.05,
+          "mid": 371.81,
+          "pct_low": -7.8,
+          "pct_high": 8.6,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 55.0,
+          "tilt_pct": 0.73,
+          "rel_tilt_pct": -0.54,
+          "skew": -0.102,
+          "lean": "down"
+        }
+      }
+    },
+    {
       "ticker": "LOW",
       "asof": "2026-09-11",
       "close": 196.82,
@@ -11292,7 +11332,7 @@
           "days": 5,
           "low": 192.68,
           "high": 201.31,
-          "wide_low": 188.44,
+          "wide_low": 188.37,
           "wide_high": 205.48,
           "mid": 197.34,
           "pct_low": -2.1,
@@ -11301,7 +11341,7 @@
           "days_to_earnings": 68.0,
           "tilt_pct": 0.26,
           "rel_tilt_pct": -0.01,
-          "skew": -0.066,
+          "skew": -0.07,
           "lean": "flat"
         },
         "1 month": {
@@ -11403,46 +11443,6 @@
       }
     },
     {
-      "ticker": "TPL",
-      "asof": "2026-09-11",
-      "close": 369.1,
-      "trailing_vol": 0.333,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 356.86,
-          "high": 383.01,
-          "wide_low": 342.95,
-          "wide_high": 397.89,
-          "mid": 371.54,
-          "pct_low": -3.3,
-          "pct_high": 3.8,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 55.0,
-          "tilt_pct": 0.66,
-          "rel_tilt_pct": 0.38,
-          "skew": -0.078,
-          "lean": "up"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 340.67,
-          "high": 400.8,
-          "wide_low": 315.23,
-          "wide_high": 425.73,
-          "mid": 371.81,
-          "pct_low": -7.7,
-          "pct_high": 8.6,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 55.0,
-          "tilt_pct": 0.73,
-          "rel_tilt_pct": -0.54,
-          "skew": -0.099,
-          "lean": "down"
-        }
-      }
-    },
-    {
       "ticker": "GPN",
       "asof": "2026-09-11",
       "close": 88.29,
@@ -11450,10 +11450,10 @@
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 85.55,
-          "high": 91.11,
-          "wide_low": 83.04,
-          "wide_high": 93.6,
+          "low": 85.53,
+          "high": 91.14,
+          "wide_low": 83.0,
+          "wide_high": 93.61,
           "mid": 88.43,
           "pct_low": -3.1,
           "pct_high": 3.2,
@@ -11461,14 +11461,14 @@
           "days_to_earnings": 54.0,
           "tilt_pct": 0.16,
           "rel_tilt_pct": -0.12,
-          "skew": -0.051,
+          "skew": -0.054,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 82.63,
-          "high": 95.32,
-          "wide_low": 78.75,
+          "low": 82.66,
+          "high": 95.31,
+          "wide_low": 78.74,
           "wide_high": 100.65,
           "mid": 88.94,
           "pct_low": -6.4,
@@ -11851,7 +11851,7 @@
         "1 week": {
           "days": 5,
           "low": 21.92,
-          "high": 22.69,
+          "high": 22.68,
           "wide_low": 21.54,
           "wide_high": 23.06,
           "mid": 22.29,
@@ -11894,14 +11894,14 @@
           "high": 50.5,
           "wide_low": 47.29,
           "wide_high": 51.39,
-          "mid": 49.47,
+          "mid": 49.46,
           "pct_low": -1.9,
           "pct_high": 2.4,
           "earnings_inside": 0.0,
           "days_to_earnings": 34.0,
-          "tilt_pct": 0.3,
-          "rel_tilt_pct": 0.03,
-          "skew": -0.084,
+          "tilt_pct": 0.28,
+          "rel_tilt_pct": 0.01,
+          "skew": -0.079,
           "lean": "flat"
         },
         "1 month": {
@@ -11910,14 +11910,14 @@
           "high": 52.13,
           "wide_low": 45.45,
           "wide_high": 54.06,
-          "mid": 50.04,
+          "mid": 50.03,
           "pct_low": -3.5,
           "pct_high": 5.7,
           "earnings_inside": 0.0,
           "days_to_earnings": 34.0,
-          "tilt_pct": 1.45,
-          "rel_tilt_pct": 0.18,
-          "skew": -0.109,
+          "tilt_pct": 1.43,
+          "rel_tilt_pct": 0.16,
+          "skew": -0.107,
           "lean": "flat"
         }
       }
@@ -12283,6 +12283,46 @@
       }
     },
     {
+      "ticker": "ADP",
+      "asof": "2026-09-11",
+      "close": 268.26,
+      "trailing_vol": 0.252,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 262.57,
+          "high": 276.14,
+          "wide_low": 256.82,
+          "wide_high": 282.19,
+          "mid": 269.07,
+          "pct_low": -2.1,
+          "pct_high": 2.9,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 48.0,
+          "tilt_pct": 0.3,
+          "rel_tilt_pct": 0.03,
+          "skew": 0.011,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 254.89,
+          "high": 284.36,
+          "wide_low": 242.24,
+          "wide_high": 295.24,
+          "mid": 271.5,
+          "pct_low": -5.0,
+          "pct_high": 6.0,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 48.0,
+          "tilt_pct": 1.2,
+          "rel_tilt_pct": -0.07,
+          "skew": -0.153,
+          "lean": "flat"
+        }
+      }
+    },
+    {
       "ticker": "SBAC",
       "asof": "2026-09-11",
       "close": 185.47,
@@ -12348,8 +12388,8 @@
           "days": 21,
           "low": 45.29,
           "high": 48.0,
-          "wide_low": 43.95,
-          "wide_high": 49.19,
+          "wide_low": 43.94,
+          "wide_high": 49.23,
           "mid": 46.62,
           "pct_low": -1.8,
           "pct_high": 4.1,
@@ -12357,7 +12397,7 @@
           "days_to_earnings": 41.0,
           "tilt_pct": 1.06,
           "rel_tilt_pct": -0.21,
-          "skew": -0.047,
+          "skew": -0.042,
           "lean": "flat"
         }
       }
@@ -12508,7 +12548,7 @@
           "days": 21,
           "low": 69.61,
           "high": 77.76,
-          "wide_low": 65.85,
+          "wide_low": 65.75,
           "wide_high": 81.39,
           "mid": 73.94,
           "pct_low": -4.6,
@@ -12517,7 +12557,7 @@
           "days_to_earnings": 49.0,
           "tilt_pct": 1.38,
           "rel_tilt_pct": 0.1,
-          "skew": -0.094,
+          "skew": -0.1,
           "lean": "flat"
         }
       }
@@ -12598,46 +12638,6 @@
           "tilt_pct": 1.27,
           "rel_tilt_pct": 0.0,
           "skew": -0.092,
-          "lean": "flat"
-        }
-      }
-    },
-    {
-      "ticker": "ADP",
-      "asof": "2026-09-11",
-      "close": 268.26,
-      "trailing_vol": 0.25,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 262.59,
-          "high": 275.99,
-          "wide_low": 257.0,
-          "wide_high": 282.02,
-          "mid": 269.1,
-          "pct_low": -2.1,
-          "pct_high": 2.9,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 48.0,
-          "tilt_pct": 0.31,
-          "rel_tilt_pct": 0.04,
-          "skew": 0.01,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 255.02,
-          "high": 283.92,
-          "wide_low": 242.45,
-          "wide_high": 294.22,
-          "mid": 271.48,
-          "pct_low": -4.9,
-          "pct_high": 5.8,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 48.0,
-          "tilt_pct": 1.19,
-          "rel_tilt_pct": -0.08,
-          "skew": -0.169,
           "lean": "flat"
         }
       }
@@ -12746,9 +12746,9 @@
         },
         "1 month": {
           "days": 21,
-          "low": 32.27,
+          "low": 32.26,
           "high": 37.36,
-          "wide_low": 30.06,
+          "wide_low": 30.04,
           "wide_high": 39.56,
           "mid": 35.11,
           "pct_low": -6.1,
@@ -12757,7 +12757,7 @@
           "days_to_earnings": 48.0,
           "tilt_pct": 2.16,
           "rel_tilt_pct": 0.89,
-          "skew": -0.131,
+          "skew": -0.133,
           "lean": "up"
         }
       }
@@ -13411,9 +13411,9 @@
         "1 week": {
           "days": 5,
           "low": 306.16,
-          "high": 320.57,
+          "high": 320.67,
           "wide_low": 298.03,
-          "wide_high": 326.88,
+          "wide_high": 327.12,
           "mid": 313.0,
           "pct_low": -1.9,
           "pct_high": 2.8,
@@ -13421,7 +13421,7 @@
           "days_to_earnings": 32.0,
           "tilt_pct": 0.32,
           "rel_tilt_pct": 0.05,
-          "skew": -0.061,
+          "skew": -0.052,
           "lean": "flat"
         },
         "1 month": {
@@ -14107,9 +14107,9 @@
         "1 month": {
           "days": 21,
           "low": 242.07,
-          "high": 271.63,
+          "high": 271.67,
           "wide_low": 228.54,
-          "wide_high": 281.31,
+          "wide_high": 282.34,
           "mid": 257.95,
           "pct_low": -4.2,
           "pct_high": 7.5,
@@ -14117,7 +14117,7 @@
           "days_to_earnings": 48.0,
           "tilt_pct": 2.04,
           "rel_tilt_pct": 0.77,
-          "skew": -0.165,
+          "skew": -0.145,
           "lean": "up"
         }
       }
@@ -14213,7 +14213,7 @@
           "low": 29.67,
           "high": 30.76,
           "wide_low": 29.1,
-          "wide_high": 31.24,
+          "wide_high": 31.25,
           "mid": 30.21,
           "pct_low": -1.5,
           "pct_high": 2.1,
@@ -14221,7 +14221,7 @@
           "days_to_earnings": 36.0,
           "tilt_pct": 0.27,
           "rel_tilt_pct": -0.01,
-          "skew": -0.055,
+          "skew": -0.05,
           "lean": "flat"
         },
         "1 month": {
@@ -14413,7 +14413,7 @@
           "low": 88.25,
           "high": 94.51,
           "wide_low": 85.5,
-          "wide_high": 97.4,
+          "wide_high": 97.42,
           "mid": 91.53,
           "pct_low": -3.4,
           "pct_high": 3.4,
@@ -14421,23 +14421,23 @@
           "days_to_earnings": 40.0,
           "tilt_pct": 0.17,
           "rel_tilt_pct": -0.1,
-          "skew": -0.046,
+          "skew": -0.044,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 86.82,
-          "high": 99.21,
+          "low": 86.81,
+          "high": 99.2,
           "wide_low": 80.65,
-          "wide_high": 105.49,
-          "mid": 93.91,
+          "wide_high": 105.47,
+          "mid": 94.02,
           "pct_low": -5.0,
           "pct_high": 8.6,
           "earnings_inside": 0.0,
           "days_to_earnings": 40.0,
-          "tilt_pct": 2.74,
-          "rel_tilt_pct": 1.47,
-          "skew": -0.134,
+          "tilt_pct": 2.86,
+          "rel_tilt_pct": 1.59,
+          "skew": -0.143,
           "lean": "up"
         }
       }
@@ -14730,9 +14730,9 @@
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 22.33,
+          "low": 22.32,
           "high": 23.62,
-          "wide_low": 21.7,
+          "wide_low": 21.67,
           "wide_high": 24.3,
           "mid": 22.93,
           "pct_low": -1.9,
@@ -14741,7 +14741,7 @@
           "days_to_earnings": 18.0,
           "tilt_pct": 0.79,
           "rel_tilt_pct": 0.51,
-          "skew": 0.026,
+          "skew": 0.013,
           "lean": "up"
         },
         "1 month": {
@@ -15170,10 +15170,10 @@
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 278.31,
+          "low": 278.29,
           "high": 288.39,
           "wide_low": 272.92,
-          "wide_high": 292.73,
+          "wide_high": 292.72,
           "mid": 283.13,
           "pct_low": -1.5,
           "pct_high": 2.1,
@@ -15181,7 +15181,7 @@
           "days_to_earnings": 54.0,
           "tilt_pct": 0.24,
           "rel_tilt_pct": -0.04,
-          "skew": -0.048,
+          "skew": -0.049,
           "lean": "flat"
         },
         "1 month": {
@@ -15483,6 +15483,46 @@
       }
     },
     {
+      "ticker": "WAT",
+      "asof": "2026-09-11",
+      "close": 408.34,
+      "trailing_vol": 0.243,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 399.0,
+          "high": 420.18,
+          "wide_low": 388.2,
+          "wide_high": 430.68,
+          "mid": 409.77,
+          "pct_low": -2.3,
+          "pct_high": 2.9,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 50.0,
+          "tilt_pct": 0.35,
+          "rel_tilt_pct": 0.07,
+          "skew": -0.041,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 390.58,
+          "high": 436.36,
+          "wide_low": 368.46,
+          "wide_high": 459.84,
+          "mid": 414.85,
+          "pct_low": -4.4,
+          "pct_high": 6.9,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 50.0,
+          "tilt_pct": 1.58,
+          "rel_tilt_pct": 0.31,
+          "skew": -0.071,
+          "lean": "flat"
+        }
+      }
+    },
+    {
       "ticker": "AVY",
       "asof": "2026-09-11",
       "close": 169.38,
@@ -15639,46 +15679,6 @@
           "rel_tilt_pct": -0.6,
           "skew": -0.096,
           "lean": "down"
-        }
-      }
-    },
-    {
-      "ticker": "WAT",
-      "asof": "2026-09-11",
-      "close": 408.34,
-      "trailing_vol": 0.243,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 399.0,
-          "high": 420.18,
-          "wide_low": 388.32,
-          "wide_high": 430.65,
-          "mid": 409.77,
-          "pct_low": -2.3,
-          "pct_high": 2.9,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 50.0,
-          "tilt_pct": 0.35,
-          "rel_tilt_pct": 0.07,
-          "skew": -0.039,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 390.68,
-          "high": 436.36,
-          "wide_low": 368.46,
-          "wide_high": 459.84,
-          "mid": 414.85,
-          "pct_low": -4.3,
-          "pct_high": 6.9,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 50.0,
-          "tilt_pct": 1.58,
-          "rel_tilt_pct": 0.31,
-          "skew": -0.071,
-          "lean": "flat"
         }
       }
     },
@@ -15971,9 +15971,9 @@
         "1 week": {
           "days": 5,
           "low": 460.18,
-          "high": 476.14,
-          "wide_low": 451.61,
-          "wide_high": 483.24,
+          "high": 476.13,
+          "wide_low": 451.59,
+          "wide_high": 483.36,
           "mid": 467.72,
           "pct_low": -1.3,
           "pct_high": 2.1,
@@ -15981,7 +15981,7 @@
           "days_to_earnings": 50.0,
           "tilt_pct": 0.32,
           "rel_tilt_pct": 0.04,
-          "skew": -0.036,
+          "skew": -0.032,
           "lean": "flat"
         },
         "1 month": {
@@ -16083,6 +16083,46 @@
       }
     },
     {
+      "ticker": "APA",
+      "asof": "2026-09-11",
+      "close": 44.73,
+      "trailing_vol": 0.318,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 43.25,
+          "high": 46.54,
+          "wide_low": 41.92,
+          "wide_high": 47.97,
+          "mid": 44.93,
+          "pct_low": -3.3,
+          "pct_high": 4.0,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 55.0,
+          "tilt_pct": 0.45,
+          "rel_tilt_pct": 0.17,
+          "skew": -0.029,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 42.29,
+          "high": 49.06,
+          "wide_low": 39.46,
+          "wide_high": 52.06,
+          "mid": 45.63,
+          "pct_low": -5.5,
+          "pct_high": 9.7,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 55.0,
+          "tilt_pct": 1.99,
+          "rel_tilt_pct": 0.72,
+          "skew": -0.049,
+          "lean": "up"
+        }
+      }
+    },
+    {
       "ticker": "COIN",
       "asof": "2026-09-11",
       "close": 175.26,
@@ -16159,46 +16199,6 @@
           "rel_tilt_pct": -0.36,
           "skew": -0.074,
           "lean": "down"
-        }
-      }
-    },
-    {
-      "ticker": "APA",
-      "asof": "2026-09-11",
-      "close": 44.73,
-      "trailing_vol": 0.318,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 43.25,
-          "high": 46.54,
-          "wide_low": 41.92,
-          "wide_high": 47.97,
-          "mid": 44.93,
-          "pct_low": -3.3,
-          "pct_high": 4.0,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 55.0,
-          "tilt_pct": 0.45,
-          "rel_tilt_pct": 0.17,
-          "skew": -0.029,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 42.29,
-          "high": 49.02,
-          "wide_low": 39.46,
-          "wide_high": 52.06,
-          "mid": 45.63,
-          "pct_low": -5.5,
-          "pct_high": 9.6,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 55.0,
-          "tilt_pct": 1.99,
-          "rel_tilt_pct": 0.72,
-          "skew": -0.049,
-          "lean": "up"
         }
       }
     },
@@ -16333,7 +16333,7 @@
           "low": 68.86,
           "high": 71.28,
           "wide_low": 67.6,
-          "wide_high": 72.36,
+          "wide_high": 72.4,
           "mid": 70.07,
           "pct_low": -1.5,
           "pct_high": 2.0,
@@ -16341,15 +16341,15 @@
           "days_to_earnings": 39.0,
           "tilt_pct": 0.24,
           "rel_tilt_pct": -0.03,
-          "skew": -0.055,
+          "skew": -0.046,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
           "low": 67.72,
           "high": 73.17,
-          "wide_low": 65.42,
-          "wide_high": 75.4,
+          "wide_low": 65.38,
+          "wide_high": 75.43,
           "mid": 70.71,
           "pct_low": -3.1,
           "pct_high": 4.7,
@@ -16357,7 +16357,7 @@
           "days_to_earnings": 39.0,
           "tilt_pct": 1.15,
           "rel_tilt_pct": -0.12,
-          "skew": -0.095,
+          "skew": -0.096,
           "lean": "flat"
         }
       }
@@ -16694,21 +16694,21 @@
           "high": 15.4,
           "wide_low": 13.86,
           "wide_high": 15.96,
-          "mid": 14.85,
+          "mid": 14.84,
           "pct_low": -3.4,
           "pct_high": 3.9,
           "earnings_inside": 0.0,
           "days_to_earnings": 54.0,
-          "tilt_pct": 0.2,
-          "rel_tilt_pct": -0.07,
-          "skew": 0.022,
+          "tilt_pct": 0.13,
+          "rel_tilt_pct": -0.14,
+          "skew": 0.031,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
           "low": 13.94,
           "high": 16.25,
-          "wide_low": 13.28,
+          "wide_low": 13.24,
           "wide_high": 17.27,
           "mid": 15.13,
           "pct_low": -5.9,
@@ -16717,7 +16717,7 @@
           "days_to_earnings": 54.0,
           "tilt_pct": 2.07,
           "rel_tilt_pct": 0.8,
-          "skew": 0.007,
+          "skew": -0.004,
           "lean": "up"
         }
       }
@@ -17050,7 +17050,7 @@
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 86.97,
+          "low": 86.93,
           "high": 90.08,
           "wide_low": 85.08,
           "wide_high": 91.52,
@@ -17146,18 +17146,18 @@
         },
         "1 month": {
           "days": 21,
-          "low": 355.39,
-          "high": 434.52,
-          "wide_low": 324.26,
-          "wide_high": 483.59,
-          "mid": 393.91,
+          "low": 355.31,
+          "high": 434.47,
+          "wide_low": 324.12,
+          "wide_high": 483.49,
+          "mid": 394.65,
           "pct_low": -6.4,
           "pct_high": 14.4,
           "earnings_inside": 0.0,
           "days_to_earnings": 41.0,
-          "tilt_pct": 3.67,
-          "rel_tilt_pct": 2.4,
-          "skew": 0.026,
+          "tilt_pct": 3.86,
+          "rel_tilt_pct": 2.59,
+          "skew": 0.015,
           "lean": "up"
         }
       }
@@ -17170,10 +17170,10 @@
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 659.47,
+          "low": 659.43,
           "high": 696.16,
           "wide_low": 641.63,
-          "wide_high": 712.37,
+          "wide_high": 712.88,
           "mid": 677.89,
           "pct_low": -2.4,
           "pct_high": 3.0,
@@ -17181,7 +17181,7 @@
           "days_to_earnings": 76.0,
           "tilt_pct": 0.32,
           "rel_tilt_pct": 0.04,
-          "skew": -0.051,
+          "skew": -0.044,
           "lean": "flat"
         },
         "1 month": {
@@ -17643,46 +17643,6 @@
       }
     },
     {
-      "ticker": "CB",
-      "asof": "2026-09-11",
-      "close": 338.25,
-      "trailing_vol": 0.17,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 333.45,
-          "high": 344.89,
-          "wide_low": 328.37,
-          "wide_high": 350.43,
-          "mid": 339.3,
-          "pct_low": -1.4,
-          "pct_high": 2.0,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 47.0,
-          "tilt_pct": 0.31,
-          "rel_tilt_pct": 0.03,
-          "skew": -0.007,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 328.23,
-          "high": 352.25,
-          "wide_low": 316.93,
-          "wide_high": 362.44,
-          "mid": 341.39,
-          "pct_low": -3.0,
-          "pct_high": 4.1,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 47.0,
-          "tilt_pct": 0.92,
-          "rel_tilt_pct": -0.35,
-          "skew": -0.108,
-          "lean": "flat"
-        }
-      }
-    },
-    {
       "ticker": "J",
       "asof": "2026-09-11",
       "close": 141.85,
@@ -17758,6 +17718,46 @@
           "tilt_pct": 1.4,
           "rel_tilt_pct": 0.13,
           "skew": -0.148,
+          "lean": "flat"
+        }
+      }
+    },
+    {
+      "ticker": "CB",
+      "asof": "2026-09-11",
+      "close": 338.25,
+      "trailing_vol": 0.17,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 333.29,
+          "high": 344.98,
+          "wide_low": 328.24,
+          "wide_high": 350.31,
+          "mid": 339.39,
+          "pct_low": -1.5,
+          "pct_high": 2.0,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 47.0,
+          "tilt_pct": 0.34,
+          "rel_tilt_pct": 0.06,
+          "skew": -0.027,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 328.22,
+          "high": 352.79,
+          "wide_low": 316.87,
+          "wide_high": 362.74,
+          "mid": 341.5,
+          "pct_low": -3.0,
+          "pct_high": 4.3,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 47.0,
+          "tilt_pct": 0.96,
+          "rel_tilt_pct": -0.31,
+          "skew": -0.107,
           "lean": "flat"
         }
       }
@@ -18251,9 +18251,9 @@
         "1 week": {
           "days": 5,
           "low": 107.45,
-          "high": 110.53,
+          "high": 110.58,
           "wide_low": 105.99,
-          "wide_high": 111.9,
+          "wide_high": 111.97,
           "mid": 109.12,
           "pct_low": -1.2,
           "pct_high": 1.6,
@@ -18261,23 +18261,23 @@
           "days_to_earnings": 52.0,
           "tilt_pct": 0.3,
           "rel_tilt_pct": 0.03,
-          "skew": -0.073,
+          "skew": -0.061,
           "lean": "flat"
         },
         "1 month": {
           "days": 21,
-          "low": 106.53,
+          "low": 106.56,
           "high": 112.87,
-          "wide_low": 103.94,
-          "wide_high": 115.79,
-          "mid": 110.02,
+          "wide_low": 103.93,
+          "wide_high": 115.84,
+          "mid": 110.05,
           "pct_low": -2.1,
           "pct_high": 3.8,
           "earnings_inside": 0.0,
           "days_to_earnings": 52.0,
-          "tilt_pct": 1.12,
-          "rel_tilt_pct": -0.15,
-          "skew": -0.053,
+          "tilt_pct": 1.15,
+          "rel_tilt_pct": -0.12,
+          "skew": -0.055,
           "lean": "flat"
         }
       }
@@ -18331,9 +18331,9 @@
         "1 week": {
           "days": 5,
           "low": 308.1,
-          "high": 325.45,
+          "high": 325.46,
           "wide_low": 300.56,
-          "wide_high": 332.81,
+          "wide_high": 332.86,
           "mid": 316.65,
           "pct_low": -2.4,
           "pct_high": 3.1,
@@ -18341,7 +18341,7 @@
           "days_to_earnings": 48.0,
           "tilt_pct": 0.33,
           "rel_tilt_pct": 0.05,
-          "skew": -0.023,
+          "skew": -0.022,
           "lean": "flat"
         },
         "1 month": {
@@ -18643,6 +18643,46 @@
       }
     },
     {
+      "ticker": "LYV",
+      "asof": "2026-09-11",
+      "close": 170.15,
+      "trailing_vol": 0.229,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 166.39,
+          "high": 174.56,
+          "wide_low": 162.07,
+          "wide_high": 178.49,
+          "mid": 170.6,
+          "pct_low": -2.2,
+          "pct_high": 2.6,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 54.0,
+          "tilt_pct": 0.26,
+          "rel_tilt_pct": -0.01,
+          "skew": -0.063,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 162.01,
+          "high": 180.76,
+          "wide_low": 154.67,
+          "wide_high": 189.23,
+          "mid": 171.9,
+          "pct_low": -4.8,
+          "pct_high": 6.2,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 54.0,
+          "tilt_pct": 1.02,
+          "rel_tilt_pct": -0.25,
+          "skew": -0.047,
+          "lean": "flat"
+        }
+      }
+    },
+    {
       "ticker": "ABNB",
       "asof": "2026-09-11",
       "close": 170.19,
@@ -18679,46 +18719,6 @@
           "rel_tilt_pct": -0.42,
           "skew": -0.195,
           "lean": "down"
-        }
-      }
-    },
-    {
-      "ticker": "LYV",
-      "asof": "2026-09-11",
-      "close": 170.15,
-      "trailing_vol": 0.229,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 166.39,
-          "high": 174.47,
-          "wide_low": 162.07,
-          "wide_high": 178.47,
-          "mid": 170.6,
-          "pct_low": -2.2,
-          "pct_high": 2.5,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 54.0,
-          "tilt_pct": 0.26,
-          "rel_tilt_pct": -0.01,
-          "skew": -0.064,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 162.09,
-          "high": 180.33,
-          "wide_low": 154.81,
-          "wide_high": 188.58,
-          "mid": 171.9,
-          "pct_low": -4.7,
-          "pct_high": 6.0,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 54.0,
-          "tilt_pct": 1.02,
-          "rel_tilt_pct": -0.25,
-          "skew": -0.061,
-          "lean": "flat"
         }
       }
     },
@@ -18763,46 +18763,6 @@
       }
     },
     {
-      "ticker": "BKNG",
-      "asof": "2026-09-11",
-      "close": 173.92,
-      "trailing_vol": 0.375,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 167.32,
-          "high": 180.62,
-          "wide_low": 161.16,
-          "wide_high": 186.43,
-          "mid": 174.12,
-          "pct_low": -3.8,
-          "pct_high": 3.8,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 47.0,
-          "tilt_pct": 0.11,
-          "rel_tilt_pct": -0.16,
-          "skew": -0.062,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 160.26,
-          "high": 188.61,
-          "wide_low": 149.06,
-          "wide_high": 200.88,
-          "mid": 175.52,
-          "pct_low": -7.9,
-          "pct_high": 8.4,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 47.0,
-          "tilt_pct": 0.92,
-          "rel_tilt_pct": -0.35,
-          "skew": -0.095,
-          "lean": "down"
-        }
-      }
-    },
-    {
       "ticker": "SPG",
       "asof": "2026-09-11",
       "close": 204.83,
@@ -18838,46 +18798,6 @@
           "tilt_pct": 1.28,
           "rel_tilt_pct": 0.01,
           "skew": -0.078,
-          "lean": "flat"
-        }
-      }
-    },
-    {
-      "ticker": "TRMB",
-      "asof": "2026-09-11",
-      "close": 57.66,
-      "trailing_vol": 0.302,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 56.02,
-          "high": 59.41,
-          "wide_low": 54.33,
-          "wide_high": 61.07,
-          "mid": 57.83,
-          "pct_low": -2.8,
-          "pct_high": 3.0,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 54.0,
-          "tilt_pct": 0.29,
-          "rel_tilt_pct": 0.02,
-          "skew": -0.068,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 53.9,
-          "high": 61.87,
-          "wide_low": 50.9,
-          "wide_high": 64.84,
-          "mid": 58.37,
-          "pct_low": -6.5,
-          "pct_high": 7.3,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 54.0,
-          "tilt_pct": 1.22,
-          "rel_tilt_pct": -0.05,
-          "skew": -0.131,
           "lean": "flat"
         }
       }
@@ -19069,7 +18989,7 @@
           "low": 207.16,
           "high": 224.4,
           "wide_low": 199.81,
-          "wide_high": 231.46,
+          "wide_high": 231.47,
           "mid": 216.78,
           "pct_low": -3.2,
           "pct_high": 4.8,
@@ -19077,7 +18997,47 @@
           "days_to_earnings": 50.0,
           "tilt_pct": 1.26,
           "rel_tilt_pct": -0.01,
-          "skew": -0.109,
+          "skew": -0.108,
+          "lean": "flat"
+        }
+      }
+    },
+    {
+      "ticker": "BKNG",
+      "asof": "2026-09-11",
+      "close": 173.92,
+      "trailing_vol": 0.376,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 167.24,
+          "high": 180.65,
+          "wide_low": 161.06,
+          "wide_high": 186.33,
+          "mid": 174.15,
+          "pct_low": -3.8,
+          "pct_high": 3.9,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 47.0,
+          "tilt_pct": 0.13,
+          "rel_tilt_pct": -0.14,
+          "skew": -0.072,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 160.33,
+          "high": 188.48,
+          "wide_low": 149.02,
+          "wide_high": 200.73,
+          "mid": 175.54,
+          "pct_low": -7.8,
+          "pct_high": 8.4,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 47.0,
+          "tilt_pct": 0.93,
+          "rel_tilt_pct": -0.34,
+          "skew": -0.1,
           "lean": "flat"
         }
       }
@@ -19198,6 +19158,46 @@
           "tilt_pct": 1.28,
           "rel_tilt_pct": 0.01,
           "skew": -0.039,
+          "lean": "flat"
+        }
+      }
+    },
+    {
+      "ticker": "TRMB",
+      "asof": "2026-09-11",
+      "close": 57.66,
+      "trailing_vol": 0.302,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 56.01,
+          "high": 59.4,
+          "wide_low": 54.33,
+          "wide_high": 61.07,
+          "mid": 57.83,
+          "pct_low": -2.9,
+          "pct_high": 3.0,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 54.0,
+          "tilt_pct": 0.29,
+          "rel_tilt_pct": 0.02,
+          "skew": -0.068,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 53.9,
+          "high": 61.75,
+          "wide_low": 50.9,
+          "wide_high": 64.87,
+          "mid": 58.37,
+          "pct_low": -6.5,
+          "pct_high": 7.1,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 54.0,
+          "tilt_pct": 1.22,
+          "rel_tilt_pct": -0.05,
+          "skew": -0.129,
           "lean": "flat"
         }
       }
@@ -19546,18 +19546,18 @@
         },
         "1 month": {
           "days": 21,
-          "low": 777.26,
-          "high": 886.33,
-          "wide_low": 737.99,
-          "wide_high": 928.12,
-          "mid": 837.85,
-          "pct_low": -5.0,
+          "low": 777.08,
+          "high": 886.36,
+          "wide_low": 738.01,
+          "wide_high": 928.18,
+          "mid": 837.34,
+          "pct_low": -5.1,
           "pct_high": 8.3,
           "earnings_inside": 0.0,
           "days_to_earnings": 48.0,
-          "tilt_pct": 2.33,
-          "rel_tilt_pct": 1.06,
-          "skew": -0.107,
+          "tilt_pct": 2.27,
+          "rel_tilt_pct": 1.0,
+          "skew": -0.102,
           "lean": "up"
         }
       }
@@ -19572,8 +19572,8 @@
           "days": 5,
           "low": 74.14,
           "high": 76.98,
-          "wide_low": 72.76,
-          "wide_high": 78.18,
+          "wide_low": 72.75,
+          "wide_high": 78.19,
           "mid": 75.53,
           "pct_low": -1.6,
           "pct_high": 2.2,
@@ -19587,9 +19587,9 @@
         "1 month": {
           "days": 21,
           "low": 73.18,
-          "high": 79.08,
+          "high": 79.11,
           "wide_low": 70.64,
-          "wide_high": 81.77,
+          "wide_high": 81.8,
           "mid": 76.1,
           "pct_low": -2.9,
           "pct_high": 5.0,
@@ -19597,7 +19597,7 @@
           "days_to_earnings": 55.0,
           "tilt_pct": 1.02,
           "rel_tilt_pct": -0.25,
-          "skew": -0.018,
+          "skew": -0.015,
           "lean": "flat"
         }
       }
@@ -19763,6 +19763,46 @@
       }
     },
     {
+      "ticker": "FIS",
+      "asof": "2026-09-11",
+      "close": 38.14,
+      "trailing_vol": 0.395,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 36.82,
+          "high": 39.56,
+          "wide_low": 35.5,
+          "wide_high": 40.76,
+          "mid": 38.22,
+          "pct_low": -3.5,
+          "pct_high": 3.7,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 54.0,
+          "tilt_pct": 0.21,
+          "rel_tilt_pct": -0.07,
+          "skew": -0.069,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 35.74,
+          "high": 41.06,
+          "wide_low": 33.37,
+          "wide_high": 43.07,
+          "mid": 38.36,
+          "pct_low": -6.3,
+          "pct_high": 7.7,
+          "earnings_inside": 0.0,
+          "days_to_earnings": 54.0,
+          "tilt_pct": 0.58,
+          "rel_tilt_pct": -0.7,
+          "skew": -0.092,
+          "lean": "down"
+        }
+      }
+    },
+    {
       "ticker": "CME",
       "asof": "2026-09-11",
       "close": 275.54,
@@ -19839,46 +19879,6 @@
           "rel_tilt_pct": -0.15,
           "skew": -0.126,
           "lean": "flat"
-        }
-      }
-    },
-    {
-      "ticker": "FIS",
-      "asof": "2026-09-11",
-      "close": 38.14,
-      "trailing_vol": 0.395,
-      "horizons": {
-        "1 week": {
-          "days": 5,
-          "low": 36.87,
-          "high": 39.59,
-          "wide_low": 35.6,
-          "wide_high": 40.75,
-          "mid": 38.22,
-          "pct_low": -3.3,
-          "pct_high": 3.8,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 54.0,
-          "tilt_pct": 0.21,
-          "rel_tilt_pct": -0.07,
-          "skew": -0.051,
-          "lean": "flat"
-        },
-        "1 month": {
-          "days": 21,
-          "low": 35.71,
-          "high": 40.99,
-          "wide_low": 33.39,
-          "wide_high": 43.05,
-          "mid": 38.36,
-          "pct_low": -6.4,
-          "pct_high": 7.5,
-          "earnings_inside": 0.0,
-          "days_to_earnings": 54.0,
-          "tilt_pct": 0.58,
-          "rel_tilt_pct": -0.7,
-          "skew": -0.092,
-          "lean": "down"
         }
       }
     },
@@ -20010,10 +20010,10 @@
       "horizons": {
         "1 week": {
           "days": 5,
-          "low": 84.44,
+          "low": 84.43,
           "high": 89.27,
           "wide_low": 82.28,
-          "wide_high": 91.51,
+          "wide_high": 91.57,
           "mid": 86.94,
           "pct_low": -2.6,
           "pct_high": 2.9,
@@ -20021,7 +20021,7 @@
           "days_to_earnings": 54.0,
           "tilt_pct": 0.25,
           "rel_tilt_pct": -0.02,
-          "skew": -0.036,
+          "skew": -0.03,
           "lean": "flat"
         },
         "1 month": {
