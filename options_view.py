@@ -115,6 +115,44 @@ def build(tickers: list[str] | None = None) -> dict:
     }
 
 
+def placeholder_page(reason: str, asof: str = "") -> str:
+    """A page that says why there is nothing to show.
+
+    This exists because the alternative is a 404, and a 404 is the worst thing
+    this build can produce. The step that writes this page is deliberately
+    `continue-on-error` in the workflow - a failed chain fetch must never take
+    the ranges page down with it - which means a failure here is invisible: the
+    run goes green and the link 404s with no explanation anywhere.
+
+    So the page is always written. A reader who follows the link during a
+    market holiday, or after the option source has moved again, gets a sentence
+    telling them which of those it was instead of a GitHub error screen.
+    """
+    import options_dashboard
+    return (
+        '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width,initial-scale=1">'
+        "<title>Options view</title>"
+        f"<style>{options_dashboard.CSS}</style></head><body>"
+        '<div class="wrap"><h1>Options view</h1>'
+        f'<p class="sub">No option prices for this run{" &middot; " + _e(asof) if asof else ""}</p>'
+        '<div class="note"><b>Nothing could be priced.</b><br>'
+        f'{_e(reason)}<br><br>'
+        'The ranges themselves are unaffected - only the comparison against '
+        'what options cost needs live chains. This page rebuilds on the next '
+        'daily run, and chains are usually only available on a trading day.'
+        '</div>'
+        '<footer><a href="./">Ranges</a> &middot; '
+        '<a href="./results.html">How the ranges have scored</a> &middot; '
+        '<a href="./flow.html">Options flow</a></footer>'
+        "</div></body></html>")
+
+
+def _e(x) -> str:
+    import html as _h
+    return _h.escape(str(x if x is not None else ""))
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--tickers", nargs="*")
@@ -125,12 +163,31 @@ def main(argv=None) -> int:
     args = p.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-    payload = build(args.tickers)
+    import options_dashboard
+    try:
+        payload = build(args.tickers)
+    except Exception as exc:                      # noqa: BLE001 - see above
+        log.error("options build failed: %s: %s", type(exc).__name__, exc)
+        with open(args.html, "w") as fh:
+            fh.write(placeholder_page(f"{type(exc).__name__}: {exc}"))
+        print(f"WROTE PLACEHOLDER -> {args.html}")
+        print("The page exists and explains itself; it is not a 404.")
+        return 1
 
     with open(args.out, "w") as fh:
         json.dump(payload, fh, indent=2)
 
-    import options_dashboard
+    cov = payload["coverage"]
+    if not cov["priced"]:
+        # Built fine, priced nothing. Same reader problem, different cause.
+        with open(args.html, "w") as fh:
+            fh.write(placeholder_page(
+                f"{cov['forecast']} names were forecast but none had a usable "
+                f"option chain ({cov['no_chain']} fetch failures).",
+                payload.get("asof", "")))
+        print(f"0 of {cov['forecast']} names priced - wrote placeholder")
+        return 1
+
     with open(args.html, "w") as fh:
         fh.write(options_dashboard.render(payload, min_gap=args.min_gap))
 

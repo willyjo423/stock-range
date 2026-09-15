@@ -48,10 +48,30 @@ jobs:
         run: python daily.py
 
       - name: Options view
+        id: options
         # Needs the forecasts from the step above, and fetches the chains
         # itself. Never let it take the ranges down with it.
         continue-on-error: true
         run: python options_view.py
+
+      - name: Say whether the options page built
+        # continue-on-error means the run goes green either way, so without
+        # this the only symptom of a failure is a 404 on a link nobody is
+        # watching. It writes a page explaining itself now; this puts the
+        # outcome where it can be seen without opening the log.
+        if: always()
+        run: |
+          if [ "${{ steps.options.outcome }}" = "success" ]; then
+            echo "### Options page: built" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### Options page: FELL BACK TO A PLACEHOLDER" \
+              >> $GITHUB_STEP_SUMMARY
+            echo "The page exists and says why, but nothing was priced." \
+              >> $GITHUB_STEP_SUMMARY
+          fi
+          test -f docs/options.html \
+            && echo "docs/options.html present ($(wc -c < docs/options.html) bytes)" \
+            || echo "docs/options.html MISSING - the link will 404"
 
       - name: Grade ranges whose windows have closed
         # Never let the scoreboard take the forecasts down with it.

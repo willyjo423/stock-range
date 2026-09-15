@@ -143,6 +143,22 @@ def _range_cell(h: dict) -> str:
             f'{arrow}${h["low"]:,.2f} – ${h["high"]:,.2f}{flag}{pct}</td>')
 
 
+def ordinal(n: float) -> str:
+    """1st, 2nd, 3rd, 4th - and 11th, 12th, 13th, which are the trap.
+
+    Every percentile on this page was printed with a hardcoded "th", so the
+    1st percentile read "1th" and the 23rd read "23th". Small, but it is the
+    first thing the eye lands on in the watch column and it makes the whole
+    page look unfinished.
+    """
+    i = int(round(n))
+    if 10 <= i % 100 <= 20:
+        suffix = "th"
+    else:
+        suffix = {1: "st", 2: "nd", 3: "rd"}.get(i % 10, "th")
+    return f"{i}{suffix}"
+
+
 def _watch_cell(r: dict) -> str:
     """The ranking number, and one line saying why it is what it is."""
     score = r.get("watch_score") or 0.0
@@ -153,7 +169,7 @@ def _watch_cell(r: dict) -> str:
         top = open_[0]
         pct = top["percentile"]
         cls = "edge-hi" if pct >= 50 else "edge-lo"
-        why = (f'{pct:.0f}th pct of the {_e(top["horizon"])} range '
+        why = (f'{ordinal(pct)} pct of the {_e(top["horizon"])} range '
                f'published {_e(top["published"])}')
     elif ts:
         cls = ""
@@ -175,10 +191,10 @@ def _position_cell(r: dict) -> str:
         return '<td class="pos" data-v="-1">—</td>'
     lead = open_[0]["percentile"]
     bits = "".join(
-        f'<small>{_e(o["horizon"])}: {o["percentile"]:.0f}th '
+        f'<small>{_e(o["horizon"])}: {ordinal(o["percentile"])} '
         f'({o["elapsed_frac"] * 100:.0f}% through)</small>' for o in open_)
     return (f'<td class="pos" data-v="{abs(lead - 50):.2f}">'
-            f'{lead:.0f}th{bits}</td>')
+            f'{ordinal(lead)}{bits}</td>')
 
 
 def _row(r: dict, labels: list) -> str:
