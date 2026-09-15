@@ -47,6 +47,39 @@ def load_todays_flow(asof: str) -> dict[str, dict]:
     return {r["ticker"]: r for r in (flags.get("tickers") or []) if r.get("ticker")}
 
 
+def buy_rank(r: dict) -> tuple[int, float]:
+    """Sort key for the options page: cheapest genuine reading first.
+
+    The ratio is implied / model, so BELOW one means the market is charging
+    less for a move than the model expects - the buying side. An earlier
+    version sorted by the ABSOLUTE distance from one, which interleaved the
+    most over-priced names with the most under-priced and made the top of the
+    page a mix of buy and sell ideas with nothing to separate them.
+
+    A name is ranked on its single cheapest horizon rather than an average of
+    its horizons: a one-week option being cheap is a trade on its own and
+    should not be diluted by a fairly-priced one-month sitting beside it.
+
+    The leading element of the tuple is doing the important work. A cheap
+    reading built on a stale or crossed quote is the most common way this page
+    can mislead - a wide bid/ask makes a fairly-priced option look
+    under-priced, and those are exactly the names that would otherwise lead.
+    They sort below every clean reading rather than being deleted, so coverage
+    stays visible; names with no chain at all sort last.
+
+    Module level rather than nested inside `build` so the ordering rule can be
+    tested directly, which is the only way to know it still holds.
+    """
+    clean = [h["ratio"] for h in r["horizons"].values()
+             if h.get("ratio") and h.get("quotes_ok", True)]
+    if clean:
+        return (0, min(clean))
+    shaky = [h["ratio"] for h in r["horizons"].values() if h.get("ratio")]
+    if shaky:
+        return (1, min(shaky))
+    return (2, 0.0)
+
+
 def build(tickers: list[str] | None = None) -> dict:
     payload = load_forecasts()
     asof = payload.get("asof")
@@ -94,23 +127,41 @@ def build(tickers: list[str] | None = None) -> dict:
             flow_flags.get(tkr))
         out.append(row)
 
-    # Biggest disagreement first, over whichever horizon disagrees most. A name
-    # with no usable chain sorts to the bottom rather than being dropped, so
-    # coverage stays visible.
-    def gap(r):
-        vals = [abs(h.get("ratio", 1.0) - 1.0)
-                for h in r["horizons"].values() if h.get("ratio")]
-        return max(vals, default=-1.0)
+    # Cheapest first - the buying side of the page.
+    #
+    # The ratio is implied / model, so BELOW one means the market is charging
+    # less for a move than the model expects, and that is the direction worth
+    # leading with. The first version sorted by the ABSOLUTE distance from one,
+    # which put the most over-priced names alongside the most under-priced and
+    # made the top of the page a mix of buy and sell ideas with nothing
+    # separating them.
+    #
+    # A name is ranked on its single cheapest horizon rather than an average of
+    # them: a one-week option being cheap is a trade on its own and should not
+    # be diluted by a fairly-priced one-month.
+    #
+    # The tuple is doing real work. A cheap-looking reading built on a stale or
+    # crossed quote is the most common way this page can mislead - a wide
+    # bid/ask makes a fair option look under-priced - so those sort BELOW every
+    # clean reading rather than being deleted, and no-chain names sort last.
+    for r in out:
+        rank = buy_rank(r)
+        r["cheapest_ratio"] = round(rank[1], 3) if rank[0] < 2 else None
+        r["quotes_suspect"] = rank[0] == 1
 
-    out.sort(key=lambda r: -gap(r))
+    out.sort(key=buy_rank)
 
-    priced = sum(1 for r in out if gap(r) >= 0)
+    priced = sum(1 for r in out if r.get("cheapest_ratio") is not None)
+    cheap = sum(1 for r in out
+                if (r.get("cheapest_ratio") or 9) <= implied.CHEAP_RATIO
+                and not r["quotes_suspect"])
+    log.info("%d names priced, %d of them reading cheap", priced, cheap)
     return {
         "asof": asof,
         "generated_at": payload.get("generated_at"),
         "tickers": out,
         "coverage": {"forecast": len(records), "priced": priced,
-                     "no_chain": len(errors)},
+                     "cheap": cheap, "no_chain": len(errors)},
         "model_metrics": payload.get("model_metrics") or {},
     }
 
@@ -128,14 +179,28 @@ def placeholder_page(reason: str, asof: str = "") -> str:
     market holiday, or after the option source has moved again, gets a sentence
     telling them which of those it was instead of a GitHub error screen.
     """
-    import options_dashboard
+    # Deliberately self-contained: no import of options_dashboard, no shared
+    # CSS. If that module is what broke, borrowing its stylesheet to explain
+    # the breakage fails for the same reason and you are back to a 404.
+    css = ("body{margin:0;background:#f6f7f9;color:#14171c;font:15px/1.6 "
+           "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}"
+           "@media(prefers-color-scheme:dark){body{background:#0f1115;"
+           "color:#e8eaed}.note{background:#171a21;border-color:#252a34}"
+           "a{color:#4ea1ff}}"
+           ".wrap{max-width:680px;margin:0 auto;padding:40px 16px}"
+           "h1{font-size:22px;margin:0 0 4px}"
+           ".sub{color:#5b6472;font-size:13px;margin:0 0 22px}"
+           ".note{background:#fff;border:1px solid #e3e6ea;border-left:3px "
+           "solid #d29922;border-radius:8px;padding:16px 18px;font-size:14px}"
+           "footer{margin-top:28px;font-size:13px}")
     return (
         '<!doctype html><html lang="en"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
         "<title>Options view</title>"
-        f"<style>{options_dashboard.CSS}</style></head><body>"
+        f"<style>{css}</style></head><body>"
         '<div class="wrap"><h1>Options view</h1>'
-        f'<p class="sub">No option prices for this run{" &middot; " + _e(asof) if asof else ""}</p>'
+        f'<p class="sub">No option prices for this run'
+        f'{" &middot; " + _e(asof) if asof else ""}</p>'
         '<div class="note"><b>Nothing could be priced.</b><br>'
         f'{_e(reason)}<br><br>'
         'The ranges themselves are unaffected - only the comparison against '
@@ -163,8 +228,8 @@ def main(argv=None) -> int:
     args = p.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-    import options_dashboard
     try:
+        import options_dashboard
         payload = build(args.tickers)
     except Exception as exc:                      # noqa: BLE001 - see above
         log.error("options build failed: %s: %s", type(exc).__name__, exc)

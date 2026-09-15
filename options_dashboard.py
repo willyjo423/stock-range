@@ -60,6 +60,9 @@ input[type=search]{width:100%;padding:11px 13px;font-size:16px;
 .head{display:flex;align-items:baseline;gap:10px}
 .tk{font-size:20px;font-weight:700;letter-spacing:-.01em}
 .px{font-size:16px;color:var(--dim);font-variant-numeric:tabular-nums}
+.shaky{display:inline-block;background:#6b7280;color:#fff;font-size:9.5px;
+  font-weight:700;border-radius:3px;padding:1px 4px;margin-left:4px;
+  letter-spacing:.03em;vertical-align:1px}
 .earn{margin-left:auto;background:#fdf0d5;color:#8a6414;font-size:11px;
   font-weight:700;border-radius:20px;padding:3px 9px}
 
@@ -207,6 +210,12 @@ def _card(rec: dict) -> str:
     earn = any((h.get("earnings_inside") == 1)
                for h in (rec.get("horizons") or {}).values())
     badge = ('<span class="earn">EARNINGS INSIDE</span>' if earn else "")
+    # A wide or stale bid/ask makes a fairly-priced option read cheap, which is
+    # the single most likely way this page misleads. Those names still appear -
+    # deleting them would hide coverage - but below every clean reading, and
+    # saying so on the card.
+    if rec.get("quotes_suspect"):
+        badge += '<span class="shaky">THIN QUOTES</span>' 
     labels = sorted((rec.get("horizons") or {}).items(),
                     key=lambda kv: kv[1].get("days") or 0)
     # The lean sits under the shortest horizon only. Repeating it under every
@@ -221,6 +230,16 @@ def _card(rec: dict) -> str:
 
 NOTE = """
 <div class="note">
+<b>Cheapest first.</b> The page is ordered by how far below the model's
+expectation the market is pricing a move, on each name's single best horizon.
+The top of the page is where options cost least relative to what the model
+thinks is coming; scroll to the bottom for the ones priced richest.
+<br><br>
+<b>Cheap is not the same as a good trade.</b> An option is often cheap because
+the market knows something the model does not &mdash; a deal closing, a
+catalyst passing, a stock about to go quiet. The gap is the start of the
+question.
+<br><br>
 <b>What the two bars are.</b> The model's published range is the middle half of
 outcomes; an option's implied move is a one-standard-deviation move. Those are
 different units, so the percentages here convert the model's range onto the
@@ -259,6 +278,7 @@ def render(payload: dict, min_gap: float = 0.0) -> str:
     strip = "".join(
         f"<div>{k}<b>{_e(v)}</b></div>" for k, v in (
             ("names priced", cov.get("priced")),
+            ("reading cheap", cov.get("cheap")),
             ("no option chain", cov.get("no_chain")),
             ("forecast today", cov.get("forecast")),
         ) if v is not None)

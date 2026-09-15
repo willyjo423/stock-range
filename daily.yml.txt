@@ -54,6 +54,44 @@ jobs:
         continue-on-error: true
         run: python options_view.py
 
+      - name: Guarantee the options page exists
+        # The last line of defence, and the only one that does not depend on
+        # Python running at all. options_view.py writes its own explanation
+        # when the BUILD fails - but if the module fails to import, or the
+        # interpreter dies before main(), nothing runs and the link 404s.
+        # This is shell, it runs whatever happened above, and a page that
+        # says "not built" is strictly better than GitHub's error screen.
+        if: always()
+        run: |
+          mkdir -p docs
+          if [ ! -s docs/options.html ]; then
+            echo "options.html missing or empty - writing a stand-in"
+            cat > docs/options.html <<'HTML'
+          <!doctype html><html lang="en"><head><meta charset="utf-8">
+          <meta name="viewport" content="width=device-width,initial-scale=1">
+          <title>Options view</title><style>
+          body{margin:0;background:#f6f7f9;color:#14171c;font:15px/1.6
+          -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+          @media(prefers-color-scheme:dark){body{background:#0f1115;color:#e8eaed}
+          .note{background:#171a21;border-color:#252a34}a{color:#4ea1ff}}
+          .wrap{max-width:680px;margin:0 auto;padding:40px 16px}
+          h1{font-size:22px;margin:0 0 18px}
+          .note{background:#fff;border:1px solid #e3e6ea;border-left:3px solid
+          #d29922;border-radius:8px;padding:16px 18px;font-size:14px}
+          footer{margin-top:28px;font-size:13px}</style></head><body>
+          <div class="wrap"><h1>Options view</h1>
+          <div class="note"><b>This page did not build on the last run.</b><br>
+          The options comparison needs live chains and could not produce one.
+          The ranges themselves are unaffected. Check the Daily run log for the
+          Options view step, and this page will rebuild on the next run.</div>
+          <footer><a href="./">Ranges</a> &middot;
+          <a href="./results.html">How the ranges have scored</a> &middot;
+          <a href="./flow.html">Options flow</a></footer>
+          </div></body></html>
+          HTML
+          fi
+          ls -l docs/options.html
+
       - name: Say whether the options page built
         # continue-on-error means the run goes green either way, so without
         # this the only symptom of a failure is a 404 on a link nobody is

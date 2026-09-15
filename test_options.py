@@ -278,9 +278,73 @@ def test_no_quotes_is_visible():
           "Options look" not in h)
 
 
+def test_cheapest_sorts_to_the_top():
+    section("THE PAGE LEADS WITH THE BUYING SIDE")
+    import options_view as OV
+    import options_dashboard as OD
+
+    def h(ratio, days, ok=True):
+        if ratio is None:
+            return {"days": days, "model_move_pct": 7.0}
+        return {"days": days, "model_move_pct": 7.0,
+                "implied_move_pct": 7.0 * ratio, "ratio": ratio,
+                "verdict": implied.verdict(ratio), "quotes_ok": ok,
+                "low": 90.0, "high": 110.0}
+
+    def name(t, wk, mo, ok=True):
+        return {"ticker": t, "close": 100.0,
+                "horizons": {"1 week": h(wk, 5, ok), "1 month": h(mo, 21, ok)},
+                "lean": {"direction": "flat", "drivers": []},
+                "has_flow": False}
+
+    rows = [name("RICH", 1.40, 1.30), name("FAIR", 1.01, 0.99),
+            name("CHEAP", 0.62, 0.95), name("MID", 0.80, 0.85),
+            name("NOQ", None, None), name("THIN", 0.40, 0.45, ok=False)]
+
+    for r in rows:
+        rank = OV.buy_rank(r)
+        r["cheapest_ratio"] = round(rank[1], 3) if rank[0] < 2 else None
+        r["quotes_suspect"] = rank[0] == 1
+    rows.sort(key=OV.buy_rank)
+    order = [r["ticker"] for r in rows]
+
+    check("the cheapest name leads", order[0] == "CHEAP", str(order))
+    check("then the next cheapest", order[1] == "MID", str(order))
+    check("the richest sorts below every cheap one",
+          order.index("RICH") > order.index("FAIR"), str(order))
+    check("a name with no chain sorts last", order[-1] == "NOQ", str(order))
+
+    # The one that matters. THIN is the cheapest ratio on the board at 0.40 -
+    # and it is cheap only because its quotes are wide. A page that leads with
+    # it is a page that leads with its own worst reading.
+    check("a cheap reading on thin quotes does NOT lead the page",
+          order.index("THIN") > order.index("MID"), str(order))
+    check("but it is still shown, so coverage stays visible",
+          "THIN" in order)
+
+    # Ranking on the single best horizon, not an average: CHEAP averages 0.785
+    # across its two horizons and MID averages 0.825, so an average would order
+    # them the same way here - but CHEAP's one-week at 0.62 is the trade.
+    check("a name is ranked on its cheapest horizon",
+          rows[0]["cheapest_ratio"] == 0.62,
+          str(rows[0]["cheapest_ratio"]))
+
+    payload = {"asof": "2026-09-15", "tickers": rows,
+               "coverage": {"forecast": 6, "priced": 5, "cheap": 2,
+                            "no_chain": 1}}
+    html = OD.render(payload)
+    check("the rendered page keeps that order",
+          html.index("CHEAP") < html.index("RICH"))
+    check("and says what the order means", "Cheapest first" in html)
+    check("and warns that cheap is not automatically a buy",
+          "not the same as a good trade" in html)
+    check("a thin-quote name is labelled on its card", "THIN QUOTES" in html)
+
+
 def main():
     print("Options view - offline checks")
-    for fn in (test_model_sigma, test_implied, test_expiry_choice,
+    for fn in (test_cheapest_sorts_to_the_top,
+               test_model_sigma, test_implied, test_expiry_choice,
                test_compare, test_lean, test_page, test_no_quotes_is_visible):
         try:
             fn()
