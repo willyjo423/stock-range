@@ -155,8 +155,53 @@ def implied_sigma_pct(chain: pd.DataFrame, spot: float, horizon_days: int,
     return out
 
 
+def contracts(chain: pd.DataFrame, spot: float,
+              low: float | None, high: float | None) -> dict:
+    """Which contracts these numbers actually describe.
+
+    The page has been quoting a percentage move for a horizon without ever
+    naming the expiry it was read from, leaving the reader to guess whether
+    "1 week" meant a Friday five days out or the monthly. The expiry was
+    already chosen and recorded internally - it was simply never shown.
+
+    Strikes are the nearest LISTED strike to the model's range edges, not a
+    recommendation: the low and high are the edges of the middle half of the
+    model's distribution, so they mark where the model thinks the move runs
+    out, and rounding them to real strikes saves the reader doing it against a
+    chain they cannot see.
+    """
+    out: dict = {}
+    if chain is None or chain.empty:
+        return out
+
+    exp = chain["expiry"].dropna()
+    if not exp.empty:
+        out["expiry_date"] = pd.Timestamp(exp.iloc[0]).strftime("%Y-%m-%d")
+
+    strikes = pd.to_numeric(chain["strike"], errors="coerce").dropna().unique()
+    if not len(strikes):
+        return out
+    strikes = np.sort(strikes)
+
+    def nearest(x):
+        if x is None or not np.isfinite(float(x)):
+            return None
+        return float(strikes[int(np.abs(strikes - float(x)).argmin())])
+
+    out["atm_strike"] = nearest(spot)
+    out["strike_low"] = nearest(low)
+    out["strike_high"] = nearest(high)
+    return out
+
+
 def pick_expiry(chain: pd.DataFrame, horizon_days: int) -> tuple[pd.DataFrame, int | None]:
-    """The listed expiry nearest the horizon, in calendar terms."""
+    """The listed expiry nearest the horizon, in calendar terms.
+
+    Note the conversion. A horizon of 5 means five TRADING days; listed
+    expiries are calendar dates, so the target is scaled by 365/252 before the
+    nearest is chosen. Matching 5 trading days against a 5-calendar-day expiry
+    would systematically pick a contract that is too short.
+    """
     if chain is None or chain.empty:
         return chain, None
     target_cal = horizon_days * 365.0 / TRADING_DAYS

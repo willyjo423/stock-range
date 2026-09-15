@@ -19,6 +19,7 @@ The design rules, learned from the page this replaces:
 """
 from __future__ import annotations
 
+import datetime as _dt
 import html
 
 CSS = """
@@ -60,6 +61,11 @@ input[type=search]{width:100%;padding:11px 13px;font-size:16px;
 .head{display:flex;align-items:baseline;gap:10px}
 .tk{font-size:20px;font-weight:700;letter-spacing:-.01em}
 .px{font-size:16px;color:var(--dim);font-variant-numeric:tabular-nums}
+.exp{color:var(--dim);font-size:11.5px;font-weight:600;letter-spacing:.02em;
+  margin-left:8px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.contracts{color:var(--faint);font-size:11.5px;margin-top:5px;
+  font-variant-numeric:tabular-nums}
+.contracts b{color:var(--dim);font-weight:600}
 .shaky{display:inline-block;background:#6b7280;color:#fff;font-size:9.5px;
   font-weight:700;border-radius:3px;padding:1px 4px;margin-left:4px;
   letter-spacing:.03em;vertical-align:1px}
@@ -191,6 +197,52 @@ def _lean(lean: dict) -> str:
             f'{rows}</div>')
 
 
+def _pretty_date(iso: str) -> str:
+    """2026-09-19 -> Fri 19 Sep. The weekday is the point.
+
+    Option expiries are weekly Fridays and monthly third-Fridays, and a reader
+    deciding between "this week" and "next week" is really asking which Friday.
+    An ISO date makes them work that out; the weekday says it outright.
+    """
+    try:
+        d = _dt.date.fromisoformat(str(iso))
+    except (TypeError, ValueError):
+        return str(iso)
+    return d.strftime("%a %-d %b")
+
+
+def _strike(x: float) -> str:
+    """A strike as it is actually listed.
+
+    Formatting these with no decimals turned a listed 97.5 into "98", which is
+    not a strike that exists - the reader goes to the chain and cannot find it.
+    Half-point and quarter-point strikes are common below $50, so the decimals
+    are kept only where they carry something.
+    """
+    return f"{x:,.0f}" if float(x).is_integer() else f"{x:,.2f}".rstrip("0")
+
+
+def _contracts(h: dict) -> str:
+    """Name the expiry and the strikes the numbers describe.
+
+    "1 week" is five TRADING days from the last close, which is about seven
+    calendar days - but the implied move was read off whichever expiry is
+    listed nearest that, and those are not the same date. Printing both the
+    expiry and its days-to-expiry is the only way the reader can tell which
+    contract the percentage above belongs to.
+    """
+    if not h.get("expiry_date"):
+        return ""
+    bits = []
+    if h.get("atm_strike") is not None:
+        bits.append(f'at the money <b>{_strike(h["atm_strike"])}</b>')
+    lo, hi = h.get("strike_low"), h.get("strike_high")
+    if lo is not None and hi is not None:
+        bits.append(f'range edges <b>{_strike(lo)}</b> / '
+                    f'<b>{_strike(hi)}</b>')
+    return f'<div class="contracts">{" &middot; ".join(bits)}</div>'
+
+
 def _row(label: str, h: dict, lean: dict | None) -> str:
     v = h.get("verdict", "unknown")
     chip = {"expensive": "Options look expensive", "cheap": "Options look cheap",
@@ -199,10 +251,21 @@ def _row(label: str, h: dict, lean: dict | None) -> str:
     if h.get("low") and h.get("high"):
         rng = (f'<div class="range">Half the time it finishes between '
                f'${h["low"]:,.2f} and ${h["high"]:,.2f}</div>')
+    # The expiry belongs on this line, beside the period and the verdict. That
+    # is the line the eye reads to decide "is this the contract I want", and
+    # "NEXT WEEK" alone does not answer it - the reader cannot tell whether
+    # that means this Friday's weekly or the one after.
+    when = ""
+    if h.get("expiry_date"):
+        dte = h.get("expiry_dte")
+        when = (f'<span class="exp">exp {_e(_pretty_date(h["expiry_date"]))}'
+                + (f' &middot; {int(dte)}d' if dte is not None else "")
+                + '</span>')
     return (f'<div class="row"><div class="rowhead">'
-            f'<span class="per">{_e(PERIOD.get(label, label))}</span>'
+            f'<span class="per">{_e(PERIOD.get(label, label))}</span>{when}'
             f'<span class="verdict v-{_e(v)}">{chip}</span></div>'
             f'{_bars(h)}<div class="says">{_sentence(h)}</div>{rng}'
+            f'{_contracts(h)}'
             f'{_lean(lean) if lean else ""}</div>')
 
 
@@ -239,6 +302,12 @@ thinks is coming; scroll to the bottom for the ones priced richest.
 the market knows something the model does not &mdash; a deal closing, a
 catalyst passing, a stock about to go quiet. The gap is the start of the
 question.
+<br><br>
+<b>What a period means.</b> &ldquo;1 week&rdquo; is five trading days from the
+last close &mdash; about seven calendar days. &ldquo;1 month&rdquo; is
+twenty-one. The implied move beside it is read from whichever listed expiry
+falls nearest that horizon, and each row names the expiry it used, so the two
+are never assumed to be the same date.
 <br><br>
 <b>What the two bars are.</b> The model's published range is the middle half of
 outcomes; an option's implied move is a one-standard-deviation move. Those are

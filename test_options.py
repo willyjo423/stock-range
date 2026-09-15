@@ -341,9 +341,78 @@ def test_cheapest_sorts_to_the_top():
     check("a thin-quote name is labelled on its card", "THIN QUOTES" in html)
 
 
+def test_the_contract_is_named():
+    section("EVERY ROW MUST NAME THE EXPIRY IT WAS READ FROM")
+    import options_dashboard as OD
+
+    # "Next week" is five TRADING days from the last close - about seven
+    # calendar days - but the implied move is read from whichever expiry is
+    # LISTED nearest that, which is a different date. A row that says only
+    # "NEXT WEEK" leaves the reader unable to tell this Friday's weekly from
+    # the one after, which is the whole decision when buying a short option.
+    chain = pd.DataFrame({
+        "expiry": [pd.Timestamp("2026-09-18")] * 6,
+        "strike": [95.0, 97.5, 100.0, 102.5, 105.0, 107.5],
+        "right": list("CPCPCP"), "dte": [3] * 6,
+    })
+    got = implied.contracts(chain, spot=101.2, low=96.4, high=106.1)
+    check("the expiry date is reported", got["expiry_date"] == "2026-09-18",
+          str(got))
+    check("the at-the-money strike is the nearest listed to spot",
+          got["atm_strike"] == 100.0, str(got))
+    check("the range edges round to listed strikes, not round numbers",
+          (got["strike_low"], got["strike_high"]) == (97.5, 105.0), str(got))
+    check("an empty chain names nothing rather than guessing",
+          implied.contracts(pd.DataFrame(), 100, 90, 110) == {})
+    check("a missing range still names the expiry",
+          implied.contracts(chain, 101.2, None, None)["strike_low"] is None)
+
+    # The horizon is converted from trading days to calendar days before the
+    # nearest expiry is chosen. Without that a 5-trading-day horizon would keep
+    # selecting a contract two days too short.
+    wide = pd.DataFrame({"dte": [2, 7, 30, 60], "expiry": [pd.NaT] * 4,
+                         "strike": [100.0] * 4, "right": list("CPCP")})
+    check("a one-week horizon picks the ~7 day expiry, not the 2 day",
+          implied.pick_expiry(wide, 5)[1] == 7,
+          str(implied.pick_expiry(wide, 5)[1]))
+    check("and a one-month horizon picks the 30 day",
+          implied.pick_expiry(wide, 21)[1] == 30)
+
+    check("a listed 97.5 renders as 97.5, not 98", OD._strike(97.5) == "97.5",
+          OD._strike(97.5))
+    check("a whole strike keeps no decimals", OD._strike(100.0) == "100")
+    check("the date carries its weekday, which is what Friday means",
+          OD._pretty_date("2026-10-16").startswith("Fri"),
+          OD._pretty_date("2026-10-16"))
+    check("an unparseable date passes through rather than raising",
+          OD._pretty_date("not a date") == "not a date")
+
+    h = {"days": 5, "low": 215.25, "high": 238.22, "model_move_pct": 7.5,
+         "implied_move_pct": 6.1, "ratio": 0.81, "quotes_ok": True,
+         "verdict": implied.verdict(0.81), "expiry_dte": 4,
+         "expiry_date": "2026-09-18", "atm_strike": 230.0,
+         "strike_low": 215.0, "strike_high": 240.0}
+    html = OD.render({"asof": "2026-09-15", "coverage": {},
+                      "tickers": [{"ticker": "HWM", "close": 229.61,
+                                   "horizons": {"1 week": h},
+                                   "lean": {"direction": "down",
+                                            "drivers": []},
+                                   "cheapest_ratio": 0.81,
+                                   "quotes_suspect": False}]})
+    head = html[html.index('class="rowhead"'):]
+    head = head[:head.index("</div>")]
+    check("the expiry sits in the row header, next to the verdict",
+          "18 Sep" in head, head[:180])
+    check("with its days to expiry", "4d" in head, head[:180])
+    check("the strikes appear on the row", "215" in html and "240" in html)
+    check("and the page says what a period means",
+          "five trading days" in html)
+
+
 def main():
     print("Options view - offline checks")
-    for fn in (test_cheapest_sorts_to_the_top,
+    for fn in (test_the_contract_is_named,
+               test_cheapest_sorts_to_the_top,
                test_model_sigma, test_implied, test_expiry_choice,
                test_compare, test_lean, test_page, test_no_quotes_is_visible):
         try:

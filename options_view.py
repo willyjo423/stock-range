@@ -118,6 +118,10 @@ def build(tickers: list[str] | None = None) -> dict:
                 exp_chain, dte = implied.pick_expiry(sub, days)
                 imp = implied.implied_sigma_pct(exp_chain, spot, days, dte)
                 entry.update(implied.compare(model_pct, imp))
+                # Name the contract these numbers were read from. Without it
+                # the reader has to guess which expiry "1 week" meant.
+                entry.update(implied.contracts(exp_chain, spot,
+                                               h.get("low"), h.get("high")))
             row["horizons"][label] = entry
 
         row["lean"] = implied.lean(
