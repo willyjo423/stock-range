@@ -36,7 +36,9 @@
           "side": "mid",
           "iv": 0.452,
           "score": 5.47,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2105.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "MU260921P01010000",
@@ -53,7 +55,9 @@
           "side": "mid",
           "iv": 0.306,
           "score": 5.08,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 3084.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "MU260921C01020000",
@@ -70,7 +74,9 @@
           "side": "at ask",
           "iv": 0.291,
           "score": 4.89,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 603.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "MU260921C01015000",
@@ -87,7 +93,9 @@
           "side": "mid",
           "iv": 0.293,
           "score": 4.85,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1868.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "MU260921C01010000",
@@ -104,7 +112,9 @@
           "side": "mid",
           "iv": 0.293,
           "score": 4.84,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 675.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "MU260921P01005000",
@@ -121,7 +131,9 @@
           "side": "at bid",
           "iv": 0.305,
           "score": 4.77,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 472.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "MU260921C01005000",
@@ -138,7 +150,9 @@
           "side": "at ask",
           "iv": 0.3,
           "score": 4.63,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 614.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "MU260921C00995000",
@@ -155,7 +169,9 @@
           "side": "at ask",
           "iv": 0.312,
           "score": 4.52,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 750.0,
+          "oi_confirmed": 0
         }
       ],
       "times_flagged": 3,
@@ -190,7 +206,9 @@
           "side": "mid",
           "iv": 0.606,
           "score": 4.66,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 603.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "SNDK261002P01780000",
@@ -207,7 +225,9 @@
           "side": "at ask",
           "iv": 0.679,
           "score": 4.52,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 193.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "SNDK260925C01800000",
@@ -224,7 +244,9 @@
           "side": "mid",
           "iv": 0.609,
           "score": 4.29,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 877.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "SNDK260925C01745000",
@@ -241,7 +263,9 @@
           "side": "mid",
           "iv": 0.605,
           "score": 4.0,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 82.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "SNDK260925C01870000",
@@ -258,7 +282,9 @@
           "side": "at ask",
           "iv": 0.62,
           "score": 3.77,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 414.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "SNDK260925P01720000",
@@ -275,7 +301,9 @@
           "side": "mid",
           "iv": 0.602,
           "score": 3.64,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 451.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "SNDK260925P01740000",
@@ -292,7 +320,9 @@
           "side": "mid",
           "iv": 0.6,
           "score": 3.55,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 150.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "SNDK260925P01750000",
@@ -309,7 +339,9 @@
           "side": "at ask",
           "iv": 0.602,
           "score": 3.52,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 249.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 3,
@@ -344,7 +376,9 @@
           "side": "at bid",
           "iv": 0.231,
           "score": 5.24,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1480.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "META260921C00672500",
@@ -361,7 +395,9 @@
           "side": "at bid",
           "iv": 0.222,
           "score": 4.79,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1210.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "META260925C00702500",
@@ -378,7 +414,9 @@
           "side": "at bid",
           "iv": 0.387,
           "score": 2.6,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 4138.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "META260925C00692500",
@@ -395,7 +433,9 @@
           "side": "at ask",
           "iv": 0.377,
           "score": 2.49,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 961.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "META260921C00677500",
@@ -412,7 +452,9 @@
           "side": "at bid",
           "iv": 0.231,
           "score": 2.14,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1085.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "META261002C00665000",
@@ -429,7 +471,9 @@
           "side": "at bid",
           "iv": 0.381,
           "score": 1.77,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 73.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "META261002C00695000",
@@ -446,7 +490,9 @@
           "side": "at bid",
           "iv": 0.383,
           "score": 1.67,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 288.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "META260921P00670000",
@@ -463,7 +509,9 @@
           "side": "mid",
           "iv": 0.258,
           "score": 1.58,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 667.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 3,
@@ -498,7 +546,9 @@
           "side": "unknown",
           "iv": 0.197,
           "score": 4.05,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2079.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "TSLA260921P00380000",
@@ -515,7 +565,9 @@
           "side": "unknown",
           "iv": 0.0,
           "score": 4.01,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 104.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "TSLA260921P00367500",
@@ -532,7 +584,9 @@
           "side": "unknown",
           "iv": 0.149,
           "score": 3.9,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 286.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "TSLA260921P00370000",
@@ -549,7 +603,9 @@
           "side": "unknown",
           "iv": 0.0,
           "score": 3.57,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": -60.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "TSLA260921C00360000",
@@ -566,7 +622,9 @@
           "side": "unknown",
           "iv": 0.393,
           "score": 3.43,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 861.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "TSLA260925P00375000",
@@ -583,7 +641,9 @@
           "side": "unknown",
           "iv": 0.252,
           "score": 3.25,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 52.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "TSLA260921P00375000",
@@ -600,7 +660,9 @@
           "side": "unknown",
           "iv": 0.0,
           "score": 3.13,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": -37.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "TSLA260921C00372500",
@@ -617,7 +679,9 @@
           "side": "unknown",
           "iv": 0.328,
           "score": 2.98,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1469.0,
+          "oi_confirmed": 0
         }
       ],
       "times_flagged": 3
@@ -651,7 +715,9 @@
           "side": "at bid",
           "iv": 0.0,
           "score": 4.75,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 242.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AMZN260921C00242500",
@@ -668,7 +734,9 @@
           "side": "mid",
           "iv": 0.285,
           "score": 3.96,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 446.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AMZN260921C00245000",
@@ -685,7 +753,9 @@
           "side": "mid",
           "iv": 0.246,
           "score": 3.64,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 170.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AMZN260925C00242500",
@@ -702,7 +772,9 @@
           "side": "mid",
           "iv": 0.28,
           "score": 3.43,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 675.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "AMZN260921P00260000",
@@ -719,7 +791,9 @@
           "side": "mid",
           "iv": 0.219,
           "score": 3.28,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 11.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AMZN260921C00247500",
@@ -736,7 +810,9 @@
           "side": "mid",
           "iv": 0.208,
           "score": 3.24,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 349.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AMZN260921P00262500",
@@ -753,7 +829,9 @@
           "side": "mid",
           "iv": 0.249,
           "score": 3.11,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 290.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AMZN260923P00252500",
@@ -770,7 +848,9 @@
           "side": "at ask",
           "iv": 0.246,
           "score": 2.41,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1077.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 3,
@@ -805,7 +885,9 @@
           "side": "mid",
           "iv": 0.35,
           "score": 3.92,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1071.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "AMD260921C00550000",
@@ -822,7 +904,9 @@
           "side": "mid",
           "iv": 0.352,
           "score": 3.53,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 429.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AMD260921C00542500",
@@ -839,7 +923,9 @@
           "side": "at bid",
           "iv": 0.314,
           "score": 3.45,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 549.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "AMD260923C00545000",
@@ -856,7 +942,9 @@
           "side": "at bid",
           "iv": 0.448,
           "score": 3.15,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 523.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "AMD260921C00545000",
@@ -873,7 +961,9 @@
           "side": "at bid",
           "iv": 0.366,
           "score": 3.12,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 284.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AMD260921C00560000",
@@ -890,7 +980,9 @@
           "side": "at bid",
           "iv": 0.343,
           "score": 3.07,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 619.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AMD260921C00547500",
@@ -907,7 +999,9 @@
           "side": "at bid",
           "iv": 0.357,
           "score": 3.04,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 237.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AMD260921C00555000",
@@ -924,7 +1018,9 @@
           "side": "mid",
           "iv": 0.348,
           "score": 2.9,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 286.0,
+          "oi_confirmed": 0
         }
       ],
       "times_flagged": 3,
@@ -959,7 +1055,9 @@
           "side": "at ask",
           "iv": 0.702,
           "score": 4.93,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 510.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "LITE260925C00935000",
@@ -976,7 +1074,9 @@
           "side": "mid",
           "iv": 0.667,
           "score": 3.88,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 392.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "LITE260925C00880000",
@@ -993,7 +1093,9 @@
           "side": "at ask",
           "iv": 0.652,
           "score": 3.82,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 306.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "LITE260925P00880000",
@@ -1010,7 +1112,9 @@
           "side": "mid",
           "iv": 0.645,
           "score": 2.57,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 340.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 3,
@@ -1045,7 +1149,9 @@
           "side": "at bid",
           "iv": 0.208,
           "score": 4.2,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 999.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "AAPL260923P00340000",
@@ -1062,7 +1168,9 @@
           "side": "at ask",
           "iv": 0.182,
           "score": 3.94,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1383.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "AAPL260925P00350000",
@@ -1079,7 +1187,9 @@
           "side": "at bid",
           "iv": 0.247,
           "score": 3.6,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 974.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "AAPL260925P00345000",
@@ -1096,7 +1206,9 @@
           "side": "mid",
           "iv": 0.182,
           "score": 3.54,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1875.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "AAPL260925P00340000",
@@ -1113,7 +1225,9 @@
           "side": "mid",
           "iv": 0.205,
           "score": 3.4,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 3172.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "AAPL260923C00337500",
@@ -1130,7 +1244,9 @@
           "side": "mid",
           "iv": 0.208,
           "score": 2.14,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 3286.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "AAPL260925P00347500",
@@ -1147,7 +1263,9 @@
           "side": "mid",
           "iv": 0.13,
           "score": 2.1,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1439.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 3,
@@ -1182,7 +1300,9 @@
           "side": "mid",
           "iv": 0.64,
           "score": 3.94,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 5727.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "COIN260925P00192500",
@@ -1199,7 +1319,9 @@
           "side": "mid",
           "iv": 0.582,
           "score": 3.26,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 553.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "COIN260925C00195000",
@@ -1216,7 +1338,9 @@
           "side": "at ask",
           "iv": 0.612,
           "score": 3.03,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2957.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "COIN260925P00195000",
@@ -1233,7 +1357,9 @@
           "side": "mid",
           "iv": 0.59,
           "score": 2.34,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 709.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "COIN260925P00190000",
@@ -1250,7 +1376,9 @@
           "side": "mid",
           "iv": 0.582,
           "score": 2.03,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1231.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "COIN260925P00200000",
@@ -1267,7 +1395,9 @@
           "side": "at bid",
           "iv": 0.604,
           "score": 1.98,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 160.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "COIN261002C00197500",
@@ -1284,7 +1414,9 @@
           "side": "mid",
           "iv": 0.65,
           "score": 1.98,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 464.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "COIN260925C00192500",
@@ -1301,7 +1433,9 @@
           "side": "at ask",
           "iv": 0.613,
           "score": 1.71,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2247.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 3,
@@ -1336,7 +1470,9 @@
           "side": "unknown",
           "iv": 0.247,
           "score": 3.28,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 444.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "GOOGL260925P00360000",
@@ -1353,7 +1489,9 @@
           "side": "unknown",
           "iv": 0.302,
           "score": 2.25,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 637.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "GOOGL260923P00355000",
@@ -1370,7 +1508,9 @@
           "side": "unknown",
           "iv": 0.264,
           "score": 2.07,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 283.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "GOOGL260921C00345000",
@@ -1387,7 +1527,9 @@
           "side": "unknown",
           "iv": 0.171,
           "score": 1.7,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 773.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "GOOGL261002P00355000",
@@ -1404,7 +1546,9 @@
           "side": "unknown",
           "iv": 0.311,
           "score": 1.53,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 13.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "GOOGL260921P00350000",
@@ -1421,7 +1565,9 @@
           "side": "unknown",
           "iv": 0.221,
           "score": 1.46,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 583.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "GOOGL260925P00350000",
@@ -1438,7 +1584,9 @@
           "side": "unknown",
           "iv": 0.284,
           "score": 1.14,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 621.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "GOOGL260923C00360000",
@@ -1455,7 +1603,9 @@
           "side": "unknown",
           "iv": 0.254,
           "score": 1.13,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1288.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 3
@@ -1489,7 +1639,9 @@
           "side": "unknown",
           "iv": 0.286,
           "score": 3.4,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 5931.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "NFLX260925C00073000",
@@ -1506,7 +1658,9 @@
           "side": "unknown",
           "iv": 0.296,
           "score": 2.73,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 5579.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "NFLX260925C00071000",
@@ -1523,7 +1677,9 @@
           "side": "unknown",
           "iv": 0.297,
           "score": 2.61,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1517.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "NFLX261002C00072000",
@@ -1540,7 +1696,9 @@
           "side": "unknown",
           "iv": 0.315,
           "score": 2.39,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2452.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "NFLX260925C00074000",
@@ -1557,7 +1715,9 @@
           "side": "unknown",
           "iv": 0.301,
           "score": 2.36,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 6312.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "NFLX261002C00070000",
@@ -1574,7 +1734,9 @@
           "side": "unknown",
           "iv": 0.331,
           "score": 2.32,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 573.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "NFLX260925C00070000",
@@ -1591,7 +1753,9 @@
           "side": "unknown",
           "iv": 0.314,
           "score": 1.84,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 670.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "NFLX260925P00071000",
@@ -1608,7 +1772,9 @@
           "side": "unknown",
           "iv": 0.297,
           "score": 1.07,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2734.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2
@@ -1642,7 +1808,9 @@
           "side": "unknown",
           "iv": 0.203,
           "score": 3.12,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2595.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "NVDA260921P00230000",
@@ -1659,7 +1827,9 @@
           "side": "unknown",
           "iv": 0.401,
           "score": 2.76,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 61.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "NVDA260923C00217500",
@@ -1676,7 +1846,9 @@
           "side": "unknown",
           "iv": 0.219,
           "score": 2.51,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 490.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "NVDA260923P00217500",
@@ -1693,7 +1865,9 @@
           "side": "unknown",
           "iv": 0.257,
           "score": 2.02,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1703.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "NVDA260923P00220000",
@@ -1710,7 +1884,9 @@
           "side": "unknown",
           "iv": 0.265,
           "score": 1.32,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 633.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "NVDA260921P00222500",
@@ -1727,7 +1903,9 @@
           "side": "unknown",
           "iv": 0.241,
           "score": 0.67,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 462.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "NVDA260923P00222500",
@@ -1744,7 +1922,9 @@
           "side": "unknown",
           "iv": 0.274,
           "score": 0.54,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 309.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 3
@@ -1778,7 +1958,9 @@
           "side": "unknown",
           "iv": 0.594,
           "score": 3.67,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 35649.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "SMCI261002C00037000",
@@ -1795,7 +1977,9 @@
           "side": "unknown",
           "iv": 0.637,
           "score": 2.3,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2729.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "SMCI261002P00040000",
@@ -1812,7 +1996,9 @@
           "side": "unknown",
           "iv": 0.675,
           "score": 0.29,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 475.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2
@@ -1846,7 +2032,9 @@
           "side": "mid",
           "iv": 0.546,
           "score": 3.0,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 627.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "DELL260925P00572500",
@@ -1863,7 +2051,9 @@
           "side": "at bid",
           "iv": 0.518,
           "score": 1.67,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 23.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "DELL260925P00580000",
@@ -1880,7 +2070,9 @@
           "side": "mid",
           "iv": 0.514,
           "score": 1.43,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 18.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "DELL260925P00575000",
@@ -1897,7 +2089,9 @@
           "side": "mid",
           "iv": 0.523,
           "score": 1.38,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 142.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "DELL260925P00570000",
@@ -1914,7 +2108,9 @@
           "side": "at bid",
           "iv": 0.502,
           "score": 1.13,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": -43.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "DELL260925C00580000",
@@ -1931,7 +2127,9 @@
           "side": "mid",
           "iv": 0.539,
           "score": 0.52,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 141.0,
+          "oi_confirmed": 0
         }
       ],
       "times_flagged": 3,
@@ -1966,7 +2164,9 @@
           "side": "mid",
           "iv": 0.385,
           "score": 3.78,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 285.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "COST260925C00875000",
@@ -1983,7 +2183,9 @@
           "side": "mid",
           "iv": 0.376,
           "score": 3.71,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 263.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2,
@@ -2018,7 +2220,9 @@
           "side": "unknown",
           "iv": 0.571,
           "score": 3.1,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2472.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "INTC260921C00108000",
@@ -2035,7 +2239,9 @@
           "side": "unknown",
           "iv": 0.381,
           "score": 1.3,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1465.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "INTC260925P00108000",
@@ -2052,7 +2258,9 @@
           "side": "unknown",
           "iv": 0.542,
           "score": 0.41,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 3.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "INTC260925P00111000",
@@ -2069,7 +2277,9 @@
           "side": "unknown",
           "iv": 0.547,
           "score": 0.33,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": -34.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "INTC260925C00109000",
@@ -2086,7 +2296,9 @@
           "side": "unknown",
           "iv": 0.566,
           "score": 0.04,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2292.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2
@@ -2120,7 +2332,9 @@
           "side": "mid",
           "iv": 0.384,
           "score": 4.26,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 7505.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 1,
@@ -2155,7 +2369,9 @@
           "side": "unknown",
           "iv": 0.304,
           "score": 2.26,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 168.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AVGO260921P00357500",
@@ -2172,7 +2388,9 @@
           "side": "unknown",
           "iv": 0.246,
           "score": 2.09,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 205.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AVGO260921P00360000",
@@ -2189,7 +2407,9 @@
           "side": "unknown",
           "iv": 0.248,
           "score": 2.02,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 187.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AVGO260923P00357500",
@@ -2206,7 +2426,9 @@
           "side": "unknown",
           "iv": 0.305,
           "score": 2.01,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 55.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AVGO260925C00347500",
@@ -2223,7 +2445,9 @@
           "side": "unknown",
           "iv": 0.348,
           "score": 1.49,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": -64.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AVGO260921P00365000",
@@ -2240,7 +2464,9 @@
           "side": "unknown",
           "iv": 0.253,
           "score": 1.24,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 59.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AVGO260923P00360000",
@@ -2257,7 +2483,9 @@
           "side": "unknown",
           "iv": 0.304,
           "score": 1.02,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 212.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "AVGO260923C00350000",
@@ -2274,7 +2502,9 @@
           "side": "unknown",
           "iv": 0.305,
           "score": 0.8,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": -87.0,
+          "oi_confirmed": 0
         }
       ],
       "times_flagged": 2
@@ -2308,7 +2538,9 @@
           "side": "mid",
           "iv": 0.54,
           "score": 2.82,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1025.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "HOOD260925P00125000",
@@ -2325,7 +2557,9 @@
           "side": "at bid",
           "iv": 0.54,
           "score": 2.1,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 720.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "HOOD260925P00120000",
@@ -2342,7 +2576,9 @@
           "side": "at ask",
           "iv": 0.543,
           "score": 1.99,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1163.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "HOOD260925C00119000",
@@ -2359,7 +2595,9 @@
           "side": "at ask",
           "iv": 0.594,
           "score": 1.76,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2630.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "HOOD260925P00118000",
@@ -2376,7 +2614,9 @@
           "side": "at bid",
           "iv": 0.548,
           "score": 1.54,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1718.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "HOOD261002P00120000",
@@ -2393,7 +2633,9 @@
           "side": "at bid",
           "iv": 0.565,
           "score": 0.59,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 361.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 3,
@@ -2428,7 +2670,9 @@
           "side": "mid",
           "iv": 0.44,
           "score": 3.6,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 914.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "AMAT260925C00445000",
@@ -2445,7 +2689,9 @@
           "side": "mid",
           "iv": 0.446,
           "score": 3.39,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 911.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2,
@@ -2480,7 +2726,9 @@
           "side": "mid",
           "iv": 0.632,
           "score": 3.27,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 414.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "COHR260925C00315000",
@@ -2497,7 +2745,9 @@
           "side": "at ask",
           "iv": 0.634,
           "score": 0.85,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 183.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "COHR260925C00310000",
@@ -2514,7 +2764,9 @@
           "side": "mid",
           "iv": 0.693,
           "score": 0.34,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 160.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2,
@@ -2549,7 +2801,9 @@
           "side": "at bid",
           "iv": 0.555,
           "score": 3.93,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 3126.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 3,
@@ -2584,7 +2838,9 @@
           "side": "unknown",
           "iv": 0.14,
           "score": 2.64,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1205.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "MSFT260925C00502500",
@@ -2601,7 +2857,9 @@
           "side": "unknown",
           "iv": 0.216,
           "score": 2.52,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2642.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "MSFT260923P00500000",
@@ -2618,7 +2876,9 @@
           "side": "unknown",
           "iv": 0.213,
           "score": 1.02,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 82.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "MSFT260921C00495000",
@@ -2635,7 +2895,9 @@
           "side": "unknown",
           "iv": 0.136,
           "score": 0.99,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 384.0,
+          "oi_confirmed": 0
         }
       ],
       "times_flagged": 3
@@ -2669,7 +2931,9 @@
           "side": "unknown",
           "iv": 0.27,
           "score": 3.11,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 20207.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "KHC260925C00025000",
@@ -2686,7 +2950,9 @@
           "side": "unknown",
           "iv": 0.258,
           "score": 2.49,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 20713.0,
+          "oi_confirmed": 1
         }
       ]
     },
@@ -2719,7 +2985,9 @@
           "side": "mid",
           "iv": 0.458,
           "score": 3.09,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1773.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "ANET260925C00197500",
@@ -2736,7 +3004,9 @@
           "side": "at bid",
           "iv": 0.466,
           "score": 2.7,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 644.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 1,
@@ -2771,7 +3041,9 @@
           "side": "at bid",
           "iv": 0.609,
           "score": 3.36,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 633.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 1,
@@ -2806,7 +3078,9 @@
           "side": "unknown",
           "iv": 0.439,
           "score": 1.73,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2012.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "ORCL260925C00147000",
@@ -2823,7 +3097,9 @@
           "side": "unknown",
           "iv": 0.423,
           "score": 1.47,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1046.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "ORCL260925P00142000",
@@ -2840,7 +3116,9 @@
           "side": "unknown",
           "iv": 0.449,
           "score": 1.46,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2201.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "ORCL260925C00146000",
@@ -2857,7 +3135,9 @@
           "side": "unknown",
           "iv": 0.411,
           "score": 1.22,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 736.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "ORCL260925P00148000",
@@ -2874,7 +3154,9 @@
           "side": "unknown",
           "iv": 0.461,
           "score": 1.18,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1355.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "ORCL260925P00146000",
@@ -2891,7 +3173,9 @@
           "side": "unknown",
           "iv": 0.453,
           "score": 0.37,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 417.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "ORCL260925P00143000",
@@ -2908,7 +3192,9 @@
           "side": "unknown",
           "iv": 0.441,
           "score": 0.16,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 906.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2
@@ -2942,7 +3228,9 @@
           "side": "unknown",
           "iv": 0.358,
           "score": 3.09,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 5538.0,
+          "oi_confirmed": 1
         }
       ]
     },
@@ -2975,7 +3263,9 @@
           "side": "mid",
           "iv": 0.284,
           "score": 3.07,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2724.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 1,
@@ -3010,7 +3300,9 @@
           "side": "at ask",
           "iv": 0.43,
           "score": 2.96,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 366.0,
+          "oi_confirmed": 0
         }
       ],
       "times_flagged": 1,
@@ -3045,7 +3337,9 @@
           "side": "unknown",
           "iv": 0.29,
           "score": 1.66,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 199.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "GOOG260925P00355000",
@@ -3062,7 +3356,9 @@
           "side": "unknown",
           "iv": 0.307,
           "score": 1.24,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 108.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "GOOG260925C00352500",
@@ -3079,7 +3375,9 @@
           "side": "unknown",
           "iv": 0.272,
           "score": 0.99,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 852.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "GOOG261002P00355000",
@@ -3096,7 +3394,9 @@
           "side": "unknown",
           "iv": 0.299,
           "score": 0.88,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 106.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "GOOG260925P00352500",
@@ -3113,7 +3413,9 @@
           "side": "unknown",
           "iv": 0.333,
           "score": 0.78,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 88.0,
+          "oi_confirmed": 0
         },
         {
           "contract": "GOOG260925C00347500",
@@ -3130,7 +3432,9 @@
           "side": "unknown",
           "iv": 0.267,
           "score": 0.74,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 752.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2
@@ -3164,7 +3468,9 @@
           "side": "at bid",
           "iv": 0.494,
           "score": 2.28,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1119.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "APP260925P00300000",
@@ -3181,7 +3487,9 @@
           "side": "mid",
           "iv": 0.494,
           "score": 2.13,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1168.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 1,
@@ -3216,7 +3524,9 @@
           "side": "at bid",
           "iv": 0.337,
           "score": 2.75,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 307.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2,
@@ -3251,7 +3561,9 @@
           "side": "mid",
           "iv": 0.509,
           "score": 2.66,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1421.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2,
@@ -3286,7 +3598,9 @@
           "side": "mid",
           "iv": 0.478,
           "score": 2.61,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2560.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 1,
@@ -3321,7 +3635,9 @@
           "side": "mid",
           "iv": 0.639,
           "score": 2.11,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 182.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "WDC260925C00450000",
@@ -3338,7 +3654,9 @@
           "side": "at ask",
           "iv": 0.569,
           "score": 0.41,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 207.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2,
@@ -3373,7 +3691,9 @@
           "side": "mid",
           "iv": 0.629,
           "score": 1.95,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 32.0,
+          "oi_confirmed": 1
         },
         {
           "contract": "STX260925C00900000",
@@ -3390,7 +3710,9 @@
           "side": "mid",
           "iv": 0.588,
           "score": 1.28,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 189.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 2,
@@ -3425,7 +3747,9 @@
           "side": "at ask",
           "iv": 0.438,
           "score": 1.69,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 519.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 1,
@@ -3460,7 +3784,9 @@
           "side": "unknown",
           "iv": 0.375,
           "score": 1.64,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 2006.0,
+          "oi_confirmed": 1
         }
       ]
     },
@@ -3493,7 +3819,9 @@
           "side": "at ask",
           "iv": 0.243,
           "score": 1.45,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 567.0,
+          "oi_confirmed": 1
         }
       ],
       "times_flagged": 1,
@@ -3528,7 +3856,9 @@
           "side": "unknown",
           "iv": 0.299,
           "score": 1.44,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 694.0,
+          "oi_confirmed": 1
         }
       ]
     },
@@ -3561,7 +3891,9 @@
           "side": "unknown",
           "iv": 0.444,
           "score": 1.0,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 1.0,
+          "oi_confirmed": 0
         }
       ]
     },
@@ -3594,7 +3926,9 @@
           "side": "mid",
           "iv": 0.425,
           "score": 0.3,
-          "stale_mid": 0
+          "stale_mid": 0,
+          "oi_change": 129.0,
+          "oi_confirmed": 0
         }
       ],
       "times_flagged": 1,
