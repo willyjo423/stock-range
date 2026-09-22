@@ -55,32 +55,36 @@ th.sortable::after{content:" 95";opacity:.35;font-size:10px}
 footer{color:var(--faint);font-size:12px;margin-top:30px;text-align:center}
 .cal{font-size:12.5px;color:var(--dim);margin-top:6px}
 .cal table{font-size:12px;margin-top:6px}
-pre{white-space:pre-wrap;font:12.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}}</style></head><body><div class="wrap"><h1>Options flow, graded forward</h1><p class="sub">Updated 2026-09-21 20:49. Every flag here was archived on the day it was raised and graded after the week closed.</p><div class="note"><pre>OPTIONS FLOW, GRADED FORWARD
+pre{white-space:pre-wrap;font:12.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}}</style></head><body><div class="wrap"><h1>Options flow, graded forward</h1><p class="sub">Updated 2026-09-22 15:29. Every flag here was archived on the day it was raised and graded after the week closed.</p><div class="note"><pre>OPTIONS FLOW, GRADED FORWARD
 ====================================================================
-Scan days        : 3  (2026-09-10 to 2026-09-21)
-Names with bands : 1,509
-  of which flagged: 201
+Scan days        : 4  (2026-09-10 to 2026-09-22)
+Names with bands : 2,012
+  of which flagged: 255
 
 Question: do flagged names leave their own 1 week band more
 often than everything else on the same days? A band is 50/50 by
 construction, so the control group is the number that matters.
 
-Left the band    flagged  41.3%   others  49.0%   gap  -7.7 pts  (z = -2.04)
-Move size        flagged  1.06    others  1.19    gap -0.13      (t = -1.86)
+Left the band    flagged  47.8%   others  50.5%   gap  -2.6 pts  (z = -0.79)
+Move size        flagged  1.16    others  1.23    gap -0.07      (t = -1.07)
                  in band half-widths; 1.0 means it finished at the edge
 
 Direction, for one-sided flags only:
-  calls  broke up   25.7%  vs   9.9%  (z = +4.99, n=105)
-  puts   broke down   15.9%  vs  39.1%  (z = -3.87, n=69)
+  calls  broke up   33.1%  vs  11.2%  (z = +7.46, n=139)
+  puts   broke down   16.9%  vs  39.3%  (z = -4.11, n=83)
 
 By how loud the flag was:
-  quieter  breakout  43.6%   move 1.06   (n=101)
-  louder   breakout  39.0%   move 1.05   (n=100)
+  quieter  breakout  50.0%   move 1.13   (n=128)
+  louder   breakout  45.7%   move 1.20   (n=127)
 
 Split by whether next-morning open interest confirmed the trade:
-  confirmed  44.3%   unconfirmed  37.9%   (z = +0.93)
+  confirmed  47.2%   unconfirmed  48.4%   (z = -0.19)
 
 --------------------------------------------------------------------
-Flagged names behave differently (z = -2.04). That is a
-difference in dispersion, not a trade - the band says how
-far, never which way.</pre></div><footer><a href="./flow.html">Back to today's flags</a> &middot; <a href="./">Ranges</a></footer></div></body></html>
+No effect at the usual bar. The smallest gap this many
+observations could resolve is about 6.3 points, so a
+real but smaller effect would still be invisible here.
+
+If this stays flat as the sample grows, the honest move is
+to stop running the scan rather than to loosen the filters
+until something looks significant.</pre></div><footer><a href="./flow.html">Back to today's flags</a> &middot; <a href="./">Ranges</a></footer></div></body></html>
