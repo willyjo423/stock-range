@@ -1,9 +1,10 @@
 {
   "asof": "2026-10-09",
-  "scan_at": "2026-10-09T20:08:55+00:00",
+  "scan_at": "2026-10-09T22:38:10+00:00",
   "scans": [
     "0039",
-    "2008"
+    "2008",
+    "2238"
   ],
   "tickers": [
     {
@@ -157,7 +158,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "MU",
@@ -310,7 +311,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "TSLA",
@@ -463,7 +464,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "SNDK",
@@ -616,7 +617,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "META",
@@ -769,7 +770,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "NVDA",
@@ -3243,7 +3244,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2
+      "times_flagged": 3
     },
     {
       "ticker": "AXP",
@@ -8145,35 +8146,35 @@
   ],
   "coverage": {
     "requested": 503,
-    "with_chain": 501,
-    "failed": 2,
-    "contracts": 151585,
-    "snapshots_today": 2,
+    "with_chain": 500,
+    "failed": 3,
+    "contracts": 144895,
+    "snapshots_today": 3,
     "first_scan_of_day": false,
     "chain_quality": {
-      "rows": 151585,
-      "tickers": 501,
+      "rows": 144895,
+      "tickers": 500,
       "sources": [
         "cboe",
         "yfinance"
       ],
       "expiries": 33,
       "symbol_disagreements": 0,
-      "oi_missing": 0.015047663027344393,
+      "oi_missing": 0.0044100900652196415,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.4926740772503876,
+      "zero_volume_share": 0.469194934262742,
       "usable": true
     },
     "gate_survivors": {
-      "dte": 59350,
-      "atm": 22186,
-      "premium": 1030,
-      "low_oi": 137195,
-      "new_positioning": 15888,
-      "quote": 87310
+      "dte": 57858,
+      "atm": 21360,
+      "premium": 1673,
+      "low_oi": 132536,
+      "new_positioning": 16069,
+      "quote": 79914
     },
-    "flagged_contracts": 126
+    "flagged_contracts": 13
   },
   "errors": {
     "NVR": "CBOE: NVR: https://cdn.cboe.com/api/global/delayed_quotes/options/NVR.json -> HTTP 429; yfinance: NVR: no expirations listed",
