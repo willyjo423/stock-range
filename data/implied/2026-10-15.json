@@ -1,0 +1,7636 @@
+{
+  "asof": "2026-10-15",
+  "generated_at": "2026-10-16T00:40:44+00:00",
+  "tickers": [
+    {
+      "ticker": "VZ",
+      "close": 44.4,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.76,
+          "implied_move_pct": 3.48,
+          "ratio": 0.604,
+          "verdict": "cheap",
+          "iv": 0.247,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.6,
+          "implied_move_pct": 7.88,
+          "ratio": 0.821,
+          "verdict": "cheap",
+          "iv": 0.273,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "KO",
+      "close": 92.0,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.25,
+          "implied_move_pct": 2.65,
+          "ratio": 0.623,
+          "verdict": "cheap",
+          "iv": 0.1884,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 6.33,
+          "implied_move_pct": 6.53,
+          "ratio": 1.031,
+          "verdict": "fair",
+          "iv": 0.2261,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "EQT",
+      "close": 52.45,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.93,
+          "implied_move_pct": 5.05,
+          "ratio": 0.637,
+          "verdict": "cheap",
+          "iv": 0.3584,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.1,
+          "implied_move_pct": 12.07,
+          "ratio": 1.088,
+          "verdict": "fair",
+          "iv": 0.4182,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CFG",
+      "close": 62.57,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.85,
+          "implied_move_pct": 4.12,
+          "ratio": 0.705,
+          "verdict": "cheap",
+          "iv": 0.2922,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 9.09,
+          "implied_move_pct": 8.43,
+          "ratio": 0.927,
+          "verdict": "fair",
+          "iv": 0.2922,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "FITB",
+      "close": 50.35,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.53,
+          "implied_move_pct": 3.95,
+          "ratio": 0.714,
+          "verdict": "cheap",
+          "iv": 0.2804,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 8.74,
+          "implied_move_pct": 8.09,
+          "ratio": 0.925,
+          "verdict": "fair",
+          "iv": 0.2804,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "KEY",
+      "close": 19.94,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.12,
+          "implied_move_pct": 3.93,
+          "ratio": 0.768,
+          "verdict": "cheap",
+          "iv": 0.2791,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 7.73,
+          "implied_move_pct": 8.06,
+          "ratio": 1.042,
+          "verdict": "fair",
+          "iv": 0.2791,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ELV",
+      "close": 428.43,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.27,
+          "implied_move_pct": 4.96,
+          "ratio": 0.791,
+          "verdict": "cheap",
+          "iv": 0.3518,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 9.85,
+          "implied_move_pct": 10.16,
+          "ratio": 1.031,
+          "verdict": "fair",
+          "iv": 0.3518,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "BRK-B",
+      "close": 525.68,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 1.89,
+          "implied_move_pct": 2.15,
+          "ratio": 1.138,
+          "verdict": "fair",
+          "iv": 0.1528,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 5.23,
+          "implied_move_pct": 4.14,
+          "ratio": 0.791,
+          "verdict": "cheap",
+          "iv": 0.1434,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "FICO",
+      "close": 769.93,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 11.89,
+          "implied_move_pct": 9.46,
+          "ratio": 0.796,
+          "verdict": "cheap",
+          "iv": 0.6715,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 19.43,
+          "implied_move_pct": 19.38,
+          "ratio": 0.997,
+          "verdict": "fair",
+          "iv": 0.6715,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "TER",
+      "close": 343.21,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 11.27,
+          "implied_move_pct": 8.98,
+          "ratio": 0.797,
+          "verdict": "cheap",
+          "iv": 0.6372,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 16.19,
+          "implied_move_pct": 22.84,
+          "ratio": 1.411,
+          "verdict": "expensive",
+          "iv": 0.7911,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "RSG",
+      "close": 229.65,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.31,
+          "implied_move_pct": 2.78,
+          "ratio": 1.201,
+          "verdict": "expensive",
+          "iv": 0.1974,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 6.92,
+          "implied_move_pct": 5.7,
+          "ratio": 0.823,
+          "verdict": "cheap",
+          "iv": 0.1974,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "SBAC",
+      "close": 183.72,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.27,
+          "implied_move_pct": 4.62,
+          "ratio": 1.081,
+          "verdict": "fair",
+          "iv": 0.3277,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 11.5,
+          "implied_move_pct": 9.46,
+          "ratio": 0.823,
+          "verdict": "cheap",
+          "iv": 0.3277,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "TMUS",
+      "close": 157.03,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.37,
+          "implied_move_pct": 5.11,
+          "ratio": 0.952,
+          "verdict": "fair",
+          "iv": 0.3631,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 13.49,
+          "implied_move_pct": 11.13,
+          "ratio": 0.825,
+          "verdict": "cheap",
+          "iv": 0.3856,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "LMT",
+      "close": 532.64,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.09,
+          "implied_move_pct": 5.93,
+          "ratio": 0.836,
+          "verdict": "cheap",
+          "iv": 0.4212,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.95,
+          "implied_move_pct": 9.03,
+          "ratio": 1.009,
+          "verdict": "fair",
+          "iv": 0.3129,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "VRT",
+      "close": 222.83,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 9.93,
+          "implied_move_pct": 8.33,
+          "ratio": 0.839,
+          "verdict": "cheap",
+          "iv": 0.5912,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.44,
+          "implied_move_pct": 18.87,
+          "ratio": 1.307,
+          "verdict": "expensive",
+          "iv": 0.6538,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "CCI",
+      "close": 80.0,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.81,
+          "implied_move_pct": 4.96,
+          "ratio": 0.854,
+          "verdict": "cheap",
+          "iv": 0.3519,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 9.58,
+          "implied_move_pct": 10.16,
+          "ratio": 1.06,
+          "verdict": "fair",
+          "iv": 0.3519,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "ARE",
+      "close": 42.34,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.51,
+          "implied_move_pct": 5.94,
+          "ratio": 1.078,
+          "verdict": "fair",
+          "iv": 0.4219,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 14.19,
+          "implied_move_pct": 12.18,
+          "ratio": 0.858,
+          "verdict": "cheap",
+          "iv": 0.4219,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "HAS",
+      "close": 98.41,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.41,
+          "implied_move_pct": 5.51,
+          "ratio": 0.859,
+          "verdict": "cheap",
+          "iv": 0.3915,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 10.42,
+          "implied_move_pct": 11.3,
+          "ratio": 1.084,
+          "verdict": "fair",
+          "iv": 0.3915,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "AKAM",
+      "close": 92.32,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 9.23,
+          "implied_move_pct": 8.4,
+          "ratio": 0.91,
+          "verdict": "fair",
+          "iv": 0.5967,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 20.61,
+          "implied_move_pct": 17.82,
+          "ratio": 0.865,
+          "verdict": "cheap",
+          "iv": 0.6173,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "AAPL",
+      "close": 342.0,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.01,
+          "implied_move_pct": 3.52,
+          "ratio": 1.168,
+          "verdict": "expensive",
+          "iv": 0.2496,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.08,
+          "implied_move_pct": 6.99,
+          "ratio": 0.866,
+          "verdict": "cheap",
+          "iv": 0.242,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CSCO",
+      "close": 109.85,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.4,
+          "implied_move_pct": 4.95,
+          "ratio": 1.124,
+          "verdict": "fair",
+          "iv": 0.3511,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.87,
+          "implied_move_pct": 10.4,
+          "ratio": 0.876,
+          "verdict": "fair",
+          "iv": 0.3604,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "EFX",
+      "close": 161.26,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.6,
+          "implied_move_pct": 6.7,
+          "ratio": 0.882,
+          "verdict": "fair",
+          "iv": 0.4756,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 12.77,
+          "implied_move_pct": 13.73,
+          "ratio": 1.075,
+          "verdict": "fair",
+          "iv": 0.4756,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "FCX",
+      "close": 70.06,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.89,
+          "implied_move_pct": 7.02,
+          "ratio": 0.89,
+          "verdict": "fair",
+          "iv": 0.4981,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.88,
+          "implied_move_pct": 15.08,
+          "ratio": 1.171,
+          "verdict": "expensive",
+          "iv": 0.5223,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "V",
+      "close": 399.75,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.81,
+          "implied_move_pct": 2.98,
+          "ratio": 1.06,
+          "verdict": "fair",
+          "iv": 0.2116,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.83,
+          "implied_move_pct": 7.0,
+          "ratio": 0.894,
+          "verdict": "fair",
+          "iv": 0.2427,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "DDOG",
+      "close": 269.33,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.63,
+          "implied_move_pct": 8.26,
+          "ratio": 1.245,
+          "verdict": "expensive",
+          "iv": 0.5862,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 18.72,
+          "implied_move_pct": 16.75,
+          "ratio": 0.895,
+          "verdict": "fair",
+          "iv": 0.5802,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "AMGN",
+      "close": 434.03,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.89,
+          "implied_move_pct": 4.05,
+          "ratio": 1.04,
+          "verdict": "fair",
+          "iv": 0.2874,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.37,
+          "implied_move_pct": 9.35,
+          "ratio": 0.902,
+          "verdict": "fair",
+          "iv": 0.3238,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CL",
+      "close": 92.67,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.62,
+          "implied_move_pct": 3.14,
+          "ratio": 1.2,
+          "verdict": "expensive",
+          "iv": 0.2229,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.45,
+          "implied_move_pct": 6.75,
+          "ratio": 0.906,
+          "verdict": "fair",
+          "iv": 0.234,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "EXPE",
+      "close": 291.87,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.86,
+          "implied_move_pct": 7.29,
+          "ratio": 1.244,
+          "verdict": "expensive",
+          "iv": 0.5173,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.3,
+          "implied_move_pct": 14.04,
+          "ratio": 0.917,
+          "verdict": "fair",
+          "iv": 0.4862,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "BKNG",
+      "close": 165.8,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.76,
+          "implied_move_pct": 6.26,
+          "ratio": 1.314,
+          "verdict": "expensive",
+          "iv": 0.4441,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.98,
+          "implied_move_pct": 10.99,
+          "ratio": 0.917,
+          "verdict": "fair",
+          "iv": 0.3806,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "ABNB",
+      "close": 167.06,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.5,
+          "implied_move_pct": 6.02,
+          "ratio": 1.336,
+          "verdict": "expensive",
+          "iv": 0.4272,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.8,
+          "implied_move_pct": 11.74,
+          "ratio": 0.917,
+          "verdict": "fair",
+          "iv": 0.4068,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "WMB",
+      "close": 69.22,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.3,
+          "implied_move_pct": 5.27,
+          "ratio": 1.226,
+          "verdict": "expensive",
+          "iv": 0.3738,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.83,
+          "implied_move_pct": 9.06,
+          "ratio": 0.922,
+          "verdict": "fair",
+          "iv": 0.3138,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CIEN",
+      "close": 356.52,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 10.32,
+          "implied_move_pct": 10.14,
+          "ratio": 0.982,
+          "verdict": "fair",
+          "iv": 0.7198,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 21.8,
+          "implied_move_pct": 20.17,
+          "ratio": 0.925,
+          "verdict": "fair",
+          "iv": 0.6989,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "GEHC",
+      "close": 68.47,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.88,
+          "implied_move_pct": 3.6,
+          "ratio": 0.928,
+          "verdict": "fair",
+          "iv": 0.2552,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.32,
+          "implied_move_pct": 12.05,
+          "ratio": 1.064,
+          "verdict": "fair",
+          "iv": 0.4173,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "UNH",
+      "close": 406.67,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.71,
+          "implied_move_pct": 4.42,
+          "ratio": 1.191,
+          "verdict": "expensive",
+          "iv": 0.3138,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.45,
+          "implied_move_pct": 8.78,
+          "ratio": 0.929,
+          "verdict": "fair",
+          "iv": 0.3041,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "WMT",
+      "close": 117.87,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.49,
+          "implied_move_pct": 3.52,
+          "ratio": 1.008,
+          "verdict": "fair",
+          "iv": 0.2498,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.79,
+          "implied_move_pct": 7.28,
+          "ratio": 0.935,
+          "verdict": "fair",
+          "iv": 0.2521,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "KDP",
+      "close": 34.18,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.02,
+          "implied_move_pct": 4.72,
+          "ratio": 1.175,
+          "verdict": "expensive",
+          "iv": 0.3353,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 10.33,
+          "implied_move_pct": 9.68,
+          "ratio": 0.937,
+          "verdict": "fair",
+          "iv": 0.3353,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "CEG",
+      "close": 279.54,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.49,
+          "implied_move_pct": 7.28,
+          "ratio": 1.122,
+          "verdict": "fair",
+          "iv": 0.5167,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.95,
+          "implied_move_pct": 15.0,
+          "ratio": 0.941,
+          "verdict": "fair",
+          "iv": 0.5196,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "WM",
+      "close": 224.19,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.55,
+          "implied_move_pct": 3.34,
+          "ratio": 1.31,
+          "verdict": "expensive",
+          "iv": 0.2368,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 7.26,
+          "implied_move_pct": 6.84,
+          "ratio": 0.942,
+          "verdict": "fair",
+          "iv": 0.2368,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "CVS",
+      "close": 92.58,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.69,
+          "implied_move_pct": 5.01,
+          "ratio": 1.357,
+          "verdict": "expensive",
+          "iv": 0.3554,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.61,
+          "implied_move_pct": 10.0,
+          "ratio": 0.943,
+          "verdict": "fair",
+          "iv": 0.3464,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "SNDK",
+      "close": 1403.34,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 8.37,
+          "implied_move_pct": 10.14,
+          "ratio": 1.212,
+          "verdict": "expensive",
+          "iv": 0.72,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 22.73,
+          "implied_move_pct": 21.46,
+          "ratio": 0.944,
+          "verdict": "fair",
+          "iv": 0.7435,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "AMP",
+      "close": 502.58,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.47,
+          "implied_move_pct": 4.43,
+          "ratio": 1.276,
+          "verdict": "expensive",
+          "iv": 0.3148,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 9.63,
+          "implied_move_pct": 9.09,
+          "ratio": 0.944,
+          "verdict": "fair",
+          "iv": 0.3148,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "C",
+      "close": 123.21,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.19,
+          "implied_move_pct": 4.09,
+          "ratio": 0.977,
+          "verdict": "fair",
+          "iv": 0.29,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.74,
+          "implied_move_pct": 8.26,
+          "ratio": 0.945,
+          "verdict": "fair",
+          "iv": 0.2862,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "WY",
+      "close": 19.38,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.62,
+          "implied_move_pct": 4.46,
+          "ratio": 1.232,
+          "verdict": "expensive",
+          "iv": 0.3166,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 9.65,
+          "implied_move_pct": 9.14,
+          "ratio": 0.948,
+          "verdict": "fair",
+          "iv": 0.3166,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "QCOM",
+      "close": 178.4,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.05,
+          "implied_move_pct": 7.16,
+          "ratio": 1.184,
+          "verdict": "expensive",
+          "iv": 0.508,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.14,
+          "implied_move_pct": 14.43,
+          "ratio": 0.953,
+          "verdict": "fair",
+          "iv": 0.4999,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "VST",
+      "close": 151.79,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.34,
+          "implied_move_pct": 7.08,
+          "ratio": 1.117,
+          "verdict": "fair",
+          "iv": 0.5027,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.66,
+          "implied_move_pct": 14.94,
+          "ratio": 0.954,
+          "verdict": "fair",
+          "iv": 0.5176,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "JBL",
+      "close": 287.14,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.67,
+          "implied_move_pct": 7.33,
+          "ratio": 0.955,
+          "verdict": "fair",
+          "iv": 0.52,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 13.84,
+          "implied_move_pct": 14.69,
+          "ratio": 1.061,
+          "verdict": "fair",
+          "iv": 0.5089,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "AJG",
+      "close": 250.1,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.5,
+          "implied_move_pct": 4.97,
+          "ratio": 1.421,
+          "verdict": "expensive",
+          "iv": 0.3527,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 10.63,
+          "implied_move_pct": 10.18,
+          "ratio": 0.957,
+          "verdict": "fair",
+          "iv": 0.3527,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "PLTR",
+      "close": 200.97,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.41,
+          "implied_move_pct": 6.49,
+          "ratio": 1.199,
+          "verdict": "expensive",
+          "iv": 0.4606,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 13.94,
+          "implied_move_pct": 13.37,
+          "ratio": 0.959,
+          "verdict": "fair",
+          "iv": 0.4631,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "DIS",
+      "close": 110.68,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.01,
+          "implied_move_pct": 3.78,
+          "ratio": 1.255,
+          "verdict": "expensive",
+          "iv": 0.2682,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.96,
+          "implied_move_pct": 7.67,
+          "ratio": 0.964,
+          "verdict": "fair",
+          "iv": 0.2658,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ACN",
+      "close": 224.92,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.22,
+          "implied_move_pct": 6.36,
+          "ratio": 1.022,
+          "verdict": "fair",
+          "iv": 0.4517,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 13.18,
+          "implied_move_pct": 12.78,
+          "ratio": 0.97,
+          "verdict": "fair",
+          "iv": 0.4426,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "WFC",
+      "close": 82.75,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.82,
+          "implied_move_pct": 3.84,
+          "ratio": 1.004,
+          "verdict": "fair",
+          "iv": 0.273,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.01,
+          "implied_move_pct": 7.81,
+          "ratio": 0.975,
+          "verdict": "fair",
+          "iv": 0.2704,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "MAR",
+      "close": 385.71,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.95,
+          "implied_move_pct": 3.1,
+          "ratio": 1.052,
+          "verdict": "fair",
+          "iv": 0.2203,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.47,
+          "implied_move_pct": 8.28,
+          "ratio": 0.978,
+          "verdict": "fair",
+          "iv": 0.2869,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "IBKR",
+      "close": 86.03,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.89,
+          "implied_move_pct": 7.73,
+          "ratio": 0.979,
+          "verdict": "fair",
+          "iv": 0.5488,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.11,
+          "implied_move_pct": 14.63,
+          "ratio": 1.208,
+          "verdict": "expensive",
+          "iv": 0.507,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "AFL",
+      "close": 118.05,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.3,
+          "implied_move_pct": 3.33,
+          "ratio": 1.446,
+          "verdict": "expensive",
+          "iv": 0.2367,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 5.86,
+          "implied_move_pct": 5.74,
+          "ratio": 0.98,
+          "verdict": "fair",
+          "iv": 0.199,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "GEN",
+      "close": 24.82,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.85,
+          "implied_move_pct": 7.75,
+          "ratio": 1.325,
+          "verdict": "expensive",
+          "iv": 0.5504,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 16.17,
+          "implied_move_pct": 15.89,
+          "ratio": 0.983,
+          "verdict": "fair",
+          "iv": 0.5504,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "UAL",
+      "close": 101.31,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 8.37,
+          "implied_move_pct": 8.22,
+          "ratio": 0.983,
+          "verdict": "fair",
+          "iv": 0.5836,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.61,
+          "implied_move_pct": 15.66,
+          "ratio": 1.242,
+          "verdict": "expensive",
+          "iv": 0.5424,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "MOS",
+      "close": 18.95,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.3,
+          "implied_move_pct": 7.23,
+          "ratio": 1.147,
+          "verdict": "fair",
+          "iv": 0.5132,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.81,
+          "implied_move_pct": 14.57,
+          "ratio": 0.984,
+          "verdict": "fair",
+          "iv": 0.5049,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "F",
+      "close": 12.31,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.44,
+          "implied_move_pct": 4.37,
+          "ratio": 0.984,
+          "verdict": "fair",
+          "iv": 0.3106,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.41,
+          "implied_move_pct": 13.36,
+          "ratio": 1.171,
+          "verdict": "expensive",
+          "iv": 0.4629,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "PNC",
+      "close": 214.94,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.91,
+          "implied_move_pct": 3.85,
+          "ratio": 0.986,
+          "verdict": "fair",
+          "iv": 0.2734,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 6.34,
+          "implied_move_pct": 7.04,
+          "ratio": 1.11,
+          "verdict": "fair",
+          "iv": 0.2437,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "MA",
+      "close": 616.32,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.65,
+          "implied_move_pct": 3.0,
+          "ratio": 1.134,
+          "verdict": "fair",
+          "iv": 0.2127,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.75,
+          "implied_move_pct": 7.65,
+          "ratio": 0.987,
+          "verdict": "fair",
+          "iv": 0.265,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "HUM",
+      "close": 432.2,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.07,
+          "implied_move_pct": 5.77,
+          "ratio": 1.138,
+          "verdict": "fair",
+          "iv": 0.4098,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.18,
+          "implied_move_pct": 14.0,
+          "ratio": 0.987,
+          "verdict": "fair",
+          "iv": 0.485,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "KMI",
+      "close": 32.82,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.4,
+          "implied_move_pct": 4.46,
+          "ratio": 1.312,
+          "verdict": "expensive",
+          "iv": 0.3169,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.84,
+          "implied_move_pct": 8.75,
+          "ratio": 0.99,
+          "verdict": "fair",
+          "iv": 0.3032,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "EIX",
+      "close": 55.65,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.04,
+          "implied_move_pct": 5.64,
+          "ratio": 1.396,
+          "verdict": "expensive",
+          "iv": 0.4004,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 11.65,
+          "implied_move_pct": 11.56,
+          "ratio": 0.992,
+          "verdict": "fair",
+          "iv": 0.4004,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "PCAR",
+      "close": 110.81,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.24,
+          "implied_move_pct": 4.07,
+          "ratio": 1.254,
+          "verdict": "expensive",
+          "iv": 0.2889,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 8.4,
+          "implied_move_pct": 8.34,
+          "ratio": 0.992,
+          "verdict": "fair",
+          "iv": 0.2889,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "MSFT",
+      "close": 539.44,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.48,
+          "implied_move_pct": 3.45,
+          "ratio": 0.992,
+          "verdict": "fair",
+          "iv": 0.2446,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.97,
+          "implied_move_pct": 10.86,
+          "ratio": 1.089,
+          "verdict": "fair",
+          "iv": 0.3763,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "TPR",
+      "close": 119.75,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.26,
+          "implied_move_pct": 6.26,
+          "ratio": 1.468,
+          "verdict": "expensive",
+          "iv": 0.4447,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.81,
+          "implied_move_pct": 12.74,
+          "ratio": 0.995,
+          "verdict": "fair",
+          "iv": 0.4412,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "TWLO",
+      "close": 271.12,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.7,
+          "implied_move_pct": 7.68,
+          "ratio": 0.997,
+          "verdict": "fair",
+          "iv": 0.5451,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 19.64,
+          "implied_move_pct": 27.54,
+          "ratio": 1.402,
+          "verdict": "expensive",
+          "iv": 0.954,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "BAC",
+      "close": 51.7,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.51,
+          "implied_move_pct": 3.57,
+          "ratio": 1.018,
+          "verdict": "fair",
+          "iv": 0.2534,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.33,
+          "implied_move_pct": 7.32,
+          "ratio": 0.998,
+          "verdict": "fair",
+          "iv": 0.2537,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "STE",
+      "close": 224.33,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.86,
+          "implied_move_pct": 4.13,
+          "ratio": 1.445,
+          "verdict": "expensive",
+          "iv": 0.2933,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 8.47,
+          "implied_move_pct": 8.47,
+          "ratio": 1.0,
+          "verdict": "fair",
+          "iv": 0.2933,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CAH",
+      "close": 253.71,
+      "horizons": {
+        "1 month": {
+          "model_move_pct": 8.93,
+          "implied_move_pct": 8.94,
+          "ratio": 1.001,
+          "verdict": "fair",
+          "iv": 0.3097,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "AXON",
+      "close": 417.19,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.13,
+          "implied_move_pct": 7.33,
+          "ratio": 1.196,
+          "verdict": "expensive",
+          "iv": 0.5204,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.64,
+          "implied_move_pct": 15.7,
+          "ratio": 1.004,
+          "verdict": "fair",
+          "iv": 0.5437,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "TMO",
+      "close": 696.49,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.95,
+          "implied_move_pct": 7.55,
+          "ratio": 1.086,
+          "verdict": "fair",
+          "iv": 0.5363,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.0,
+          "implied_move_pct": 11.06,
+          "ratio": 1.006,
+          "verdict": "fair",
+          "iv": 0.3832,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "TSLA",
+      "close": 362.44,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 8.84,
+          "implied_move_pct": 8.9,
+          "ratio": 1.007,
+          "verdict": "fair",
+          "iv": 0.632,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.03,
+          "implied_move_pct": 15.33,
+          "ratio": 1.274,
+          "verdict": "expensive",
+          "iv": 0.5311,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "LYV",
+      "close": 172.51,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.54,
+          "implied_move_pct": 4.63,
+          "ratio": 1.309,
+          "verdict": "expensive",
+          "iv": 0.3289,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.87,
+          "implied_move_pct": 9.0,
+          "ratio": 1.015,
+          "verdict": "fair",
+          "iv": 0.3119,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "GWW",
+      "close": 1331.17,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.89,
+          "implied_move_pct": 3.82,
+          "ratio": 1.324,
+          "verdict": "expensive",
+          "iv": 0.2714,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 7.71,
+          "implied_move_pct": 7.83,
+          "ratio": 1.016,
+          "verdict": "fair",
+          "iv": 0.2714,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "UBER",
+      "close": 69.29,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.71,
+          "implied_move_pct": 5.16,
+          "ratio": 1.39,
+          "verdict": "expensive",
+          "iv": 0.3662,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.39,
+          "implied_move_pct": 10.56,
+          "ratio": 1.016,
+          "verdict": "fair",
+          "iv": 0.366,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "PM",
+      "close": 199.9,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.87,
+          "implied_move_pct": 5.96,
+          "ratio": 1.016,
+          "verdict": "fair",
+          "iv": 0.4235,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.43,
+          "implied_move_pct": 10.98,
+          "ratio": 1.164,
+          "verdict": "expensive",
+          "iv": 0.3804,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ORCL",
+      "close": 134.47,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.51,
+          "implied_move_pct": 7.68,
+          "ratio": 1.022,
+          "verdict": "fair",
+          "iv": 0.5452,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.93,
+          "implied_move_pct": 18.22,
+          "ratio": 1.143,
+          "verdict": "fair",
+          "iv": 0.6312,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "LUV",
+      "close": 40.83,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.81,
+          "implied_move_pct": 8.01,
+          "ratio": 1.025,
+          "verdict": "fair",
+          "iv": 0.5686,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.97,
+          "implied_move_pct": 15.11,
+          "ratio": 1.262,
+          "verdict": "expensive",
+          "iv": 0.5234,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "IFF",
+      "close": 90.29,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.28,
+          "implied_move_pct": 4.73,
+          "ratio": 1.44,
+          "verdict": "expensive",
+          "iv": 0.3355,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 9.44,
+          "implied_move_pct": 9.68,
+          "ratio": 1.026,
+          "verdict": "fair",
+          "iv": 0.3355,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "EL",
+      "close": 107.19,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.19,
+          "implied_move_pct": 5.34,
+          "ratio": 1.029,
+          "verdict": "fair",
+          "iv": 0.379,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.42,
+          "implied_move_pct": 15.12,
+          "ratio": 1.048,
+          "verdict": "fair",
+          "iv": 0.5237,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "BALL",
+      "close": 62.8,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.34,
+          "implied_move_pct": 4.33,
+          "ratio": 1.295,
+          "verdict": "expensive",
+          "iv": 0.3076,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 8.63,
+          "implied_move_pct": 8.88,
+          "ratio": 1.029,
+          "verdict": "fair",
+          "iv": 0.3076,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "GM",
+      "close": 83.66,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.09,
+          "implied_move_pct": 7.31,
+          "ratio": 1.031,
+          "verdict": "fair",
+          "iv": 0.519,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.25,
+          "implied_move_pct": 14.36,
+          "ratio": 1.173,
+          "verdict": "expensive",
+          "iv": 0.4976,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "IRM",
+      "close": 112.68,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.17,
+          "implied_move_pct": 5.69,
+          "ratio": 1.366,
+          "verdict": "expensive",
+          "iv": 0.4041,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.49,
+          "implied_move_pct": 10.83,
+          "ratio": 1.033,
+          "verdict": "fair",
+          "iv": 0.3753,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "VICI",
+      "close": 22.94,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.19,
+          "implied_move_pct": 3.04,
+          "ratio": 1.388,
+          "verdict": "expensive",
+          "iv": 0.2158,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 6.02,
+          "implied_move_pct": 6.23,
+          "ratio": 1.035,
+          "verdict": "fair",
+          "iv": 0.2158,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "MGM",
+      "close": 29.48,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.25,
+          "implied_move_pct": 5.84,
+          "ratio": 1.376,
+          "verdict": "expensive",
+          "iv": 0.4143,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 11.54,
+          "implied_move_pct": 11.96,
+          "ratio": 1.036,
+          "verdict": "fair",
+          "iv": 0.4143,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "COR",
+      "close": 341.41,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.55,
+          "implied_move_pct": 5.02,
+          "ratio": 1.415,
+          "verdict": "expensive",
+          "iv": 0.3565,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 9.93,
+          "implied_move_pct": 10.29,
+          "ratio": 1.037,
+          "verdict": "fair",
+          "iv": 0.3565,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "MCD",
+      "close": 242.5,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.44,
+          "implied_move_pct": 3.46,
+          "ratio": 1.42,
+          "verdict": "expensive",
+          "iv": 0.2459,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 6.67,
+          "implied_move_pct": 6.92,
+          "ratio": 1.037,
+          "verdict": "fair",
+          "iv": 0.2397,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "RCL",
+      "close": 280.01,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.35,
+          "implied_move_pct": 6.35,
+          "ratio": 1.187,
+          "verdict": "expensive",
+          "iv": 0.4506,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.02,
+          "implied_move_pct": 15.59,
+          "ratio": 1.038,
+          "verdict": "fair",
+          "iv": 0.5401,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "BX",
+      "close": 109.2,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.25,
+          "implied_move_pct": 7.54,
+          "ratio": 1.04,
+          "verdict": "fair",
+          "iv": 0.5354,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.81,
+          "implied_move_pct": 14.73,
+          "ratio": 1.15,
+          "verdict": "expensive",
+          "iv": 0.5101,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "MU",
+      "close": 931.24,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.01,
+          "implied_move_pct": 7.56,
+          "ratio": 1.079,
+          "verdict": "fair",
+          "iv": 0.537,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.75,
+          "implied_move_pct": 15.35,
+          "ratio": 1.04,
+          "verdict": "fair",
+          "iv": 0.5318,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "AMAT",
+      "close": 430.01,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.05,
+          "implied_move_pct": 7.54,
+          "ratio": 1.247,
+          "verdict": "expensive",
+          "iv": 0.5353,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.62,
+          "implied_move_pct": 16.29,
+          "ratio": 1.043,
+          "verdict": "fair",
+          "iv": 0.5642,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "DASH",
+      "close": 184.01,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.77,
+          "implied_move_pct": 8.1,
+          "ratio": 1.404,
+          "verdict": "expensive",
+          "iv": 0.5753,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.0,
+          "implied_move_pct": 15.67,
+          "ratio": 1.045,
+          "verdict": "fair",
+          "iv": 0.5429,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "PGR",
+      "close": 213.75,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.05,
+          "implied_move_pct": 4.23,
+          "ratio": 1.045,
+          "verdict": "fair",
+          "iv": 0.3004,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.42,
+          "implied_move_pct": 8.87,
+          "ratio": 1.054,
+          "verdict": "fair",
+          "iv": 0.3073,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "VRTX",
+      "close": 508.75,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.71,
+          "implied_move_pct": 5.38,
+          "ratio": 1.452,
+          "verdict": "expensive",
+          "iv": 0.3819,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.54,
+          "implied_move_pct": 9.98,
+          "ratio": 1.046,
+          "verdict": "fair",
+          "iv": 0.3458,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "APD",
+      "close": 296.6,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.65,
+          "implied_move_pct": 3.9,
+          "ratio": 1.47,
+          "verdict": "expensive",
+          "iv": 0.277,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 7.64,
+          "implied_move_pct": 8.0,
+          "ratio": 1.047,
+          "verdict": "fair",
+          "iv": 0.277,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "LITE",
+      "close": 896.33,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 9.56,
+          "implied_move_pct": 10.14,
+          "ratio": 1.061,
+          "verdict": "fair",
+          "iv": 0.7197,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 19.29,
+          "implied_move_pct": 20.23,
+          "ratio": 1.049,
+          "verdict": "fair",
+          "iv": 0.7006,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "SPGI",
+      "close": 424.81,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.96,
+          "implied_move_pct": 4.54,
+          "ratio": 1.532,
+          "verdict": "expensive",
+          "iv": 0.3225,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.84,
+          "implied_move_pct": 9.28,
+          "ratio": 1.05,
+          "verdict": "fair",
+          "iv": 0.3214,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "COF",
+      "close": 198.86,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.3,
+          "implied_move_pct": 6.62,
+          "ratio": 1.05,
+          "verdict": "fair",
+          "iv": 0.4697,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.88,
+          "implied_move_pct": 12.51,
+          "ratio": 1.266,
+          "verdict": "expensive",
+          "iv": 0.4332,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "NDAQ",
+      "close": 93.5,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.55,
+          "implied_move_pct": 5.83,
+          "ratio": 1.05,
+          "verdict": "fair",
+          "iv": 0.4139,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.74,
+          "implied_move_pct": 10.54,
+          "ratio": 1.207,
+          "verdict": "expensive",
+          "iv": 0.3651,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "AMT",
+      "close": 181.36,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.75,
+          "implied_move_pct": 4.26,
+          "ratio": 1.552,
+          "verdict": "expensive",
+          "iv": 0.3026,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 8.3,
+          "implied_move_pct": 8.74,
+          "ratio": 1.053,
+          "verdict": "fair",
+          "iv": 0.3026,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "GDDY",
+      "close": 103.36,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.77,
+          "implied_move_pct": 8.63,
+          "ratio": 1.275,
+          "verdict": "expensive",
+          "iv": 0.6126,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 18.17,
+          "implied_move_pct": 19.17,
+          "ratio": 1.055,
+          "verdict": "fair",
+          "iv": 0.6642,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "BA",
+      "close": 188.73,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.23,
+          "implied_move_pct": 4.48,
+          "ratio": 1.058,
+          "verdict": "fair",
+          "iv": 0.3183,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.38,
+          "implied_move_pct": 13.16,
+          "ratio": 1.156,
+          "verdict": "expensive",
+          "iv": 0.4558,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "BDX",
+      "close": 193.76,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.18,
+          "implied_move_pct": 4.3,
+          "ratio": 1.354,
+          "verdict": "expensive",
+          "iv": 0.3051,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 8.32,
+          "implied_move_pct": 8.81,
+          "ratio": 1.059,
+          "verdict": "fair",
+          "iv": 0.3051,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "NRG",
+      "close": 102.86,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.31,
+          "implied_move_pct": 9.47,
+          "ratio": 1.5,
+          "verdict": "expensive",
+          "iv": 0.6726,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 16.28,
+          "implied_move_pct": 17.26,
+          "ratio": 1.06,
+          "verdict": "fair",
+          "iv": 0.598,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CRWD",
+      "close": 249.29,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.89,
+          "implied_move_pct": 7.36,
+          "ratio": 1.068,
+          "verdict": "fair",
+          "iv": 0.5227,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.58,
+          "implied_move_pct": 15.48,
+          "ratio": 1.061,
+          "verdict": "fair",
+          "iv": 0.5363,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "LEN",
+      "close": 77.69,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.2,
+          "implied_move_pct": 6.58,
+          "ratio": 1.061,
+          "verdict": "fair",
+          "iv": 0.467,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.39,
+          "implied_move_pct": 15.59,
+          "ratio": 1.258,
+          "verdict": "expensive",
+          "iv": 0.54,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "VLO",
+      "close": 444.06,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.89,
+          "implied_move_pct": 8.38,
+          "ratio": 1.062,
+          "verdict": "fair",
+          "iv": 0.5951,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.31,
+          "implied_move_pct": 15.54,
+          "ratio": 1.086,
+          "verdict": "fair",
+          "iv": 0.5384,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "GNRC",
+      "close": 198.4,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.87,
+          "implied_move_pct": 7.31,
+          "ratio": 1.064,
+          "verdict": "fair",
+          "iv": 0.5189,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 16.17,
+          "implied_move_pct": 21.18,
+          "ratio": 1.31,
+          "verdict": "expensive",
+          "iv": 0.7336,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "T",
+      "close": 23.5,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.58,
+          "implied_move_pct": 6.44,
+          "ratio": 1.405,
+          "verdict": "expensive",
+          "iv": 0.4575,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.21,
+          "implied_move_pct": 10.87,
+          "ratio": 1.064,
+          "verdict": "fair",
+          "iv": 0.3765,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "LULU",
+      "close": 99.09,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.99,
+          "implied_move_pct": 6.19,
+          "ratio": 1.241,
+          "verdict": "expensive",
+          "iv": 0.4393,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.83,
+          "implied_move_pct": 12.62,
+          "ratio": 1.066,
+          "verdict": "fair",
+          "iv": 0.4371,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "MRNA",
+      "close": 226.3,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 11.03,
+          "implied_move_pct": 12.77,
+          "ratio": 1.157,
+          "verdict": "expensive",
+          "iv": 0.9064,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 35.49,
+          "implied_move_pct": 37.93,
+          "ratio": 1.069,
+          "verdict": "fair",
+          "iv": 1.3138,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "TYL",
+      "close": 363.62,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.32,
+          "implied_move_pct": 6.32,
+          "ratio": 1.464,
+          "verdict": "expensive",
+          "iv": 0.4487,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 12.11,
+          "implied_move_pct": 12.95,
+          "ratio": 1.07,
+          "verdict": "fair",
+          "iv": 0.4487,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "LRCX",
+      "close": 277.46,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 9.33,
+          "implied_move_pct": 10.16,
+          "ratio": 1.089,
+          "verdict": "fair",
+          "iv": 0.7216,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.6,
+          "implied_move_pct": 16.72,
+          "ratio": 1.072,
+          "verdict": "fair",
+          "iv": 0.5793,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "KR",
+      "close": 62.71,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.28,
+          "implied_move_pct": 5.37,
+          "ratio": 1.256,
+          "verdict": "expensive",
+          "iv": 0.3814,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.49,
+          "implied_move_pct": 10.18,
+          "ratio": 1.072,
+          "verdict": "fair",
+          "iv": 0.3525,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "MCK",
+      "close": 998.64,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.39,
+          "implied_move_pct": 4.74,
+          "ratio": 1.399,
+          "verdict": "expensive",
+          "iv": 0.3367,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 9.04,
+          "implied_move_pct": 9.72,
+          "ratio": 1.075,
+          "verdict": "fair",
+          "iv": 0.3367,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "PG",
+      "close": 157.08,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.05,
+          "implied_move_pct": 4.97,
+          "ratio": 1.228,
+          "verdict": "expensive",
+          "iv": 0.3526,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.24,
+          "implied_move_pct": 7.89,
+          "ratio": 1.09,
+          "verdict": "fair",
+          "iv": 0.2733,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "COHR",
+      "close": 250.6,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 9.36,
+          "implied_move_pct": 10.6,
+          "ratio": 1.132,
+          "verdict": "fair",
+          "iv": 0.7527,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 19.42,
+          "implied_move_pct": 21.16,
+          "ratio": 1.09,
+          "verdict": "fair",
+          "iv": 0.7329,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "SCHW",
+      "close": 94.16,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.21,
+          "implied_move_pct": 4.6,
+          "ratio": 1.092,
+          "verdict": "fair",
+          "iv": 0.3264,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.56,
+          "implied_move_pct": 8.76,
+          "ratio": 1.159,
+          "verdict": "expensive",
+          "iv": 0.3036,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "PFE",
+      "close": 29.44,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.59,
+          "implied_move_pct": 3.36,
+          "ratio": 1.299,
+          "verdict": "expensive",
+          "iv": 0.2384,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.15,
+          "implied_move_pct": 7.82,
+          "ratio": 1.093,
+          "verdict": "fair",
+          "iv": 0.2708,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "PCG",
+      "close": 12.96,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.76,
+          "implied_move_pct": 7.48,
+          "ratio": 0.964,
+          "verdict": "fair",
+          "iv": 0.5313,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 13.45,
+          "implied_move_pct": 14.77,
+          "ratio": 1.098,
+          "verdict": "fair",
+          "iv": 0.5117,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "HRL",
+      "close": 20.19,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.34,
+          "implied_move_pct": 4.26,
+          "ratio": 1.277,
+          "verdict": "expensive",
+          "iv": 0.3027,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.05,
+          "implied_move_pct": 7.74,
+          "ratio": 1.098,
+          "verdict": "fair",
+          "iv": 0.2681,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "DLR",
+      "close": 174.47,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.79,
+          "implied_move_pct": 5.27,
+          "ratio": 1.101,
+          "verdict": "fair",
+          "iv": 0.374,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.26,
+          "implied_move_pct": 13.79,
+          "ratio": 1.225,
+          "verdict": "expensive",
+          "iv": 0.4776,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "KMB",
+      "close": 104.07,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.93,
+          "implied_move_pct": 3.23,
+          "ratio": 1.103,
+          "verdict": "fair",
+          "iv": 0.2296,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.12,
+          "implied_move_pct": 8.96,
+          "ratio": 1.104,
+          "verdict": "fair",
+          "iv": 0.3104,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "KKR",
+      "close": 87.63,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.09,
+          "implied_move_pct": 6.78,
+          "ratio": 1.333,
+          "verdict": "expensive",
+          "iv": 0.4813,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.33,
+          "implied_move_pct": 13.61,
+          "ratio": 1.104,
+          "verdict": "fair",
+          "iv": 0.4714,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "MS",
+      "close": 182.1,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.97,
+          "implied_move_pct": 4.38,
+          "ratio": 1.104,
+          "verdict": "fair",
+          "iv": 0.3108,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.54,
+          "implied_move_pct": 9.15,
+          "ratio": 1.214,
+          "verdict": "expensive",
+          "iv": 0.317,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "PANW",
+      "close": 375.04,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.86,
+          "implied_move_pct": 7.97,
+          "ratio": 1.162,
+          "verdict": "expensive",
+          "iv": 0.5662,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.08,
+          "implied_move_pct": 15.56,
+          "ratio": 1.105,
+          "verdict": "fair",
+          "iv": 0.5392,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "GEV",
+      "close": 941.78,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.38,
+          "implied_move_pct": 7.11,
+          "ratio": 1.321,
+          "verdict": "expensive",
+          "iv": 0.5045,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.48,
+          "implied_move_pct": 16.07,
+          "ratio": 1.11,
+          "verdict": "fair",
+          "iv": 0.5568,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "COST",
+      "close": 978.01,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.49,
+          "implied_move_pct": 3.24,
+          "ratio": 1.299,
+          "verdict": "expensive",
+          "iv": 0.23,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 5.96,
+          "implied_move_pct": 6.61,
+          "ratio": 1.11,
+          "verdict": "fair",
+          "iv": 0.229,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "TTWO",
+      "close": 209.38,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.61,
+          "implied_move_pct": 6.82,
+          "ratio": 1.478,
+          "verdict": "expensive",
+          "iv": 0.4842,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.65,
+          "implied_move_pct": 14.04,
+          "ratio": 1.11,
+          "verdict": "fair",
+          "iv": 0.4865,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "BE",
+      "close": 239.34,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 10.57,
+          "implied_move_pct": 15.01,
+          "ratio": 1.421,
+          "verdict": "expensive",
+          "iv": 1.0659,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 25.09,
+          "implied_move_pct": 27.89,
+          "ratio": 1.112,
+          "verdict": "fair",
+          "iv": 0.9662,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "NKE",
+      "close": 37.14,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.59,
+          "implied_move_pct": 5.1,
+          "ratio": 1.112,
+          "verdict": "fair",
+          "iv": 0.3623,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.07,
+          "implied_move_pct": 10.87,
+          "ratio": 1.199,
+          "verdict": "expensive",
+          "iv": 0.3765,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "MO",
+      "close": 73.84,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.65,
+          "implied_move_pct": 4.03,
+          "ratio": 1.52,
+          "verdict": "expensive",
+          "iv": 0.2859,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.78,
+          "implied_move_pct": 9.78,
+          "ratio": 1.114,
+          "verdict": "fair",
+          "iv": 0.3386,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "JNJ",
+      "close": 253.28,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.58,
+          "implied_move_pct": 4.0,
+          "ratio": 1.117,
+          "verdict": "fair",
+          "iv": 0.2838,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 6.38,
+          "implied_move_pct": 8.18,
+          "ratio": 1.283,
+          "verdict": "expensive",
+          "iv": 0.2832,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "FIS",
+      "close": 36.13,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.27,
+          "implied_move_pct": 5.68,
+          "ratio": 1.331,
+          "verdict": "expensive",
+          "iv": 0.4033,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.18,
+          "implied_move_pct": 12.53,
+          "ratio": 1.121,
+          "verdict": "fair",
+          "iv": 0.4341,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "HPE",
+      "close": 63.11,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 8.32,
+          "implied_move_pct": 9.33,
+          "ratio": 1.122,
+          "verdict": "fair",
+          "iv": 0.6626,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.91,
+          "implied_move_pct": 19.49,
+          "ratio": 1.307,
+          "verdict": "expensive",
+          "iv": 0.6753,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "NCLH",
+      "close": 14.87,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.4,
+          "implied_move_pct": 8.12,
+          "ratio": 1.503,
+          "verdict": "expensive",
+          "iv": 0.5762,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.02,
+          "implied_move_pct": 15.73,
+          "ratio": 1.122,
+          "verdict": "fair",
+          "iv": 0.5449,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "RTX",
+      "close": 186.95,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.16,
+          "implied_move_pct": 6.91,
+          "ratio": 1.123,
+          "verdict": "fair",
+          "iv": 0.4904,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.01,
+          "implied_move_pct": 11.82,
+          "ratio": 1.311,
+          "verdict": "expensive",
+          "iv": 0.4093,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "CME",
+      "close": 289.46,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.54,
+          "implied_move_pct": 6.23,
+          "ratio": 1.124,
+          "verdict": "fair",
+          "iv": 0.4424,
+          "expiry_dte": 7
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "OXY",
+      "close": 60.67,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.62,
+          "implied_move_pct": 5.17,
+          "ratio": 1.427,
+          "verdict": "expensive",
+          "iv": 0.3669,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.08,
+          "implied_move_pct": 10.21,
+          "ratio": 1.124,
+          "verdict": "fair",
+          "iv": 0.3536,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "META",
+      "close": 737.54,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.06,
+          "implied_move_pct": 8.28,
+          "ratio": 1.635,
+          "verdict": "expensive",
+          "iv": 0.5882,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.79,
+          "implied_move_pct": 14.42,
+          "ratio": 1.127,
+          "verdict": "fair",
+          "iv": 0.4995,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "MCHP",
+      "close": 74.26,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.44,
+          "implied_move_pct": 7.39,
+          "ratio": 1.357,
+          "verdict": "expensive",
+          "iv": 0.5249,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.39,
+          "implied_move_pct": 16.25,
+          "ratio": 1.129,
+          "verdict": "fair",
+          "iv": 0.563,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "MRVL",
+      "close": 241.24,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 8.25,
+          "implied_move_pct": 9.32,
+          "ratio": 1.13,
+          "verdict": "fair",
+          "iv": 0.6616,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.72,
+          "implied_move_pct": 18.6,
+          "ratio": 1.184,
+          "verdict": "expensive",
+          "iv": 0.6442,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "MMM",
+      "close": 165.33,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.41,
+          "implied_move_pct": 7.25,
+          "ratio": 1.13,
+          "verdict": "fair",
+          "iv": 0.515,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.25,
+          "implied_move_pct": 12.48,
+          "ratio": 1.349,
+          "verdict": "expensive",
+          "iv": 0.4324,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "HPQ",
+      "close": 30.85,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.16,
+          "implied_move_pct": 7.79,
+          "ratio": 1.265,
+          "verdict": "expensive",
+          "iv": 0.5527,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.03,
+          "implied_move_pct": 15.89,
+          "ratio": 1.132,
+          "verdict": "fair",
+          "iv": 0.5505,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "DVN",
+      "close": 49.24,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.24,
+          "implied_move_pct": 6.27,
+          "ratio": 1.478,
+          "verdict": "expensive",
+          "iv": 0.4453,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.2,
+          "implied_move_pct": 11.57,
+          "ratio": 1.134,
+          "verdict": "fair",
+          "iv": 0.4009,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "MDT",
+      "close": 95.45,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.46,
+          "implied_move_pct": 3.93,
+          "ratio": 1.136,
+          "verdict": "fair",
+          "iv": 0.2791,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 6.71,
+          "implied_move_pct": 8.54,
+          "ratio": 1.273,
+          "verdict": "expensive",
+          "iv": 0.2958,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ETN",
+      "close": 402.48,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.72,
+          "implied_move_pct": 6.8,
+          "ratio": 1.441,
+          "verdict": "expensive",
+          "iv": 0.4827,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.04,
+          "implied_move_pct": 13.68,
+          "ratio": 1.136,
+          "verdict": "fair",
+          "iv": 0.4738,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "REGN",
+      "close": 796.34,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.48,
+          "implied_move_pct": 5.09,
+          "ratio": 1.137,
+          "verdict": "fair",
+          "iv": 0.3612,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.75,
+          "implied_move_pct": 13.85,
+          "ratio": 1.288,
+          "verdict": "expensive",
+          "iv": 0.4799,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "EXE",
+      "close": 91.11,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.88,
+          "implied_move_pct": 5.18,
+          "ratio": 1.335,
+          "verdict": "expensive",
+          "iv": 0.3677,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.79,
+          "implied_move_pct": 12.27,
+          "ratio": 1.137,
+          "verdict": "fair",
+          "iv": 0.4249,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "INTU",
+      "close": 330.17,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.07,
+          "implied_move_pct": 7.05,
+          "ratio": 1.162,
+          "verdict": "expensive",
+          "iv": 0.5002,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 13.13,
+          "implied_move_pct": 14.98,
+          "ratio": 1.141,
+          "verdict": "fair",
+          "iv": 0.5191,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "FSLR",
+      "close": 178.81,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.18,
+          "implied_move_pct": 7.69,
+          "ratio": 1.245,
+          "verdict": "expensive",
+          "iv": 0.5457,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 16.76,
+          "implied_move_pct": 19.16,
+          "ratio": 1.143,
+          "verdict": "fair",
+          "iv": 0.6639,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "INTC",
+      "close": 95.37,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.58,
+          "implied_move_pct": 8.67,
+          "ratio": 1.144,
+          "verdict": "fair",
+          "iv": 0.6156,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 16.66,
+          "implied_move_pct": 21.86,
+          "ratio": 1.312,
+          "verdict": "expensive",
+          "iv": 0.7572,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "FISV",
+      "close": 47.21,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.95,
+          "implied_move_pct": 5.68,
+          "ratio": 1.147,
+          "verdict": "fair",
+          "iv": 0.4031,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.52,
+          "implied_move_pct": 11.73,
+          "ratio": 1.232,
+          "verdict": "expensive",
+          "iv": 0.4063,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "AMD",
+      "close": 562.23,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.02,
+          "implied_move_pct": 7.8,
+          "ratio": 1.295,
+          "verdict": "expensive",
+          "iv": 0.5539,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.82,
+          "implied_move_pct": 17.01,
+          "ratio": 1.148,
+          "verdict": "fair",
+          "iv": 0.5894,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "CCL",
+      "close": 26.46,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.7,
+          "implied_move_pct": 6.44,
+          "ratio": 1.369,
+          "verdict": "expensive",
+          "iv": 0.4575,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.68,
+          "implied_move_pct": 12.26,
+          "ratio": 1.148,
+          "verdict": "fair",
+          "iv": 0.4248,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CMG",
+      "close": 30.58,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.06,
+          "implied_move_pct": 5.81,
+          "ratio": 1.148,
+          "verdict": "fair",
+          "iv": 0.4126,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 13.38,
+          "implied_move_pct": 16.31,
+          "ratio": 1.219,
+          "verdict": "expensive",
+          "iv": 0.5649,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "JPM",
+      "close": 335.53,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.64,
+          "implied_move_pct": 3.34,
+          "ratio": 1.267,
+          "verdict": "expensive",
+          "iv": 0.2371,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 6.02,
+          "implied_move_pct": 6.97,
+          "ratio": 1.157,
+          "verdict": "expensive",
+          "iv": 0.2415,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "APP",
+      "close": 262.19,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.69,
+          "implied_move_pct": 7.76,
+          "ratio": 1.159,
+          "verdict": "expensive",
+          "iv": 0.5511,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 18.16,
+          "implied_move_pct": 23.21,
+          "ratio": 1.278,
+          "verdict": "expensive",
+          "iv": 0.8038,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "SMCI",
+      "close": 35.09,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 8.25,
+          "implied_move_pct": 10.25,
+          "ratio": 1.242,
+          "verdict": "expensive",
+          "iv": 0.7276,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 21.35,
+          "implied_move_pct": 24.74,
+          "ratio": 1.159,
+          "verdict": "expensive",
+          "iv": 0.8572,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "DAL",
+      "close": 78.08,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.75,
+          "implied_move_pct": 5.53,
+          "ratio": 1.163,
+          "verdict": "expensive",
+          "iv": 0.3926,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.76,
+          "implied_move_pct": 11.44,
+          "ratio": 1.172,
+          "verdict": "expensive",
+          "iv": 0.3962,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "SO",
+      "close": 89.18,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.13,
+          "implied_move_pct": 3.67,
+          "ratio": 1.725,
+          "verdict": "expensive",
+          "iv": 0.2609,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 5.93,
+          "implied_move_pct": 6.91,
+          "ratio": 1.165,
+          "verdict": "expensive",
+          "iv": 0.2393,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "STZ",
+      "close": 129.58,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.65,
+          "implied_move_pct": 4.72,
+          "ratio": 1.293,
+          "verdict": "expensive",
+          "iv": 0.3353,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.35,
+          "implied_move_pct": 9.75,
+          "ratio": 1.167,
+          "verdict": "expensive",
+          "iv": 0.3379,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "GLW",
+      "close": 138.43,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.53,
+          "implied_move_pct": 8.8,
+          "ratio": 1.168,
+          "verdict": "expensive",
+          "iv": 0.6249,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 16.51,
+          "implied_move_pct": 20.34,
+          "ratio": 1.232,
+          "verdict": "expensive",
+          "iv": 0.7045,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "AMZN",
+      "close": 254.76,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.55,
+          "implied_move_pct": 4.14,
+          "ratio": 1.168,
+          "verdict": "expensive",
+          "iv": 0.2939,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.47,
+          "implied_move_pct": 13.73,
+          "ratio": 1.311,
+          "verdict": "expensive",
+          "iv": 0.4756,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "DHR",
+      "close": 231.5,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.29,
+          "implied_move_pct": 8.54,
+          "ratio": 1.171,
+          "verdict": "expensive",
+          "iv": 0.6064,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.12,
+          "implied_move_pct": 14.69,
+          "ratio": 1.321,
+          "verdict": "expensive",
+          "iv": 0.5089,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "LVS",
+      "close": 38.32,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.67,
+          "implied_move_pct": 7.82,
+          "ratio": 1.172,
+          "verdict": "expensive",
+          "iv": 0.5552,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.99,
+          "implied_move_pct": 14.69,
+          "ratio": 1.471,
+          "verdict": "expensive",
+          "iv": 0.509,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "IP",
+      "close": 34.1,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.41,
+          "implied_move_pct": 6.82,
+          "ratio": 1.546,
+          "verdict": "expensive",
+          "iv": 0.4844,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.85,
+          "implied_move_pct": 15.07,
+          "ratio": 1.173,
+          "verdict": "expensive",
+          "iv": 0.522,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "APO",
+      "close": 111.87,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.68,
+          "implied_move_pct": 7.67,
+          "ratio": 1.638,
+          "verdict": "expensive",
+          "iv": 0.5446,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.51,
+          "implied_move_pct": 14.67,
+          "ratio": 1.173,
+          "verdict": "expensive",
+          "iv": 0.5083,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "APA",
+      "close": 47.23,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.54,
+          "implied_move_pct": 6.74,
+          "ratio": 1.486,
+          "verdict": "expensive",
+          "iv": 0.4785,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.75,
+          "implied_move_pct": 13.81,
+          "ratio": 1.175,
+          "verdict": "expensive",
+          "iv": 0.4785,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ANET",
+      "close": 195.42,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.32,
+          "implied_move_pct": 7.25,
+          "ratio": 1.362,
+          "verdict": "expensive",
+          "iv": 0.5147,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.73,
+          "implied_move_pct": 14.98,
+          "ratio": 1.177,
+          "verdict": "expensive",
+          "iv": 0.519,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "ADBE",
+      "close": 251.67,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.18,
+          "implied_move_pct": 6.1,
+          "ratio": 1.177,
+          "verdict": "expensive",
+          "iv": 0.4329,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.91,
+          "implied_move_pct": 13.07,
+          "ratio": 1.198,
+          "verdict": "expensive",
+          "iv": 0.4528,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "GILD",
+      "close": 157.37,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.48,
+          "implied_move_pct": 5.14,
+          "ratio": 1.477,
+          "verdict": "expensive",
+          "iv": 0.365,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.22,
+          "implied_move_pct": 10.88,
+          "ratio": 1.18,
+          "verdict": "expensive",
+          "iv": 0.377,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "KHC",
+      "close": 22.7,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.35,
+          "implied_move_pct": 4.96,
+          "ratio": 1.479,
+          "verdict": "expensive",
+          "iv": 0.3521,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.32,
+          "implied_move_pct": 9.82,
+          "ratio": 1.18,
+          "verdict": "expensive",
+          "iv": 0.3403,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "CTAS",
+      "close": 213.06,
+      "horizons": {
+        "1 month": {
+          "model_move_pct": 6.99,
+          "implied_move_pct": 8.27,
+          "ratio": 1.183,
+          "verdict": "expensive",
+          "iv": 0.2864,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ARES",
+      "close": 112.49,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.97,
+          "implied_move_pct": 6.75,
+          "ratio": 1.359,
+          "verdict": "expensive",
+          "iv": 0.4791,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.9,
+          "implied_move_pct": 15.25,
+          "ratio": 1.183,
+          "verdict": "expensive",
+          "iv": 0.5284,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ALB",
+      "close": 98.18,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.67,
+          "implied_move_pct": 7.39,
+          "ratio": 1.584,
+          "verdict": "expensive",
+          "iv": 0.5247,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.78,
+          "implied_move_pct": 15.24,
+          "ratio": 1.193,
+          "verdict": "expensive",
+          "iv": 0.5281,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "KLAC",
+      "close": 174.46,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.5,
+          "implied_move_pct": 8.48,
+          "ratio": 1.543,
+          "verdict": "expensive",
+          "iv": 0.6023,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.02,
+          "implied_move_pct": 17.95,
+          "ratio": 1.195,
+          "verdict": "expensive",
+          "iv": 0.6218,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "TJX",
+      "close": 144.58,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.01,
+          "implied_move_pct": 3.61,
+          "ratio": 1.197,
+          "verdict": "expensive",
+          "iv": 0.2566,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 5.92,
+          "implied_move_pct": 7.63,
+          "ratio": 1.289,
+          "verdict": "expensive",
+          "iv": 0.2644,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "AVGO",
+      "close": 344.33,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.61,
+          "implied_move_pct": 5.52,
+          "ratio": 1.197,
+          "verdict": "expensive",
+          "iv": 0.3916,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.18,
+          "implied_move_pct": 11.6,
+          "ratio": 1.264,
+          "verdict": "expensive",
+          "iv": 0.4018,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "CF",
+      "close": 119.77,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.94,
+          "implied_move_pct": 6.96,
+          "ratio": 1.409,
+          "verdict": "expensive",
+          "iv": 0.4943,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.92,
+          "implied_move_pct": 14.29,
+          "ratio": 1.199,
+          "verdict": "expensive",
+          "iv": 0.4952,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "PEP",
+      "close": 128.38,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.78,
+          "implied_move_pct": 3.91,
+          "ratio": 1.406,
+          "verdict": "expensive",
+          "iv": 0.2772,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 6.75,
+          "implied_move_pct": 8.1,
+          "ratio": 1.2,
+          "verdict": "expensive",
+          "iv": 0.2805,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "DE",
+      "close": 650.67,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.29,
+          "implied_move_pct": 6.2,
+          "ratio": 1.447,
+          "verdict": "expensive",
+          "iv": 0.44,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.81,
+          "implied_move_pct": 11.78,
+          "ratio": 1.201,
+          "verdict": "expensive",
+          "iv": 0.4079,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "XOM",
+      "close": 174.68,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.05,
+          "implied_move_pct": 3.99,
+          "ratio": 1.309,
+          "verdict": "expensive",
+          "iv": 0.283,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.64,
+          "implied_move_pct": 9.19,
+          "ratio": 1.204,
+          "verdict": "expensive",
+          "iv": 0.3182,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "RDDT",
+      "close": 148.6,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.18,
+          "implied_move_pct": 8.64,
+          "ratio": 1.204,
+          "verdict": "expensive",
+          "iv": 0.613,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 17.69,
+          "implied_move_pct": 22.95,
+          "ratio": 1.297,
+          "verdict": "expensive",
+          "iv": 0.7951,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "MRK",
+      "close": 145.19,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.31,
+          "implied_move_pct": 6.12,
+          "ratio": 1.42,
+          "verdict": "expensive",
+          "iv": 0.4348,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.77,
+          "implied_move_pct": 14.18,
+          "ratio": 1.205,
+          "verdict": "expensive",
+          "iv": 0.4912,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "GS",
+      "close": 891.28,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.91,
+          "implied_move_pct": 4.74,
+          "ratio": 1.213,
+          "verdict": "expensive",
+          "iv": 0.3364,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.94,
+          "implied_move_pct": 9.58,
+          "ratio": 1.206,
+          "verdict": "expensive",
+          "iv": 0.332,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "ON",
+      "close": 73.7,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.05,
+          "implied_move_pct": 8.51,
+          "ratio": 1.407,
+          "verdict": "expensive",
+          "iv": 0.6044,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.91,
+          "implied_move_pct": 19.22,
+          "ratio": 1.208,
+          "verdict": "expensive",
+          "iv": 0.6657,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "DG",
+      "close": 133.89,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.46,
+          "implied_move_pct": 5.54,
+          "ratio": 1.242,
+          "verdict": "expensive",
+          "iv": 0.3931,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.09,
+          "implied_move_pct": 12.21,
+          "ratio": 1.21,
+          "verdict": "expensive",
+          "iv": 0.423,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "BMY",
+      "close": 60.57,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.1,
+          "implied_move_pct": 5.04,
+          "ratio": 1.228,
+          "verdict": "expensive",
+          "iv": 0.3577,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.04,
+          "implied_move_pct": 12.2,
+          "ratio": 1.215,
+          "verdict": "expensive",
+          "iv": 0.4227,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "DELL",
+      "close": 507.93,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.81,
+          "implied_move_pct": 9.5,
+          "ratio": 1.216,
+          "verdict": "expensive",
+          "iv": 0.6747,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.4,
+          "implied_move_pct": 18.78,
+          "ratio": 1.219,
+          "verdict": "expensive",
+          "iv": 0.6506,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "GOOGL",
+      "close": 349.22,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.66,
+          "implied_move_pct": 4.45,
+          "ratio": 1.216,
+          "verdict": "expensive",
+          "iv": 0.3157,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.73,
+          "implied_move_pct": 12.97,
+          "ratio": 1.333,
+          "verdict": "expensive",
+          "iv": 0.4492,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "UPS",
+      "close": 97.83,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.12,
+          "implied_move_pct": 3.81,
+          "ratio": 1.221,
+          "verdict": "expensive",
+          "iv": 0.2703,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.74,
+          "implied_move_pct": 13.4,
+          "ratio": 1.376,
+          "verdict": "expensive",
+          "iv": 0.4641,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "PHM",
+      "close": 112.99,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.99,
+          "implied_move_pct": 7.32,
+          "ratio": 1.221,
+          "verdict": "expensive",
+          "iv": 0.5198,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.06,
+          "implied_move_pct": 13.9,
+          "ratio": 1.382,
+          "verdict": "expensive",
+          "iv": 0.4816,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ROST",
+      "close": 234.83,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.27,
+          "implied_move_pct": 4.26,
+          "ratio": 1.302,
+          "verdict": "expensive",
+          "iv": 0.3027,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.03,
+          "implied_move_pct": 8.59,
+          "ratio": 1.222,
+          "verdict": "expensive",
+          "iv": 0.2974,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "HWM",
+      "close": 219.7,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.3,
+          "implied_move_pct": 5.26,
+          "ratio": 1.223,
+          "verdict": "expensive",
+          "iv": 0.3734,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.75,
+          "implied_move_pct": 15.11,
+          "ratio": 1.286,
+          "verdict": "expensive",
+          "iv": 0.5233,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "CNC",
+      "close": 70.51,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.42,
+          "implied_move_pct": 6.31,
+          "ratio": 1.428,
+          "verdict": "expensive",
+          "iv": 0.4482,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.24,
+          "implied_move_pct": 15.01,
+          "ratio": 1.226,
+          "verdict": "expensive",
+          "iv": 0.5198,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CDNS",
+      "close": 324.38,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.77,
+          "implied_move_pct": 6.79,
+          "ratio": 1.422,
+          "verdict": "expensive",
+          "iv": 0.4822,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.45,
+          "implied_move_pct": 15.29,
+          "ratio": 1.228,
+          "verdict": "expensive",
+          "iv": 0.5295,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "RMD",
+      "close": 242.23,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.09,
+          "implied_move_pct": 5.34,
+          "ratio": 1.726,
+          "verdict": "expensive",
+          "iv": 0.3793,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 8.91,
+          "implied_move_pct": 10.95,
+          "ratio": 1.229,
+          "verdict": "expensive",
+          "iv": 0.3793,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "COP",
+      "close": 141.73,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.5,
+          "implied_move_pct": 4.9,
+          "ratio": 1.398,
+          "verdict": "expensive",
+          "iv": 0.3478,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.86,
+          "implied_move_pct": 10.89,
+          "ratio": 1.23,
+          "verdict": "expensive",
+          "iv": 0.3771,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CAT",
+      "close": 735.64,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.78,
+          "implied_move_pct": 7.06,
+          "ratio": 1.478,
+          "verdict": "expensive",
+          "iv": 0.5015,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.47,
+          "implied_move_pct": 15.36,
+          "ratio": 1.232,
+          "verdict": "expensive",
+          "iv": 0.5322,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "USB",
+      "close": 57.39,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.8,
+          "implied_move_pct": 3.99,
+          "ratio": 1.423,
+          "verdict": "expensive",
+          "iv": 0.2835,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 6.7,
+          "implied_move_pct": 8.27,
+          "ratio": 1.235,
+          "verdict": "expensive",
+          "iv": 0.2866,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "NEM",
+      "close": 115.79,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.86,
+          "implied_move_pct": 7.36,
+          "ratio": 1.514,
+          "verdict": "expensive",
+          "iv": 0.5222,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.84,
+          "implied_move_pct": 14.63,
+          "ratio": 1.235,
+          "verdict": "expensive",
+          "iv": 0.507,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "GD",
+      "close": 337.03,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.74,
+          "implied_move_pct": 3.64,
+          "ratio": 1.328,
+          "verdict": "expensive",
+          "iv": 0.2583,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.39,
+          "implied_move_pct": 9.15,
+          "ratio": 1.238,
+          "verdict": "expensive",
+          "iv": 0.3171,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "RL",
+      "close": 391.07,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.86,
+          "implied_move_pct": 5.81,
+          "ratio": 1.505,
+          "verdict": "expensive",
+          "iv": 0.4123,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 9.58,
+          "implied_move_pct": 11.9,
+          "ratio": 1.243,
+          "verdict": "expensive",
+          "iv": 0.4123,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "LHX",
+      "close": 240.5,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.22,
+          "implied_move_pct": 4.56,
+          "ratio": 1.415,
+          "verdict": "expensive",
+          "iv": 0.3239,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.78,
+          "implied_move_pct": 10.92,
+          "ratio": 1.244,
+          "verdict": "expensive",
+          "iv": 0.3782,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "CVX",
+      "close": 219.32,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.89,
+          "implied_move_pct": 3.84,
+          "ratio": 1.327,
+          "verdict": "expensive",
+          "iv": 0.2728,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.56,
+          "implied_move_pct": 9.5,
+          "ratio": 1.256,
+          "verdict": "expensive",
+          "iv": 0.329,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ISRG",
+      "close": 427.86,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.47,
+          "implied_move_pct": 9.4,
+          "ratio": 1.258,
+          "verdict": "expensive",
+          "iv": 0.6673,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.32,
+          "implied_move_pct": 16.2,
+          "ratio": 1.431,
+          "verdict": "expensive",
+          "iv": 0.5611,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "SLB",
+      "close": 48.37,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.93,
+          "implied_move_pct": 7.21,
+          "ratio": 2.462,
+          "verdict": "expensive",
+          "iv": 0.5117,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.58,
+          "implied_move_pct": 13.38,
+          "ratio": 1.265,
+          "verdict": "expensive",
+          "iv": 0.4634,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "EOG",
+      "close": 152.62,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.12,
+          "implied_move_pct": 5.08,
+          "ratio": 1.628,
+          "verdict": "expensive",
+          "iv": 0.3607,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.23,
+          "implied_move_pct": 10.41,
+          "ratio": 1.265,
+          "verdict": "expensive",
+          "iv": 0.3607,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "CHTR",
+      "close": 109.99,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.38,
+          "implied_move_pct": 8.42,
+          "ratio": 1.32,
+          "verdict": "expensive",
+          "iv": 0.5975,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 16.18,
+          "implied_move_pct": 20.51,
+          "ratio": 1.268,
+          "verdict": "expensive",
+          "iv": 0.7103,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "HOOD",
+      "close": 101.08,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.54,
+          "implied_move_pct": 8.33,
+          "ratio": 1.274,
+          "verdict": "expensive",
+          "iv": 0.5911,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 16.5,
+          "implied_move_pct": 21.43,
+          "ratio": 1.299,
+          "verdict": "expensive",
+          "iv": 0.7423,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "GOOG",
+      "close": 343.65,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.54,
+          "implied_move_pct": 4.51,
+          "ratio": 1.274,
+          "verdict": "expensive",
+          "iv": 0.3204,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.61,
+          "implied_move_pct": 12.97,
+          "ratio": 1.35,
+          "verdict": "expensive",
+          "iv": 0.4494,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "COIN",
+      "close": 172.89,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.5,
+          "implied_move_pct": 9.57,
+          "ratio": 1.275,
+          "verdict": "expensive",
+          "iv": 0.6797,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.55,
+          "implied_move_pct": 21.19,
+          "ratio": 1.362,
+          "verdict": "expensive",
+          "iv": 0.734,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "LLY",
+      "close": 1251.61,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.11,
+          "implied_move_pct": 5.25,
+          "ratio": 1.276,
+          "verdict": "expensive",
+          "iv": 0.3725,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.96,
+          "implied_move_pct": 14.52,
+          "ratio": 1.325,
+          "verdict": "expensive",
+          "iv": 0.503,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CRM",
+      "close": 246.74,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.78,
+          "implied_move_pct": 6.1,
+          "ratio": 1.276,
+          "verdict": "expensive",
+          "iv": 0.4329,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.1,
+          "implied_move_pct": 13.32,
+          "ratio": 1.319,
+          "verdict": "expensive",
+          "iv": 0.4615,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "AXP",
+      "close": 313.87,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.91,
+          "implied_move_pct": 5.93,
+          "ratio": 2.041,
+          "verdict": "expensive",
+          "iv": 0.4207,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.26,
+          "implied_move_pct": 10.55,
+          "ratio": 1.277,
+          "verdict": "expensive",
+          "iv": 0.3654,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "URI",
+      "close": 1047.58,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 8.06,
+          "implied_move_pct": 10.3,
+          "ratio": 1.278,
+          "verdict": "expensive",
+          "iv": 0.7315,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 13.03,
+          "implied_move_pct": 17.79,
+          "ratio": 1.366,
+          "verdict": "expensive",
+          "iv": 0.6163,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "BBY",
+      "close": 94.17,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.69,
+          "implied_move_pct": 6.53,
+          "ratio": 1.391,
+          "verdict": "expensive",
+          "iv": 0.4634,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.77,
+          "implied_move_pct": 12.52,
+          "ratio": 1.281,
+          "verdict": "expensive",
+          "iv": 0.4338,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "GE",
+      "close": 312.0,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.83,
+          "implied_move_pct": 7.47,
+          "ratio": 1.281,
+          "verdict": "expensive",
+          "iv": 0.5301,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.24,
+          "implied_move_pct": 13.39,
+          "ratio": 1.449,
+          "verdict": "expensive",
+          "iv": 0.4638,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "NVDA",
+      "close": 217.23,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.76,
+          "implied_move_pct": 5.21,
+          "ratio": 1.386,
+          "verdict": "expensive",
+          "iv": 0.3699,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.21,
+          "implied_move_pct": 10.55,
+          "ratio": 1.285,
+          "verdict": "expensive",
+          "iv": 0.3655,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "BAX",
+      "close": 25.76,
+      "horizons": {
+        "1 month": {
+          "model_move_pct": 12.45,
+          "implied_move_pct": 16.13,
+          "ratio": 1.296,
+          "verdict": "expensive",
+          "iv": 0.5586,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "PSX",
+      "close": 297.29,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.57,
+          "implied_move_pct": 7.4,
+          "ratio": 1.619,
+          "verdict": "expensive",
+          "iv": 0.5256,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.51,
+          "implied_move_pct": 14.98,
+          "ratio": 1.301,
+          "verdict": "expensive",
+          "iv": 0.5188,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "WYNN",
+      "close": 76.97,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.16,
+          "implied_move_pct": 5.84,
+          "ratio": 1.404,
+          "verdict": "expensive",
+          "iv": 0.4147,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.01,
+          "implied_move_pct": 14.34,
+          "ratio": 1.303,
+          "verdict": "expensive",
+          "iv": 0.4969,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "NEE",
+      "close": 78.96,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.47,
+          "implied_move_pct": 5.33,
+          "ratio": 2.157,
+          "verdict": "expensive",
+          "iv": 0.3784,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.11,
+          "implied_move_pct": 9.33,
+          "ratio": 1.313,
+          "verdict": "expensive",
+          "iv": 0.3234,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "PYPL",
+      "close": 56.1,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.45,
+          "implied_move_pct": 4.68,
+          "ratio": 1.355,
+          "verdict": "expensive",
+          "iv": 0.332,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.31,
+          "implied_move_pct": 16.21,
+          "ratio": 1.317,
+          "verdict": "expensive",
+          "iv": 0.5615,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "SNPS",
+      "close": 468.11,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.67,
+          "implied_move_pct": 7.47,
+          "ratio": 1.318,
+          "verdict": "expensive",
+          "iv": 0.5301,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.13,
+          "implied_move_pct": 15.33,
+          "ratio": 1.513,
+          "verdict": "expensive",
+          "iv": 0.5311,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "STX",
+      "close": 690.81,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.42,
+          "implied_move_pct": 9.78,
+          "ratio": 1.319,
+          "verdict": "expensive",
+          "iv": 0.6943,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.24,
+          "implied_move_pct": 21.67,
+          "ratio": 1.422,
+          "verdict": "expensive",
+          "iv": 0.7507,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "ABBV",
+      "close": 283.48,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.21,
+          "implied_move_pct": 4.33,
+          "ratio": 1.35,
+          "verdict": "expensive",
+          "iv": 0.3074,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.34,
+          "implied_move_pct": 11.03,
+          "ratio": 1.323,
+          "verdict": "expensive",
+          "iv": 0.3821,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "TGT",
+      "close": 156.63,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.48,
+          "implied_move_pct": 5.21,
+          "ratio": 1.499,
+          "verdict": "expensive",
+          "iv": 0.3701,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.41,
+          "implied_move_pct": 9.8,
+          "ratio": 1.323,
+          "verdict": "expensive",
+          "iv": 0.3394,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CVNA",
+      "close": 57.96,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.59,
+          "implied_move_pct": 8.73,
+          "ratio": 1.326,
+          "verdict": "expensive",
+          "iv": 0.62,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 17.48,
+          "implied_move_pct": 23.69,
+          "ratio": 1.355,
+          "verdict": "expensive",
+          "iv": 0.8206,
+          "expiry_dte": 28
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "DXCM",
+      "close": 87.71,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.25,
+          "implied_move_pct": 6.4,
+          "ratio": 1.505,
+          "verdict": "expensive",
+          "iv": 0.4544,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.94,
+          "implied_move_pct": 15.83,
+          "ratio": 1.326,
+          "verdict": "expensive",
+          "iv": 0.5483,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "IBM",
+      "close": 234.12,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.8,
+          "implied_move_pct": 9.02,
+          "ratio": 1.326,
+          "verdict": "expensive",
+          "iv": 0.6403,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.43,
+          "implied_move_pct": 14.72,
+          "ratio": 1.411,
+          "verdict": "expensive",
+          "iv": 0.5099,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "XYZ",
+      "close": 75.85,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.04,
+          "implied_move_pct": 7.03,
+          "ratio": 1.739,
+          "verdict": "expensive",
+          "iv": 0.4993,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.86,
+          "implied_move_pct": 14.53,
+          "ratio": 1.338,
+          "verdict": "expensive",
+          "iv": 0.5033,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CBOE",
+      "close": 308.09,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.0,
+          "implied_move_pct": 7.09,
+          "ratio": 1.418,
+          "verdict": "expensive",
+          "iv": 0.5032,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.53,
+          "implied_move_pct": 15.47,
+          "ratio": 1.342,
+          "verdict": "expensive",
+          "iv": 0.536,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "EBAY",
+      "close": 122.91,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.46,
+          "implied_move_pct": 8.9,
+          "ratio": 1.997,
+          "verdict": "expensive",
+          "iv": 0.6321,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.17,
+          "implied_move_pct": 15.11,
+          "ratio": 1.353,
+          "verdict": "expensive",
+          "iv": 0.5236,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "LOW",
+      "close": 195.72,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.55,
+          "implied_move_pct": 4.81,
+          "ratio": 1.355,
+          "verdict": "expensive",
+          "iv": 0.3414,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.03,
+          "implied_move_pct": 9.67,
+          "ratio": 1.376,
+          "verdict": "expensive",
+          "iv": 0.335,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "BLK",
+      "close": 1120.78,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.5,
+          "implied_move_pct": 4.78,
+          "ratio": 1.364,
+          "verdict": "expensive",
+          "iv": 0.3395,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.19,
+          "implied_move_pct": 9.74,
+          "ratio": 1.355,
+          "verdict": "expensive",
+          "iv": 0.3374,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "HSY",
+      "close": 168.68,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.95,
+          "implied_move_pct": 5.09,
+          "ratio": 1.724,
+          "verdict": "expensive",
+          "iv": 0.3617,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.91,
+          "implied_move_pct": 10.9,
+          "ratio": 1.377,
+          "verdict": "expensive",
+          "iv": 0.3777,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "DLTR",
+      "close": 124.41,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.48,
+          "implied_move_pct": 6.47,
+          "ratio": 1.445,
+          "verdict": "expensive",
+          "iv": 0.4596,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.84,
+          "implied_move_pct": 13.54,
+          "ratio": 1.377,
+          "verdict": "expensive",
+          "iv": 0.4691,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "DOW",
+      "close": 29.19,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.61,
+          "implied_move_pct": 7.63,
+          "ratio": 1.653,
+          "verdict": "expensive",
+          "iv": 0.542,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.04,
+          "implied_move_pct": 15.25,
+          "ratio": 1.382,
+          "verdict": "expensive",
+          "iv": 0.5283,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "PPG",
+      "close": 107.81,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.88,
+          "implied_move_pct": 4.0,
+          "ratio": 1.387,
+          "verdict": "expensive",
+          "iv": 0.2843,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.19,
+          "implied_move_pct": 12.6,
+          "ratio": 1.539,
+          "verdict": "expensive",
+          "iv": 0.4365,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ICE",
+      "close": 158.41,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.16,
+          "implied_move_pct": 4.84,
+          "ratio": 1.533,
+          "verdict": "expensive",
+          "iv": 0.3435,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.51,
+          "implied_move_pct": 11.93,
+          "ratio": 1.401,
+          "verdict": "expensive",
+          "iv": 0.4134,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "UNP",
+      "close": 288.71,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.04,
+          "implied_move_pct": 5.71,
+          "ratio": 1.413,
+          "verdict": "expensive",
+          "iv": 0.4051,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 6.95,
+          "implied_move_pct": 9.91,
+          "ratio": 1.425,
+          "verdict": "expensive",
+          "iv": 0.3434,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "SBUX",
+      "close": 96.88,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.58,
+          "implied_move_pct": 5.06,
+          "ratio": 1.415,
+          "verdict": "expensive",
+          "iv": 0.3589,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.19,
+          "implied_move_pct": 14.09,
+          "ratio": 1.533,
+          "verdict": "expensive",
+          "iv": 0.488,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ADP",
+      "close": 285.65,
+      "horizons": {
+        "1 month": {
+          "model_move_pct": 8.32,
+          "implied_move_pct": 11.82,
+          "ratio": 1.42,
+          "verdict": "expensive",
+          "iv": 0.4095,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "CRH",
+      "close": 82.32,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.74,
+          "implied_move_pct": 6.09,
+          "ratio": 1.629,
+          "verdict": "expensive",
+          "iv": 0.4321,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.83,
+          "implied_move_pct": 13.96,
+          "ratio": 1.421,
+          "verdict": "expensive",
+          "iv": 0.4836,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ADSK",
+      "close": 245.16,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.5,
+          "implied_move_pct": 6.43,
+          "ratio": 1.429,
+          "verdict": "expensive",
+          "iv": 0.4567,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.01,
+          "implied_move_pct": 13.46,
+          "ratio": 1.345,
+          "verdict": "expensive",
+          "iv": 0.4662,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "WDC",
+      "close": 356.45,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.14,
+          "implied_move_pct": 11.69,
+          "ratio": 1.637,
+          "verdict": "expensive",
+          "iv": 0.8297,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 15.91,
+          "implied_move_pct": 22.78,
+          "ratio": 1.432,
+          "verdict": "expensive",
+          "iv": 0.7892,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "CMCSA",
+      "close": 21.77,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.17,
+          "implied_move_pct": 7.81,
+          "ratio": 1.872,
+          "verdict": "expensive",
+          "iv": 0.5547,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.76,
+          "implied_move_pct": 15.52,
+          "ratio": 1.443,
+          "verdict": "expensive",
+          "iv": 0.5376,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "NOW",
+      "close": 139.98,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 5.23,
+          "implied_move_pct": 7.59,
+          "ratio": 1.452,
+          "verdict": "expensive",
+          "iv": 0.5386,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 14.07,
+          "implied_move_pct": 21.34,
+          "ratio": 1.517,
+          "verdict": "expensive",
+          "iv": 0.7394,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "HD",
+      "close": 308.24,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.22,
+          "implied_move_pct": 4.68,
+          "ratio": 1.453,
+          "verdict": "expensive",
+          "iv": 0.3322,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 6.84,
+          "implied_move_pct": 10.16,
+          "ratio": 1.486,
+          "verdict": "expensive",
+          "iv": 0.3521,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "NFLX",
+      "close": 72.61,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 7.2,
+          "implied_move_pct": 10.48,
+          "ratio": 1.455,
+          "verdict": "expensive",
+          "iv": 0.7437,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.75,
+          "implied_move_pct": 17.4,
+          "ratio": 1.618,
+          "verdict": "expensive",
+          "iv": 0.6028,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "EMR",
+      "close": 162.15,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.57,
+          "implied_move_pct": 6.68,
+          "ratio": 1.871,
+          "verdict": "expensive",
+          "iv": 0.4744,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.33,
+          "implied_move_pct": 12.14,
+          "ratio": 1.458,
+          "verdict": "expensive",
+          "iv": 0.4204,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "HAL",
+      "close": 32.89,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.36,
+          "implied_move_pct": 7.67,
+          "ratio": 1.76,
+          "verdict": "expensive",
+          "iv": 0.5444,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.59,
+          "implied_move_pct": 14.19,
+          "ratio": 1.48,
+          "verdict": "expensive",
+          "iv": 0.4915,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CARR",
+      "close": 54.24,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.64,
+          "implied_move_pct": 5.41,
+          "ratio": 1.485,
+          "verdict": "expensive",
+          "iv": 0.3843,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.43,
+          "implied_move_pct": 17.21,
+          "ratio": 1.825,
+          "verdict": "expensive",
+          "iv": 0.5963,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "ABT",
+      "close": 104.68,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.07,
+          "implied_move_pct": 7.05,
+          "ratio": 2.293,
+          "verdict": "expensive",
+          "iv": 0.5004,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.57,
+          "implied_move_pct": 11.4,
+          "ratio": 1.506,
+          "verdict": "expensive",
+          "iv": 0.3949,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "FTNT",
+      "close": 181.91,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.92,
+          "implied_move_pct": 7.42,
+          "ratio": 1.507,
+          "verdict": "expensive",
+          "iv": 0.527,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 12.76,
+          "implied_move_pct": 21.69,
+          "ratio": 1.7,
+          "verdict": "expensive",
+          "iv": 0.7513,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "FDX",
+      "close": 295.54,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.97,
+          "implied_move_pct": 4.48,
+          "ratio": 1.509,
+          "verdict": "expensive",
+          "iv": 0.318,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 6.9,
+          "implied_move_pct": 14.6,
+          "ratio": 2.117,
+          "verdict": "expensive",
+          "iv": 0.5058,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "WDAY",
+      "close": 188.77,
+      "horizons": {
+        "1 month": {
+          "model_move_pct": 10.61,
+          "implied_move_pct": 16.13,
+          "ratio": 1.52,
+          "verdict": "expensive",
+          "iv": 0.5588,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "BSX",
+      "close": 44.14,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.0,
+          "implied_move_pct": 6.08,
+          "ratio": 1.521,
+          "verdict": "expensive",
+          "iv": 0.4316,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 10.25,
+          "implied_move_pct": 17.32,
+          "ratio": 1.689,
+          "verdict": "expensive",
+          "iv": 0.5999,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "HLT",
+      "close": 328.0,
+      "horizons": {
+        "1 month": {
+          "model_move_pct": 7.78,
+          "implied_move_pct": 11.84,
+          "ratio": 1.521,
+          "verdict": "expensive",
+          "iv": 0.4101,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ALGN",
+      "close": 149.34,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.23,
+          "implied_move_pct": 6.44,
+          "ratio": 1.524,
+          "verdict": "expensive",
+          "iv": 0.4573,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.66,
+          "implied_move_pct": 20.02,
+          "ratio": 1.717,
+          "verdict": "expensive",
+          "iv": 0.6935,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "TSCO",
+      "close": 33.37,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 6.67,
+          "implied_move_pct": 10.21,
+          "ratio": 1.531,
+          "verdict": "expensive",
+          "iv": 0.7246,
+          "expiry_dte": 7
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "HON",
+      "close": 210.5,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.67,
+          "implied_move_pct": 7.54,
+          "ratio": 1.615,
+          "verdict": "expensive",
+          "iv": 0.5354,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.98,
+          "implied_move_pct": 14.26,
+          "ratio": 1.788,
+          "verdict": "expensive",
+          "iv": 0.4941,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "AIG",
+      "close": 79.12,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.7,
+          "implied_move_pct": 4.36,
+          "ratio": 1.616,
+          "verdict": "expensive",
+          "iv": 0.3096,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 7.5,
+          "implied_move_pct": 7.1,
+          "ratio": 0.947,
+          "verdict": "fair",
+          "iv": 0.246,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ADI",
+      "close": 403.95,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.97,
+          "implied_move_pct": 7.31,
+          "ratio": 1.84,
+          "verdict": "expensive",
+          "iv": 0.5189,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.31,
+          "implied_move_pct": 13.86,
+          "ratio": 1.668,
+          "verdict": "expensive",
+          "iv": 0.48,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "DHI",
+      "close": 139.55,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.69,
+          "implied_move_pct": 6.28,
+          "ratio": 1.7,
+          "verdict": "expensive",
+          "iv": 0.4459,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 8.99,
+          "implied_move_pct": 15.83,
+          "ratio": 1.761,
+          "verdict": "expensive",
+          "iv": 0.5485,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "BIIB",
+      "close": 235.35,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.84,
+          "implied_move_pct": 7.3,
+          "ratio": 1.899,
+          "verdict": "expensive",
+          "iv": 0.5179,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.48,
+          "implied_move_pct": 16.25,
+          "ratio": 1.714,
+          "verdict": "expensive",
+          "iv": 0.5629,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "TXN",
+      "close": 279.12,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.85,
+          "implied_move_pct": 10.3,
+          "ratio": 2.676,
+          "verdict": "expensive",
+          "iv": 0.7313,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.91,
+          "implied_move_pct": 17.63,
+          "ratio": 1.778,
+          "verdict": "expensive",
+          "iv": 0.6106,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "DECK",
+      "close": 86.58,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.78,
+          "implied_move_pct": 12.85,
+          "ratio": 2.69,
+          "verdict": "expensive",
+          "iv": 0.9121,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 11.07,
+          "implied_move_pct": 19.9,
+          "ratio": 1.798,
+          "verdict": "expensive",
+          "iv": 0.6893,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "up"
+    },
+    {
+      "ticker": "CSX",
+      "close": 48.69,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.52,
+          "implied_move_pct": 6.98,
+          "ratio": 2.767,
+          "verdict": "expensive",
+          "iv": 0.4959,
+          "expiry_dte": 7
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "CI",
+      "close": 298.81,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 3.58,
+          "implied_move_pct": 4.59,
+          "ratio": 1.281,
+          "verdict": "expensive",
+          "iv": 0.3255,
+          "expiry_dte": 7
+        },
+        "1 month": {
+          "model_move_pct": 9.65,
+          "implied_move_pct": 9.66,
+          "ratio": 1.001,
+          "verdict": "fair",
+          "iv": 0.3346,
+          "expiry_dte": 14
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "CHD",
+      "close": 103.08,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.42,
+          "implied_move_pct": 3.44,
+          "ratio": 1.423,
+          "verdict": "expensive",
+          "iv": 0.2441,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 7.04,
+          "implied_move_pct": 7.05,
+          "ratio": 1.002,
+          "verdict": "fair",
+          "iv": 0.2441,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "down"
+    },
+    {
+      "ticker": "FRT",
+      "close": 105.68,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 2.08,
+          "implied_move_pct": 2.66,
+          "ratio": 1.281,
+          "verdict": "expensive",
+          "iv": 0.1891,
+          "expiry_dte": 35
+        },
+        "1 month": {
+          "model_move_pct": 5.41,
+          "implied_move_pct": 5.46,
+          "ratio": 1.009,
+          "verdict": "fair",
+          "iv": 0.1891,
+          "expiry_dte": 35
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "ULTA",
+      "close": 609.24,
+      "horizons": {
+        "1 week": {
+          "model_move_pct": 4.08,
+          "implied_move_pct": 6.07,
+          "ratio": 1.486,
+          "verdict": "expensive",
+          "iv": 0.4311,
+          "expiry_dte": 7
+        }
+      },
+      "lean": "flat"
+    },
+    {
+      "ticker": "PTC",
+      "close": 193.15,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "SKYD",
+      "close": 7.26,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "HST",
+      "close": 23.85,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "FLEX",
+      "close": 98.5,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "MTD",
+      "close": 1639.04,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "FIX",
+      "close": 1481.27,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "MPC",
+      "close": 476.92,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "CTSH",
+      "close": 65.77,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "IDXX",
+      "close": 547.18,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "UHS",
+      "close": 187.36,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "PFG",
+      "close": 108.96,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "BF-B",
+      "close": 28.58,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "A",
+      "close": 175.55,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "RF",
+      "close": 27.31,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "ECHO",
+      "close": 86.85,
+      "horizons": {},
+      "lean": "up"
+    },
+    {
+      "ticker": "MAA",
+      "close": 116.27,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "HBAN",
+      "close": 15.35,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "AVY",
+      "close": 175.88,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "DRI",
+      "close": 214.31,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "BRO",
+      "close": 67.98,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "DVA",
+      "close": 189.16,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "WELL",
+      "close": 234.63,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "MPWR",
+      "close": 1249.2,
+      "horizons": {},
+      "lean": "up"
+    },
+    {
+      "ticker": "OMC",
+      "close": 80.72,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "YUM",
+      "close": 150.83,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "GRMN",
+      "close": 285.22,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "MCO",
+      "close": 483.69,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "O",
+      "close": 55.55,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "SJM",
+      "close": 125.93,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "VLTO",
+      "close": 100.66,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ED",
+      "close": 109.86,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "PNW",
+      "close": 101.58,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "TFC",
+      "close": 46.57,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "VRSK",
+      "close": 187.33,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "BR",
+      "close": 174.11,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ZBH",
+      "close": 94.38,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "AOS",
+      "close": 59.47,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "MTB",
+      "close": 218.65,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "SYY",
+      "close": 82.15,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "COO",
+      "close": 57.4,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "SYK",
+      "close": 293.23,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "JBHT",
+      "close": 235.31,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "BNY",
+      "close": 142.09,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "FERG",
+      "close": 228.76,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "CSGP",
+      "close": 32.0,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "SHW",
+      "close": 336.92,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "PAYX",
+      "close": 110.78,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "MDLZ",
+      "close": 63.03,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "HCA",
+      "close": 468.5,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "CASY",
+      "close": 673.63,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "PLD",
+      "close": 126.94,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "PWR",
+      "close": 642.21,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "NTRS",
+      "close": 165.44,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "CNP",
+      "close": 39.8,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "WTW",
+      "close": 310.36,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "IVZ",
+      "close": 28.8,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "WSM",
+      "close": 252.03,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "AWK",
+      "close": 133.04,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "CDW",
+      "close": 150.1,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "VTRS",
+      "close": 18.22,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "JCI",
+      "close": 147.63,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "NTAP",
+      "close": 214.7,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "VMRK",
+      "close": 61.18,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "EW",
+      "close": 88.1,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "BG",
+      "close": 107.01,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "BKR",
+      "close": 54.4,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "WST",
+      "close": 383.02,
+      "horizons": {},
+      "lean": "up"
+    },
+    {
+      "ticker": "ROP",
+      "close": 382.45,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "AES",
+      "close": 14.97,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "FDXF",
+      "close": 108.69,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "TDG",
+      "close": 1134.24,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "EME",
+      "close": 732.53,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "PSA",
+      "close": 295.33,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "TSN",
+      "close": 54.04,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "STT",
+      "close": 167.6,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "KEYS",
+      "close": 357.62,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "OTIS",
+      "close": 69.11,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "P",
+      "close": 141.49,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "DTE",
+      "close": 128.33,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "LIN",
+      "close": 493.22,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ACGL",
+      "close": 99.31,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "TXT",
+      "close": 75.15,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "APH",
+      "close": 81.49,
+      "horizons": {},
+      "lean": "up"
+    },
+    {
+      "ticker": "CRL",
+      "close": 306.24,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "DGX",
+      "close": 239.15,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ECL",
+      "close": 290.81,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "CHRW",
+      "close": 143.82,
+      "horizons": {},
+      "lean": "up"
+    },
+    {
+      "ticker": "VTR",
+      "close": 84.86,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "RVTY",
+      "close": 154.71,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "JKHY",
+      "close": 156.47,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "CPT",
+      "close": 98.19,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "DOC",
+      "close": 18.96,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ALL",
+      "close": 239.6,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "RJF",
+      "close": 157.37,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ROL",
+      "close": 33.89,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "GPC",
+      "close": 133.51,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "VEEV",
+      "close": 297.35,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "AZO",
+      "close": 3059.62,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "GIS",
+      "close": 32.88,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "EXR",
+      "close": 137.69,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "MAS",
+      "close": 72.58,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "CB",
+      "close": 352.79,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ERIE",
+      "close": 238.69,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "LH",
+      "close": 325.07,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "AIZ",
+      "close": 281.87,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "BEN",
+      "close": 31.38,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "IT",
+      "close": 207.31,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "KIM",
+      "close": 22.67,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "CPRT",
+      "close": 27.75,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "INCY",
+      "close": 113.27,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "TROW",
+      "close": 101.37,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "TT",
+      "close": 457.36,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "CMS",
+      "close": 66.94,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "MNST",
+      "close": 45.34,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "NDSN",
+      "close": 328.8,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "WRB",
+      "close": 73.97,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "MRSH",
+      "close": 186.54,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "PEG",
+      "close": 70.21,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "NOC",
+      "close": 499.63,
+      "horizons": {},
+      "lean": "up"
+    },
+    {
+      "ticker": "INVH",
+      "close": 26.54,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "AON",
+      "close": 286.8,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "MKC",
+      "close": 45.71,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "IR",
+      "close": 77.94,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "REG",
+      "close": 73.04,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "FANG",
+      "close": 197.51,
+      "horizons": {},
+      "lean": "up"
+    },
+    {
+      "ticker": "LNT",
+      "close": 67.1,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "FOXA",
+      "close": 62.21,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ZBRA",
+      "close": 377.51,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "BXP",
+      "close": 59.69,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "WEC",
+      "close": 106.04,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ATO",
+      "close": 163.95,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ROK",
+      "close": 422.03,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "FOX",
+      "close": 55.68,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "XEL",
+      "close": 75.12,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "SWK",
+      "close": 92.75,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "NSC",
+      "close": 324.83,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "TKO",
+      "close": 176.02,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "NVR",
+      "close": 5940.83,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ORLY",
+      "close": 88.5,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "HIG",
+      "close": 132.81,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "SRE",
+      "close": 81.93,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ODFL",
+      "close": 188.88,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "Q",
+      "close": 121.62,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "PNR",
+      "close": 53.45,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "AEE",
+      "close": 103.76,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ES",
+      "close": 65.99,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "LDOS",
+      "close": 124.0,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "GL",
+      "close": 167.59,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "PODD",
+      "close": 138.77,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "DUK",
+      "close": 118.88,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "IEX",
+      "close": 236.42,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "PRU",
+      "close": 116.35,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "OKE",
+      "close": 90.65,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ZTS",
+      "close": 75.29,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "EG",
+      "close": 381.35,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "WAT",
+      "close": 444.15,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "SW",
+      "close": 40.75,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "SPG",
+      "close": 203.39,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "LYB",
+      "close": 62.67,
+      "horizons": {},
+      "lean": "up"
+    },
+    {
+      "ticker": "FDS",
+      "close": 301.83,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "TDY",
+      "close": 619.91,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "TRGP",
+      "close": 282.55,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "AME",
+      "close": 248.52,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ILMN",
+      "close": 267.93,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "HUBB",
+      "close": 464.71,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "EXPD",
+      "close": 198.64,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "DOV",
+      "close": 194.09,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "D",
+      "close": 62.86,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "UDR",
+      "close": 34.21,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "HII",
+      "close": 267.22,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "HSIC",
+      "close": 86.99,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "NUE",
+      "close": 254.69,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "CINF",
+      "close": 167.22,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "MSI",
+      "close": 456.39,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "CLX",
+      "close": 86.2,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "TRV",
+      "close": 383.89,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "EXC",
+      "close": 42.48,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "NI",
+      "close": 41.25,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "TPL",
+      "close": 346.52,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "MSCI",
+      "close": 575.09,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "SYF",
+      "close": 71.72,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "GPN",
+      "close": 84.17,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ETR",
+      "close": 103.96,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ITW",
+      "close": 271.19,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "ESS",
+      "close": 269.66,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "NWS",
+      "close": 32.45,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "PPL",
+      "close": 34.48,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "XYL",
+      "close": 103.37,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "CBRE",
+      "close": 135.49,
+      "horizons": {},
+      "lean": "up"
+    },
+    {
+      "ticker": "AEP",
+      "close": 124.29,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "SNA",
+      "close": 365.91,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "ADM",
+      "close": 82.93,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "FE",
+      "close": 45.55,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "WAB",
+      "close": 287.76,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "NWSA",
+      "close": 29.56,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "VMC",
+      "close": 252.4,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "SOLV",
+      "close": 87.26,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "EVRG",
+      "close": 81.57,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "J",
+      "close": 141.97,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "SWKS",
+      "close": 79.1,
+      "horizons": {},
+      "lean": "up"
+    },
+    {
+      "ticker": "VRSN",
+      "close": 304.09,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "MET",
+      "close": 100.27,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "FFIV",
+      "close": 456.58,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "KVUE",
+      "close": 18.01,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "EQIX",
+      "close": 996.26,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "MLM",
+      "close": 491.23,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "LII",
+      "close": 358.5,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "IQV",
+      "close": 262.01,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "STLD",
+      "close": 240.76,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "CMI",
+      "close": 532.73,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "TECH",
+      "close": 72.52,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "HONA",
+      "close": 156.73,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "TEL",
+      "close": 212.99,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "DD",
+      "close": 131.6,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "PH",
+      "close": 961.75,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "APTV",
+      "close": 45.19,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "AMCR",
+      "close": 42.28,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "DPZ",
+      "close": 303.09,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "L",
+      "close": 108.79,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "TRMB",
+      "close": 60.97,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "ALLE",
+      "close": 152.5,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "FTV",
+      "close": 57.24,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "CPAY",
+      "close": 406.2,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "PKG",
+      "close": 232.58,
+      "horizons": {},
+      "lean": "flat"
+    },
+    {
+      "ticker": "NXPI",
+      "close": 231.09,
+      "horizons": {},
+      "lean": "up"
+    },
+    {
+      "ticker": "VYLR",
+      "close": 74.41,
+      "horizons": {},
+      "lean": "down"
+    },
+    {
+      "ticker": "FAST",
+      "close": 50.38,
+      "horizons": {},
+      "lean": "flat"
+    }
+  ]
+}
