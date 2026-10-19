@@ -1,9 +1,10 @@
 {
   "asof": "2026-10-19",
-  "scan_at": "2026-10-19T22:21:11+00:00",
+  "scan_at": "2026-10-19T23:56:47+00:00",
   "scans": [
     "2037",
-    "2221"
+    "2221",
+    "2356"
   ],
   "tickers": [
     {
@@ -2026,11 +2027,11 @@
     "requested": 503,
     "with_chain": 502,
     "failed": 1,
-    "contracts": 144757,
-    "snapshots_today": 2,
+    "contracts": 132227,
+    "snapshots_today": 3,
     "first_scan_of_day": false,
     "chain_quality": {
-      "rows": 144757,
+      "rows": 132227,
       "tickers": 502,
       "sources": [
         "cboe",
@@ -2038,19 +2039,19 @@
       ],
       "expiries": 32,
       "symbol_disagreements": 0,
-      "oi_missing": 0.00016579509108367816,
+      "oi_missing": 0.00018150604642017137,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.49747507892537146,
+      "zero_volume_share": 0.46042790050443555,
       "usable": true
     },
     "gate_survivors": {
-      "dte": 49192,
-      "atm": 20254,
-      "premium": 2050,
-      "low_oi": 135869,
-      "new_positioning": 18442,
-      "quote": 83819
+      "dte": 48492,
+      "atm": 19096,
+      "premium": 2162,
+      "low_oi": 123932,
+      "new_positioning": 18246,
+      "quote": 75258
     },
     "flagged_contracts": 0
   },
