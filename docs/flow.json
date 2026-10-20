@@ -1,9 +1,10 @@
 {
   "asof": "2026-10-20",
-  "scan_at": "2026-10-20T21:37:14+00:00",
+  "scan_at": "2026-10-20T23:25:08+00:00",
   "scans": [
     "1919",
-    "2137"
+    "2137",
+    "2325"
   ],
   "tickers": [
     {
@@ -2058,6 +2059,41 @@
       ]
     },
     {
+      "ticker": "CSCO",
+      "spot": 106.71,
+      "n_contracts": 1,
+      "premium": 393470,
+      "call_premium": 393470,
+      "put_premium": 0,
+      "call_share": 1.0,
+      "tilt": "calls",
+      "score": 1.55,
+      "max_vol_oi": 1.0,
+      "nearest_dte": 3,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "CSCO261023C00102000",
+          "right": "C",
+          "strike": 102.0,
+          "expiry": "2026-10-23",
+          "dte": 3,
+          "premium": 393470,
+          "volume": 803,
+          "open_interest": 803,
+          "vol_oi": 1.0,
+          "mid": 4.9,
+          "burst": 1.0,
+          "side": "at ask",
+          "iv": 0.58,
+          "score": 1.55,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-10-20T23:25:08+00:00"
+    },
+    {
       "ticker": "DHR",
       "spot": 224.24,
       "n_contracts": 1,
@@ -2266,11 +2302,11 @@
     "requested": 503,
     "with_chain": 502,
     "failed": 1,
-    "contracts": 160520,
-    "snapshots_today": 2,
+    "contracts": 142984,
+    "snapshots_today": 3,
     "first_scan_of_day": false,
     "chain_quality": {
-      "rows": 160520,
+      "rows": 142984,
       "tickers": 502,
       "sources": [
         "cboe",
@@ -2278,21 +2314,21 @@
       ],
       "expiries": 32,
       "symbol_disagreements": 0,
-      "oi_missing": 0.00015574383254423124,
+      "oi_missing": 0.00021680747496223354,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.4841390480936955,
+      "zero_volume_share": 0.42982431600738547,
       "usable": true
     },
     "gate_survivors": {
-      "dte": 50261,
-      "atm": 22853,
-      "premium": 1815,
-      "low_oi": 150743,
-      "new_positioning": 18671,
-      "quote": 90115
+      "dte": 49130,
+      "atm": 21020,
+      "premium": 1893,
+      "low_oi": 134302,
+      "new_positioning": 18353,
+      "quote": 78964
     },
-    "flagged_contracts": 84
+    "flagged_contracts": 1
   },
   "errors": {
     "NVR": "CBOE: NVR: https://cdn.cboe.com/api/global/delayed_quotes/options/NVR.json -> HTTP 429; yfinance: NVR: no expirations listed"
