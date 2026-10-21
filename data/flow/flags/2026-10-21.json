@@ -1,9 +1,10 @@
 {
   "asof": "2026-10-21",
-  "scan_at": "2026-10-21T21:42:26+00:00",
+  "scan_at": "2026-10-21T23:38:03+00:00",
   "scans": [
     "1920",
-    "2142"
+    "2142",
+    "2338"
   ],
   "tickers": [
     {
@@ -2739,7 +2740,7 @@
     "with_chain": 502,
     "failed": 1,
     "contracts": 143618,
-    "snapshots_today": 2,
+    "snapshots_today": 3,
     "first_scan_of_day": false,
     "chain_quality": {
       "rows": 143618,
@@ -2758,13 +2759,13 @@
     },
     "gate_survivors": {
       "dte": 48371,
-      "atm": 21313,
-      "premium": 1814,
+      "atm": 21291,
+      "premium": 1717,
       "low_oi": 134469,
       "new_positioning": 17867,
       "quote": 79741
     },
-    "flagged_contracts": 98
+    "flagged_contracts": 0
   },
   "errors": {
     "NVR": "CBOE: NVR: https://cdn.cboe.com/api/global/delayed_quotes/options/NVR.json -> HTTP 429; yfinance: NVR: no expirations listed"
