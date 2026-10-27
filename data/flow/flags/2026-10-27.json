@@ -1,8 +1,9 @@
 {
   "asof": "2026-10-27",
-  "scan_at": "2026-10-27T00:05:25+00:00",
+  "scan_at": "2026-10-27T20:08:01+00:00",
   "scans": [
-    "0005"
+    "0005",
+    "2008"
   ],
   "tickers": [
     {
@@ -155,7 +156,8 @@
           "score": 5.53,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "META",
@@ -307,7 +309,8 @@
           "score": 4.89,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "SNDK",
@@ -459,7 +462,8 @@
           "score": 5.19,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "TSLA",
@@ -611,7 +615,8 @@
           "score": 3.9,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "NVDA",
@@ -763,7 +768,8 @@
           "score": 3.31,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "AMD",
@@ -915,7 +921,8 @@
           "score": 4.13,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "AAPL",
@@ -1067,7 +1074,8 @@
           "score": 3.09,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "AMZN",
@@ -1219,7 +1227,8 @@
           "score": 4.06,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "GOOGL",
@@ -1371,7 +1380,8 @@
           "score": 2.55,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "MSFT",
@@ -1523,7 +1533,8 @@
           "score": 2.76,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "AVGO",
@@ -1675,7 +1686,8 @@
           "score": 3.0,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "BE",
@@ -1827,7 +1839,8 @@
           "score": 3.08,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "FSLR",
@@ -1979,7 +1992,8 @@
           "score": 1.27,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "HOOD",
@@ -2131,7 +2145,8 @@
           "score": 2.56,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "COIN",
@@ -2721,7 +2736,8 @@
           "score": 1.47,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "DELL",
@@ -2873,7 +2889,8 @@
           "score": 2.16,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "RDDT",
@@ -3177,7 +3194,8 @@
           "score": 1.63,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "LMT",
@@ -3956,6 +3974,41 @@
       ]
     },
     {
+      "ticker": "WMB",
+      "spot": 74.1,
+      "n_contracts": 1,
+      "premium": 6824165,
+      "call_premium": 6824165,
+      "put_premium": 0,
+      "call_share": 1.0,
+      "tilt": "calls",
+      "score": 4.91,
+      "max_vol_oi": 267.13,
+      "nearest_dte": 10,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "WMB261106C00075000",
+          "right": "C",
+          "strike": 75.0,
+          "expiry": "2026-11-06",
+          "dte": 10,
+          "premium": 6824165,
+          "volume": 38446,
+          "open_interest": 144,
+          "vol_oi": 267.13,
+          "mid": 1.77,
+          "burst": 1.0,
+          "side": "at bid",
+          "iv": 0.43,
+          "score": 4.91,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-10-27T20:08:01+00:00"
+    },
+    {
       "ticker": "LITE",
       "spot": 756.17,
       "n_contracts": 11,
@@ -4105,7 +4158,8 @@
           "score": 1.07,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "STX",
@@ -4257,7 +4311,8 @@
           "score": 0.93,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "RCL",
@@ -4611,7 +4666,43 @@
           "score": 0.88,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
+    },
+    {
+      "ticker": "FDX",
+      "spot": 307.22,
+      "n_contracts": 1,
+      "premium": 5234175,
+      "call_premium": 5234175,
+      "put_premium": 0,
+      "call_share": 1.0,
+      "tilt": "calls",
+      "score": 4.68,
+      "max_vol_oi": 289.93,
+      "nearest_dte": 10,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "FDX261106C00315000",
+          "right": "C",
+          "strike": 315.0,
+          "expiry": "2026-11-06",
+          "dte": 10,
+          "premium": 5234175,
+          "volume": 8115,
+          "open_interest": 28,
+          "vol_oi": 289.93,
+          "mid": 6.45,
+          "burst": 1.0,
+          "side": "at ask",
+          "iv": 0.472,
+          "score": 4.68,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 2,
+      "first_seen": "2026-10-27T00:05:25+00:00"
     },
     {
       "ticker": "SCHW",
@@ -6764,7 +6855,8 @@
           "score": 0.34,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "LLY",
@@ -7369,7 +7461,8 @@
           "score": 0.52,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "HUM",
@@ -9519,39 +9612,6 @@
       ]
     },
     {
-      "ticker": "FDX",
-      "spot": 298.72,
-      "n_contracts": 1,
-      "premium": 73625,
-      "call_premium": 0,
-      "put_premium": 73625,
-      "call_share": 0.0,
-      "tilt": "puts",
-      "score": 0.38,
-      "max_vol_oi": 1.28,
-      "nearest_dte": 3,
-      "looks_multileg": 0,
-      "contracts": [
-        {
-          "contract": "FDX261030P00295000",
-          "right": "P",
-          "strike": 295.0,
-          "expiry": "2026-10-30",
-          "dte": 3,
-          "premium": 73625,
-          "volume": 95,
-          "open_interest": 74,
-          "vol_oi": 1.28,
-          "mid": 7.75,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.828,
-          "score": 0.38,
-          "stale_mid": 0
-        }
-      ]
-    },
-    {
       "ticker": "DIS",
       "spot": 112.52,
       "n_contracts": 1,
@@ -9787,11 +9847,11 @@
     "requested": 503,
     "with_chain": 502,
     "failed": 1,
-    "contracts": 154266,
-    "snapshots_today": 1,
-    "first_scan_of_day": true,
+    "contracts": 205343,
+    "snapshots_today": 2,
+    "first_scan_of_day": false,
     "chain_quality": {
-      "rows": 154266,
+      "rows": 205343,
       "tickers": 502,
       "sources": [
         "cboe",
@@ -9799,21 +9859,21 @@
       ],
       "expiries": 32,
       "symbol_disagreements": 0,
-      "oi_missing": 0.00018150467374534896,
+      "oi_missing": 0.0001071378133172302,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.4712250269015856,
+      "zero_volume_share": 0.5766254510745435,
       "usable": true
     },
     "gate_survivors": {
-      "dte": 50166,
-      "atm": 22189,
-      "premium": 10419,
-      "low_oi": 145493,
-      "new_positioning": 20263,
-      "quote": 88155
+      "dte": 53372,
+      "atm": 27136,
+      "premium": 1086,
+      "low_oi": 193538,
+      "new_positioning": 18993,
+      "quote": 133819
     },
-    "flagged_contracts": 998
+    "flagged_contracts": 171
   },
   "errors": {
     "NVR": "CBOE: NVR: https://cdn.cboe.com/api/global/delayed_quotes/options/NVR.json -> HTTP 429; yfinance: NVR: no expirations listed"
