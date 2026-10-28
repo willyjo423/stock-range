@@ -1,9 +1,10 @@
 {
   "asof": "2026-10-28",
-  "scan_at": "2026-10-28T20:19:05+00:00",
+  "scan_at": "2026-10-28T22:34:23+00:00",
   "scans": [
     "0000",
-    "2019"
+    "2019",
+    "2234"
   ],
   "tickers": [
     {
@@ -8769,11 +8770,11 @@
     "requested": 503,
     "with_chain": 502,
     "failed": 1,
-    "contracts": 171718,
-    "snapshots_today": 2,
+    "contracts": 145709,
+    "snapshots_today": 3,
     "first_scan_of_day": false,
     "chain_quality": {
-      "rows": 171718,
+      "rows": 145709,
       "tickers": 502,
       "sources": [
         "cboe",
@@ -8781,21 +8782,21 @@
       ],
       "expiries": 32,
       "symbol_disagreements": 0,
-      "oi_missing": 0.000116470026438696,
+      "oi_missing": 0.00013725988099568318,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.5127476443937152,
+      "zero_volume_share": 0.4344961532918351,
       "usable": true
     },
     "gate_survivors": {
-      "dte": 50643,
-      "atm": 23913,
-      "premium": 1007,
-      "low_oi": 161319,
-      "new_positioning": 18102,
-      "quote": 93599
+      "dte": 48835,
+      "atm": 21609,
+      "premium": 1571,
+      "low_oi": 136493,
+      "new_positioning": 17960,
+      "quote": 75792
     },
-    "flagged_contracts": 170
+    "flagged_contracts": 0
   },
   "errors": {
     "NVR": "CBOE: NVR: https://cdn.cboe.com/api/global/delayed_quotes/options/NVR.json -> HTTP 429; yfinance: NVR: no expirations listed"
