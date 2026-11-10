@@ -1,9 +1,10 @@
 {
   "asof": "2026-11-10",
-  "scan_at": "2026-11-10T02:55:43+00:00",
+  "scan_at": "2026-11-10T21:20:13+00:00",
   "scans": [
     "0131",
-    "0255"
+    "0255",
+    "2120"
   ],
   "tickers": [
     {
@@ -156,7 +157,8 @@
           "score": 4.97,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "MU",
@@ -308,7 +310,8 @@
           "score": 4.53,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "TSLA",
@@ -460,7 +463,8 @@
           "score": 3.7,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "AAPL",
@@ -612,7 +616,8 @@
           "score": 3.93,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "NVDA",
@@ -764,7 +769,8 @@
           "score": 4.3,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "META",
@@ -916,7 +922,8 @@
           "score": 3.48,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "AMZN",
@@ -1068,7 +1075,8 @@
           "score": 3.65,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "SNDK",
@@ -1220,7 +1228,8 @@
           "score": 4.4,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "MSFT",
@@ -1372,7 +1381,8 @@
           "score": 3.22,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "AVGO",
@@ -1524,7 +1534,8 @@
           "score": 3.64,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "APP",
@@ -3921,7 +3932,8 @@
           "score": 0.59,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "DELL",
@@ -4073,7 +4085,8 @@
           "score": 0.74,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "XOM",
@@ -4325,7 +4338,43 @@
           "score": 0.21,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
+    },
+    {
+      "ticker": "CLX",
+      "spot": 106.6,
+      "n_contracts": 1,
+      "premium": 2273965,
+      "call_premium": 2273965,
+      "put_premium": 0,
+      "call_share": 1.0,
+      "tilt": "calls",
+      "score": 3.91,
+      "max_vol_oi": 38.44,
+      "nearest_dte": 10,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "CLX261120C00110000",
+          "right": "C",
+          "strike": 110.0,
+          "expiry": "2026-11-20",
+          "dte": 10,
+          "premium": 2273965,
+          "volume": 8581,
+          "open_interest": 227,
+          "vol_oi": 38.44,
+          "mid": 2.65,
+          "burst": 0.98,
+          "side": "at ask",
+          "iv": 0.551,
+          "score": 3.91,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-11-10T21:20:13+00:00"
     },
     {
       "ticker": "ORCL",
@@ -4409,7 +4458,8 @@
           "score": 1.64,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "INTC",
@@ -6178,7 +6228,7 @@
           "stale_mid": 0
         }
       ],
-      "times_flagged": 2,
+      "times_flagged": 3,
       "first_seen": "2026-11-10T01:31:07+00:00"
     },
     {
@@ -9836,11 +9886,11 @@
     "requested": 503,
     "with_chain": 502,
     "failed": 1,
-    "contracts": 219713,
-    "snapshots_today": 2,
+    "contracts": 164271,
+    "snapshots_today": 3,
     "first_scan_of_day": false,
     "chain_quality": {
-      "rows": 219713,
+      "rows": 164271,
       "tickers": 502,
       "sources": [
         "cboe",
@@ -9848,21 +9898,21 @@
       ],
       "expiries": 32,
       "symbol_disagreements": 0,
-      "oi_missing": 0.00010468201699489789,
+      "oi_missing": 9.13125262523513e-05,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.57506838466545,
+      "zero_volume_share": 0.4798351504526058,
       "usable": true
     },
     "gate_survivors": {
-      "dte": 75422,
-      "atm": 26533,
-      "premium": 4684,
-      "low_oi": 205449,
-      "new_positioning": 22337,
-      "quote": 129671
+      "dte": 72050,
+      "atm": 20922,
+      "premium": 1316,
+      "low_oi": 152080,
+      "new_positioning": 18017,
+      "quote": 94925
     },
-    "flagged_contracts": 10
+    "flagged_contracts": 181
   },
   "errors": {
     "NVR": "CBOE: NVR: https://cdn.cboe.com/api/global/delayed_quotes/options/NVR.json -> HTTP 429; yfinance: NVR: no expirations listed"
