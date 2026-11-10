@@ -1,8 +1,9 @@
 {
   "asof": "2026-11-10",
-  "scan_at": "2026-11-10T01:31:07+00:00",
+  "scan_at": "2026-11-10T02:55:43+00:00",
   "scans": [
-    "0131"
+    "0131",
+    "0255"
   ],
   "tickers": [
     {
@@ -2873,7 +2874,8 @@
           "score": 1.64,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "LLY",
@@ -3025,7 +3027,8 @@
           "score": 0.71,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "HOOD",
@@ -4409,6 +4412,75 @@
       ]
     },
     {
+      "ticker": "INTC",
+      "spot": 59.39,
+      "n_contracts": 3,
+      "premium": 1323832,
+      "call_premium": 779038,
+      "put_premium": 544794,
+      "call_share": 0.59,
+      "tilt": "two-sided",
+      "score": 3.87,
+      "max_vol_oi": 2697.0,
+      "nearest_dte": 10,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "INTC261120C00059000",
+          "right": "C",
+          "strike": 59.0,
+          "expiry": "2026-11-20",
+          "dte": 10,
+          "premium": 563588,
+          "volume": 1695,
+          "open_interest": 0,
+          "vol_oi": 1695.0,
+          "mid": 3.33,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.764,
+          "score": 3.08,
+          "stale_mid": 0
+        },
+        {
+          "contract": "INTC261120P00057000",
+          "right": "P",
+          "strike": 57.0,
+          "expiry": "2026-11-20",
+          "dte": 10,
+          "premium": 544794,
+          "volume": 2697,
+          "open_interest": 0,
+          "vol_oi": 2697.0,
+          "mid": 2.02,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.764,
+          "score": 3.05,
+          "stale_mid": 0
+        },
+        {
+          "contract": "INTC261120C00058000",
+          "right": "C",
+          "strike": 58.0,
+          "expiry": "2026-11-20",
+          "dte": 10,
+          "premium": 215450,
+          "volume": 556,
+          "open_interest": 0,
+          "vol_oi": 556.0,
+          "mid": 3.88,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.765,
+          "score": 2.24,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-11-10T02:55:43+00:00"
+    },
+    {
       "ticker": "CVX",
       "spot": 212.61,
       "n_contracts": 7,
@@ -5130,7 +5202,8 @@
           "score": 0.64,
           "stale_mid": 0
         }
-      ]
+      ],
+      "times_flagged": 2
     },
     {
       "ticker": "OXY",
@@ -6055,6 +6128,58 @@
           "stale_mid": 0
         }
       ]
+    },
+    {
+      "ticker": "GEV",
+      "spot": 830.01,
+      "n_contracts": 2,
+      "premium": 567450,
+      "call_premium": 190950,
+      "put_premium": 376500,
+      "call_share": 0.34,
+      "tilt": "two-sided",
+      "score": 3.23,
+      "max_vol_oi": 100.0,
+      "nearest_dte": 10,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "GEV261120P00835000",
+          "right": "P",
+          "strike": 835.0,
+          "expiry": "2026-11-20",
+          "dte": 10,
+          "premium": 376500,
+          "volume": 100,
+          "open_interest": 0,
+          "vol_oi": 100.0,
+          "mid": 37.65,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.609,
+          "score": 2.73,
+          "stale_mid": 0
+        },
+        {
+          "contract": "GEV261120C00805000",
+          "right": "C",
+          "strike": 805.0,
+          "expiry": "2026-11-20",
+          "dte": 10,
+          "premium": 190950,
+          "volume": 38,
+          "open_interest": 0,
+          "vol_oi": 38.0,
+          "mid": 50.25,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.641,
+          "score": 2.14,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 2,
+      "first_seen": "2026-11-10T01:31:07+00:00"
     },
     {
       "ticker": "RCL",
@@ -8429,56 +8554,6 @@
       ]
     },
     {
-      "ticker": "GEV",
-      "spot": 774.11,
-      "n_contracts": 2,
-      "premium": 187775,
-      "call_premium": 0,
-      "put_premium": 187775,
-      "call_share": 0.0,
-      "tilt": "puts",
-      "score": 1.69,
-      "max_vol_oi": 3.18,
-      "nearest_dte": 10,
-      "looks_multileg": 0,
-      "contracts": [
-        {
-          "contract": "GEV261120P00807500",
-          "right": "P",
-          "strike": 807.5,
-          "expiry": "2026-11-20",
-          "dte": 10,
-          "premium": 88025,
-          "volume": 35,
-          "open_interest": 11,
-          "vol_oi": 3.18,
-          "mid": 25.15,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.618,
-          "score": 1.19,
-          "stale_mid": 0
-        },
-        {
-          "contract": "GEV261120P00802500",
-          "right": "P",
-          "strike": 802.5,
-          "expiry": "2026-11-20",
-          "dte": 10,
-          "premium": 99750,
-          "volume": 42,
-          "open_interest": 25,
-          "vol_oi": 1.68,
-          "mid": 23.75,
-          "burst": null,
-          "side": "unknown",
-          "iv": 0.63,
-          "score": 0.84,
-          "stale_mid": 0
-        }
-      ]
-    },
-    {
       "ticker": "WDC",
       "spot": 263.78,
       "n_contracts": 3,
@@ -8926,6 +9001,41 @@
           "stale_mid": 0
         }
       ]
+    },
+    {
+      "ticker": "TER",
+      "spot": 246.0,
+      "n_contracts": 1,
+      "premium": 438960,
+      "call_premium": 438960,
+      "put_premium": 0,
+      "call_share": 1.0,
+      "tilt": "calls",
+      "score": 1.42,
+      "max_vol_oi": 2.17,
+      "nearest_dte": 3,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "TER261113C00255000",
+          "right": "C",
+          "strike": 255.0,
+          "expiry": "2026-11-13",
+          "dte": 3,
+          "premium": 438960,
+          "volume": 708,
+          "open_interest": 327,
+          "vol_oi": 2.17,
+          "mid": 6.2,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.963,
+          "score": 1.42,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-11-10T02:55:43+00:00"
     },
     {
       "ticker": "CVNA",
@@ -9726,11 +9836,11 @@
     "requested": 503,
     "with_chain": 502,
     "failed": 1,
-    "contracts": 149830,
-    "snapshots_today": 1,
-    "first_scan_of_day": true,
+    "contracts": 219713,
+    "snapshots_today": 2,
+    "first_scan_of_day": false,
     "chain_quality": {
-      "rows": 149830,
+      "rows": 219713,
       "tickers": 502,
       "sources": [
         "cboe",
@@ -9738,21 +9848,21 @@
       ],
       "expiries": 32,
       "symbol_disagreements": 0,
-      "oi_missing": 0.00015350730828272042,
+      "oi_missing": 0.00010468201699489789,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.4217980377761463,
+      "zero_volume_share": 0.57506838466545,
       "usable": true
     },
     "gate_survivors": {
-      "dte": 70815,
-      "atm": 20186,
-      "premium": 13910,
-      "low_oi": 138744,
-      "new_positioning": 21445,
-      "quote": 84009
+      "dte": 75422,
+      "atm": 26533,
+      "premium": 4684,
+      "low_oi": 205449,
+      "new_positioning": 22337,
+      "quote": 129671
     },
-    "flagged_contracts": 927
+    "flagged_contracts": 10
   },
   "errors": {
     "NVR": "CBOE: NVR: https://cdn.cboe.com/api/global/delayed_quotes/options/NVR.json -> HTTP 429; yfinance: NVR: no expirations listed"
