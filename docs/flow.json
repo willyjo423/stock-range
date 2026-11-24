@@ -1,9 +1,10 @@
 {
   "asof": "2026-11-24",
-  "scan_at": "2026-11-24T03:58:19+00:00",
+  "scan_at": "2026-11-24T04:59:09+00:00",
   "scans": [
     "0215",
-    "0358"
+    "0358",
+    "0459"
   ],
   "tickers": [
     {
@@ -7363,34 +7364,34 @@
   ],
   "coverage": {
     "requested": 503,
-    "with_chain": 467,
-    "failed": 36,
-    "contracts": 82965,
-    "snapshots_today": 2,
+    "with_chain": 460,
+    "failed": 43,
+    "contracts": 82022,
+    "snapshots_today": 3,
     "first_scan_of_day": false,
     "chain_quality": {
-      "rows": 82965,
-      "tickers": 467,
+      "rows": 82022,
+      "tickers": 460,
       "sources": [
         "yfinance"
       ],
       "expiries": 10,
       "symbol_disagreements": 0,
-      "oi_missing": 0.0044958717531489185,
+      "oi_missing": 0.00454756041062154,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.11483155547520038,
+      "zero_volume_share": 0.11501792202092122,
       "usable": true
     },
     "gate_survivors": {
-      "dte": 45847,
-      "atm": 14794,
-      "premium": 1876,
-      "low_oi": 79474,
-      "new_positioning": 23967,
-      "quote": 33787
+      "dte": 45299,
+      "atm": 14612,
+      "premium": 2209,
+      "low_oi": 78553,
+      "new_positioning": 23521,
+      "quote": 33594
     },
-    "flagged_contracts": 186
+    "flagged_contracts": 0
   },
   "errors": {
     "FOXA": "CBOE: FOXA: https://cdn.cboe.com/api/global/delayed_quotes/options/FOXA.json -> HTTP 403; yfinance: FOXA: no chain rows",
