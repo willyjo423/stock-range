@@ -1,8 +1,9 @@
 {
   "asof": "2026-11-25",
-  "scan_at": "2026-11-25T02:25:29+00:00",
+  "scan_at": "2026-11-25T03:45:00+00:00",
   "scans": [
-    "0225"
+    "0225",
+    "0345"
   ],
   "tickers": [
     {
@@ -7027,6 +7028,75 @@
       ]
     },
     {
+      "ticker": "WDAY",
+      "spot": 179.23,
+      "n_contracts": 3,
+      "premium": 594030,
+      "call_premium": 203490,
+      "put_premium": 390540,
+      "call_share": 0.34,
+      "tilt": "two-sided",
+      "score": 2.25,
+      "max_vol_oi": 5.38,
+      "nearest_dte": 2,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "WDAY261127C00185000",
+          "right": "C",
+          "strike": 185.0,
+          "expiry": "2026-11-27",
+          "dte": 2,
+          "premium": 203490,
+          "volume": 323,
+          "open_interest": 60,
+          "vol_oi": 5.38,
+          "mid": 6.3,
+          "burst": null,
+          "side": "unknown",
+          "iv": 1.35,
+          "score": 1.46,
+          "stale_mid": 0
+        },
+        {
+          "contract": "WDAY261127P00175000",
+          "right": "P",
+          "strike": 175.0,
+          "expiry": "2026-11-27",
+          "dte": 2,
+          "premium": 178020,
+          "volume": 258,
+          "open_interest": 105,
+          "vol_oi": 2.46,
+          "mid": 6.9,
+          "burst": null,
+          "side": "unknown",
+          "iv": 1.383,
+          "score": 0.78,
+          "stale_mid": 0
+        },
+        {
+          "contract": "WDAY261127P00185000",
+          "right": "P",
+          "strike": 185.0,
+          "expiry": "2026-11-27",
+          "dte": 2,
+          "premium": 212520,
+          "volume": 168,
+          "open_interest": 131,
+          "vol_oi": 1.28,
+          "mid": 12.65,
+          "burst": null,
+          "side": "unknown",
+          "iv": 1.441,
+          "score": 0.46,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-11-25T03:45:00+00:00"
+    },
+    {
       "ticker": "CI",
       "spot": 275.0,
       "n_contracts": 1,
@@ -7126,6 +7196,41 @@
       ]
     },
     {
+      "ticker": "VRT",
+      "spot": 173.82,
+      "n_contracts": 1,
+      "premium": 194250,
+      "call_premium": 194250,
+      "put_premium": 0,
+      "call_share": 1.0,
+      "tilt": "calls",
+      "score": 2.07,
+      "max_vol_oi": 13.21,
+      "nearest_dte": 9,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "VRT261204C00175000",
+          "right": "C",
+          "strike": 175.0,
+          "expiry": "2026-12-04",
+          "dte": 9,
+          "premium": 194250,
+          "volume": 185,
+          "open_interest": 14,
+          "vol_oi": 13.21,
+          "mid": 10.5,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.963,
+          "score": 2.07,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-11-25T03:45:00+00:00"
+    },
+    {
       "ticker": "FICO",
       "spot": 703.33,
       "n_contracts": 1,
@@ -7157,6 +7262,58 @@
           "stale_mid": 0
         }
       ]
+    },
+    {
+      "ticker": "VRTX",
+      "spot": 563.92,
+      "n_contracts": 2,
+      "premium": 919585,
+      "call_premium": 919585,
+      "put_premium": 0,
+      "call_share": 1.0,
+      "tilt": "calls",
+      "score": 1.68,
+      "max_vol_oi": 1.22,
+      "nearest_dte": 2,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "VRTX261127C00537500",
+          "right": "C",
+          "strike": 537.5,
+          "expiry": "2026-11-27",
+          "dte": 2,
+          "premium": 577885,
+          "volume": 209,
+          "open_interest": 201,
+          "vol_oi": 1.04,
+          "mid": 27.65,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.723,
+          "score": 1.18,
+          "stale_mid": 0
+        },
+        {
+          "contract": "VRTX261127C00540000",
+          "right": "C",
+          "strike": 540.0,
+          "expiry": "2026-11-27",
+          "dte": 2,
+          "premium": 341700,
+          "volume": 134,
+          "open_interest": 110,
+          "vol_oi": 1.22,
+          "mid": 25.5,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.715,
+          "score": 0.84,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-11-25T03:45:00+00:00"
     },
     {
       "ticker": "MCD",
@@ -7274,6 +7431,75 @@
           "stale_mid": 0
         }
       ]
+    },
+    {
+      "ticker": "WDC",
+      "spot": 273.95,
+      "n_contracts": 3,
+      "premium": 694285,
+      "call_premium": 190350,
+      "put_premium": 503935,
+      "call_share": 0.27,
+      "tilt": "puts",
+      "score": 1.53,
+      "max_vol_oi": 2.02,
+      "nearest_dte": 2,
+      "looks_multileg": 0,
+      "contracts": [
+        {
+          "contract": "WDC261127P00280000",
+          "right": "P",
+          "strike": 280.0,
+          "expiry": "2026-11-27",
+          "dte": 2,
+          "premium": 343335,
+          "volume": 282,
+          "open_interest": 266,
+          "vol_oi": 1.06,
+          "mid": 12.18,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.881,
+          "score": 0.74,
+          "stale_mid": 0
+        },
+        {
+          "contract": "WDC261127P00275000",
+          "right": "P",
+          "strike": 275.0,
+          "expiry": "2026-11-27",
+          "dte": 2,
+          "premium": 160600,
+          "volume": 176,
+          "open_interest": 87,
+          "vol_oi": 2.02,
+          "mid": 9.12,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.865,
+          "score": 0.55,
+          "stale_mid": 0
+        },
+        {
+          "contract": "WDC261127C00280000",
+          "right": "C",
+          "strike": 280.0,
+          "expiry": "2026-11-27",
+          "dte": 2,
+          "premium": 190350,
+          "volume": 270,
+          "open_interest": 176,
+          "vol_oi": 1.53,
+          "mid": 7.05,
+          "burst": null,
+          "side": "unknown",
+          "iv": 0.977,
+          "score": 0.49,
+          "stale_mid": 0
+        }
+      ],
+      "times_flagged": 1,
+      "first_seen": "2026-11-25T03:45:00+00:00"
     },
     {
       "ticker": "SBUX",
@@ -7773,34 +7999,34 @@
   ],
   "coverage": {
     "requested": 503,
-    "with_chain": 459,
-    "failed": 44,
-    "contracts": 89867,
-    "snapshots_today": 1,
-    "first_scan_of_day": true,
+    "with_chain": 482,
+    "failed": 21,
+    "contracts": 93493,
+    "snapshots_today": 2,
+    "first_scan_of_day": false,
     "chain_quality": {
-      "rows": 89867,
-      "tickers": 459,
+      "rows": 93493,
+      "tickers": 482,
       "sources": [
         "yfinance"
       ],
       "expiries": 11,
       "symbol_disagreements": 0,
-      "oi_missing": 0.008434686814959885,
+      "oi_missing": 0.00816103879434824,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.11745134476504167,
+      "zero_volume_share": 0.11777352315146589,
       "usable": true
     },
     "gate_survivors": {
-      "dte": 49566,
-      "atm": 15941,
-      "premium": 9511,
-      "low_oi": 85524,
-      "new_positioning": 26190,
-      "quote": 39309
+      "dte": 51583,
+      "atm": 16637,
+      "premium": 2373,
+      "low_oi": 89079,
+      "new_positioning": 27457,
+      "quote": 40637
     },
-    "flagged_contracts": 897
+    "flagged_contracts": 9
   },
   "errors": {
     "FOXA": "CBOE: FOXA: https://cdn.cboe.com/api/global/delayed_quotes/options/FOXA.json -> HTTP 403; yfinance: FOXA: no chain rows",
