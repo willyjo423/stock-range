@@ -1,9 +1,10 @@
 {
   "asof": "2026-11-26",
-  "scan_at": "2026-11-26T03:06:16+00:00",
+  "scan_at": "2026-11-26T23:53:24+00:00",
   "scans": [
     "0147",
-    "0306"
+    "0306",
+    "2353"
   ],
   "tickers": [
     {
@@ -8917,32 +8918,32 @@
   ],
   "coverage": {
     "requested": 503,
-    "with_chain": 464,
-    "failed": 39,
-    "contracts": 89269,
-    "snapshots_today": 2,
+    "with_chain": 469,
+    "failed": 34,
+    "contracts": 89764,
+    "snapshots_today": 3,
     "first_scan_of_day": false,
     "chain_quality": {
-      "rows": 89269,
-      "tickers": 464,
+      "rows": 89764,
+      "tickers": 469,
       "sources": [
         "yfinance"
       ],
       "expiries": 10,
       "symbol_disagreements": 0,
-      "oi_missing": 0.0010754013151261916,
+      "oi_missing": 0.0011028920279844926,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.10489643661293394,
+      "zero_volume_share": 0.1050086894523417,
       "usable": true
     },
     "gate_survivors": {
-      "dte": 50138,
-      "atm": 15755,
-      "premium": 2228,
-      "low_oi": 85464,
-      "new_positioning": 26365,
-      "quote": 39688
+      "dte": 50409,
+      "atm": 15834,
+      "premium": 495,
+      "low_oi": 85953,
+      "new_positioning": 26534,
+      "quote": 39930
     },
     "flagged_contracts": 0
   },
