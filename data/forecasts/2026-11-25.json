@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T04:18:57+00:00",
+  "generated_at": "2026-11-27T04:28:32+00:00",
   "asof": "2026-11-25",
   "tickers": [
     {
@@ -636,7 +636,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.31,
-          "rel_tilt_pct": -0.46,
+          "rel_tilt_pct": -0.45,
           "skew": -0.092,
           "lean": "down"
         }
@@ -1356,7 +1356,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": -1.23,
-          "rel_tilt_pct": -2.0,
+          "rel_tilt_pct": -1.99,
           "skew": 0.001,
           "lean": "down"
         }
@@ -1516,7 +1516,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": -3.38,
-          "rel_tilt_pct": -4.15,
+          "rel_tilt_pct": -4.14,
           "skew": 0.155,
           "lean": "down"
         }
@@ -1756,7 +1756,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.15,
-          "rel_tilt_pct": 0.38,
+          "rel_tilt_pct": 0.39,
           "skew": -0.071,
           "lean": "up"
         }
@@ -2340,7 +2340,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.33,
-          "rel_tilt_pct": 0.07,
+          "rel_tilt_pct": 0.08,
           "skew": 0.021,
           "lean": "flat"
         },
@@ -2798,7 +2798,7 @@
           "tilt_pct": 1.11,
           "rel_tilt_pct": 0.35,
           "skew": -0.059,
-          "lean": "flat"
+          "lean": "up"
         }
       }
     },
@@ -3836,7 +3836,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.4,
-          "rel_tilt_pct": -0.37,
+          "rel_tilt_pct": -0.36,
           "skew": -0.023,
           "lean": "down"
         }
@@ -3998,6 +3998,46 @@
           "tilt_pct": 0.22,
           "rel_tilt_pct": -0.54,
           "skew": -0.114,
+          "lean": "down"
+        }
+      }
+    },
+    {
+      "ticker": "AMZN",
+      "asof": "2026-11-25",
+      "close": 244.43,
+      "trailing_vol": 0.457,
+      "horizons": {
+        "1 week": {
+          "days": 5,
+          "low": 234.79,
+          "high": 254.55,
+          "wide_low": 225.3,
+          "wide_high": 262.84,
+          "mid": 244.97,
+          "pct_low": -3.9,
+          "pct_high": 4.1,
+          "earnings_inside": 0.0,
+          "days_to_earnings": null,
+          "tilt_pct": 0.22,
+          "rel_tilt_pct": -0.03,
+          "skew": -0.086,
+          "lean": "flat"
+        },
+        "1 month": {
+          "days": 21,
+          "low": 227.05,
+          "high": 265.38,
+          "wide_low": 210.36,
+          "wide_high": 284.26,
+          "mid": 244.82,
+          "pct_low": -7.1,
+          "pct_high": 8.6,
+          "earnings_inside": 0.0,
+          "days_to_earnings": null,
+          "tilt_pct": 0.16,
+          "rel_tilt_pct": -0.61,
+          "skew": -0.008,
           "lean": "down"
         }
       }
@@ -4196,7 +4236,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.0,
-          "rel_tilt_pct": -0.77,
+          "rel_tilt_pct": -0.76,
           "skew": -0.11,
           "lean": "down"
         }
@@ -4316,7 +4356,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": -0.81,
-          "rel_tilt_pct": -1.58,
+          "rel_tilt_pct": -1.57,
           "skew": -0.046,
           "lean": "down"
         }
@@ -4396,7 +4436,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.92,
-          "rel_tilt_pct": 0.15,
+          "rel_tilt_pct": 0.16,
           "skew": -0.059,
           "lean": "flat"
         }
@@ -5236,7 +5276,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.89,
-          "rel_tilt_pct": 0.12,
+          "rel_tilt_pct": 0.13,
           "skew": -0.027,
           "lean": "flat"
         }
@@ -5436,7 +5476,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.41,
-          "rel_tilt_pct": 0.64,
+          "rel_tilt_pct": 0.65,
           "skew": -0.115,
           "lean": "up"
         }
@@ -5916,7 +5956,7 @@
           "earnings_inside": 1.0,
           "days_to_earnings": 8.0,
           "tilt_pct": 1.93,
-          "rel_tilt_pct": 1.16,
+          "rel_tilt_pct": 1.17,
           "skew": -0.06,
           "lean": "up"
         }
@@ -6356,7 +6396,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.52,
-          "rel_tilt_pct": -0.25,
+          "rel_tilt_pct": -0.24,
           "skew": -0.084,
           "lean": "flat"
         }
@@ -6436,7 +6476,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.17,
-          "rel_tilt_pct": -0.6,
+          "rel_tilt_pct": -0.59,
           "skew": 0.032,
           "lean": "down"
         }
@@ -6516,7 +6556,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.98,
-          "rel_tilt_pct": 0.21,
+          "rel_tilt_pct": 0.22,
           "skew": -0.059,
           "lean": "flat"
         }
@@ -6636,7 +6676,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.78,
-          "rel_tilt_pct": 0.01,
+          "rel_tilt_pct": 0.02,
           "skew": -0.017,
           "lean": "flat"
         }
@@ -6676,7 +6716,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.96,
-          "rel_tilt_pct": 0.19,
+          "rel_tilt_pct": 0.2,
           "skew": -0.104,
           "lean": "flat"
         }
@@ -6916,7 +6956,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.14,
-          "rel_tilt_pct": 0.37,
+          "rel_tilt_pct": 0.38,
           "skew": -0.047,
           "lean": "up"
         }
@@ -7636,7 +7676,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.08,
-          "rel_tilt_pct": 0.31,
+          "rel_tilt_pct": 0.32,
           "skew": -0.079,
           "lean": "flat"
         }
@@ -7716,7 +7756,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.52,
-          "rel_tilt_pct": -0.25,
+          "rel_tilt_pct": -0.24,
           "skew": -0.036,
           "lean": "flat"
         }
@@ -8436,7 +8476,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.11,
-          "rel_tilt_pct": -0.66,
+          "rel_tilt_pct": -0.65,
           "skew": -0.144,
           "lean": "down"
         }
@@ -8676,7 +8716,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": -0.19,
-          "rel_tilt_pct": -0.96,
+          "rel_tilt_pct": -0.95,
           "skew": -0.112,
           "lean": "down"
         }
@@ -8900,7 +8940,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.31,
-          "rel_tilt_pct": 0.05,
+          "rel_tilt_pct": 0.06,
           "skew": -0.031,
           "lean": "flat"
         },
@@ -8916,7 +8956,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.4,
-          "rel_tilt_pct": -0.37,
+          "rel_tilt_pct": -0.36,
           "skew": -0.098,
           "lean": "down"
         }
@@ -9060,7 +9100,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.15,
-          "rel_tilt_pct": -0.11,
+          "rel_tilt_pct": -0.1,
           "skew": -0.109,
           "lean": "flat"
         },
@@ -10196,7 +10236,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.52,
-          "rel_tilt_pct": -0.25,
+          "rel_tilt_pct": -0.24,
           "skew": -0.094,
           "lean": "flat"
         }
@@ -10556,7 +10596,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.24,
-          "rel_tilt_pct": 0.47,
+          "rel_tilt_pct": 0.48,
           "skew": -0.096,
           "lean": "up"
         }
@@ -11556,7 +11596,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.46,
-          "rel_tilt_pct": 0.69,
+          "rel_tilt_pct": 0.7,
           "skew": -0.074,
           "lean": "up"
         }
@@ -12196,7 +12236,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.03,
-          "rel_tilt_pct": 0.26,
+          "rel_tilt_pct": 0.27,
           "skew": -0.087,
           "lean": "flat"
         }
@@ -13796,7 +13836,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": -0.06,
-          "rel_tilt_pct": -0.83,
+          "rel_tilt_pct": -0.82,
           "skew": -0.018,
           "lean": "down"
         }
@@ -13836,7 +13876,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.73,
-          "rel_tilt_pct": -0.04,
+          "rel_tilt_pct": -0.03,
           "skew": -0.313,
           "lean": "flat"
         }
@@ -13916,7 +13956,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.72,
-          "rel_tilt_pct": -0.05,
+          "rel_tilt_pct": -0.04,
           "skew": -0.048,
           "lean": "flat"
         }
@@ -13956,7 +13996,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.03,
-          "rel_tilt_pct": 0.26,
+          "rel_tilt_pct": 0.27,
           "skew": -0.061,
           "lean": "flat"
         }
@@ -14076,7 +14116,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.96,
-          "rel_tilt_pct": 0.19,
+          "rel_tilt_pct": 0.2,
           "skew": -0.092,
           "lean": "flat"
         }
@@ -14220,7 +14260,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.17,
-          "rel_tilt_pct": -0.09,
+          "rel_tilt_pct": -0.08,
           "skew": -0.033,
           "lean": "flat"
         },
@@ -14676,7 +14716,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.08,
-          "rel_tilt_pct": 0.31,
+          "rel_tilt_pct": 0.32,
           "skew": -0.045,
           "lean": "flat"
         }
@@ -14820,7 +14860,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.31,
-          "rel_tilt_pct": 0.05,
+          "rel_tilt_pct": 0.06,
           "skew": -0.029,
           "lean": "flat"
         },
@@ -15076,7 +15116,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.74,
-          "rel_tilt_pct": -0.03,
+          "rel_tilt_pct": -0.02,
           "skew": -0.045,
           "lean": "flat"
         }
@@ -15196,7 +15236,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.57,
-          "rel_tilt_pct": -0.2,
+          "rel_tilt_pct": -0.19,
           "skew": -0.078,
           "lean": "flat"
         }
@@ -15356,7 +15396,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.18,
-          "rel_tilt_pct": 0.41,
+          "rel_tilt_pct": 0.42,
           "skew": -0.111,
           "lean": "up"
         }
@@ -15716,7 +15756,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.48,
-          "rel_tilt_pct": -0.29,
+          "rel_tilt_pct": -0.28,
           "skew": -0.074,
           "lean": "flat"
         }
@@ -15780,7 +15820,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.3,
-          "rel_tilt_pct": 0.04,
+          "rel_tilt_pct": 0.05,
           "skew": -0.053,
           "lean": "flat"
         },
@@ -15820,7 +15860,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.3,
-          "rel_tilt_pct": 0.04,
+          "rel_tilt_pct": 0.05,
           "skew": -0.032,
           "lean": "flat"
         },
@@ -16476,7 +16516,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.61,
-          "rel_tilt_pct": -0.16,
+          "rel_tilt_pct": -0.15,
           "skew": -0.098,
           "lean": "flat"
         }
@@ -16940,7 +16980,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.18,
-          "rel_tilt_pct": -0.08,
+          "rel_tilt_pct": -0.07,
           "skew": -0.074,
           "lean": "flat"
         },
@@ -17196,7 +17236,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.61,
-          "rel_tilt_pct": -0.16,
+          "rel_tilt_pct": -0.15,
           "skew": -0.043,
           "lean": "flat"
         }
@@ -17540,7 +17580,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.23,
-          "rel_tilt_pct": -0.03,
+          "rel_tilt_pct": -0.02,
           "skew": -0.072,
           "lean": "flat"
         },
@@ -17556,7 +17596,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": -0.13,
-          "rel_tilt_pct": -0.9,
+          "rel_tilt_pct": -0.89,
           "skew": -0.132,
           "lean": "down"
         }
@@ -18140,7 +18180,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.16,
-          "rel_tilt_pct": -0.1,
+          "rel_tilt_pct": -0.09,
           "skew": -0.081,
           "lean": "flat"
         },
@@ -18220,7 +18260,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.25,
-          "rel_tilt_pct": -0.0,
+          "rel_tilt_pct": 0.0,
           "skew": -0.094,
           "lean": "flat"
         },
@@ -18316,7 +18356,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.76,
-          "rel_tilt_pct": -0.0,
+          "rel_tilt_pct": 0.0,
           "skew": -0.051,
           "lean": "flat"
         }
@@ -18636,7 +18676,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.69,
-          "rel_tilt_pct": 0.92,
+          "rel_tilt_pct": 0.93,
           "skew": -0.154,
           "lean": "up"
         }
@@ -19380,7 +19420,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.4,
-          "rel_tilt_pct": 0.14,
+          "rel_tilt_pct": 0.15,
           "skew": -0.058,
           "lean": "flat"
         },
@@ -19556,7 +19596,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 0.81,
-          "rel_tilt_pct": 0.04,
+          "rel_tilt_pct": 0.05,
           "skew": -0.03,
           "lean": "flat"
         }
@@ -19756,7 +19796,7 @@
           "earnings_inside": 0.0,
           "days_to_earnings": null,
           "tilt_pct": 1.87,
-          "rel_tilt_pct": 1.1,
+          "rel_tilt_pct": 1.11,
           "skew": -0.095,
           "lean": "up"
         }
