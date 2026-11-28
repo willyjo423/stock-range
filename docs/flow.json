@@ -1,8 +1,9 @@
 {
   "asof": "2026-11-28",
-  "scan_at": "2026-11-28T01:28:09+00:00",
+  "scan_at": "2026-11-28T02:58:07+00:00",
   "scans": [
-    "0128"
+    "0128",
+    "0258"
   ],
   "tickers": [
     {
@@ -9411,8 +9412,8 @@
     "with_chain": 501,
     "failed": 2,
     "contracts": 67852,
-    "snapshots_today": 1,
-    "first_scan_of_day": true,
+    "snapshots_today": 2,
+    "first_scan_of_day": false,
     "chain_quality": {
       "rows": 67852,
       "tickers": 501,
@@ -9424,18 +9425,18 @@
       "oi_missing": 0.0011937746860814715,
       "volume_missing": 0.0,
       "spot_missing": 0.0,
-      "zero_volume_share": 0.10384365973000059,
+      "zero_volume_share": 0.10399103932087485,
       "usable": true
     },
     "gate_survivors": {
       "dte": 42782,
-      "atm": 11817,
-      "premium": 5874,
+      "atm": 11955,
+      "premium": 1053,
       "low_oi": 66133,
-      "new_positioning": 32227,
-      "quote": 31986
+      "new_positioning": 32014,
+      "quote": 32216
     },
-    "flagged_contracts": 1047
+    "flagged_contracts": 0
   },
   "errors": {
     "FOXA": "CBOE: FOXA: https://cdn.cboe.com/api/global/delayed_quotes/options/FOXA.json -> HTTP 403; yfinance: FOXA: no chain rows",
